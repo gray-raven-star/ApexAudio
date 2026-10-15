@@ -1,6 +1,7 @@
 # Apex Audio
 
-Windows game-audio capture and supplemental-haptics tool developed for the Flydigi Apex 6 Pro. The host manages connections, audio-group presets, multitrack recording and playback, and can route selected game audio tracks to Flydigi X-Haptics. Game-specific capture is supplied by `.gpack` adapters.
+**Apex Audio lets the Flydigi Apex 6 Pro use selected game sounds as input for supplemental vibration through Flydigi X-Haptics.** When a game adapter can read dialogue, background music, and sound effects as separate groups, you can turn off dialogue and music while keeping footsteps, gunfire, and other effects as vibration input. The game continues playing all of its normal audio.
+ Game-specific capture is supplied by `.gpack` adapters.
 
 [中文说明](README.md)
 
