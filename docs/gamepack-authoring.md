@@ -23,11 +23,11 @@
 | `adapters/Wwise/` | Wwise 适配器及原生模块；配置结构在 `GameDefinition.cs` |
 | `adapters/Fmod/` | FMOD 适配器，字段和限制见其 `README.md` |
 | `adapters/Unreal/` | Unreal AudioMixer 适配器，字段和限制见其 `README.md` |
-| `gamepacks/` | 按游戏保存的版本匹配、配置和初始预设示例 |
+| `gamepacks/` | 你为目标游戏新建的版本匹配、配置和初始预设；公开仓库不附具体游戏定义 |
 | `schemas/` | 清单与预设的 JSON Schema |
 | `tools/Pack.ps1` | 为完整包目录生成文件摘要并压成 `.gpack` |
 
-现有定义示例：`gamepacks/monsterhunterworld`（Wwise）、`gamepacks/kingdomcome2`（FMOD）、`gamepacks/stellarblade`（Unreal）。这些是已知游戏的配置实例，不能把里面的地址、编号或版本直接套给其他游戏。
+新定义从 `templates/` 复制对应引擎的空白模板，并保存到 `gamepacks/<你的包ID>/`。可以参考已经发布的适配包结构，但仍需根据目标游戏的实际版本收集接口证据并验证录音结果。
 
 运行版只含应用和文档；制作采集模块需要完整源码。当前构建环境为 Windows x64、.NET 8 SDK；下列原生构建脚本调用 Zig 的 `cc`，`-Compiler` 应填写实际 `zig.exe` 路径。代码并未打包第三方游戏 SDK。
 
@@ -49,7 +49,7 @@ gamepacks/my-game/
   README.md
 ```
 
-- `manifest.json`：固定的包 ID、名称、版本、适配器入口、游戏匹配和预设引用，格式见 [包清单](gpack-format.md)。不要沿用示例包的 ID。
+- `manifest.json`：固定的包 ID、名称、版本、适配器入口、游戏匹配和预设引用，格式见 [包清单](gpack-format.md)。为目标游戏创建新的包 ID。
 - `game.json`：由所用适配器解释。宿主不解析其中的游戏地址或引擎字段；自写适配器也可以采用别的文件名和配置格式。
 - `presets/initial.json`：作者提供的初始命名、显示文件夹和开关，格式见 [预设说明](presets-recordings.md)。`packId` 必须对应新包 ID，分组键必须匹配适配器返回的稳定 ID。
 - `README.md`：明确支持的游戏版本、实际可用能力、未验证项目和已知限制。

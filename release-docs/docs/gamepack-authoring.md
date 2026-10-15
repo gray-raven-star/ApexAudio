@@ -30,7 +30,7 @@ pwsh -File tools/New-Pack.ps1 -Id author.example -Name "目标游戏" -Backend W
 
 ## 3. 适配采集实现
 
-复用时核对字段和后端源码要求；不兼容时按 new-module.md 开发。模板不包含游戏定位答案，构建工具也不会自动发现接口。
+复用时核对字段和后端源码要求；不兼容时按 new-module.md 开发。可以参考已发布适配包的结构，但构建工具不会自动发现目标游戏接口，仍需对实际游戏版本进行调查和验证。
 
 Custom 模板会生成 `adapter/YourAdapter.csproj` 和接口骨架。Connect 明确抛出未实现；它不会产生假音频。完善 IGameAdapter；需要低延迟补充震动时另实现 IRealtimeMixAdapter。
 

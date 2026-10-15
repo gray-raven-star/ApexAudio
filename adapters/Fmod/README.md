@@ -1,6 +1,6 @@
 # FMOD 分组适配器
 
-独立 EXE 适配器，实现既有 IPC V1、独立 PCM 和可选 realtimeMix。宿主源码和已安装二进制无需改变。天国2示例数据位于 `gamepacks/kingdomcome2`，最终归入自包含 `.gpack`。
+独立 EXE 适配器，实现既有 IPC V1、独立 PCM 和可选 realtimeMix。宿主源码和已安装二进制无需改变。每款游戏的定位数据和总线定义由单独的 `gamepacks/<你的包ID>` 提供，最终打包为自包含 `.gpack`。
 
 ## 当前实现
 
@@ -15,9 +15,9 @@
 
 `executable` / `executableSha256` 是版本匹配规则；`modules` 是实际调用模块及其哈希。
 
-`wrapperModule` / `wrapperRva` 定义模块内全局对象指针的位置；`stateOffset` / `studioOffset` 是该对象中初始化状态（值 2）及 Studio System 句柄的成员偏移。所有位置都属于包内数据，不在宿主中判断游戏名。此定位器目前适用于已核对的对象包装方式；其他游戏若使用不同实例访问方式，需要在适配器包内扩展定位实现，不能仅套用天国2偏移。
+`wrapperModule` / `wrapperRva` 定义模块内全局对象指针的位置；`stateOffset` / `studioOffset` 是该对象中初始化状态（值 2）及 Studio System 句柄的成员偏移。所有位置都属于包内数据，不在宿主中判断游戏名。此定位器目前适用于已核对的对象包装方式；其他游戏若使用不同实例访问方式，需要在适配器包内扩展定位实现，不能照搬其他游戏的偏移。
 
-`runtimeVersion` 是 FMOD 实际版本。天国2当前为 `0x00020221`，按 FMOD 的版本编码显示为 **2.02.21**；版本检测比较原始整数。
+`runtimeVersion` 是 FMOD 实际版本；版本检测比较原始整数，并应在目标游戏运行时确认。
 
 `buses` 最多 64 条：每条包含 16 字节 GUID 小端原始字节的 hex `id`、原始 `path`、显示 `name`、实际 `parentId`、`category`、`containsChildren`。顺序固定且与原生索引一致。GUID、路径来自银行 API；翻译和初始开关由包作者整理。
 
@@ -26,9 +26,9 @@
 ## 构建
 
 ```powershell
-pwsh -File adapters/Fmod/tools/BuildPack.ps1 -Compiler <zig.exe> -Profile gamepacks/kingdomcome2
+pwsh -File adapters/Fmod/tools/BuildPack.ps1 -Compiler <zig.exe> -Profile gamepacks/<你的包ID>
 ```
 
-仅编译本适配器和原生模块，复用 Contracts / Windows 辅助程序集，产物在 `dist/packages/local.kingdomcome2.gpack`。包不携带游戏银行、FMOD DLL 或第三方参考源码。匹配失败应更新包的定位数据和哈希，再实测，不要放宽版本检查。
+仅编译本适配器和原生模块，复用 Contracts / Windows 辅助程序集，产物位于 `dist/packages/`。包不携带游戏银行、FMOD DLL 或第三方参考源码。匹配失败应更新包的定位数据和哈希，再实测，不要放宽版本检查。
 
-验证记录在 `artifacts/kcd2/integration.json`：用已安装宿主的 Contracts、Core、XHaptics、Windows DLL 执行真实游戏采集／开关／录音。安装前后对比宿主根目录哈希。菜单里只测到音乐和总体混音；对白、脚步及实体马达效果需要游玩场景和连接手柄后确认。
+真实游戏验证应记录在该游戏包自己的验证报告中，注明运行时采集、音轨独立性、反馈与重连各自的覆盖范围。不能把适配器构建或离线协议测试写成实际游戏验证。

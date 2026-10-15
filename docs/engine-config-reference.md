@@ -1,4 +1,4 @@
-# 三个现有适配器的 game.json 字段
+# 现有适配器的 game.json 字段
 
 配置格式由适配器决定，不属于宿主 V1 协议。本文对应当前源码；修改结构时请同步维护文档、序列化和原生配置布局。数字在 JSON 中使用十进制，不直接写 `0x...`。模块相对地址 RVA 与对象内字段偏移是不同概念；每次启动变化的绝对地址不能写成 RVA。
 
@@ -12,7 +12,7 @@
 
 ## Wwise
 
-实现：`adapters/Wwise/GameDefinition.cs`、`Program.cs` 和 `native/ApexWwiseCapture.c`。参考：`gamepacks/monsterhunterworld/`。
+实现：`adapters/Wwise/GameDefinition.cs`、`Program.cs` 和 `native/ApexWwiseCapture.c`。目标游戏定义不随公开源码仓库提供。
 
 | 字段 | 类型／来源／用途 |
 |---|---|
@@ -42,7 +42,7 @@
 
 ## FMOD Studio
 
-实现：`adapters/Fmod/`。参考：`gamepacks/kingdomcome2/`。
+实现：`adapters/Fmod/`。目标游戏定义不随公开源码仓库提供。
 
 | 字段 | 类型／来源／用途 |
 |---|---|
@@ -70,7 +70,7 @@ GUID、路径和活动路由来自银行元数据／活动 Studio System。现�
 
 ## Unreal AudioMixer
 
-实现：`adapters/Unreal/`。参考：`gamepacks/stellarblade/`，当前为实际游戏接入尚未验证的试用定义。
+实现：`adapters/Unreal/`。目标游戏定义不随公开源码仓库提供。
 
 | 字段 | 类型／来源／用途 |
 |---|---|

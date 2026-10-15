@@ -35,15 +35,15 @@ pwsh -File tools/Build.ps1 -Test
 
 项目的 NuGet 配置不依赖外部第三方 NuGet 包，WebView2 SDK 文件已保存在 `vendor/`；但机器必须具有相应 .NET SDK 和所需框架引用包。如果还原报告框架缺失，应先补齐环境，不要跳过错误。
 
-## 构建三个参考包
+## 构建新游戏包
 
-这些命令只编译包，不自动连接游戏：
+先按 [适配包制作指南](gamepack-authoring.md) 独立取得目标游戏配置，并把定义放进 `gamepacks/<你的包ID>/`。以下命令只构建完整包，不会自动发现配置是否正确，也不会自动连接游戏。按采用的引擎选择对应命令：
 
 ```powershell
 dotnet restore adapters/Wwise/ApexAudio.Wwise.csproj --configfile NuGet.Config
-pwsh -File adapters/Wwise/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/monsterhunterworld -Compiler ./toolchains/zig/zig.exe
-pwsh -File adapters/Fmod/tools/BuildPack.ps1 -Profile gamepacks/kingdomcome2 -Compiler ./toolchains/zig/zig.exe
-pwsh -File adapters/Unreal/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/stellarblade -Compiler ./toolchains/zig/zig.exe
+pwsh -File adapters/Wwise/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler ./toolchains/zig/zig.exe
+pwsh -File adapters/Fmod/tools/BuildPack.ps1 -Profile gamepacks/my-game -Compiler ./toolchains/zig/zig.exe
+pwsh -File adapters/Unreal/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler ./toolchains/zig/zig.exe
 ```
 
 结果位于 `dist/packages/`。定义目录含源配置，`captureSha256` 可暂为空；BuildPack 在构建暂存区填入实际 DLL 摘要。不要直接把未编译的定义目录压缩后声称它是完整可运行包。
@@ -54,10 +54,6 @@ pwsh -File adapters/Unreal/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/st
 
 ## 交付开发项目
 
-项目提供 `tools/ExportSource.ps1`，使用明确目录清单导出源码、三个参考定义和文档。可选 `-CompilerDirectory` 携带完整 Zig 工具链。它不收集运行数据、历史实验、旧游戏配置或开发机的固定安装路径；导出的根目录不含 `artifacts/`、`dist/`、`bin/`、`obj/` 或用户录音。
-
-```powershell
-pwsh -File tools/ExportSource.ps1 -Output ../ApexAudio-Developer.zip -CompilerDirectory ./toolchains/zig
-```
+公开源码仓库包含通用代码、空白模板和文档，不含目标游戏定义、运行数据或用户录音。仓库还没有完整开发套件压缩包；若自行整理分发包，应排除 `artifacts/`、`dist/`、`bin/`、`obj/`、本机 `data/` 和任何目标游戏专属定义，并保留第三方许可证。
 
 导出目录 `artifacts/source-export-*` 只是构建暂存区，不应再次作为输入。压缩包中工具链及第三方文件保留其许可；本项目并未因此取得游戏资源、商业 SDK 或品牌图标的公开再分发许可，来源见根目录 `THIRD-PARTY.md`。

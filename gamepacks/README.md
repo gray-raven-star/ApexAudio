@@ -1,3 +1,7 @@
-# Game pack definitions
+# 游戏适配包
 
-This directory is intentionally empty in the public source repository. Use `tools/New-Pack.ps1` to create a local game definition. Do not commit target-game definitions during blind evaluations; publish an adapter package separately when appropriate.
+源码中的 `gamepacks/` 用于存放本地开发中的游戏定义。面向普通用户的可导入 `.gpack` 文件通过 GitHub Releases 分发，这样用户可以只下载自己需要的游戏包，主程序源码也能保持清晰。
+
+面向普通用户的可导入适配包按版本作为 [GitHub Release 附件](https://github.com/gray-raven-star/ApexAudio/releases) 分发。文件统一使用 `ApexAudio-游戏名-版本号.gpack` 命名，并提供音频引擎、游戏版本匹配范围和校验摘要。
+
+适配包不得包含用户私人配置、录音或游戏文件。公开某款游戏的适配包时，请在说明中明确游戏版本和实际验证范围；如需公开适配包源码，可放在独立目录、分支或仓库中维护。

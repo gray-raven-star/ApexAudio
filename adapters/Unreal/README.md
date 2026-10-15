@@ -26,7 +26,7 @@
 
 ## 构建与验证
 
-使用 `tools/BuildPack.ps1 -DefinitionDirectory gamepacks/stellarblade -Compiler <C编译器>` 构建。
+使用 `tools/BuildPack.ps1 -DefinitionDirectory gamepacks/<你的包ID> -Compiler <C编译器>` 构建。
 
 本轮完成离线导入、协议和原生回调的人工数据自测；真实游戏中的监听注册、分组音频和反馈效果尚未验证。用户导入的实际测试不应被离线自测替代。
 
