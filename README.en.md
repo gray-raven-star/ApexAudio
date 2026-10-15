@@ -6,11 +6,11 @@ Windows game-audio capture and supplemental-haptics tool developed for the Flydi
 
 ## Downloads
 
-This repository currently contains source code and adapter-development documentation; a ready-to-run application archive has not been published yet. The application requires Windows x64, .NET 8 Desktop Runtime, and WebView2 Runtime. Supplemental haptics are currently designed and verified primarily with the Flydigi Apex 6 Pro.
+GitHub Releases provide a Windows x64 application archive and individually downloadable game adapters. The application requires .NET 8 Desktop Runtime and WebView2 Runtime. Supplemental haptics are currently designed and verified primarily with the Flydigi Apex 6 Pro.
 
 Import game adapters from the app as `.gpack` files. Each package only matches the game executable version declared in its manifest. Game updates may require an updated package. Supplemental haptics require a compatible official X-Haptics installation.
 
-Game adapters are best distributed as versioned GitHub Release assets so users can download only the games they need. The source tree does not include recordings, user settings, or local game data.
+The application and game adapters are separate assets on the same Release page. Download the app and only the `.gpack` files for games you play. The source tree does not include recordings, user settings, or local game data.
 
 ## Develop an adapter
 

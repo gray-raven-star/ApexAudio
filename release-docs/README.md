@@ -1,10 +1,10 @@
 # Apex Audio
 
-Windows x64 声音采集工具。主程序负责适配包管理、预设编辑、分轨录音、试听和 X-Haptics 时间对照；游戏采集由独立 `.gpack` 提供。
+面向飞智八爪鱼 6 Pro、配合飞智 X-Haptics 使用的 Windows x64 游戏声音采集与补充震动工具。主程序负责适配包管理、预设编辑、分轨录音和试听；游戏采集由独立 `.gpack` 提供。
 
 ## 使用运行包
 
-解压后运行 `ApexAudio.exe`。需要 .NET 8 Desktop Runtime 和 WebView2 Runtime；本包不捆绑或安装它们。适配包由用户导入，运行包不预装任何游戏包或演示包。
+解压后运行 `ApexAudio.exe`。需要 .NET 8 Desktop Runtime 和 WebView2 Runtime；本包不捆绑或安装它们。请从同一 GitHub Release 单独下载并导入你要玩的游戏适配包，无需下载其他游戏包。
 
 游戏适配器需要核对其声明的游戏版本；不保证任意游戏开箱即用。补充震动需要另行安装兼容的官方 X-Haptics；不随本项目分发驱动。
 

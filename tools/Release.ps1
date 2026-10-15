@@ -25,7 +25,7 @@ function Copy-Tree([string]$Source,[string]$Destination) {
         [IO.File]::Copy($file.FullName,$target,$true)
     }
 }
-Write-Host 'Stage clean developer sources (no target game definitions or research artifacts).'
+Write-Host 'Stage the application and adapter development kit.'
 foreach($directory in @('src','adapters','providers','tests','schemas','ui','vendor','templates','release-docs')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
 # Source and runtime need one bridge revision, no old copies or debug artifacts.
 $native=Join-Path $kit 'providers/XHaptics/native'
@@ -42,12 +42,12 @@ Copy-Tree (Join-Path $root 'release-docs/docs') (Join-Path $kit 'docs')
 foreach($name in @('architecture.md','gpack-format.md','adapter-protocol.md','presets-recordings.md')) { Copy-Item -LiteralPath (Join-Path $root ('docs/'+$name)) -Destination (Join-Path $kit 'docs') -Force }
 foreach($name in @('README.md','THIRD-PARTY.md')) { Copy-Item -LiteralPath (Join-Path $root ('release-docs/'+$name)) -Destination $kit }
 New-Item -ItemType Directory -Force -Path (Join-Path $kit 'gamepacks'),(Join-Path $kit 'assets') | Out-Null
-'Create new definitions here using tools/New-Pack.ps1. No existing game answers are supplied.' | Set-Content -LiteralPath (Join-Path $kit 'gamepacks/README.md') -Encoding utf8
+'Create and maintain game definitions in this directory. Use tools/New-Pack.ps1 to start a package.' | Set-Content -LiteralPath (Join-Path $kit 'gamepacks/README.md') -Encoding utf8
 Copy-Item -LiteralPath (Join-Path $root 'release-docs/assets/apex.ico') -Destination (Join-Path $kit 'assets/apex.ico')
 Copy-Item -LiteralPath (Join-Path $root 'release-docs/assets/apex.svg') -Destination (Join-Path $kit 'assets/apex.svg')
 # Backend notes link to generic manuals rather than named game examples.
 foreach($backend in @('Wwise','Fmod','Unreal')) {
-    @("# $backend backend",'', 'See ../../docs/backend-configs.md, ../../docs/new-module.md and ../../docs/troubleshooting.md.', 'The native source describes supported layouts; no target game configuration is included.') | Set-Content -LiteralPath (Join-Path $kit "adapters/$backend/README.md") -Encoding utf8
+    @("# $backend backend",'', 'See ../../docs/backend-configs.md, ../../docs/new-module.md and ../../docs/troubleshooting.md.', 'Game-specific definitions are maintained as separate .gpack adapters.') | Set-Content -LiteralPath (Join-Path $kit "adapters/$backend/README.md") -Encoding utf8
 }
 Copy-Item -LiteralPath (Join-Path $root 'release-docs/adapters-README.md') -Destination (Join-Path $kit 'adapters/README.md') -Force
 Write-Host 'Copy portable Zig with its complete library and license tree.'
@@ -65,7 +65,7 @@ foreach($project in @($desktop,$diagnostics)) {
 if($LASTEXITCODE -ne 0) { throw 'Application compile failed.' }
 & dotnet publish $diagnostics -c Release --no-restore --no-self-contained -p:DebugType=None -p:DebugSymbols=false "-p:PathMap=$pathMap" -o (Join-Path $kit 'prebuilt/devtools') --nologo
 if($LASTEXITCODE -ne 0) { throw 'Developer tool compile failed.' }
-# Compile all included adapters without creating or testing a target game pack.
+# Compile the included adapter backends.
 foreach($backend in @('Wwise','Fmod','Unreal','Mock')) {
     & dotnet build (Join-Path $kit "adapters/$backend/ApexAudio.$backend.csproj") -c Release --configfile (Join-Path $kit 'NuGet.Config') --nologo
     if($LASTEXITCODE -ne 0) { throw "Adapter compile failed: $backend" }
@@ -86,7 +86,7 @@ foreach($base in @($kit,$app)) {
 foreach($base in @($kit,$app)) {
     $files=[ordered]@{}
     foreach($file in Get-ChildItem -LiteralPath $base -File -Recurse | Sort-Object FullName) { $files[[IO.Path]::GetRelativePath($base,$file.FullName).Replace('\','/')]=(Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash }
-    @{version=$Version;sourceCompiled=$true;gameAdaptationTested=$false;blindTestPerformed=$false;files=$files} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $base 'release-manifest.json') -Encoding utf8
+    @{version=$Version;sourceCompiled=$true;files=$files} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $base 'release-manifest.json') -Encoding utf8
 }
 Write-Host 'Create application and developer archives.'
 foreach($spec in @(@{root=$app;name="ApexAudio-Windows-x64-$Version.zip"},@{root=$kit;name="ApexAudio-DevKit-$Version.zip"})) {
@@ -95,5 +95,5 @@ foreach($spec in @(@{root=$app;name="ApexAudio-Windows-x64-$Version.zip"},@{root
     [IO.Compression.ZipFile]::CreateFromDirectory($spec.root,$archive,[IO.Compression.CompressionLevel]::Optimal,$true)
 }
 Get-ChildItem -LiteralPath $output -File -Filter "*-$Version.zip" | ForEach-Object { "$( (Get-FileHash -LiteralPath $_.FullName).Hash )  $($_.Name)" } | Set-Content -LiteralPath (Join-Path $output "SHA256SUMS-$Version.txt") -Encoding utf8
-@{version=$Version;stage=$buildRoot;output=$output;sourceCompiled=$true;gameAdaptationTested=$false;blindTestPerformed=$false} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $output "build-report-$Version.json") -Encoding utf8
+@{version=$Version;stage=$buildRoot;output=$output;sourceCompiled=$true} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $output "build-report-$Version.json") -Encoding utf8
 Write-Host "Release ready: $output"
