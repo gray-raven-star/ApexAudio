@@ -1,0 +1,16 @@
+**/bin/
+**/obj/
+dist/
+artifacts/
+*.user
+data/
+toolchain/
+prebuilt/
+.venv/
+evidence/
+.cache/
+**/__pycache__/
+
+# Local game-specific answers stay out of the public blind-test repository.
+/gamepacks/*
+!/gamepacks/README.md

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><UseWindowsForms>true</UseWindowsForms><AssemblyName>ApexAudio</AssemblyName>
+    <ApplicationIcon>../../assets/apex.ico</ApplicationIcon><ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="../ApexAudio.Application/ApexAudio.Application.csproj" /></ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.WebView2.Core"><HintPath>../../vendor/webview2/Microsoft.Web.WebView2.Core.dll</HintPath></Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms"><HintPath>../../vendor/webview2/Microsoft.Web.WebView2.WinForms.dll</HintPath></Reference>
+    <Content Include="../../vendor/webview2/WebView2Loader.dll" Link="WebView2Loader.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../../ui/**/*" Link="ui/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../../assets/apex.ico" Link="assets/apex.ico" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

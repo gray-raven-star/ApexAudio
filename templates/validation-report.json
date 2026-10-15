@@ -1,0 +1,17 @@
+{
+  "packId": "__REQUIRED__", "packVersion": "__REQUIRED__", "environment": {},
+  "validationTier": "basic",
+  "targetVersionEvidence": [],
+  "versions": { "bankFormat": null, "integrationVersion": null, "exactSdkVersion": null, "verifiedAbi": null },
+  "audioInstanceEvidence": { "diskCandidates": [], "loadedModule": null, "initializedInstance": "not-tested", "realCallbacks": "not-tested" },
+  "groupEvidenceFile": null,
+  "stages": {
+    "packageIntegrity": "not-tested", "build": "not-tested", "protocol": "not-tested",
+    "resolvedObjects": "not-tested", "listenerRegistration": "not-tested", "callbacks": "not-tested",
+    "nonZeroPcm": "not-tested", "independentTracks": "not-tested", "selection": "not-tested",
+    "disconnectReconnect": "not-tested", "feedbackSource": "not-tested", "physicalHaptics": "not-tested"
+  },
+  "evidenceFiles": [], "sources": [], "knownLimitations": [], "blockingStage": null,
+  "notTested": [], "reproductionCommands": [],
+  "cleanup": { "adapterDisconnected": "not-tested", "gameModules": "not-observed", "temporaryDirectories": [] }
+}

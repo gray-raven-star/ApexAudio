@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "demo.independent-audio",
+  "name": "独立音轨演示",
+  "version": "1.0.0",
+  "author": "Apex Audio",
+  "source": "随软件提供的本地演示包",
+  "description": "四条不同的测试音轨，体验预设编辑、独立试听和时间轴。不会连接真实游戏。",
+  "protocolVersion": 1,
+  "entryPoint": "ApexAudio.Mock.exe",
+  "demo": true,
+  "games": [],
+  "presets": ["presets/author.json"],
+  "files": {}
+}

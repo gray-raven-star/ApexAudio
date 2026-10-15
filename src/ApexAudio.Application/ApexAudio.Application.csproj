@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../ApexAudio.Core/ApexAudio.Core.csproj" />
+    <ProjectReference Include="../../providers/XHaptics/ApexAudio.XHaptics.csproj" />
+  </ItemGroup>
+</Project>

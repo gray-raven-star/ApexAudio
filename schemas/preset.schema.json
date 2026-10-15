@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Apex Audio sound preset V1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "name", "packId", "groups"],
+  "properties": {
+    "schemaVersion": {"const": 1}, "id": {"type": "string", "minLength": 1}, "name": {"type": "string", "minLength": 1},
+    "packId": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]{2,79}$"},
+    "basePresetId": {"type": ["string", "null"]}, "basePackVersion": {"type": ["string", "null"]},
+    "folders": {"type": "array", "items": {"type": "object", "required": ["id", "name"], "properties": {"id": {"type": "string", "pattern": "^folder:.+"}, "name": {"type": "string", "minLength": 1}, "parentId": {"type": ["string", "null"]}, "order": {"type": "integer"}}}},
+    "groups": {"type": "object", "additionalProperties": {"type": "object", "properties": {"name": {"type": ["string", "null"]}, "enabled": {"type": "boolean"}, "folderId": {"type": ["string", "null"]}, "order": {"type": "integer"}}}
+  }
+}

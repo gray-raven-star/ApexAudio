@@ -1,0 +1,14 @@
+[
+  {
+    "processName": "xHaptics Engine",
+    "sha256": "332D255E13CF88B0224A7D9621BCF39FF28B693A6C328E300FCF8264C9660803",
+    "kind": "formal",
+    "port": 18757
+  },
+  {
+    "processName": "x-haptic-engine-fusion",
+    "sha256": "58DBFCD857A92D8C6C436E615B321B53A2C329909F3AED67244A679D6E1829F5",
+    "kind": "beta",
+    "port": 18789
+  }
+]

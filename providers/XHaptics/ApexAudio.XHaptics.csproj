@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup><ProjectReference Include="../../src/ApexAudio.Contracts/ApexAudio.Contracts.csproj" /></ItemGroup>
+  <ItemGroup><ProjectReference Include="../../src/ApexAudio.Windows/ApexAudio.Windows.csproj" /></ItemGroup>
+  <ItemGroup>
+    <Content Include="native/ApexGroupsBridge-v5.dll" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="native/xh-engines.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="native/xh-support.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

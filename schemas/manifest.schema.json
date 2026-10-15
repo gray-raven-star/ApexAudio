@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Apex Audio complete game pack V1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "name", "version", "protocolVersion", "entryPoint", "games", "presets", "files"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]{2,79}$"},
+    "name": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+(\\.[0-9]+){0,2}$"},
+    "author": {"type": "string"}, "source": {"type": "string"}, "description": {"type": "string"},
+    "protocolVersion": {"const": 1},
+    "entryPoint": {"type": "string", "pattern": "^[^:\\\\]+\\.exe$"},
+    "demo": {"type": "boolean"},
+    "games": {"type": "array", "items": {"type": "object", "required": ["executable"], "properties": {"executable": {"type": "string", "pattern": "^[^/\\\\:]+\\.exe$"}, "sha256": {"type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$"}}}},
+    "presets": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "files": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}}
+  }
+}

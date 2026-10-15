@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src blob:; connect-src 'self'"><title>Apex Audio</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">A</div><div><strong>APEX AUDIO</strong><small>声音采集工作台</small></div></div>
+  <div class="nav-label">工作空间</div>
+  <nav>
+    <button class="nav active" data-page="workspace"><span class="nav-icon">◫</span><span>声音工作台</span></button>
+    <button class="nav" data-page="recordings"><span class="nav-icon">≋</span><span>录音与试听</span></button>
+    <button class="nav" data-page="packages"><span class="nav-icon">◇</span><span>游戏适配包</span></button>
+  </nav>
+  <div class="sidebar-bottom"><button class="nav" data-page="settings"><span class="nav-icon">⚙</span><span>应用设置</span></button><div class="version">独立音频 · 0.1.1</div></div>
+</aside>
+<main>
+  <header class="topbar"><div class="breadcrumb">工作空间 <span>/</span> <strong id="pageTitle">声音工作台</strong></div><div class="top-status"><span class="dot" id="connectionDot"></span><span id="connectionText">未连接</span></div></header>
+  <div class="content">
+    <div class="page-heading"><div><div class="eyebrow">GAME AUDIO CAPTURE</div><h1 id="heading">游戏声音与手柄反馈</h1><p id="subtitle">选择参与震动的声音；录制后可逐组试听，并对照震动时间。</p></div><button id="openData" class="subtle">打开数据目录 ↗</button></div>
+    <div id="error" class="error-banner" hidden><span id="errorText"></span><button id="dismissError">×</button></div>
+    <section id="workspace" class="page">
+      <div class="connection-card card"><div class="game-mark">◈</div><div class="game-select"><label>当前适配包</label><select id="packSelect"><option value="">导入游戏适配包开始使用</option></select><span id="gameState" class="muted">等待选择</span></div><div class="feedback-control"><div><span class="dot" id="feedbackDot"></span><strong>X-Haptics 补充震动</strong><span id="feedbackState" class="muted">未开启</span></div><label class="switch"><input id="feedback" type="checkbox"><span></span></label></div><button id="refresh" class="subtle">刷新</button><button id="connect" class="primary">连接采集</button></div>
+      <div class="preset-bar"><span class="label">声音预设</span><select id="presetSelect"><option value="">连接后获取作者预设</option></select><span id="dirty" class="tag" hidden>未保存</span><button id="savePreset">保存</button><button id="saveAs">另存为</button><button id="presetMore" class="subtle">更多 ▾</button></div>
+      <div class="workspace-grid">
+        <div class="card group-panel"><div class="group-toolbar"><div class="group-toolbar-title"><h2>声音分组</h2><span id="groupCount" class="muted">等待连接</span><select id="treeMode" aria-label="分组浏览方式"><option value="category">按类别</option><option value="hierarchy">原始层级</option></select><button id="addFolder" class="subtle" title="新建显示文件夹">＋ 文件夹</button></div>
+          <div class="group-toolbar-controls"><input id="search" type="search" placeholder="搜索名称、分类或编号"><button id="collapse" class="icon-button" title="收起到大类">⇤</button><label><input id="audibleOnly" type="checkbox">只看有声</label><button id="refreshAudible" class="text-button">更新快照</button><span id="activeCount" class="muted"></span></div></div>
+          <div id="tree" class="tree"><div class="empty"><div class="empty-symbol">≋</div><h3>先连接声音采集</h3><p>适配包提供分组与独立音轨<br>你来决定哪些声音参与反馈</p></div></div>
+        </div>
+        <aside class="card detail-panel"><div class="panel-title"><h2>分组详情</h2><span id="pcmBadge" class="tag">未选择</span></div><div id="detailEmpty" class="empty compact"><p>选择一个声音分组<br>修改名称或试听对应录音</p></div>
+          <div id="detail" hidden><div class="detail-heading"><div class="group-symbol">≋</div><h3 id="groupName"></h3></div><div id="groupMeta" class="muted metadata"></div><label class="field">显示名称<input id="editName" placeholder="留空使用作者名称"></label><label class="field">显示文件夹<select id="editFolder"></select></label><label class="field">显示顺序<input id="editOrder" type="number" value="0"></label><button id="applyEdit" class="wide">应用修改</button><div class="divider"></div><div class="meter-header"><span>当前声音</span><span id="peakText">—</span></div><div class="meter"><i id="selectedPeak"></i></div><p id="routingNote" class="muted small"></p><button id="listenSelected" class="wide">在录音中试听此分组 →</button></div>
+        </aside>
+      </div>
+    </section>
+    <section id="recordings" class="page" hidden>
+      <div class="recording-toolbar card"><div><label>录音会话</label><select id="takeSelect"></select><span id="recordState" class="muted small">录下所有独立音轨，方便回看</span></div><button id="saveTrackNames" hidden>保存预设</button><span id="recordShortcut" class="tag"></span><button id="recordFromTimeline" class="primary">● 开始录制</button><span id="recordClock" class="muted"></span></div>
+      <div id="takeEmpty" class="card empty"><div class="empty-symbol">◎</div><h3>记录一次现场声音</h3><p>回到工作台连接采集，录音结束后<br>在同一时间段切换分组，逐个试听。</p></div>
+      <div id="timelineContent" hidden>
+        <div class="timeline-layout"><aside class="card tracks-panel"><div class="panel-title"><h2>独立音轨</h2><span id="trackCount" class="tag"></span></div><label class="track-filter"><input id="recordAudible" type="checkbox" checked>只显示录到声音的音轨</label><input id="trackSearch" type="search" placeholder="查找音轨"><div id="tracks" class="tracks"></div></aside>
+          <div class="card timeline-panel"><div class="panel-title"><div><h2 id="timelineTitle">声音与震动</h2><span id="takeInfo" class="muted"></span></div><button id="fullRange" class="subtle">完整区间</button></div>
+            <div class="timeline-legend"><span class="audio-color">● 分组声音</span><span id="supplementLegend" class="haptic-color">● 声音补充</span><span id="finalLegend" class="haptic-final-color">● 引擎合成输出</span></div>
+            <div class="haptic-controls"><label title="同一段录音的所有音轨共用显示倍率，不改变录音音量或震动">声音显示 <select id="audioScale"><option value="auto">自动</option><option value="1">1×</option><option value="4">4×</option><option value="10">10×</option><option value="25">25×</option><option value="100">100×</option></select></label><span id="audioScaleInfo" class="muted"></span></div>
+            <div class="haptic-controls"><label>震动来源 <select id="hapticSource"><option value="both">两者对照</option><option value="supplement">声音补充</option><option value="final">引擎合成输出</option></select></label><label title="只放大震动曲线的显示，不改变手柄震动强度">震动显示 <select id="hapticScale"><option value="1">1×</option><option value="4" selected>4×</option><option value="10">10×</option></select></label></div>
+            <canvas id="timeline" height="290"></canvas><p id="hapticNote" class="muted small"></p>
+            <div class="range-row"><label>开始 <input id="rangeStart" type="number" min="0" step="0.01" value="0"> 秒</label><label>结束 <input id="rangeEnd" type="number" min="0" step="0.01" value="8"> 秒</label><label>震动偏移 <input id="hapticOffset" type="number" min="-1000" max="1000" step="10" value="0"> 毫秒</label></div>
+            <div class="playback"><button id="play" class="primary">▶ 试听所选分组</button><button id="stopPlayback">停止</button><label><input id="loop" type="checkbox" checked>循环</label><label class="volume-label">试听音量<input id="volume" type="range" min="0" max="1" step="0.05" value="0.7"></label></div>
+            <div class="hint">拖选时间区间后切换音轨，可对照同一段声音。试听只播放所选音轨；游戏仍运行时，可先暂停游戏再听。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="packages" class="page" hidden><div class="section-actions"><div><h2>已安装的游戏适配包</h2><p class="muted">完整包独立运行，采集能力由适配器提供。</p></div><button id="install" class="primary">＋ 导入 .gpack</button></div><div id="packageList" class="package-grid"></div><div class="card info-card"><h3>从适配包开始</h3><p>将作者发布的完整 .gpack 导入这里，启动对应游戏后连接。作者提供的分组和预设可自由编辑；用户预设与录音不会因卸载适配包而删除。</p></div></section>
+    <section id="settings" class="page" hidden><div class="settings-grid">
+      <div class="card settings-card"><h2>采集与连接</h2>
+        <div class="setting-row"><div><strong>自动连接已信任的适配包</strong><p>匹配到唯一游戏时连接；手动断开后保持断开。</p></div><label class="switch"><input id="autoConnect" type="checkbox" checked><span></span></label></div>
+        <div class="setting-row"><strong>自动开启 X-Haptics 补充震动</strong><label class="switch"><input id="autoFeedback" type="checkbox" checked><span></span></label></div>
+        <div class="setting-row"><strong>自动启动 X-Haptics</strong><label class="switch"><input id="autoStartXh" type="checkbox" checked><span></span></label></div>
+        <label class="field">X-Haptics 程序<div class="input-action"><input id="xhExecutable" type="text" readonly><button id="chooseXh">选择</button></div></label>
+        <label class="field">X-Haptics 本地端口<input id="port" type="text" inputmode="numeric" pattern="[0-9]{4,5}" value="18789"></label>
+        <label class="field">补充震动输入增益 <span id="gainValue">1.00</span><input id="gain" type="range" min="0" max="4" step="0.05" value="1"></label>
+      </div>
+      <div class="card settings-card"><h2>录音与快捷键</h2>
+        <label class="field">录制方式<select id="recordingMode"><option value="timed">定时录制</option><option value="manual">手动开始／结束</option></select></label>
+        <div class="settings-pair"><label class="field">录制时长（1～60 秒）<input id="recordingSeconds" type="number" min="1" max="60" value="10"></label><label class="field">开始倒计时（0～10 秒）<input id="recordingDelay" type="number" min="0" max="10" value="0"></label></div>
+        <label class="field">键盘快捷键<div class="input-action"><input id="keyboardHotkey" type="text" readonly placeholder="点击后按快捷键"><button id="clearKeyboard">清除</button></div></label>
+        <label class="field">手柄快捷键<div class="input-action"><input id="controllerHotkey" type="text" readonly value="未绑定"><button id="learnController">录制按键</button><button id="clearController">清除</button></div></label>
+        <p id="hotkeyLearnStatus" class="muted small" hidden></p>
+        <div class="setting-row"><strong>录制开始／结束提示音</strong><label class="switch"><input id="recordingSounds" type="checkbox" checked><span></span></label></div>
+      </div>
+      <div class="card settings-card"><h2>外观</h2><label class="field">界面主题<select id="theme"><option value="dark">深色</option><option value="light">浅色</option></select></label></div>
+      <div class="card settings-card"><h2>关于声音采集</h2><p class="muted">作者的预设保存在适配包内。你的修改保存为独立副本，随时可以还原作者原稿。</p><p class="muted">显示文件夹仅用于整理列表，不改变游戏内部的混音路由。父混音分组可能包含子分组的声音。</p><p class="muted">震动曲线来自 X-Haptics 报告的输出数据，表示指令幅度；时间为近似对齐，不是马达实测。</p></div>
+      </div><div class="settings-save"><button id="applySettings" class="primary">保存设置</button></div></section>
+  </div><footer><span id="footerStatus">等待适配包</span><span id="busyText"></span><span>声音由你选择</span></footer>
+</main>
+<div id="menu" class="menu" hidden><button data-menu="restore">还原初始状态</button><button data-menu="rename">重命名当前预设</button><button data-menu="import">导入用户预设</button><button data-menu="export">导出当前预设</button><button data-menu="delete">删除用户预设</button></div>
+<dialog id="textDialog"><form method="dialog"><h2 id="dialogTitle"></h2><label class="field"><input id="dialogInput" maxlength="100" required></label><div class="dialog-actions"><button id="dialogDelete" value="delete" formnovalidate hidden>删除文件夹</button><button value="cancel" formnovalidate>取消</button><button id="dialogAccept" class="primary" value="ok">确定</button></div></form></dialog>
+<div id="toast" class="toast" hidden></div><script type="module" src="app.js?v=20261015-waveform"></script>
+</body></html>

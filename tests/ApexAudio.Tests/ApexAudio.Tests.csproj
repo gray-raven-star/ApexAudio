@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/ApexAudio.Application/ApexAudio.Application.csproj" /></ItemGroup>
+  <ItemGroup><ProjectReference Include="../../adapters/Wwise/ApexAudio.Wwise.csproj" /></ItemGroup>
+</Project>

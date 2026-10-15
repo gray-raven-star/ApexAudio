@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "author-start",
+  "name": "作者初始配置",
+  "packId": "demo.independent-audio",
+  "folders": [],
+  "groups": {
+    "effects": {"enabled": true},
+    "impact": {"enabled": true,"order": 0},
+    "steps": {"enabled": true,"order": 1},
+    "music": {"enabled": false},
+    "voice": {"enabled": false}
+  }
+}

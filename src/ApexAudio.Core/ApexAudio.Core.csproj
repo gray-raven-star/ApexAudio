@@ -1,0 +1,3 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup><ProjectReference Include="../ApexAudio.Contracts/ApexAudio.Contracts.csproj" /></ItemGroup>
+</Project>

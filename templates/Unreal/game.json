@@ -1,0 +1,6 @@
+{
+  "backend": "Unreal", "name": "__REQUIRED__", "executable": "__REQUIRED__", "executableSha256": "__REQUIRED__",
+  "engineRva": 0, "nameBlocksRva": 0, "vtableRva": 0, "registerRva": 0, "unregisterRva": 0,
+  "holderOffset": 0, "deviceOffset": 0,
+  "captureFile": "", "captureSha256": "", "buses": []
+}

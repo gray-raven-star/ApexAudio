@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {recordingScale, peakOf, peakLabel} from '../ui/waveform.mjs';
+const take = {tracks:[{peaks:[0,.02,.01]}, {peaks:[0,.1,.04]}]};
+assert.equal(recordingScale(take), 9);
+assert.equal(peakOf(take.tracks[0]) * recordingScale(take), .18);
+assert.equal(peakOf(take.tracks[1]) * recordingScale(take), .9);
+assert.equal(recordingScale(take, '10'), 10);
+assert.equal(recordingScale({tracks:[{peaks:[0,0]}]}), 1);
+assert.equal(recordingScale({tracks:[{peaks:[.000001]}]}), 1000);
+assert.equal(peakLabel(.1), '-20.0 dBFS');
+assert.deepEqual(take.tracks[0].peaks, [0,.02,.01]);
+console.log('PASS: shared display scale preserves inter-track ratios, real peak readings, silence and original data');

@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/ApexAudio.Contracts/ApexAudio.Contracts.csproj" /></ItemGroup>
+  <ItemGroup><ProjectReference Include="../../src/ApexAudio.Windows/ApexAudio.Windows.csproj" /></ItemGroup>
+  <ItemGroup><InternalsVisibleTo Include="ApexAudio.Tests" /></ItemGroup>
+</Project>

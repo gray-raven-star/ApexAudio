@@ -1,0 +1,7 @@
+{
+  "backend": "Wwise", "title": "__REQUIRED__", "gameSha256": "__REQUIRED__",
+  "engineModule": "__REQUIRED__", "engineSha256": "__REQUIRED__",
+  "bankVersion": 0, "bankHeader": "__REQUIRED__", "bankId": 2047606785,
+  "sdkYear": 0, "sdkSeries": 0,
+  "captureFile": "modules/ApexWwiseCapture.dll", "captureSha256": "", "buses": []
+}

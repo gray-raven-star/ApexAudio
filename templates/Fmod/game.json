@@ -1,0 +1,6 @@
+{
+  "backend": "Fmod", "name": "__REQUIRED__", "executable": "__REQUIRED__", "executableSha256": "__REQUIRED__",
+  "modules": {"fmod.dll":"__REQUIRED__", "fmodstudio.dll":"__REQUIRED__"},
+  "wrapperModule": "__REQUIRED__", "wrapperRva": 0, "runtimeVersion": 0, "stateOffset": 0, "studioOffset": 0,
+  "captureFile": "", "captureSha256": "", "buses": []
+}

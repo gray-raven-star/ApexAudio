@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "packId": "__REQUIRED__",
+  "packVersion": "__REQUIRED__",
+  "groups": [
+    {
+      "id": "__REQUIRED__",
+      "parentId": null,
+      "objectType": "unverified",
+      "names": [],
+      "nameSource": "编号",
+      "auditionConfirmed": false,
+      "category": "其他",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": null,
+        "verification": "unverified",
+        "source": null,
+        "sourceSha256": null,
+        "targetSha256": null,
+        "checkedAt": null,
+        "runtimeOwnershipVerified": false
+      },
+      "evidenceFiles": []
+    }
+  ]
+}

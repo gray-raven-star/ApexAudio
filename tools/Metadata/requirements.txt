@@ -1,0 +1,2 @@
+# Optional, needed only for explicitly requested RE resources compressed with Zstd.
+zstandard==0.25.0

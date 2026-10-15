@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType></PropertyGroup><ItemGroup><ProjectReference Include="../../src/ApexAudio.Contracts/ApexAudio.Contracts.csproj" /><ProjectReference Include="../../src/ApexAudio.Windows/ApexAudio.Windows.csproj" /></ItemGroup></Project>
