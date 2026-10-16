@@ -18,6 +18,8 @@ GitHub Releases 提供 Windows x64 程序压缩包和可单独下载的游戏适
 
 从 [开发入口](START-HERE.md) 开始，再阅读[游戏适配包制作指南](docs/gamepack-authoring.md)。
 
+使用、开发和协议文档见[文档入口](docs/README.md)。
+
 | 目录或文档 | 用途 |
 |---|---|
 | `src/` | 主程序与通用功能 |

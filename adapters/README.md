@@ -1,6 +1,6 @@
 # 现有采集适配器：先检查这里
 
-项目有 **三个真实游戏采集实现**，以及一个不连接游戏的 Mock。下列路径均相对项目根目录，不是应用安装目录。
+项目提供 Wwise、FMOD、Unreal 三个采集实现，以及生成测试声音的 Mock。表内路径相对本目录，另有说明的除外。
 
 | 实现 | 源码和原生模块 | 配置及构建 | 当前边界 |
 |---|---|---|---|
@@ -10,6 +10,8 @@
 | Mock | `Mock/Program.cs`、`Mock/RealtimeMix.cs` | `tools/Build.ps1`（项目根目录下） | 合成测试声音，只验证宿主协议、录音和反馈传输，不验证游戏适配 |
 
 共同接口在 `src/ApexAudio.Contracts/`，进程调用辅助在 `src/ApexAudio.Windows/`。主程序不按游戏名选择采集技术；包通过入口程序提供实现。
+
+新增采集器见[新模块开发](../docs/new-module.md)，诊断和实测分别见[故障排查](../docs/troubleshooting.md)与[验证报告](../docs/validation.md)。
 
 ## 新游戏的起点
 

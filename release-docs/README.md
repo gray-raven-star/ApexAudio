@@ -10,17 +10,12 @@
 
 ## 开发适配包
 
-使用完整开发套件，阅读 [START-HERE.md](START-HERE.md)。`docs/` 提供流程与协议，`adapters/` 提供后端实现，`templates/` 提供空白模板，`tools/` 提供构建和诊断工具。
+使用完整源码或开发套件，从 [START-HERE.md](START-HERE.md) 开始。使用说明、制作流程和协议集中在[文档入口](docs/README.md)。`adapters/` 提供后端实现，`templates/` 提供模板，`tools/` 提供构建和诊断工具。
 
 开发套件不包含现成目标游戏配置或历史调查记录。Mock 仅供开发者验证传输，生成测试声音，不会自动出现在用户应用中。
 
 ## 构建
 
-```powershell
-pwsh -File tools/Setup.ps1
-pwsh -File tools/Build.ps1
-```
-
-源码构建需要 Windows x64、PowerShell 7、.NET 8 SDK。随附 Zig 用于修改原生采集模块。编译与压缩完整性检查不代替游戏适配测试，详情见 [验证说明](docs/validation.md)。
+在完整源码或开发套件目录按[构建环境说明](docs/build-environment.md)准备工具，再执行其中的构建命令。游戏内采集及反馈按[验证说明](docs/validation.md)记录。
 
 第三方来源与许可见 THIRD-PARTY.md。

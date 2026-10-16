@@ -20,10 +20,11 @@ Get-ChildItem -LiteralPath (Join-Path $outputRoot 'native') -File -Filter 'ApexG
 Publish-Project 'adapters/Mock/ApexAudio.Mock.csproj' (Join-Path $buildRoot 'mock')
 Publish-Project 'adapters/Wwise/ApexAudio.Wwise.csproj' (Join-Path $buildRoot 'wwise')
 Copy-Item (Join-Path $projectRoot 'vendor/webview2/LICENSE.txt') (Join-Path $outputRoot 'WebView2-LICENSE.txt')
-Copy-Item (Join-Path $projectRoot 'README.md') $outputRoot
+foreach ($name in @('README.md','README.en.md','START-HERE.md','AI-INSTRUCTIONS.md','THIRD-PARTY.md','LICENSE')) {
+    Copy-Item (Join-Path $projectRoot $name) $outputRoot
+}
 Copy-Item (Join-Path $projectRoot 'docs') $outputRoot -Recurse -Force
 Copy-Item (Join-Path $projectRoot 'schemas') $outputRoot -Recurse -Force
-Copy-Item (Join-Path $projectRoot 'THIRD-PARTY.md') $outputRoot
 & (Join-Path $PSScriptRoot 'MakeDemoPack.ps1')
 $oldDemo = Join-Path $outputRoot 'packages/demo.gpack'
 if (Test-Path -LiteralPath $oldDemo) { Remove-Item -LiteralPath $oldDemo }

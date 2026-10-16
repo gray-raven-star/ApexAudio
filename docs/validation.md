@@ -1,10 +1,10 @@
 # 验证工具和结果范围
 
-以下命令用于按阶段验证开发结果，各命令的执行范围分别说明。项目构建记录见 release-manifest.json。
+以下命令用于分阶段验证适配包。开发套件的发布构建记录保存在 release-manifest.json。
 
 ## 工具位置
 
-随附 `prebuilt/devtools/ApexAudio.DevTools.exe`。源码在 tools/DevTools，可用 .NET 8 SDK 重建。所有报告支持 `--output <文件.json>`；报告可能包含你电脑的游戏路径，分享前自行检查。
+开发套件的工具位于 `prebuilt/devtools/ApexAudio.DevTools.exe`；Git 源码需按[环境说明](build-environment.md)单独构建 tools/DevTools。报告支持 `--output <文件.json>`，分享前检查其中的本机游戏路径。
 
 ### 只读调查
 

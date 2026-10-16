@@ -38,18 +38,12 @@ foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','BuildNative.ps1','
 Copy-Tree (Join-Path $root 'tools/DevTools') (Join-Path $kit 'tools/DevTools')
 Copy-Tree (Join-Path $root 'tools/Metadata') (Join-Path $kit 'tools/Metadata')
 Copy-Tree (Join-Path $root 'packs/demo') (Join-Path $kit 'packs/demo')
-Copy-Tree (Join-Path $root 'release-docs/docs') (Join-Path $kit 'docs')
-foreach($name in @('architecture.md','gpack-format.md','adapter-protocol.md','presets-recordings.md','build-environment.md','group-evidence.md','container-metadata.md','xhaptics-provider.md')) { Copy-Item -LiteralPath (Join-Path $root ('docs/'+$name)) -Destination (Join-Path $kit 'docs') -Force }
+Copy-Tree (Join-Path $root 'docs') (Join-Path $kit 'docs')
 foreach($name in @('README.md','THIRD-PARTY.md')) { Copy-Item -LiteralPath (Join-Path $root ('release-docs/'+$name)) -Destination $kit }
 New-Item -ItemType Directory -Force -Path (Join-Path $kit 'gamepacks'),(Join-Path $kit 'assets') | Out-Null
 'Create and maintain game definitions in this directory. Use tools/New-Pack.ps1 to start a package.' | Set-Content -LiteralPath (Join-Path $kit 'gamepacks/README.md') -Encoding utf8
 Copy-Item -LiteralPath (Join-Path $root 'release-docs/assets/apex.ico') -Destination (Join-Path $kit 'assets/apex.ico')
 Copy-Item -LiteralPath (Join-Path $root 'release-docs/assets/apex.svg') -Destination (Join-Path $kit 'assets/apex.svg')
-# Backend notes link to generic manuals rather than named game examples.
-foreach($backend in @('Wwise','Fmod','Unreal')) {
-    @("# $backend backend",'', 'See ../../docs/backend-configs.md, ../../docs/new-module.md and ../../docs/troubleshooting.md.', 'Game-specific definitions are maintained as separate .gpack adapters.') | Set-Content -LiteralPath (Join-Path $kit "adapters/$backend/README.md") -Encoding utf8
-}
-Copy-Item -LiteralPath (Join-Path $root 'release-docs/adapters-README.md') -Destination (Join-Path $kit 'adapters/README.md') -Force
 Write-Host 'Copy portable Zig with its complete library and license tree.'
 $compiler=(Resolve-Path -LiteralPath $CompilerDirectory).Path
 Copy-Tree $compiler (Join-Path $kit 'toolchain/zig')

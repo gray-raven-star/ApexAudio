@@ -6,6 +6,8 @@
 
 清单格式见 [gpack-format](gpack-format.md)，初始预设格式见 [presets-recordings](presets-recordings.md)。清单与配置的目标游戏摘要应一致，摘要使用实际文件 SHA256。
 
+模板中的 `backend` 由统一构建器选择 Wwise、Fmod、Unreal 或 Custom 分支；各引擎适配器忽略这个构建用字段。Custom 的采集配置由其作者定义，共享清单、预设和传输协议。
+
 `captureFile` 为包内原生 DLL 相对路径；`captureSha256` 为它的实际 SHA256，BuildPack 自动填入构建产物。两者不是目标游戏摘要。源定义的空模块摘要不能直接拿去发布。父组 ID 必须存在或为空根，不允许循环；稳定 ID 不是界面行号。
 
 配置中的分组名称来自游戏元数据、编号或人工标注；`category` 是展示大类，不决定引擎路由。未能确认来源时不要标成游戏原名。初始开关由预设提供，适配器仍录制所有请求的独立音轨。
@@ -21,7 +23,7 @@
 | engineModule | 实际包含 Wwise 导出的模块文件名，可以是 EXE；不是安装绝对路径 |
 | engineSha256 | 上述模块文件 SHA256 |
 | bankVersion | 实际银行版本整数，来自已解析银行头；编译参数需对应 |
-| bankHeader | base64 编码的版本相关银行头数据；当前读取器要求 28～64 字节，前四字节小端整数等于 bankVersion；不是整个 Init.bnk，也不是可随意编造的空头 |
+| bankHeader | BKHD 的内容，不含标签和 chunk 长度；base64 编码，28～64 字节，前四字节小端整数等于 bankVersion |
 | bankId | 采集器构建插件银行所使用的 uint32 编号；应核对不会与目标已加载内容冲突，不是某条声音的编号 |
 | sdkYear / sdkSeries | 已核对的 SDK 年份／系列整数；对应原生 ABI 和编译参数，不能仅靠猜测银行版本填写 |
 | captureFile / captureSha256 | 构建输出模块路径和摘要；Wwise 脚本使用定义中的模块文件名，建议新版本或内容变化使用新文件名 |
@@ -34,7 +36,7 @@
 | name / nameSource | 名称及来源；未知名称可空，适配器显示编号 |
 | category | 展示大类，缺省为“其他” |
 | auxiliary | true 表示辅助混音元数据，不作为普通音轨输出 |
-| slot | 实际可挂载效果器的槽位；-1 表示不采集。必须核对目标 DSP 链，不能用编号推测 |
+| slot | 经确认可用的效果槽，范围 0～3；-1 表示不采集。核对 DSP 链后选择空槽，证据记录见 [分组证据](group-evidence.md) |
 
 普通 Bus（包括没有槽位的显示节点）形成 `GetAudioGroups`；非负 slot 决定 `hasPcm`。适配器根据真实父关系推导 `containsChildren`。预设的组键为十进制 `id` 字符串。
 
@@ -68,6 +70,8 @@
 
 GUID、路径和活动路由来自银行元数据／活动 Studio System。现有定位器只处理“模块全局指针 → 包装对象 → Studio 指针”这条链，其他实例管理方式须扩展包内实现；当前 DSP SDK 常量为 110，并要求已有模块/API 与 48 kHz 格式匹配。
 
+当前原生模块支持 FMOD 2.02 C API，每块最多 2048 帧，1～16 声道下混为立体声。
+
 ## Unreal AudioMixer
 
 实现：`adapters/Unreal/`。目标游戏定义不随公开源码仓库提供。
@@ -91,6 +95,8 @@ GUID、路径和活动路由来自银行元数据／活动 Studio System。现�
 | parentId / containsChildren | 初始父关系与聚合标志，连接时核对实际路由 |
 
 **并非所有布局都已经参数化。** 原生代码仍使用特定对象偏移、Submix 表结构、FName 编码和监听虚表；例如设备标志、Submix 映射、默认根项都在 C 中核对。对象结构不同需要更新模块，不能只调整以上字段。已知名字只代表候选对象存在，不保证当前场景已经载入该组或触发监听。
+
+当前输入为 48 kHz、1～16 声道，每块最多 2048 帧。监听注册、注销和虚表布局需与包内实现匹配。
 
 ## 发布前逐项核对
 

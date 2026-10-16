@@ -4,18 +4,9 @@
 
 ## 从 Mock 开始
 
-1. 按 `docs/adapter-protocol.md` 实现 Adapter 进程。
-2. Connect 确认目标游戏，GetAudioGroups 返回稳定层级，StartCapture 输出真实独立 PCM。
-3. 不支持的能力报告 false。记录只有混音时只能输出一个整体混音节点。
-4. 准备 manifest、作者预设、运行文件及必要许可。
-5. 执行 `tools/Pack.ps1` 自动生成文件 SHA256 清单并压成 .gpack。
-6. 在 UI 导入；连接后确认音轨内容、停止／退出行为。Mock 自带四条不同测试声音。
+Mock 提供四条不同的测试音轨，便于检查公共协议、分轨录音和选择切换。开发自己的采集器时，按[新模块开发](new-module.md)实现连接、分组和独立 PCM；消息格式见[适配器协议](adapter-protocol.md)。
 
-```powershell
-pwsh -File tools/Pack.ps1 -Directory ./my-pack -Output ./my-game.gpack
-```
-
-C# 可复用 Contracts 的 AdapterServer，不需要修改 Hub。其他语言按字节协议实现即可。允许自带 Python／Node／其他私有运行环境，不能在正常使用时要求用户另装前置或手动运行程序。发布文件是否允许再分发由包作者确认。
+C# 可复用 Contracts 的 AdapterServer，其他语言按字节协议实现。包可自带 Python／Node 等私有运行环境，运行依赖及其再分发许可由作者一并提供。创建、构建和打包步骤统一见[制作指南](gamepack-authoring.md)。
 
 ## 复用现有 Wwise 配置
 

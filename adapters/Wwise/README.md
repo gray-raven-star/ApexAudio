@@ -19,11 +19,10 @@
 在项目根目录运行：
 
 ```powershell
-dotnet restore adapters/Wwise/ApexAudio.Wwise.csproj --configfile NuGet.Config
-pwsh -File adapters/Wwise/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler ./toolchains/zig/zig.exe
+pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/my-game
 ```
 
-输出 `dist/packages/<包ID>.gpack`。源定义的 `captureFile` 必须使用包内 `modules/` 下的 DLL 路径；构建工具写入对应 `captureSha256`。首次构建依赖还原不可省略。
+输出 `dist/packages/<包ID>.gpack`。源定义的 `captureFile` 必须使用包内 `modules/` 下的 DLL 路径；构建工具写入对应 `captureSha256`。环境和编译器选择见[环境说明](../../docs/build-environment.md)，分组证据及完整流程见[制作指南](../../docs/gamepack-authoring.md)。统一入口会先还原 Wwise 依赖。
 
 ## 故障定位
 
