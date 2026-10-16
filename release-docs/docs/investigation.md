@@ -4,9 +4,9 @@
 
 分别记录渲染引擎、音频中间件、资源容器、接口可见性和版本。这几项互相独立；一个渲染引擎可以使用不同音频系统，同一扩展名也可以承载不同内容。
 
-先用 DevTools inspect 检查 EXE 文件摘要、命名导出和资源候选。资源检查有文件数量上限，报告 truncated=true 时不能声称已经扫完。工具只读取裸银行头，不负责解密或解包容器。
+用 DevTools inspect 检查 EXE 摘要、命名导出和候选资源。报告 truncated=true 时缩小范围重查。工具只读裸银行头，容器的解密和解包另行处理。
 
-没有 Wwise/FM​OD 等名称时继续检查模块清单、导入依赖、配置、银行头及程序运行后的模块。名称被裁剪、静态链接、加壳、延迟加载，都可能让磁盘字符串扫描没有结果。没有导出也不等于不能实现其他采集入口。
+没有 Wwise/FM​OD 等名称时，继续检查模块清单、导入依赖、配置、银行头和加载模块。名称裁剪、静态链接、加壳或延迟加载可能导致磁盘字符串扫描无结果；缺少导出时继续调查其他采集入口。
 
 ## 为什么需要打开游戏
 
@@ -28,15 +28,13 @@ prebuilt/devtools/ApexAudio.DevTools.exe read-memory --pid 1234 --address 0xADDR
 
 `0xADDRESS` 必须用实际已核对的地址替换；单次最多 16 KiB，不写进程。堆地址每次可能变化；报告中记录地址来源和模块基址，不能把它直接写入发布配置。
 
-如需反汇编，另安装可选 Python 3 与 Capstone，不影响 .NET 主构建：
+反汇编已取得的代码片段时，使用 Python 3 和 Capstone；这两项不影响 .NET 主构建：
 
 ```powershell
-py -m venv .venv
-.venv/Scripts/python -m pip install capstone==5.0.6
-.venv/Scripts/python tools/Disassemble.py --input evidence/snippet.bin --base 0xADDRESS
+uv run --with capstone==5.0.6 tools/Disassemble.py --input evidence/snippet.bin --base 0xADDRESS
 ```
 
-该脚本只解码已取得的 x64 小段代码，不读游戏、不自动定位。Capstone 来源为 [原始项目](https://github.com/capstone-engine/capstone)，文档和许可由安装包提供；网络安装由评审者执行。
+命令需 uv 和 Python，`0xADDRESS` 换成代码片段的起始地址。脚本只解码已取得的 x64 小段代码。Capstone 的文档和许可随安装包提供，源码见[原始项目](https://github.com/capstone-engine/capstone)。
 
 ## 定位的方法
 
@@ -48,6 +46,8 @@ py -m venv .venv
 6. 实际注册采集器是另一个阶段，可能向游戏加载代码或创建 DSP。与只读检查分开操作，确保当前授权覆盖它，并说明崩溃风险和停用办法。不要绕过反作弊；受限时换允许测试的目标。
 
 ## 资源读取的开发方法
+
+现有 RE Pak／UE Pak 元数据读取器的格式范围、命令及补丁合并步骤见[容器元数据读取](container-metadata.md)。
 
 已知容器优先研究格式作者、引擎官方文档或原始读取器实现；确认版本、索引、压缩及编码，再做只提取元数据的读取器。用目录索引和必要范围读取，避免整包解压。遇到未知压缩或加密，应报告具体缺口，不把修改扩展名当解包。
 

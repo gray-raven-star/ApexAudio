@@ -36,7 +36,7 @@ Wwise 原生模块在游戏内复用已有有界多组录音环形缓冲，由�
 
 ## 构建原生代码
 
-随项目保存 `adapters/Wwise/native/ApexWwiseCapture.c` 和 `providers/XHaptics/native/ApexGroupsBridge.c`。当前提供已核对摘要的现有二进制，避免重构同时更改底层 ABI。
+随项目保存 `adapters/Wwise/native/ApexWwiseCapture.c` 和 `providers/XHaptics/native/ApexGroupsBridge.c`。源码附带 X-Haptics 桥接二进制；Wwise 采集 DLL 由适配包构建流程根据 SDK／银行参数编译。
 
 可用 Zig / Windows C 编译器重建。Wwise 编译需提供 CAPTURE_BANK_VERSION、CAPTURE_SDK_YEAR、CAPTURE_SDK_SERIES；重建后更新 game.json 的 captureSha256，再重新打包。X-Haptics 桥接重建后更新 native/xh-support.json。接口未知时不能只填写新版本编号就声称支持。
 

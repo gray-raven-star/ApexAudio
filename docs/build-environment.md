@@ -11,19 +11,38 @@
 | 操作系统 | Windows x64；原生模块和本项目目标都是 x64 |
 | .NET | .NET 8 SDK，运行 `dotnet --list-sdks` 确认有 8.x；仅安装 Runtime 不能编译 |
 | PowerShell | PowerShell 7，运行 `pwsh --version`；脚本使用其 JSON 和路径 API |
-| 原生 C 编译器 | 本次开发分发包附带 Zig 0.15.2（Windows x64），位于 `toolchains/zig/zig.exe`；不能只复制 exe 而丢掉同目录的 `lib/` |
+| 原生 C 编译器 | Git 源码不附 Zig。`Release.ps1` 将发布者提供的编译器放入开发套件的 `toolchain/zig/`，连同同目录的 `lib/` 一起分发 |
 | UI 运行环境 | Microsoft Edge WebView2 Runtime；`vendor/webview2/` 的 SDK DLL 不等于浏览器 Runtime |
 | 手柄反馈 | 运行实际反馈时需另装受支持的 X-Haptics；普通构建和 Mock 检查不需要连接手柄 |
 
-本分发包不包含 .NET SDK、PowerShell、WebView2 Runtime 或官方驱动安装程序。它们是明确的外部前置，不应误认为项目丢失文件。使用官方发行渠道安装相应前置。
+SDK、PowerShell、WebView2 Runtime 和官方驱动需另行安装。编译器按 `-Compiler`、环境变量 `APEX_ZIG`、`toolchain/zig/zig.exe`、PATH 中的 `zig` 顺序查找。
 
 ```powershell
 dotnet --list-sdks
 pwsh --version
-./toolchains/zig/zig.exe version
+./toolchain/zig/zig.exe version
 ```
 
-如果只有源码而没有 `toolchains/zig/`，可自行准备 Zig，并把下面的 `-Compiler` 换成其实际绝对路径；不要求安装 MSVC，也不需要把 Zig 加入 PATH。当前脚本调用的是 `zig cc`，不是通用的 `cl.exe` 命令行。
+最后一条命令检查项目内的 Zig；没有该目录时换成实际安装路径。原生构建脚本调用 `zig cc`。
+
+检查原生开发环境并保存报告：
+
+```powershell
+pwsh -File tools/Setup.ps1 -Compiler C:/Tools/zig/zig.exe -Output evidence/setup.json
+```
+
+`C:/Tools/zig/zig.exe` 需替换成实际路径；已通过 `APEX_ZIG`、项目目录或 PATH 配置时可省略 `-Compiler`。`Setup.ps1` 同时检查 .NET 8 SDK 和 Zig；`Build.ps1` 不调用 Zig。
+
+## 准备诊断工具
+
+开发套件的诊断工具位于 `prebuilt/devtools/`。使用 Git 源码时单独构建：
+
+```powershell
+dotnet publish tools/DevTools/ApexAudio.DevTools.csproj -c Release --no-self-contained --configfile NuGet.Config -o prebuilt/devtools
+prebuilt/devtools/ApexAudio.DevTools.exe help
+```
+
+`Build.ps1` 不发布 DevTools。诊断工具的调查和采集命令见[制作指南](gamepack-authoring.md)。
 
 ## 构建主程序与离线检查
 
@@ -33,27 +52,24 @@ pwsh -File tools/Build.ps1 -Test
 
 输出 `dist/ApexAudio.exe`，测试会构建 Mock 包并在 `artifacts/` 下写临时数据。它不会连接实际游戏，也不会启动驱动发送实体震动。FMOD 和 Unreal 是包内程序，不要求添加进主程序解决方案；按各自 BuildPack 脚本构建。
 
-项目的 NuGet 配置不依赖外部第三方 NuGet 包，WebView2 SDK 文件已保存在 `vendor/`；但机器必须具有相应 .NET SDK 和所需框架引用包。如果还原报告框架缺失，应先补齐环境，不要跳过错误。
+项目不依赖外部第三方 NuGet 包，WebView2 SDK 已保存在 `vendor/`。还原若报告框架缺失，需补齐相应 .NET SDK 或框架引用包。
 
 ## 构建新游戏包
 
-先按 [适配包制作指南](gamepack-authoring.md) 独立取得目标游戏配置，并把定义放进 `gamepacks/<你的包ID>/`。以下命令只构建完整包，不会自动发现配置是否正确，也不会自动连接游戏。按采用的引擎选择对应命令：
+先按[适配包制作指南](gamepack-authoring.md)创建并填写 `gamepacks/<你的包ID>/`。日常使用统一构建入口，它根据 `game.json` 的 `backend` 检查字段并调用对应后端：
 
 ```powershell
-dotnet restore adapters/Wwise/ApexAudio.Wwise.csproj --configfile NuGet.Config
-pwsh -File adapters/Wwise/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler ./toolchains/zig/zig.exe
-pwsh -File adapters/Fmod/tools/BuildPack.ps1 -Profile gamepacks/my-game -Compiler ./toolchains/zig/zig.exe
-pwsh -File adapters/Unreal/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler ./toolchains/zig/zig.exe
+pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler C:/Tools/zig/zig.exe
 ```
 
-结果位于 `dist/packages/`。定义目录含源配置，`captureSha256` 可暂为空；BuildPack 在构建暂存区填入实际 DLL 摘要。不要直接把未编译的定义目录压缩后声称它是完整可运行包。
+输出位于 `dist/packages/`。源定义中的 `captureSha256` 可暂为空，BuildPack 编译后填入 DLL 摘要，再打包运行文件；定义目录本身不能直接作为运行包。
 
 ## 重建 X-Haptics 桥接
 
-分发源码已带当前桥接二进制与对应校验配置，普通开发不需重新编译它。`tools/BuildNative.ps1 -Compiler ./toolchains/zig/zig.exe` 是维护桥接／特定 Wwise 原生构建的入口；重建后会改变桥接摘要，应一起发布新配置。给新游戏制作包通常不需要动这个提供器。
+源码包含桥接二进制和校验配置，普通开发直接使用。修改桥接或该脚本对应的 Wwise 原生模块时，运行 `tools/BuildNative.ps1 -Compiler C:/Tools/zig/zig.exe`，路径换成实际编译器。重建桥接后一起发布更新的摘要配置。制作新游戏包通常无需修改此提供器。
 
 ## 交付开发项目
 
-公开源码仓库包含通用代码、空白模板和文档，不含目标游戏定义、运行数据或用户录音。仓库还没有完整开发套件压缩包；若自行整理分发包，应排除 `artifacts/`、`dist/`、`bin/`、`obj/`、本机 `data/` 和任何目标游戏专属定义，并保留第三方许可证。
+公开源码仓库包含通用代码、空白模板和文档，不含目标游戏定义、运行数据或用户录音。自行整理分发包时，应排除 `artifacts/`、`dist/`、`bin/`、`obj/`、本机 `data/` 和目标游戏专属定义，并保留第三方许可证。
 
-导出目录 `artifacts/source-export-*` 只是构建暂存区，不应再次作为输入。压缩包中工具链及第三方文件保留其许可；本项目并未因此取得游戏资源、商业 SDK 或品牌图标的公开再分发许可，来源见根目录 `THIRD-PARTY.md`。
+`artifacts/source-export-*` 是构建暂存区，不要再次用作导出输入。分发时保留工具链和第三方文件的许可，另行核对游戏资源、商业 SDK 和品牌图标的再分发许可。来源见根目录 `THIRD-PARTY.md`。

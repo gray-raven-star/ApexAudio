@@ -2,15 +2,15 @@
 
 ## 先理解边界
 
-`.gpack` 是包含独立适配器程序、采集模块、配置和初始预设的完整包，不只是填写游戏名称的配置文件。主程序管理连接、分组编辑、录音、试听和反馈；包负责找到游戏声音并输出规定格式的数据。
+`.gpack` 包含独立适配器程序、采集模块、配置和初始预设。主程序管理连接、分组编辑、录音、试听和反馈；包负责采集游戏声音并输出规定格式的数据。
 
 新游戏有三种情况：
 
-1. **现有采集模块覆盖其接口和结构**：准备新游戏配置、分组和初始预设，复用模块构建。
-2. **引擎相同，但版本、接口或对象结构不同**：在包的适配器中扩展定位或采集实现，再构建。不能仅改版本号或文件摘要。
-3. **现有模块无法采集**：开发新的适配器，遵循同一宿主协议。主程序不需要增加游戏名称判断，但新的采集实现仍需要开发和验证。
+1. 现有模块支持目标接口和结构：准备游戏配置、分组和初始预设，复用模块构建。
+2. 引擎相同，版本、接口或对象结构有差异：在包内扩展定位或采集代码，再构建。只改版本号或文件摘要无法解决这些差异。
+3. 现有模块无法采集：开发并验证新适配器，通过公共协议接入宿主，游戏判断留在包内。
 
-知道资源名称、读出银行或找到分组不等于已经取得独立声音。当前没有自动适配任意游戏的流程。
+资源名称、银行和分组目录是调查线索，独立声音需通过录音验证。目前没有自动适配任意游戏的流程。
 
 ## 源码项目里看哪里
 
@@ -27,19 +27,35 @@
 | `schemas/` | 清单与预设的 JSON Schema |
 | `tools/Pack.ps1` | 为完整包目录生成文件摘要并压成 `.gpack` |
 
-新定义从 `templates/` 复制对应引擎的空白模板，并保存到 `gamepacks/<你的包ID>/`。可以参考已经发布的适配包结构，但仍需根据目标游戏的实际版本收集接口证据并验证录音结果。
+使用 `tools/New-Pack.ps1` 从 `templates/` 创建新定义，保存到 `gamepacks/<你的包ID>/`。字段来源见[配置参考](engine-config-reference.md)，调查方法见[接口识别](audio-discovery.md)。
 
-运行版只含应用和文档；制作采集模块需要完整源码。当前构建环境为 Windows x64、.NET 8 SDK；下列原生构建脚本调用 Zig 的 `cc`，`-Compiler` 应填写实际 `zig.exe` 路径。代码并未打包第三方游戏 SDK。
+制作采集模块需要完整源码，运行版只含应用和文档。构建环境为 Windows x64、.NET 8 SDK；原生构建脚本调用 Zig 的 `cc`，`-Compiler` 填写实际 `zig.exe` 路径。源码不含第三方游戏 SDK。
 
 ## 制作步骤
 
 ### 1. 确认目标版本和采集能力
 
-记录实际游戏 EXE、参与调用的音频模块版本及 SHA256。确认能获取哪些真实独立分组、父子路由、采样率和通道布局。名称缺失时保留稳定编号，试听后标注；不要把猜测当成游戏原名。
+先按[环境说明](build-environment.md)准备 DevTools，然后保存一次静态调查：
 
-Wwise 需要核对接口、SDK ABI 和银行结构；FMOD 需要找到有效 System 实例及兼容 API；Unreal 需要核对 AudioMixer 设备、对象布局和监听接口。现有 FMOD 定位方式和 Unreal 布局均只覆盖已核对的结构。引擎相同不保证可以直接复用。
+```powershell
+prebuilt/devtools/ApexAudio.DevTools.exe inspect --exe "D:/Games/Example/Game.exe" --resources "D:/Games/Example" --output evidence/static.json
+```
+
+将路径换成实际安装位置。游戏启动后，加 `--pid 1234 --module Audio.dll` 检查指定加载模块，PID 和模块名也要替换。报告包含摘要、导出和候选资源；`truncated=true` 时缩小资源目录重查。
+
+记录游戏 EXE 和调用模块的版本、SHA256，核对分组、父子路由、采样率和通道布局。未知名称先用稳定编号显示，试听后标注；猜测的名称保留为候选。
+
+Wwise 核对接口、SDK ABI 和银行结构；FMOD 定位有效的 System 实例并核对 API；Unreal 核对 AudioMixer 设备、对象布局和监听接口。现有 FMOD 定位器和 Unreal 读取器只支持已核对的结构，复用前需确认目标结构一致。
 
 ### 2. 准备一个新的定义目录
+
+按调查结果选择 `Wwise`、`Fmod`、`Unreal` 或 `Custom`，在一个尚不存在的目录创建定义：
+
+```powershell
+pwsh -File tools/New-Pack.ps1 -Id author.my-game -Name "目标游戏" -Backend Wwise -Directory gamepacks/my-game
+```
+
+生成目录：
 
 ```text
 gamepacks/my-game/
@@ -47,14 +63,20 @@ gamepacks/my-game/
   game.json
   presets/initial.json
   README.md
+  group-evidence.json
+  validation-report.json
 ```
 
-- `manifest.json`：固定的包 ID、名称、版本、适配器入口、游戏匹配和预设引用，格式见 [包清单](gpack-format.md)。为目标游戏创建新的包 ID。
-- `game.json`：由所用适配器解释。宿主不解析其中的游戏地址或引擎字段；自写适配器也可以采用别的文件名和配置格式。
+- `manifest.json`：包 ID、名称、版本、适配器入口、游戏匹配和预设引用，格式见 [包清单](gpack-format.md)。为新游戏分配独立的包 ID。
+- `game.json`：适配器配置，包含游戏地址或引擎字段，宿主不解析。自写适配器可使用其他文件名和格式。
 - `presets/initial.json`：作者提供的初始命名、显示文件夹和开关，格式见 [预设说明](presets-recordings.md)。`packId` 必须对应新包 ID，分组键必须匹配适配器返回的稳定 ID。
-- `README.md`：明确支持的游戏版本、实际可用能力、未验证项目和已知限制。
+- `README.md`：支持的游戏版本、可用能力、未验证项目和已知限制。
+- `group-evidence.json`：保存分组的名称来源、效果槽和证据文件。Wwise 的填写与构建检查见[分组证据说明](group-evidence.md)。
+- `validation-report.json`：验证阶段、命令、结果和待测项目。各阶段初始为 `not-tested`，完成后填写结果。
 
-实际声音父子关系由适配器报告；预设里的文件夹只整理界面，不改变游戏音频路由。不要给多个不同编号重复发送同一份总混音来充当独立音轨。
+`__REQUIRED__` 和空分组需要用调查结果补齐。Custom 还生成 `adapter/YourAdapter.csproj` 与协议骨架，供实现自己的采集器。
+
+声音父子关系由适配器报告，预设文件夹只整理界面，不改变游戏路由。各编号需对应各自的音频来源，不能重复发送同一份总混音。
 
 ### 3. 复用或实现适配器
 
@@ -62,28 +84,22 @@ gamepacks/my-game/
 
 - 游戏连接、版本核对、分组列表、启停采集、状态与断开。
 - 每条分组的独立 PCM16、48 kHz、双声道数据和统一 QPC 时间戳。
-- 正确报告能力；只有总混音时，只提供明确命名的整体混音节点。
+- 能力按实际采集结果报告；只能取得总混音时，提供一个整体混音节点并标明名称。
 - 如需低延迟补充震动，实现可选 `realtimeMix`：采集端输出所选分组的混音共享缓冲区；空选择应静音，录音范围不跟随反馈开关缩减。
 
-不要在音频回调里等待管道或写盘。改动留在 `adapters/` 和新包中；不得靠给主程序加游戏名分支才能工作。
+管道发送和写盘放在音频回调外。游戏适配代码放在 `adapters/` 和新包中，主程序不增加游戏名分支。
 
 ### 4. 构建和打包
 
-在源码根目录执行。按实际采用的引擎运行一条命令，不需要全部执行：
+在源码根目录执行统一构建入口：
 
 ```powershell
-# Wwise：先还原适配器依赖；game.json 必须含已核对的 SDK / 银行配置。
-dotnet restore adapters/Wwise/ApexAudio.Wwise.csproj --configfile NuGet.Config
-pwsh -File adapters/Wwise/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler C:/Tools/zig/zig.exe
-
-# FMOD
-pwsh -File adapters/Fmod/tools/BuildPack.ps1 -Profile gamepacks/my-game -Compiler C:/Tools/zig/zig.exe
-
-# Unreal AudioMixer
-pwsh -File adapters/Unreal/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler C:/Tools/zig/zig.exe
+pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler C:/Tools/zig/zig.exe
 ```
 
-`C:/Tools/zig/zig.exe` 是示例路径，必须替换。脚本把采集模块摘要写入构建产物并调用打包器，输出为 `dist/packages/<manifest.id>.gpack`。这些命令只构建包，不会自动发现游戏接口。
+`C:/Tools/zig/zig.exe` 需替换成实际路径；已配置 `APEX_ZIG`、项目内编译器或 PATH 时可省略 `-Compiler`。Custom 分支不查找 Zig。输出为 `dist/packages/<manifest.id>.gpack`，引擎包的采集模块摘要由后端构建器填入。
+
+统一入口先检查必填占位、游戏 EXE 摘要、分组和预设身份，再执行后端检查及构建。维护时可单独调用底层 `BuildPack.ps1`，但它不包含上述统一检查。`Pack.ps1` 只生成文件清单和归档。
 
 自行实现的其他适配器，先整理一个含运行程序、依赖和清单的完整目录，再执行：
 
@@ -91,22 +107,40 @@ pwsh -File adapters/Unreal/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my
 pwsh -File tools/Pack.ps1 -Directory ./my-complete-pack -Output ./dist/packages/author.my-game.gpack
 ```
 
-打包器只负责生成文件清单和归档，不证明接口可用。不要把源码项目、`data/`、诊断内存、录音或游戏资源原包塞进发布包；携带的运行依赖必须允许再分发。
+发布包保留运行文件和允许再分发的依赖；排除源码项目、`data/`、诊断内存、录音及游戏资源原包。接口和采集效果按下一步验证。
 
 ### 5. 用应用导入并实测
+
+先检查完整性和启动协议：
+
+```powershell
+prebuilt/devtools/ApexAudio.DevTools.exe check --pack dist/packages/author.my-game.gpack --output evidence/package.json
+prebuilt/devtools/ApexAudio.DevTools.exe check --pack dist/packages/author.my-game.gpack --launch --output evidence/protocol.json
+```
+
+第一条解压并校验文件，第二条还执行适配器并查询信息、分组；两条都不连接真实游戏。随后可用下列命令采集，或直接在应用中录制：
+
+```powershell
+prebuilt/devtools/ApexAudio.DevTools.exe capture --pack dist/packages/author.my-game.gpack --pid 1234 --allow-game-connection --seconds 5 --output evidence/capture.json
+```
+
+PID 换成目标进程。`capture` 会调用包的连接流程，可能加载原生模块或挂接采集回调，但不启动 X-Haptics。`outcome` 表示命令是否完成；继续检查 `errors`、`status`、`packets`、`nonZeroGroups` 和各组 `peaks`，判断连接及音频输出是否正常。
 
 按普通用户流程导入 `.gpack`，确认来源后连接。发布前至少确认：
 
 - 支持版本连接成功，不匹配版本明确拒绝。
-- 不同分组录到对应声音，而非重复总混音；父子总线真实重叠需说明。
+- 逐组试听，确认各轨对应的声音；父子总线包含相同内容时注明重叠关系。
+- 分别录制背景音乐／对白和枪声、脚步、撞击等动作场景，记录候选组包含的声音。目标声音仍与背景混在同一轨时，寻找更细路由；无法继续分离的部分写入包说明。
 - 录制期间修改反馈选择不会打断录音；全关闭后补充震动输入静音。
 - 试听只播放所选录音轨道；声音和反馈时间基准一致。
 - 断开、游戏退出及重新连接行为正常；用户预设与还原初始状态正常。
 
-没有游戏或手柄实测时，README 应写“离线检查通过，实际采集／反馈未验证”，不能把模拟声音测试写成游戏适配成功。
+启用 X-Haptics，在相同场景比较全组输入与所选动作组输入，记录背景音是否仍触发明显补充震动、目标动作反馈是否保留、是否有可感知延迟。音轨分离、反馈输入和实体手柄测试分别填写结果。
+
+完成构建和协议检查后填写对应结果；尚未运行的测试保留 `not-tested`，注明缺少的环境。
 
 ## 如何发布
 
-普通用户只需要 `.gpack`，从应用导入即可。开发者交流时另提供适配器源码及构建说明，便于游戏更新后维护。更新保持同一包 ID、提高版本号、重新生成摘要并实测；不要为绕过匹配而删除版本检查。
+向用户分发 `.gpack`，供应用导入；向开发者另提供适配器源码和构建说明。更新时保持包 ID，提高版本号，重新生成摘要并实测，保留版本检查。
 
-完整源码项目至少保留 `src/`、`adapters/`、`gamepacks/`、`tools/`、`docs/`、`schemas/`、`providers/`、`ui/`、`assets/`、`vendor/` 和根目录的解决方案及构建配置。`artifacts/`、`dist/`、`bin/`、`obj/` 是生成物或开发记录，不是作者必须依赖的接口文档。
+完整源码项目至少保留 `src/`、`adapters/`、`gamepacks/`、`tools/`、`docs/`、`schemas/`、`providers/`、`ui/`、`assets/`、`vendor/` 和根目录的解决方案及构建配置。`artifacts/`、`dist/`、`bin/`、`obj/` 是生成物或开发记录，开发接口以源码和文档为准。

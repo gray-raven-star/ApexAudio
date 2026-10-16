@@ -30,7 +30,7 @@ foreach($directory in @('src','adapters','providers','tests','schemas','ui','ven
 # Source and runtime need one bridge revision, no old copies or debug artifacts.
 $native=Join-Path $kit 'providers/XHaptics/native'
 Get-ChildItem -LiteralPath $native -File | Where-Object Name -notin @('ApexGroupsBridge.c','ApexGroupsBridge-v5.dll','xh-support.json','xh-engines.json') | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
-foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','START-HERE.md','AI-INSTRUCTIONS.md')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
+foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','START-HERE.md','AI-INSTRUCTIONS.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
 foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','BuildNative.ps1','FindCompiler.ps1','Setup.ps1','Environment.ps1','New-Pack.ps1','Build-GamePack.ps1','Release.ps1','Disassemble.py')) {
     New-Item -ItemType Directory -Force -Path (Join-Path $kit 'tools') | Out-Null
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination (Join-Path $kit 'tools')
@@ -39,7 +39,7 @@ Copy-Tree (Join-Path $root 'tools/DevTools') (Join-Path $kit 'tools/DevTools')
 Copy-Tree (Join-Path $root 'tools/Metadata') (Join-Path $kit 'tools/Metadata')
 Copy-Tree (Join-Path $root 'packs/demo') (Join-Path $kit 'packs/demo')
 Copy-Tree (Join-Path $root 'release-docs/docs') (Join-Path $kit 'docs')
-foreach($name in @('architecture.md','gpack-format.md','adapter-protocol.md','presets-recordings.md')) { Copy-Item -LiteralPath (Join-Path $root ('docs/'+$name)) -Destination (Join-Path $kit 'docs') -Force }
+foreach($name in @('architecture.md','gpack-format.md','adapter-protocol.md','presets-recordings.md','build-environment.md','group-evidence.md','container-metadata.md','xhaptics-provider.md')) { Copy-Item -LiteralPath (Join-Path $root ('docs/'+$name)) -Destination (Join-Path $kit 'docs') -Force }
 foreach($name in @('README.md','THIRD-PARTY.md')) { Copy-Item -LiteralPath (Join-Path $root ('release-docs/'+$name)) -Destination $kit }
 New-Item -ItemType Directory -Force -Path (Join-Path $kit 'gamepacks'),(Join-Path $kit 'assets') | Out-Null
 'Create and maintain game definitions in this directory. Use tools/New-Pack.ps1 to start a package.' | Set-Content -LiteralPath (Join-Path $kit 'gamepacks/README.md') -Encoding utf8
@@ -71,7 +71,7 @@ foreach($backend in @('Wwise','Fmod','Unreal','Mock')) {
     if($LASTEXITCODE -ne 0) { throw "Adapter compile failed: $backend" }
 }
 Copy-Tree (Join-Path $kit 'docs') (Join-Path $app 'docs')
-foreach($name in @('README.md','THIRD-PARTY.md','START-HERE.md','AI-INSTRUCTIONS.md')) { Copy-Item -LiteralPath (Join-Path $kit $name) -Destination $app }
+foreach($name in @('README.md','THIRD-PARTY.md','START-HERE.md','AI-INSTRUCTIONS.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $kit $name) -Destination $app }
 Copy-Item -LiteralPath (Join-Path $kit 'vendor/webview2/LICENSE.txt') -Destination (Join-Path $app 'WebView2-LICENSE.txt')
 # Clean compile intermediates from the source distribution, using only exact files.
 foreach($base in @($kit,$app)) {
