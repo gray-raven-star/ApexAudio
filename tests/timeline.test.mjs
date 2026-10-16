@@ -1,11 +1,9 @@
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
 
 globalThis.ResizeObserver = class { observe() {} };
 globalThis.document = {documentElement:{dataset:{theme:'dark'}}};
 globalThis.devicePixelRatio = 1;
-const source = await readFile(new URL('../ui/timeline.js', import.meta.url), 'utf8');
-const {Timeline} = await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+const {Timeline} = await import('../ui/timeline.js');
 const strokes=[];
 const ctx={scale(){},clearRect(){},beginPath(){},moveTo(x,y){this.x=x;this.y=y;},lineTo(x,y){this.endX=x;},fillText(){},fillRect(){},stroke(){strokes.push({color:this.strokeStyle,y:this.y,x:this.x,endX:this.endX});}};
 const canvas={clientWidth:800,clientHeight:280,getContext(){return ctx;},addEventListener(){}};

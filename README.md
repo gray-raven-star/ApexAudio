@@ -16,7 +16,9 @@ GitHub Releases 提供 Windows x64 程序压缩包和可单独下载的游戏适
 
 ## 开发适配包
 
-从 [开发入口](START-HERE.md) 开始，再阅读[游戏适配包制作指南](docs/gamepack-authoring.md)。
+从 [开发入口](START-HERE.md) 开始，再阅读[游戏适配包制作指南](docs/authoring/gamepack-authoring.md)。
+
+使用、开发和协议文档见[文档入口](docs/README.md)。
 
 | 目录或文档 | 用途 |
 |---|---|
@@ -32,7 +34,7 @@ GitHub Releases 提供 Windows x64 程序压缩包和可单独下载的游戏适
 
 ## 从源码构建
 
-需要 Windows x64、PowerShell 7 和 .NET 8 SDK。详见[开发文档](docs/development.md)及[构建环境说明](docs/build-environment.md)。
+需要 Windows x64、PowerShell 7 和 .NET 8 SDK。详见[开发文档](docs/development/adapter-maintenance.md)及[构建环境说明](docs/development/build-environment.md)。
 
 ```powershell
 pwsh -File tools/Build.ps1 -Test

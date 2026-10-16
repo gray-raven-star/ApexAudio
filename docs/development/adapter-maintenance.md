@@ -1,21 +1,14 @@
-# 制作适配包和迁移
+# 适配器维护与旧配置迁移
 
-新游戏作者先读 [适配包制作指南](gamepack-authoring.md)。本文补充底层开发、旧配置迁移与验证说明；迁移旧配置不是新游戏适配的必经步骤。
+新游戏作者先读 [适配包制作指南](../authoring/gamepack-authoring.md)。本文补充底层开发、旧配置迁移与验证说明；迁移旧配置不是新游戏适配的必经步骤。
 
 ## 从 Mock 开始
 
-1. 按 `docs/adapter-protocol.md` 实现 Adapter 进程。
-2. Connect 确认目标游戏，GetAudioGroups 返回稳定层级，StartCapture 输出真实独立 PCM。
-3. 不支持的能力报告 false。记录只有混音时只能输出一个整体混音节点。
-4. 准备 manifest、作者预设、运行文件及必要许可。
-5. 执行 `tools/Pack.ps1` 自动生成文件 SHA256 清单并压成 .gpack。
-6. 在 UI 导入；连接后确认音轨内容、停止／退出行为。Mock 自带四条不同测试声音。
+Mock 提供四条不同的测试音轨，便于检查公共协议、分轨录音和选择切换。开发自己的采集器时，按[新模块开发](../authoring/new-module.md)实现连接、分组和独立 PCM；消息格式见[适配器协议](../reference/adapter-protocol.md)。
 
-```powershell
-pwsh -File tools/Pack.ps1 -Directory ./my-pack -Output ./my-game.gpack
-```
+开发演示包生成在 `artifacts/packages/`，不显示在用户版列表中，也不随用户版安装。
 
-C# 可复用 Contracts 的 AdapterServer，不需要修改 Hub。其他语言按字节协议实现即可。允许自带 Python／Node／其他私有运行环境，不能在正常使用时要求用户另装前置或手动运行程序。发布文件是否允许再分发由包作者确认。
+C# 可复用 Contracts 的 AdapterServer，其他语言按字节协议实现。包可自带 Python／Node 等私有运行环境，运行依赖及其再分发许可由作者一并提供。创建、构建和打包步骤统一见[制作指南](../authoring/gamepack-authoring.md)。
 
 ## 复用现有 Wwise 配置
 
@@ -36,7 +29,7 @@ Wwise 原生模块在游戏内复用已有有界多组录音环形缓冲，由�
 
 ## 构建原生代码
 
-随项目保存 `adapters/Wwise/native/ApexWwiseCapture.c` 和 `providers/XHaptics/native/ApexGroupsBridge.c`。当前提供已核对摘要的现有二进制，避免重构同时更改底层 ABI。
+随项目保存 `adapters/Wwise/native/ApexWwiseCapture.c` 和 `providers/XHaptics/native/ApexGroupsBridge.c`。源码附带 X-Haptics 桥接二进制；Wwise 采集 DLL 由适配包构建流程根据 SDK／银行参数编译。
 
 可用 Zig / Windows C 编译器重建。Wwise 编译需提供 CAPTURE_BANK_VERSION、CAPTURE_SDK_YEAR、CAPTURE_SDK_SERIES；重建后更新 game.json 的 captureSha256，再重新打包。X-Haptics 桥接重建后更新 native/xh-support.json。接口未知时不能只填写新版本编号就声称支持。
 

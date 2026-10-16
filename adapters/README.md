@@ -1,6 +1,6 @@
 # 现有采集适配器：先检查这里
 
-项目有 **三个真实游戏采集实现**，以及一个不连接游戏的 Mock。下列路径均相对项目根目录，不是应用安装目录。
+项目提供 Wwise、FMOD、Unreal 三个采集实现，以及生成测试声音的 Mock。表内路径相对本目录，另有说明的除外。
 
 | 实现 | 源码和原生模块 | 配置及构建 | 当前边界 |
 |---|---|---|---|
@@ -11,12 +11,14 @@
 
 共同接口在 `src/ApexAudio.Contracts/`，进程调用辅助在 `src/ApexAudio.Windows/`。主程序不按游戏名选择采集技术；包通过入口程序提供实现。
 
+新增采集器见[新模块开发](../docs/authoring/new-module.md)，诊断和实测分别见[故障排查](../docs/authoring/troubleshooting.md)与[验证报告](../docs/authoring/validation.md)。
+
 ## 新游戏的起点
 
-1. 阅读 [新游戏指南](../docs/gamepack-authoring.md) 和 [接口发现流程](../docs/audio-discovery.md)。
+1. 阅读 [新游戏指南](../docs/authoring/gamepack-authoring.md) 和 [接口发现流程](../docs/authoring/audio-discovery.md)。
 2. 识别候选音频系统，并检查这里已有实现需要的接口。没有字符串命中，不足以排除某种音频系统。
-3. 用 [配置字段参考](../docs/engine-config-reference.md) 列出缺少的数据，并记录每项来源。
+3. 用 [配置字段参考](../docs/reference/engine-config-reference.md) 列出缺少的数据，并记录每项来源。
 4. 确定差异仅为数据后才创建新配置；有 ABI、定位或回调差异时，在相应适配器中扩展。不要重复实现现有 IPC、录音转送和实时混音协议。
-5. 按 [环境说明](../docs/build-environment.md) 构建。构建成功和模拟自测均不能代替真实游戏验证。
+5. 按 [环境说明](../docs/development/build-environment.md) 构建。构建成功和模拟自测均不能代替真实游戏验证。
 
 各游戏定义是参考数据，不是通用探测规则。此项目没有附带自动扫描任意游戏、解包任意资源或猜测 SDK ABI 的完整工具链。

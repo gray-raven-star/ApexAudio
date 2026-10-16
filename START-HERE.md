@@ -1,14 +1,16 @@
 # Apex Audio：适配开发入口
 
-这个仓库提供 Apex Audio 源码、通用适配器、空白模板和开发文档，不包含任何具体游戏的定义、定位数据或初始配置。目标游戏需要由适配者独立调查和验证。
+仓库包含 Apex Audio 源码、通用适配器、空白模板和开发文档，不含具体游戏的定义、定位数据或初始配置。这些内容由适配者调查、制作并验证。
 
-仓库目前尚未发布完整开发套件压缩包。克隆源码后，按[构建环境说明](docs/build-environment.md)安装前置工具，再按[游戏适配包制作指南](docs/gamepack-authoring.md)开始。源码不附 Zig 编译器；制作原生采集模块时需要自行准备 Zig，并将路径传给构建脚本。
+在包含 `ApexAudio.sln` 的目录中操作。源码和开发套件的工具准备方法见[构建环境](docs/development/build-environment.md)，完整文档见[文档入口](docs/README.md)。
 
 建议按此顺序阅读：
 
-1. [架构和职责边界](docs/architecture.md)
-2. [新游戏适配流程](docs/gamepack-authoring.md)
-3. [适配包格式](docs/gpack-format.md)
-4. [适配器通信协议](docs/adapter-protocol.md)
+1. [制作适配包](docs/authoring/gamepack-authoring.md)：调查、创建定义、构建和实测。
+2. [识别接口](docs/authoring/audio-discovery.md)：判断能否复用现有后端。
+3. [配置字段](docs/reference/engine-config-reference.md)：填写目标版本、定位信息和分组。
+4. 现有后端不能覆盖时，阅读[新模块开发](docs/authoring/new-module.md)及[通信协议](docs/reference/adapter-protocol.md)。
 
-适配器构建成功不代表游戏内采集成功。请分别记录接口发现、构建、真实音轨采集和补充震动的验证结果。
+选择能区分背景音乐、对白和动作音的场景，逐组试听并检查反馈选择。记录接口发现、构建、音轨及补充震动的测试结果，供游戏更新后复测。
+
+使用 AI 协助制作时，将根目录的 [AI-INSTRUCTIONS.md](AI-INSTRUCTIONS.md) 交给它作为操作入口；接口、字段和工具说明按上述文档查阅。

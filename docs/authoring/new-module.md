@@ -23,7 +23,7 @@ pwsh -File tools/New-Pack.ps1 -Id author.example -Name "目标游戏" -Backend C
 | StopCapture | 取消后台任务并等待结束，不释放任务仍在使用的内存 |
 | Disconnect / Dispose | 停用采集、按接口移除监听／DSP、释放自己拥有的资源 |
 
-`src/ApexAudio.Contracts/Transport.cs` 的 AdapterServer 负责管道服务；`Models.cs` 定义消息。非 C# 实现按 adapter-protocol.md 编码字节帧，不需要引用这些 DLL。
+`src/ApexAudio.Contracts/Transport.cs` 的 AdapterServer 负责管道服务；`Models.cs` 定义消息。非 C# 实现按[适配器协议](../reference/adapter-protocol.md)编码字节帧，不需要引用这些 DLL。
 
 ## 如何取得声音
 
@@ -55,13 +55,13 @@ pwsh -File tools/New-Pack.ps1 -Id author.example -Name "目标游戏" -Backend C
 
 只混合被选择且未被聚合父组覆盖的组；不要重复叠加父子内容。录制范围独立于反馈选择，切换选择不重启录音、游戏或 X-Haptics。
 
-共享缓冲区格式在 adapter-protocol.md。回调、实时混音和保活不依赖录音管道完成发送。积压时丢弃过时反馈而非排队回放；录音原始时间戳保持不变。这个接口提供声音输入，不代表马达物理测量。
+共享缓冲区格式见[适配器协议](../reference/adapter-protocol.md)。回调、实时混音和保活不依赖录音管道完成发送。积压时丢弃过时反馈而非排队回放；录音原始时间戳保持不变。这个接口提供声音输入，不代表马达物理测量。
 
 ## 如何自测
 
 开发自测可用合成缓冲检查字节布局、下混、时间戳、空选择、父子去重和停止；Mock 是完整公共协议示例。涉及虚函数时必须从实际使用的函数表槽调用，不能直接调用处理函数绕过 ABI；涉及渲染阶段时，按目标实际的调用顺序测试。
 
-模拟检查仍不能证明真实对象、注册签名或游戏音轨正确。实际测试与报告见 validation.md。未经验证就发布时必须明确标记能力和限制。
+模拟检查仍不能证明真实对象、注册签名或游戏音轨正确。实际测试与报告见[验证说明](validation.md)。未经验证就发布时必须明确标记能力和限制。
 
 ## 构建和维护
 
