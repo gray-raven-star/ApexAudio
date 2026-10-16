@@ -143,6 +143,22 @@ PID 换成目标进程。`capture` 会调用包的连接流程，可能加载原
 
 完整诊断命令、报告字段和临时文件处理见[验证说明](validation.md)。采集失败时按[故障排查](troubleshooting.md)定位最早失败的阶段。
 
+## 阶段记录与交接
+
+`New-Pack.ps1` 已从 `templates/validation-report.json` 生成报告。随制作过程更新现有字段，续接时根据证据决定下一步：
+
+| 阶段 | 保存内容 | 报告位置与后续判断 |
+|---|---|---|
+| 目标与接口调查 | EXE／模块摘要、资源解析和接口依据 | `targetVersionEvidence`、`versions`、`audioInstanceEvidence`；仍缺 ABI、实例或路由时继续调查 |
+| 定义与构建 | manifest、后端配置、预设、分组证据和构建结果 | `groupEvidenceFile`、`stages.build`；按构建器的具体错误修正输入，成功后检查生成的 `.gpack` |
+| 包与协议 | `check`、`check --launch` 报告 | `stages.packageIntegrity`、`stages.protocol`；协议失败先修启动或消息交互，成功后再测游戏连接 |
+| 游戏内采集 | 对象、注册、回调、各轨录音和场景对照 | `stages.resolvedObjects` 至 `stages.independentTracks`；非零 PCM 后仍需试听确认各组含义 |
+| 选择与反馈 | 开关、重连、反馈源和手柄测试记录 | `stages.selection`、`disconnectReconnect`、`feedbackSource`、`physicalHaptics`；分别填写结果 |
+
+命令写入 `reproductionCommands`，报告或录音路径写入 `evidenceFiles`，资料版本及来源写入 `sources`。未执行项保留 `not-tested`，在 `notTested` 写明缺少的环境。阶段失败时填写 `blockingStage`，并在 `knownLimitations` 记录具体错误、缺少的字段和下一项验证；停止测试后更新 `cleanup`。
+
+续接先核对目标文件摘要、定义和已有产物。目标版本变化后重新检查相关接口与测试；同一版本已有的证据可继续使用。交付时随源码或定义提供报告及其引用的可分享证据，包内 README 列出已验证版本和限制。
+
 ## 如何发布
 
 向用户分发 `.gpack`，供应用导入；向开发者另提供适配器源码和构建说明。更新时保持包 ID，提高版本号，重新生成摘要并实测，保留版本检查。
