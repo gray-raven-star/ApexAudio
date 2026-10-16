@@ -4,7 +4,7 @@
 
 ## 工具位置
 
-开发套件的工具位于 `prebuilt/devtools/ApexAudio.DevTools.exe`；Git 源码需按[环境说明](build-environment.md)单独构建 tools/DevTools。报告支持 `--output <文件.json>`，分享前检查其中的本机游戏路径。
+开发套件的工具位于 `prebuilt/devtools/ApexAudio.DevTools.exe`；Git 源码需按[环境说明](../development/build-environment.md)单独构建 tools/DevTools。报告支持 `--output <文件.json>`，分享前检查其中的本机游戏路径。
 
 ### 只读调查
 

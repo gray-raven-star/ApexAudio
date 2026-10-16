@@ -20,10 +20,28 @@ Get-ChildItem -LiteralPath (Join-Path $outputRoot 'native') -File -Filter 'ApexG
 Publish-Project 'adapters/Mock/ApexAudio.Mock.csproj' (Join-Path $buildRoot 'mock')
 Publish-Project 'adapters/Wwise/ApexAudio.Wwise.csproj' (Join-Path $buildRoot 'wwise')
 Copy-Item (Join-Path $projectRoot 'vendor/webview2/LICENSE.txt') (Join-Path $outputRoot 'WebView2-LICENSE.txt')
-foreach ($name in @('README.md','README.en.md','START-HERE.md','AI-INSTRUCTIONS.md','THIRD-PARTY.md','LICENSE')) {
+# Replace generated documentation so older development notes cannot remain in dist.
+$docsOutput = Join-Path $outputRoot 'docs'
+if (Test-Path -LiteralPath $docsOutput) {
+    $resolvedOutput = (Resolve-Path -LiteralPath $outputRoot).Path
+    $resolvedDocs = (Resolve-Path -LiteralPath $docsOutput).Path
+    if ($resolvedDocs -ne (Join-Path $resolvedOutput 'docs') -or
+        ((Get-Item -LiteralPath $outputRoot).Attributes -band [IO.FileAttributes]::ReparsePoint) -or
+        ((Get-Item -LiteralPath $docsOutput).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+        throw 'Documentation cleanup must stay inside the build output directory.'
+    }
+    Remove-Item -LiteralPath $resolvedDocs -Recurse -Force
+}
+foreach ($name in @('README.en.md','START-HERE.md','AI-INSTRUCTIONS.md')) {
+    $obsolete = Join-Path $outputRoot $name
+    if (Test-Path -LiteralPath $obsolete) { Remove-Item -LiteralPath $obsolete }
+}
+Copy-Item (Join-Path $projectRoot 'packaging/README.release.md') (Join-Path $outputRoot 'README.md') -Force
+foreach ($name in @('THIRD-PARTY.md','LICENSE')) {
     Copy-Item (Join-Path $projectRoot $name) $outputRoot
 }
-Copy-Item (Join-Path $projectRoot 'docs') $outputRoot -Recurse -Force
+New-Item -ItemType Directory -Path $docsOutput -Force | Out-Null
+Copy-Item (Join-Path $projectRoot 'docs/user') $docsOutput -Recurse -Force
 Copy-Item (Join-Path $projectRoot 'schemas') $outputRoot -Recurse -Force
 & (Join-Path $PSScriptRoot 'MakeDemoPack.ps1')
 $oldDemo = Join-Path $outputRoot 'packages/demo.gpack'

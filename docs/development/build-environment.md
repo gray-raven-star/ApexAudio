@@ -42,7 +42,7 @@ dotnet publish tools/DevTools/ApexAudio.DevTools.csproj -c Release --no-self-con
 prebuilt/devtools/ApexAudio.DevTools.exe help
 ```
 
-`Build.ps1` 不发布 DevTools。诊断工具的调查和采集命令见[制作指南](gamepack-authoring.md)。
+`Build.ps1` 不发布 DevTools。诊断工具的调查和采集命令见[制作指南](../authoring/gamepack-authoring.md)。
 
 ## 构建主程序与离线检查
 
@@ -56,7 +56,7 @@ pwsh -File tools/Build.ps1 -Test
 
 ## 构建新游戏包
 
-先按[适配包制作指南](gamepack-authoring.md)创建并填写 `gamepacks/<你的包ID>/`。日常使用统一构建入口，它根据 `game.json` 的 `backend` 检查字段并调用对应后端：
+先按[适配包制作指南](../authoring/gamepack-authoring.md)创建并填写 `gamepacks/<你的包ID>/`。日常使用统一构建入口，它根据 `game.json` 的 `backend` 检查字段并调用对应后端：
 
 ```powershell
 pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler C:/Tools/zig/zig.exe

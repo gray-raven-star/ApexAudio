@@ -26,12 +26,12 @@ function Copy-Tree([string]$Source,[string]$Destination) {
     }
 }
 Write-Host 'Stage the application and adapter development kit.'
-foreach($directory in @('src','adapters','providers','tests','schemas','ui','vendor','templates','release-docs')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
+foreach($directory in @('src','adapters','providers','tests','schemas','ui','vendor','templates','packaging')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
 # Source and runtime need one bridge revision, no old copies or debug artifacts.
 $native=Join-Path $kit 'providers/XHaptics/native'
 Get-ChildItem -LiteralPath $native -File | Where-Object Name -notin @('ApexGroupsBridge.c','ApexGroupsBridge-v5.dll','xh-support.json','xh-engines.json') | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
-foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','START-HERE.md','AI-INSTRUCTIONS.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
-foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','BuildNative.ps1','FindCompiler.ps1','Setup.ps1','Environment.ps1','New-Pack.ps1','Build-GamePack.ps1','Release.ps1','Disassemble.py')) {
+foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','README.md','README.en.md','START-HERE.md','AI-INSTRUCTIONS.md','CONTRIBUTING.md','THIRD-PARTY.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
+foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','MakeWwisePack.ps1','BuildNative.ps1','FindCompiler.ps1','Setup.ps1','Environment.ps1','New-Pack.ps1','Build-GamePack.ps1','Release.ps1','Disassemble.py')) {
     New-Item -ItemType Directory -Force -Path (Join-Path $kit 'tools') | Out-Null
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination (Join-Path $kit 'tools')
 }
@@ -39,11 +39,10 @@ Copy-Tree (Join-Path $root 'tools/DevTools') (Join-Path $kit 'tools/DevTools')
 Copy-Tree (Join-Path $root 'tools/Metadata') (Join-Path $kit 'tools/Metadata')
 Copy-Tree (Join-Path $root 'packs/demo') (Join-Path $kit 'packs/demo')
 Copy-Tree (Join-Path $root 'docs') (Join-Path $kit 'docs')
-foreach($name in @('README.md','THIRD-PARTY.md')) { Copy-Item -LiteralPath (Join-Path $root ('release-docs/'+$name)) -Destination $kit }
 New-Item -ItemType Directory -Force -Path (Join-Path $kit 'gamepacks'),(Join-Path $kit 'assets') | Out-Null
 'Create and maintain game definitions in this directory. Use tools/New-Pack.ps1 to start a package.' | Set-Content -LiteralPath (Join-Path $kit 'gamepacks/README.md') -Encoding utf8
-Copy-Item -LiteralPath (Join-Path $root 'release-docs/assets/apex.ico') -Destination (Join-Path $kit 'assets/apex.ico')
-Copy-Item -LiteralPath (Join-Path $root 'release-docs/assets/apex.svg') -Destination (Join-Path $kit 'assets/apex.svg')
+Copy-Item -LiteralPath (Join-Path $root 'packaging/assets/apex.ico') -Destination (Join-Path $kit 'assets/apex.ico')
+Copy-Item -LiteralPath (Join-Path $root 'packaging/assets/apex.svg') -Destination (Join-Path $kit 'assets/apex.svg')
 Write-Host 'Copy portable Zig with its complete library and license tree.'
 $compiler=(Resolve-Path -LiteralPath $CompilerDirectory).Path
 Copy-Tree $compiler (Join-Path $kit 'toolchain/zig')
@@ -64,8 +63,9 @@ foreach($backend in @('Wwise','Fmod','Unreal','Mock')) {
     & dotnet build (Join-Path $kit "adapters/$backend/ApexAudio.$backend.csproj") -c Release --configfile (Join-Path $kit 'NuGet.Config') --nologo
     if($LASTEXITCODE -ne 0) { throw "Adapter compile failed: $backend" }
 }
-Copy-Tree (Join-Path $kit 'docs') (Join-Path $app 'docs')
-foreach($name in @('README.md','THIRD-PARTY.md','START-HERE.md','AI-INSTRUCTIONS.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $kit $name) -Destination $app }
+Copy-Tree (Join-Path $kit 'docs/user') (Join-Path $app 'docs/user')
+Copy-Item -LiteralPath (Join-Path $kit 'packaging/README.release.md') -Destination (Join-Path $app 'README.md')
+foreach($name in @('THIRD-PARTY.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $kit $name) -Destination $app }
 Copy-Item -LiteralPath (Join-Path $kit 'vendor/webview2/LICENSE.txt') -Destination (Join-Path $app 'WebView2-LICENSE.txt')
 # Clean compile intermediates from the source distribution, using only exact files.
 foreach($base in @($kit,$app)) {

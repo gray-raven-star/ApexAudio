@@ -1,12 +1,14 @@
-# 制作适配包和迁移
+# 适配器维护与旧配置迁移
 
-新游戏作者先读 [适配包制作指南](gamepack-authoring.md)。本文补充底层开发、旧配置迁移与验证说明；迁移旧配置不是新游戏适配的必经步骤。
+新游戏作者先读 [适配包制作指南](../authoring/gamepack-authoring.md)。本文补充底层开发、旧配置迁移与验证说明；迁移旧配置不是新游戏适配的必经步骤。
 
 ## 从 Mock 开始
 
-Mock 提供四条不同的测试音轨，便于检查公共协议、分轨录音和选择切换。开发自己的采集器时，按[新模块开发](new-module.md)实现连接、分组和独立 PCM；消息格式见[适配器协议](adapter-protocol.md)。
+Mock 提供四条不同的测试音轨，便于检查公共协议、分轨录音和选择切换。开发自己的采集器时，按[新模块开发](../authoring/new-module.md)实现连接、分组和独立 PCM；消息格式见[适配器协议](../reference/adapter-protocol.md)。
 
-C# 可复用 Contracts 的 AdapterServer，其他语言按字节协议实现。包可自带 Python／Node 等私有运行环境，运行依赖及其再分发许可由作者一并提供。创建、构建和打包步骤统一见[制作指南](gamepack-authoring.md)。
+开发演示包生成在 `artifacts/packages/`，不显示在用户版列表中，也不随用户版安装。
+
+C# 可复用 Contracts 的 AdapterServer，其他语言按字节协议实现。包可自带 Python／Node 等私有运行环境，运行依赖及其再分发许可由作者一并提供。创建、构建和打包步骤统一见[制作指南](../authoring/gamepack-authoring.md)。
 
 ## 复用现有 Wwise 配置
 

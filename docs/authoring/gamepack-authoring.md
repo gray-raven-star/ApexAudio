@@ -27,7 +27,7 @@
 | `schemas/` | 清单与预设的 JSON Schema |
 | `tools/Pack.ps1` | 为完整包目录生成文件摘要并压成 `.gpack` |
 
-使用 `tools/New-Pack.ps1` 从 `templates/` 创建新定义，保存到 `gamepacks/<你的包ID>/`。字段来源见[配置参考](engine-config-reference.md)，调查方法见[接口识别](audio-discovery.md)。
+使用 `tools/New-Pack.ps1` 从 `templates/` 创建新定义，保存到 `gamepacks/<你的包ID>/`。字段来源见[配置参考](../reference/engine-config-reference.md)，调查方法见[接口识别](audio-discovery.md)。
 
 制作采集模块需要完整源码，运行版只含应用和文档。构建环境为 Windows x64、.NET 8 SDK；原生构建脚本调用 Zig 的 `cc`，`-Compiler` 填写实际 `zig.exe` 路径。源码不含第三方游戏 SDK。
 
@@ -35,7 +35,7 @@
 
 ### 1. 确认目标版本和采集能力
 
-先按[环境说明](build-environment.md)准备 DevTools，然后保存一次静态调查：
+先按[环境说明](../development/build-environment.md)准备 DevTools，然后保存一次静态调查：
 
 ```powershell
 prebuilt/devtools/ApexAudio.DevTools.exe inspect --exe "D:/Games/Example/Game.exe" --resources "D:/Games/Example" --output evidence/static.json
@@ -67,11 +67,11 @@ gamepacks/my-game/
   validation-report.json
 ```
 
-- `manifest.json`：包 ID、名称、版本、适配器入口、游戏匹配和预设引用，格式见 [包清单](gpack-format.md)。为新游戏分配独立的包 ID。
+- `manifest.json`：包 ID、名称、版本、适配器入口、游戏匹配和预设引用，格式见 [包清单](../reference/gpack-format.md)。为新游戏分配独立的包 ID。
 - `game.json`：适配器配置，包含游戏地址或引擎字段，宿主不解析。自写适配器可使用其他文件名和格式。
-- `presets/initial.json`：作者提供的初始命名、显示文件夹和开关，格式见 [预设说明](presets-recordings.md)。`packId` 必须对应新包 ID，分组键必须匹配适配器返回的稳定 ID。
+- `presets/initial.json`：作者提供的初始命名、显示文件夹和开关，格式见 [预设说明](../reference/presets-recordings.md)。`packId` 必须对应新包 ID，分组键必须匹配适配器返回的稳定 ID。
 - `README.md`：支持的游戏版本、可用能力、未验证项目和已知限制。
-- `group-evidence.json`：保存分组的名称来源、效果槽和证据文件。Wwise 的填写与构建检查见[分组证据说明](group-evidence.md)。
+- `group-evidence.json`：保存分组的名称来源、效果槽和证据文件。Wwise 的填写与构建检查见[分组证据说明](../reference/group-evidence.md)。
 - `validation-report.json`：验证阶段、命令、结果和待测项目。各阶段初始为 `not-tested`，完成后填写结果。
 
 `__REQUIRED__` 和空分组需要用调查结果补齐。Custom 还生成 `adapter/YourAdapter.csproj` 与协议骨架，供实现自己的采集器。
@@ -80,7 +80,7 @@ gamepacks/my-game/
 
 ### 3. 复用或实现适配器
 
-完整接口见 [适配器协议](adapter-protocol.md)，包括：
+完整接口见 [适配器协议](../reference/adapter-protocol.md)，包括：
 
 - 游戏连接、版本核对、分组列表、启停采集、状态与断开。
 - 每条分组的独立 PCM16、48 kHz、双声道数据和统一 QPC 时间戳。
@@ -163,4 +163,4 @@ PID 换成目标进程。`capture` 会调用包的连接流程，可能加载原
 
 向用户分发 `.gpack`，供应用导入；向开发者另提供适配器源码和构建说明。更新时保持包 ID，提高版本号，重新生成摘要并实测，保留版本检查。
 
-完整源码项目至少保留 `src/`、`adapters/`、`gamepacks/`、`tools/`、`docs/`、`schemas/`、`providers/`、`ui/`、`assets/`、`vendor/` 和根目录的解决方案及构建配置。`artifacts/`、`dist/`、`bin/`、`obj/` 是生成物或开发记录，开发接口以源码和文档为准。
+完整源码项目至少保留 `src/`、`adapters/`、`gamepacks/`、`tools/`、`docs/`、`schemas/`、`providers/`、`ui/`、`assets/`、`packaging/`、`templates/`、`vendor/` 和根目录的解决方案及构建配置。`artifacts/`、`dist/`、`bin/`、`obj/` 是生成物或开发记录，开发接口以源码和文档为准。

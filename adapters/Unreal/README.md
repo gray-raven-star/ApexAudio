@@ -26,8 +26,8 @@
 
 ## 构建与验证
 
-在项目根目录使用 `tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/<你的包ID>`，编译器选择见[环境说明](../../docs/build-environment.md)。底层入口为 `adapters/Unreal/tools/BuildPack.ps1`。
+在项目根目录使用 `tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/<你的包ID>`，编译器选择见[环境说明](../../docs/development/build-environment.md)。底层入口为 `adapters/Unreal/tools/BuildPack.ps1`。
 
-本轮完成离线导入、协议和原生回调的人工数据自测；真实游戏中的监听注册、分组音频和反馈效果尚未验证。用户导入的实际测试不应被离线自测替代。
+原生模块提供人工缓冲自测，用于检查回调、独立录音和反馈混音。真实游戏中的监听注册、分组音频和反馈效果尚未验证；新增游戏包按[验证说明](../../docs/authoring/validation.md)记录实际测试结果。
 
-接口参考：[Epic Submix 文档](https://dev.epicgames.com/documentation/en-us/unreal-engine/submixes?application_version=4.27)、[ISubmixBufferListener](https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Engine/ISubmixBufferListener)。游戏布局来自本机只读核对。
+接口参考：[Epic Submix 文档](https://dev.epicgames.com/documentation/en-us/unreal-engine/submixes?application_version=4.27)、[ISubmixBufferListener](https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Engine/ISubmixBufferListener)。
