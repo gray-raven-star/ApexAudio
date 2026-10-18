@@ -20,7 +20,7 @@
 
 ```powershell
 dotnet restore adapters/Wwise/ApexAudio.Wwise.csproj --configfile NuGet.Config
-pwsh -File adapters/Wwise/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler ./toolchains/zig/zig.exe
+pwsh -File adapters/Wwise/tools/BuildPack.ps1 -DefinitionDirectory gamepacks/my-game -Compiler ./toolchain/zig/zig.exe
 ```
 
 输出 `dist/packages/<包ID>.gpack`。源定义的 `captureFile` 必须使用包内 `modules/` 下的 DLL 路径；构建工具写入对应 `captureSha256`。首次构建依赖还原不可省略。

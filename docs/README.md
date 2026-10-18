@@ -1,25 +1,23 @@
-# 文档入口
+# 开发文档
 
-## 给新游戏制作适配包
+先读根目录 [START-HERE](../START-HERE.md)，不需要一次读完全部文档。
 
-先读 [适配包制作指南](gamepack-authoring.md)。它说明源码目录、现有采集器的复用边界、制作顺序、构建命令与发布检查。
-
-应用运行版的 `docs/` 可以用于查阅协议；编写或编译适配器还需要完整源码项目中的 `adapters/`、`src/`、`gamepacks/`、`tools/` 及其构建依赖。只拿到应用运行版，不能直接编译新的采集模块。
-
-## 格式与接口
-
-| 文档 | 内容 |
+| 任务 | 文档 |
 |---|---|
-| [适配包格式](gpack-format.md) | manifest、版本识别、文件清单、导入与更新 |
-| [适配器协议](adapter-protocol.md) | 控制命令、独立 PCM、低延迟反馈共享缓冲区 |
-| [预设与录音](presets-recordings.md) | 名称、文件夹、开关、初始预设与录音数据 |
-| [架构](architecture.md) | 主程序和包的职责边界 |
-| [开发与迁移](development.md) | Mock 参考、旧 Wwise 配置迁移和底层编译 |
-| [X-Haptics 接入](xhaptics-provider.md) | 主程序的反馈模块 |
+| 环境与首次构建 | [构建环境](build-environment.md) |
+| 在宣布不兼容前做小实验 | [最小验证](first-probes.md) |
+| 从空白到完整包 | [适配流程](gamepack-authoring.md) |
+| 找资源、接口与运行实例 | [调查方法](investigation.md) |
+| 复用现有 Wwise / FMOD / Unreal | [后端边界](backend-configs.md)、[字段参考](engine-config-reference.md) |
+| 实现不同定位器或新采集模块 | [新模块开发](new-module.md) |
+| 分组名称、FX 槽、初始预设 | [分组依据](group-evidence.md) |
+| 空数据、重复音轨、延迟与模块残留 | [链路排查](troubleshooting.md) |
+| 诊断命令与实测范围 | [验证说明](validation.md) |
+| 确有缺口才做反编译 | [有限代码分析](code-analysis.md) |
+| 包格式、控制与音频传输 | [包格式](gpack-format.md)、[适配器协议](adapter-protocol.md) |
+| 用户设置和时间轴 | [预设与录音](presets-recordings.md)、[录音设置](settings-recording.md) |
+| 职责边界与反馈提供器 | [架构](architecture.md)、[X-Haptics](xhaptics-provider.md) |
 
-## 使用与状态
+开发包包含源码、空白模板、可移植 Zig 和预编译诊断工具。运行包的 docs 只供查阅，不能替代完整开发项目。只克隆源码时按环境说明准备缺少的工具。
 
-- [录音和设置](settings-recording.md)
-- [交付状态与限制](status.md)
-
-单个游戏包的支持版本、已知问题和实际测试范围以其随包 README 为准。
+实际游戏运行验证可由开发者或 AI 按已确认方式启动，不固定要求用户手动打开。验证范围按当前任务约定，资源、注册、真实 PCM 与物理反馈分别记录。

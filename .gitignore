@@ -11,6 +11,6 @@ evidence/
 .cache/
 **/__pycache__/
 
-# Local game-specific answers stay out of the public blind-test repository.
+# Game-specific definitions are maintained separately from the shared source.
 /gamepacks/*
 !/gamepacks/README.md

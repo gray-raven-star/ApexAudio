@@ -1,0 +1,62 @@
+name: Publish development bundle
+on:
+  push:
+    tags:
+      - 'bundle-*'
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+        with:
+          dotnet-version: '8.0.x'
+      - name: Verify package inputs and obtain pinned compiler
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $metadata=Get-Content release-inputs/gamepacks.json -Raw | ConvertFrom-Json
+          foreach($pack in $metadata) {
+            $path=Join-Path 'release-inputs/gamepacks' $pack.file
+            if((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -ne $pack.sha256) { throw 'Package input hash mismatch.' }
+          }
+          $zip=Join-Path $env:RUNNER_TEMP 'zig.zip'
+          Invoke-WebRequest -Uri 'https://ziglang.org/download/0.15.2/zig-x86_64-windows-0.15.2.zip' -OutFile $zip
+          if((Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash -ne '3A0ED1E8799A2F8CE2A6E6290A9FF22E6906F8227865911FB7DDEDC3CC14CB0C') { throw 'Compiler download checksum mismatch.' }
+          $directory=Join-Path $env:RUNNER_TEMP 'zig'
+          Expand-Archive -LiteralPath $zip -DestinationPath $directory
+          $roots=@(Get-ChildItem -LiteralPath $directory -Directory)
+          if($roots.Count -ne 1) { throw 'Unexpected compiler archive root.' }
+          $compiler=$roots[0]
+          "APEX_RELEASE_COMPILER=$($compiler.FullName)" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+      - name: Build development archive without game or controller tests
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $version=$env:GITHUB_REF_NAME.Substring('bundle-'.Length)
+          if($version -notmatch '^\d+\.\d+\.\d+$') { throw 'Use bundle-YEAR.MONTH.DAY.' }
+          $output=Join-Path $env:RUNNER_TEMP 'apex-release'
+          ./tools/Release.ps1 -Version $version -CompilerDirectory $env:APEX_RELEASE_COMPILER -OutputDirectory $output -DevKitOnly
+          Copy-Item release-inputs/gamepacks/*.gpack -Destination $output
+          $hashes=Get-ChildItem -LiteralPath $output -File | Where-Object { $_.Extension -in @('.zip','.gpack') } | Sort-Object Name | ForEach-Object { "$( (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash )  $($_.Name)" }
+          $hashes | Set-Content -LiteralPath (Join-Path $output 'SHA256SUMS.txt') -Encoding utf8
+          "APEX_RELEASE_OUTPUT=$output" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+      - name: Upload independent assets and publish release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference='Stop'
+          $tag=$env:GITHUB_REF_NAME
+          gh release create $tag --repo $env:GITHUB_REPOSITORY --verify-tag --draft --title "开发包 $($tag.Substring(7)) 与新增游戏适配包" --notes-file release-inputs/release-notes.md
+          if($LASTEXITCODE -ne 0) { throw 'Draft release creation failed; existing releases are not overwritten.' }
+          $assets=@(Get-ChildItem -LiteralPath $env:APEX_RELEASE_OUTPUT -File | Where-Object { $_.Extension -in @('.zip','.gpack') -or $_.Name -eq 'SHA256SUMS.txt' } | ForEach-Object FullName)
+          gh release upload $tag --repo $env:GITHUB_REPOSITORY @assets
+          if($LASTEXITCODE -ne 0) { throw 'Asset upload failed; release remains draft.' }
+          gh release edit $tag --repo $env:GITHUB_REPOSITORY --draft=false --latest=false
+          if($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }
