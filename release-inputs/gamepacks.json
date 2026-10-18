@@ -1,0 +1,46 @@
+[
+  {
+    "id": "local.indiana-great-circle",
+    "title": "夺宝奇兵：古老之圈",
+    "version": "0.1.1",
+    "file": "ApexAudio-IndianaJonesGreatCircle-0.1.1.gpack",
+    "presetSource": "saved-user-preset",
+    "groups": 48,
+    "enabled": 9,
+    "sha256": "39697F6513BA083B94A388255E7894D8B51F5D8C56593FFDAA3BE7BBE53D8115",
+    "captureUnchanged": true
+  },
+  {
+    "id": "local.elden-ring",
+    "title": "艾尔登法环",
+    "version": "0.1.1",
+    "file": "ApexAudio-EldenRing-0.1.1.gpack",
+    "presetSource": "saved-user-preset",
+    "groups": 83,
+    "enabled": 34,
+    "sha256": "5AFBD321B364FB84FBFC3E701B634B58431C4DFCF149A5AA99CC6FC9E0D06537",
+    "captureUnchanged": true
+  },
+  {
+    "id": "apex.wh40k-rogue-trader",
+    "title": "战锤40K：行商浪人",
+    "version": "1.1.1",
+    "file": "ApexAudio-RogueTrader-1.1.1.gpack",
+    "presetSource": "selected-package-preset",
+    "groups": 80,
+    "enabled": 37,
+    "sha256": "EE8FA9C5C173085F8830D4248E4AA332C6AA0367919179A59FC58B0349E96918",
+    "captureUnchanged": true
+  },
+  {
+    "id": "apex.slay-the-spire-2",
+    "title": "杀戮尖塔 2",
+    "version": "1.0.1",
+    "file": "ApexAudio-SlayTheSpire2-1.0.1.gpack",
+    "presetSource": "saved-user-preset",
+    "groups": 9,
+    "enabled": 2,
+    "sha256": "A0D435AA29CC157D655E9272CB1045BE353A18009DD566ACB83E19ED5C4149E8",
+    "captureUnchanged": true
+  }
+]
