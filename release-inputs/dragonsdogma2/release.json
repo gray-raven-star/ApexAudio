@@ -1,0 +1,9 @@
+{
+  "releaseTag": "bundle-2026.10.18",
+  "file": "ApexAudio-DragonsDogma2-0.1.1.gpack",
+  "sha256": "30a3bc4bb283db71f4e6133215fe829194c0d1fde5f5a5b3a64cf8e6a9c262c6",
+  "checksumFile": "ApexAudio-DragonsDogma2-0.1.1.sha256",
+  "presetPath": "presets/action-environment.json",
+  "enabledGroups": 18,
+  "notesLine": "- 新增龙之信条 2 适配包。"
+}
