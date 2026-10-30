@@ -46,3 +46,5 @@
 [AI-INSTRUCTIONS.md](../AI-INSTRUCTIONS.md) 用于指导 AI 按阶段调查、制作、验证和交接；技术细节引用上述说明。
 
 公开文档统一在本目录维护。开发套件包含这些文档、源码及 AI 制作入口；普通运行包仅携带 `user/` 使用说明和许可。`packaging/` 保存发布首页模板及图标素材。
+
+补充：[最小验证](authoring/first-probes.md)、[有限代码分析](authoring/code-analysis.md)、[发布适配包](authoring/publishing.md)。

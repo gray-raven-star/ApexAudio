@@ -1,0 +1,26 @@
+name: Publish Dragon's Dogma 2 package
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'release-inputs/dragonsdogma2/**'
+      - '.github/workflows/publish-gamepack.yml'
+      - 'tools/publish_gamepack.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-dragonsdogma2
+  cancel-in-progress: false
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate and append independent release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/publish_gamepack.py

@@ -164,3 +164,7 @@ PID 换成目标进程。`capture` 会调用包的连接流程，可能加载原
 向用户分发 `.gpack`，供应用导入；向开发者另提供适配器源码和构建说明。更新时保持包 ID，提高版本号，重新生成摘要并实测，保留版本检查。
 
 完整源码项目至少保留 `src/`、`adapters/`、`gamepacks/`、`tools/`、`docs/`、`schemas/`、`providers/`、`ui/`、`assets/`、`packaging/`、`templates/`、`vendor/` 和根目录的解决方案及构建配置。`artifacts/`、`dist/`、`bin/`、`obj/` 是生成物或开发记录，开发接口以源码和文档为准。
+
+## 调查补充
+
+宣布接口或版本不兼容前，先按[最小验证](first-probes.md)做低成本核对。对象和句柄分别验证；资源优先用厂商 API 读取。名称哈希与 FMOD 路径恢复见[分组证据](../reference/group-evidence.md)。反编译仅用于具体缺口，见[有限代码分析](code-analysis.md)。正常启动游戏可由适配者执行，按用户约定控制验证次数。

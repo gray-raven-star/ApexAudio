@@ -8,7 +8,7 @@
 
 从同一 GitHub Release 单独下载并导入所需游戏的 `.gpack`，确认来源后连接已启动的游戏。适配包只支持其声明的游戏版本；支持范围和实测记录见包内 README。补充震动需要兼容的官方 X-Haptics，本项目不分发驱动。
 
-- [连接、录音和设置](docs/user/settings-recording.md)
+- [连接、录音和设置](../docs/user/settings-recording.md)
 - [当前能力与限制](docs/user/capabilities.md)
 
 ## 开发资料

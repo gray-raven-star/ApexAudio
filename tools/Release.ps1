@@ -26,7 +26,7 @@ function Copy-Tree([string]$Source,[string]$Destination) {
     }
 }
 Write-Host 'Stage the application and adapter development kit.'
-foreach($directory in @('src','adapters','providers','tests','schemas','ui','vendor','templates','packaging')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
+foreach($directory in @('.github','src','adapters','providers','tests','schemas','ui','vendor','templates','packaging')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
 # Source and runtime need one bridge revision, no old copies or debug artifacts.
 $native=Join-Path $kit 'providers/XHaptics/native'
 Get-ChildItem -LiteralPath $native -File | Where-Object Name -notin @('ApexGroupsBridge.c','ApexGroupsBridge-v5.dll','xh-support.json','xh-engines.json') | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
@@ -37,6 +37,7 @@ foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','MakeWwisePack.ps1'
 }
 Copy-Tree (Join-Path $root 'tools/DevTools') (Join-Path $kit 'tools/DevTools')
 Copy-Tree (Join-Path $root 'tools/Metadata') (Join-Path $kit 'tools/Metadata')
+Copy-Tree (Join-Path $root 'tools/FmodProbe') (Join-Path $kit 'tools/FmodProbe')
 Copy-Tree (Join-Path $root 'packs/demo') (Join-Path $kit 'packs/demo')
 Copy-Tree (Join-Path $root 'docs') (Join-Path $kit 'docs')
 New-Item -ItemType Directory -Force -Path (Join-Path $kit 'gamepacks'),(Join-Path $kit 'assets') | Out-Null
@@ -58,6 +59,8 @@ foreach($project in @($desktop,$diagnostics)) {
 if($LASTEXITCODE -ne 0) { throw 'Application compile failed.' }
 & dotnet publish $diagnostics -c Release --no-restore --no-self-contained -p:DebugType=None -p:DebugSymbols=false "-p:PathMap=$pathMap" -o (Join-Path $kit 'prebuilt/devtools') --nologo
 if($LASTEXITCODE -ne 0) { throw 'Developer tool compile failed.' }
+& dotnet publish (Join-Path $kit 'tools/FmodProbe/ApexAudio.FmodProbe.csproj') -c Release --no-self-contained -p:DebugType=None -p:DebugSymbols=false "-p:PathMap=$pathMap" -o (Join-Path $kit 'prebuilt/fmod-probe') --configfile (Join-Path $kit 'NuGet.Config') --nologo
+if($LASTEXITCODE -ne 0) { throw 'FMOD probe compile failed.' }
 # Compile the included adapter backends.
 foreach($backend in @('Wwise','Fmod','Unreal','Mock')) {
     & dotnet build (Join-Path $kit "adapters/$backend/ApexAudio.$backend.csproj") -c Release --configfile (Join-Path $kit 'NuGet.Config') --nologo
@@ -74,7 +77,7 @@ foreach($base in @($kit,$app)) {
         $relative -match '(^|[\\/])(bin|obj)([\\/]|$)' -or $_.Extension -eq '.pdb'
     })
     foreach($file in $generated) { Remove-Item -LiteralPath $file.FullName }
-    $empty=@(Get-ChildItem -LiteralPath $base -Directory -Recurse | Sort-Object { $_.FullName.Length } -Descending)
+    $empty=@(Get-ChildItem -LiteralPath $base -Directory -Recurse | Where-Object { -not $_.FullName.StartsWith((Join-Path $kit 'toolchain'),[StringComparison]::OrdinalIgnoreCase) } | Sort-Object { $_.FullName.Length } -Descending)
     foreach($directory in $empty) { if(-not (Get-ChildItem -LiteralPath $directory.FullName -Force | Select-Object -First 1)) { Remove-Item -LiteralPath $directory.FullName } }
 }
 foreach($base in @($kit,$app)) {

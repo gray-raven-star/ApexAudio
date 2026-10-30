@@ -14,3 +14,7 @@
 选择能区分背景音乐、对白和动作音的场景，逐组试听并检查反馈选择。记录接口发现、构建、音轨及补充震动的测试结果，供游戏更新后复测。
 
 使用 AI 协助制作时，将根目录的 [AI-INSTRUCTIONS.md](AI-INSTRUCTIONS.md) 交给它作为操作入口；接口、字段和工具说明按上述文档查阅。
+
+需要目标运行时，开发者或 AI 可按已确认方式自行启动；登录、离线启动选择、存档操作等确需用户处理时才请求协助。已有短时验证通过后，按用户约定交付，避免重复测试。
+
+新增调查工具见[最小验证](docs/authoring/first-probes.md)、[有限代码分析](docs/authoring/code-analysis.md)与[发布说明](docs/authoring/publishing.md)。
