@@ -39,7 +39,7 @@ Setup 只检查，不自动下载软件或修改系统权限。失败先读报�
 dotnet publish tools/DevTools/ApexAudio.DevTools.csproj -c Release -o prebuilt/devtools --configfile NuGet.Config
 ```
 
-默认缓存可由构建脚本初始化在项目 .cache/；直接运行诊断 exe 时可在当前终端设置 $env:APEX_AUDIO_TEMP 到自己可写的本地目录，避免不同进程的环境变量不继承问题。详见 [权限与临时目录排查](troubleshooting.md)。
+默认缓存可由构建脚本初始化在项目 .cache/；直接运行诊断 exe 时可在当前终端设置 $env:APEX_AUDIO_TEMP 到自己可写的本地目录，避免不同进程的环境变量不继承问题。详见 [权限与临时目录排查](../authoring/troubleshooting.md)。
 
 FMOD 自检源码可单独发布：
 
@@ -47,7 +47,7 @@ FMOD 自检源码可单独发布：
 dotnet publish tools/FmodProbe/ApexAudio.FmodProbe.csproj -c Release -o prebuilt/fmod-probe --configfile NuGet.Config
 ```
 
-其输入、版本边界及验证范围见 [最小实验](first-probes.md)。
+其输入、版本边界及验证范围见 [最小实验](../authoring/first-probes.md)。
 
 ## 构建主程序与离线检查
 
@@ -61,7 +61,7 @@ pwsh -File tools/Build.ps1 -Test
 
 ## 构建新游戏包
 
-先按 [适配包制作指南](gamepack-authoring.md) 独立取得目标游戏配置，并把定义放进 `gamepacks/<你的包ID>/`。以下命令只构建完整包，不会自动发现配置是否正确，也不会自动连接游戏。按采用的引擎选择对应命令：
+先按 [适配包制作指南](../authoring/gamepack-authoring.md) 独立取得目标游戏配置，并把定义放进 `gamepacks/<你的包ID>/`。以下命令只构建完整包，不会自动发现配置是否正确，也不会自动连接游戏。按采用的引擎选择对应命令：
 
 ```powershell
 dotnet restore adapters/Wwise/ApexAudio.Wwise.csproj --configfile NuGet.Config

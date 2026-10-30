@@ -9,7 +9,7 @@ args = parser.parse_args()
 try:
     from capstone import Cs, CS_ARCH_X86, CS_MODE_64
 except ImportError:
-    parser.error('Optional dependency missing: create a Python venv and install capstone==5.0.6; see docs/investigation.md.')
+    parser.error('Optional dependency missing: create a Python venv and install capstone==5.0.6; see docs/authoring/investigation.md.')
 source = Path(args.input)
 if source.stat().st_size > 16384:
     parser.error('Only bounded snippets up to 16384 bytes are accepted.')

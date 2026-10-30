@@ -15,11 +15,11 @@ The application and game adapters are separate assets on the same Release page. 
 
 ## Develop an adapter
 
-Start with [START-HERE.md](START-HERE.md), then read the [game-pack authoring guide](docs/gamepack-authoring.md). Generic templates and engine adapters are included; ready-to-import game packages are distributed through GitHub Releases.
+Start with [START-HERE.md](START-HERE.md), then read the [game-pack authoring guide](docs/authoring/gamepack-authoring.md). Generic templates and engine adapters are included; ready-to-import game packages are distributed through GitHub Releases.
 
 ## Build from source
 
-Windows x64, PowerShell 7, and the .NET 8 SDK are required. See the [development guide](docs/development.md) and [build environment](docs/build-environment.md).
+Windows x64, PowerShell 7, and the .NET 8 SDK are required. See the [development guide](docs/development/adapter-maintenance.md) and [build environment](docs/development/build-environment.md).
 
 ```powershell
 pwsh -File tools/Build.ps1 -Test

@@ -38,12 +38,12 @@ switch ($game.backend) {
             if ($evidence.packId -ne $manifest.id -or $evidence.packVersion -ne $manifest.version) { throw 'Group evidence identity does not match the package.' }
             foreach ($bus in @($game.buses | Where-Object { -not $_.auxiliary -and $_.slot -ge 0 })) {
                 $entries = @($evidence.groups | Where-Object { "$($_.id)" -eq "$($bus.id)" })
-                if ($entries.Count -ne 1) { throw "Supply one effect-slot evidence record for bus $($bus.id). See docs/group-evidence.md." }
+                if ($entries.Count -ne 1) { throw "Supply one effect-slot evidence record for bus $($bus.id). See docs/reference/group-evidence.md." }
                 $effect = $entries[0].effects
                 if ($bus.slot -gt 3 -or $effect.selectedSlot -ne $bus.slot -or $effect.occupiedSlots -contains $bus.slot) { throw "Effect-slot conflict for bus $($bus.id). Full slots must use slot=-1." }
                 if ($effect.verification -notin @('static-only','runtime-verified') -or -not $effect.source -or $effect.sourceSha256 -notmatch '^[0-9a-fA-F]{64}$' -or $effect.targetSha256 -ne $game.engineSha256) { throw "Effect-slot evidence is incomplete for bus $($bus.id). Static evidence does not guarantee runtime ownership." }
             }
-        } else { Write-Warning 'Legacy definition has no group-evidence.json. Static/runtime slot verification is not recorded; see docs/group-evidence.md.' }
+        } else { Write-Warning 'Legacy definition has no group-evidence.json. Static/runtime slot verification is not recorded; see docs/reference/group-evidence.md.' }
         & dotnet restore (Join-Path $root 'adapters/Wwise/ApexAudio.Wwise.csproj') --configfile (Join-Path $root 'NuGet.Config') --nologo
         if ($LASTEXITCODE -ne 0) { throw 'Adapter restore failed.' }
         & (Join-Path $root 'adapters/Wwise/tools/BuildPack.ps1') -DefinitionDirectory $definitionRoot -Compiler $zig

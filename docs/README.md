@@ -1,23 +1,50 @@
-# 开发文档
+# 文档入口
 
-先读根目录 [START-HERE](../START-HERE.md)，不需要一次读完全部文档。
+使用说明位于 `user/`；适配制作方法位于 `authoring/`；格式和字段位于 `reference/`；架构、环境及实现维护位于 `development/`。
 
-| 任务 | 文档 |
+## 使用软件
+
+- [项目首页](../README.md)：下载、导入适配包和运行条件。
+- [连接、录音和设置](user/settings-recording.md)。
+- [当前能力与限制](user/capabilities.md)。
+
+## 制作适配包
+
+从[开发入口](../START-HERE.md)开始，按需查阅：
+
+| 文档 | 用途 |
 |---|---|
-| 环境与首次构建 | [构建环境](build-environment.md) |
-| 在宣布不兼容前做小实验 | [最小验证](first-probes.md) |
-| 从空白到完整包 | [适配流程](gamepack-authoring.md) |
-| 找资源、接口与运行实例 | [调查方法](investigation.md) |
-| 复用现有 Wwise / FMOD / Unreal | [后端边界](backend-configs.md)、[字段参考](engine-config-reference.md) |
-| 实现不同定位器或新采集模块 | [新模块开发](new-module.md) |
-| 分组名称、FX 槽、初始预设 | [分组依据](group-evidence.md) |
-| 空数据、重复音轨、延迟与模块残留 | [链路排查](troubleshooting.md) |
-| 诊断命令与实测范围 | [验证说明](validation.md) |
-| 确有缺口才做反编译 | [有限代码分析](code-analysis.md) |
-| 包格式、控制与音频传输 | [包格式](gpack-format.md)、[适配器协议](adapter-protocol.md) |
-| 用户设置和时间轴 | [预设与录音](presets-recordings.md)、[录音设置](settings-recording.md) |
-| 职责边界与反馈提供器 | [架构](architecture.md)、[X-Haptics](xhaptics-provider.md) |
+| [制作指南](authoring/gamepack-authoring.md) | 从目标调查到包交付的完整流程 |
+| [接口识别](authoring/audio-discovery.md) | Wwise、FMOD、Unreal 的复用判断 |
+| [调查工具与资料检索](authoring/investigation.md) | 静态检查、运行时读取和反汇编 |
+| [容器元数据](authoring/container-metadata.md) | RE Pak、UE Pak 读取、补丁合并和名称候选 |
+| [新模块开发](authoring/new-module.md) | 自定义采集器的实现要求、回调、传输和资源释放 |
+| [故障排查](authoring/troubleshooting.md) | 按注册、回调、PCM、录音和反馈分层排错 |
+| [验证与报告](authoring/validation.md) | 诊断命令、报告字段和各阶段验收要求 |
 
-开发包包含源码、空白模板、可移植 Zig 和预编译诊断工具。运行包的 docs 只供查阅，不能替代完整开发项目。只克隆源码时按环境说明准备缺少的工具。
+实现要求和验收项目供开发者逐项完成；目标游戏实际完成的测试记录在随包 README 和验证报告中。
 
-实际游戏运行验证可由开发者或 AI 按已确认方式启动，不固定要求用户手动打开。验证范围按当前任务约定，资源、注册、真实 PCM 与物理反馈分别记录。
+## 格式与接口
+
+| 文档 | 内容 |
+|---|---|
+| [适配包格式](reference/gpack-format.md) | manifest、版本识别、文件清单、导入与更新 |
+| [适配器协议](reference/adapter-protocol.md) | 控制命令、独立 PCM、低延迟反馈共享缓冲区 |
+| [后端配置字段](reference/engine-config-reference.md) | game.json、字段来源和各后端限制 |
+| [分组证据](reference/group-evidence.md) | 名称来源、Wwise 效果槽和构建检查 |
+| [预设与录音格式](reference/presets-recordings.md) | 作者预设、用户副本和录音数据 |
+
+## 开发和维护
+
+- [构建环境](development/build-environment.md)：源码与开发套件的依赖、编译器和诊断工具。
+- [架构](development/architecture.md)：宿主、适配器及反馈提供器的职责。
+- [适配器维护与迁移](development/adapter-maintenance.md)：Mock、旧 Wwise 配置迁移和原生构建。
+- [X-Haptics 接入](development/xhaptics-provider.md)：反馈桥接和震动遥测。
+
+## AI 制作入口
+
+[AI-INSTRUCTIONS.md](../AI-INSTRUCTIONS.md) 用于指导 AI 按阶段调查、制作、验证和交接；技术细节引用上述说明。
+
+公开文档统一在本目录维护。开发套件包含这些文档、源码及 AI 制作入口；普通运行包仅携带 `user/` 使用说明和许可。`packaging/` 保存发布首页模板及图标素材。
+
+补充：[最小验证](authoring/first-probes.md)、[有限代码分析](authoring/code-analysis.md)、[发布适配包](authoring/publishing.md)。

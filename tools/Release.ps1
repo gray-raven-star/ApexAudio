@@ -1,8 +1,7 @@
 param(
     [ValidatePattern('^[a-zA-Z0-9.-]+$')][string]$Version='0.1.1',
     [Parameter(Mandatory)][string]$CompilerDirectory,
-    [string]$OutputDirectory,
-    [switch]$DevKitOnly
+    [string]$OutputDirectory
 )
 $ErrorActionPreference='Stop'
 $root=(Resolve-Path -LiteralPath (Split-Path $PSScriptRoot -Parent)).Path
@@ -19,7 +18,7 @@ function Copy-Tree([string]$Source,[string]$Destination) {
     $base=(Resolve-Path -LiteralPath $Source).Path
     foreach($file in Get-ChildItem -LiteralPath $base -File -Recurse) {
         $relative=[IO.Path]::GetRelativePath($base,$file.FullName)
-        if($relative -match '(^|[\\/])(bin|obj|data|artifacts|dist|\.git|\.cache|\.venv|__pycache__)([\\/]|$)') { continue }
+        if($relative -match '(^|[\\/])(bin|obj|data|artifacts|dist|\.git)([\\/]|$)') { continue }
         if($file.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Do not release reparse-point files.' }
         $target=Join-Path $Destination $relative
         [void][IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($target))
@@ -27,15 +26,12 @@ function Copy-Tree([string]$Source,[string]$Destination) {
     }
 }
 Write-Host 'Stage the application and adapter development kit.'
-foreach($directory in @('.github','src','adapters','providers','tests','schemas','ui','vendor','templates')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
-# Preserve only release inputs still used by this script, not duplicate manuals.
-Copy-Tree (Join-Path $root 'release-docs/assets') (Join-Path $kit 'release-docs/assets')
-foreach($name in @('README.md','THIRD-PARTY.md')) { Copy-Item -LiteralPath (Join-Path $root ('release-docs/'+$name)) -Destination (Join-Path $kit 'release-docs') }
+foreach($directory in @('.github','src','adapters','providers','tests','schemas','ui','vendor','templates','packaging')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
 # Source and runtime need one bridge revision, no old copies or debug artifacts.
 $native=Join-Path $kit 'providers/XHaptics/native'
 Get-ChildItem -LiteralPath $native -File | Where-Object Name -notin @('ApexGroupsBridge.c','ApexGroupsBridge-v5.dll','xh-support.json','xh-engines.json') | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
-foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','LICENSE','CONTRIBUTING.md','START-HERE.md','AI-INSTRUCTIONS.md')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
-foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','BuildNative.ps1','FindCompiler.ps1','Setup.ps1','Environment.ps1','New-Pack.ps1','Build-GamePack.ps1','Release.ps1','Disassemble.py')) {
+foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','README.md','README.en.md','START-HERE.md','AI-INSTRUCTIONS.md','CONTRIBUTING.md','THIRD-PARTY.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
+foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','MakeWwisePack.ps1','BuildNative.ps1','FindCompiler.ps1','Setup.ps1','Environment.ps1','New-Pack.ps1','Build-GamePack.ps1','Release.ps1','Disassemble.py')) {
     New-Item -ItemType Directory -Force -Path (Join-Path $kit 'tools') | Out-Null
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination (Join-Path $kit 'tools')
 }
@@ -43,14 +39,11 @@ Copy-Tree (Join-Path $root 'tools/DevTools') (Join-Path $kit 'tools/DevTools')
 Copy-Tree (Join-Path $root 'tools/Metadata') (Join-Path $kit 'tools/Metadata')
 Copy-Tree (Join-Path $root 'tools/FmodProbe') (Join-Path $kit 'tools/FmodProbe')
 Copy-Tree (Join-Path $root 'packs/demo') (Join-Path $kit 'packs/demo')
-New-Item -ItemType Directory -Force -Path (Join-Path $kit 'docs') | Out-Null
-foreach($file in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter '*.md' | Where-Object Name -notin @('rea-workflow.md','ui-copy-review.md')) { Copy-Item -LiteralPath $file.FullName -Destination (Join-Path $kit 'docs') }
-foreach($name in @('README.md','THIRD-PARTY.md')) { Copy-Item -LiteralPath (Join-Path $root ('release-docs/'+$name)) -Destination $kit }
+Copy-Tree (Join-Path $root 'docs') (Join-Path $kit 'docs')
 New-Item -ItemType Directory -Force -Path (Join-Path $kit 'gamepacks'),(Join-Path $kit 'assets') | Out-Null
 'Create and maintain game definitions in this directory. Use tools/New-Pack.ps1 to start a package.' | Set-Content -LiteralPath (Join-Path $kit 'gamepacks/README.md') -Encoding utf8
-Copy-Item -LiteralPath (Join-Path $root 'release-docs/assets/apex.ico') -Destination (Join-Path $kit 'assets/apex.ico')
-Copy-Item -LiteralPath (Join-Path $root 'release-docs/assets/apex.svg') -Destination (Join-Path $kit 'assets/apex.svg')
-# Backend manuals are copied with their source; docs/ is the single manual input.
+Copy-Item -LiteralPath (Join-Path $root 'packaging/assets/apex.ico') -Destination (Join-Path $kit 'assets/apex.ico')
+Copy-Item -LiteralPath (Join-Path $root 'packaging/assets/apex.svg') -Destination (Join-Path $kit 'assets/apex.svg')
 Write-Host 'Copy portable Zig with its complete library and license tree.'
 $compiler=(Resolve-Path -LiteralPath $CompilerDirectory).Path
 Copy-Tree $compiler (Join-Path $kit 'toolchain/zig')
@@ -73,11 +66,11 @@ foreach($backend in @('Wwise','Fmod','Unreal','Mock')) {
     & dotnet build (Join-Path $kit "adapters/$backend/ApexAudio.$backend.csproj") -c Release --configfile (Join-Path $kit 'NuGet.Config') --nologo
     if($LASTEXITCODE -ne 0) { throw "Adapter compile failed: $backend" }
 }
-Copy-Tree (Join-Path $kit 'docs') (Join-Path $app 'docs')
-foreach($name in @('README.md','THIRD-PARTY.md','LICENSE','START-HERE.md','AI-INSTRUCTIONS.md')) { Copy-Item -LiteralPath (Join-Path $kit $name) -Destination $app }
+Copy-Tree (Join-Path $kit 'docs/user') (Join-Path $app 'docs/user')
+Copy-Item -LiteralPath (Join-Path $kit 'packaging/README.release.md') -Destination (Join-Path $app 'README.md')
+foreach($name in @('THIRD-PARTY.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $kit $name) -Destination $app }
 Copy-Item -LiteralPath (Join-Path $kit 'vendor/webview2/LICENSE.txt') -Destination (Join-Path $app 'WebView2-LICENSE.txt')
 # Clean compile intermediates from the source distribution, using only exact files.
-Write-Host 'Remove generated build files; leave the portable compiler library untouched.'
 foreach($base in @($kit,$app)) {
     $generated=@(Get-ChildItem -LiteralPath $base -File -Recurse | Where-Object {
         $relative=[IO.Path]::GetRelativePath($base,$_.FullName)
@@ -87,20 +80,13 @@ foreach($base in @($kit,$app)) {
     $empty=@(Get-ChildItem -LiteralPath $base -Directory -Recurse | Where-Object { -not $_.FullName.StartsWith((Join-Path $kit 'toolchain'),[StringComparison]::OrdinalIgnoreCase) } | Sort-Object { $_.FullName.Length } -Descending)
     foreach($directory in $empty) { if(-not (Get-ChildItem -LiteralPath $directory.FullName -Force | Select-Object -First 1)) { Remove-Item -LiteralPath $directory.FullName } }
 }
-Write-Host 'Hash release files with direct file streams.'
 foreach($base in @($kit,$app)) {
     $files=[ordered]@{}
-    foreach($path in [IO.Directory]::EnumerateFiles($base,'*',[IO.SearchOption]::AllDirectories) | Sort-Object) {
-        $stream=[IO.File]::OpenRead($path)
-        try { $hash=[Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($stream)) } finally { $stream.Dispose() }
-        $files[[IO.Path]::GetRelativePath($base,$path).Replace('\','/')]=$hash
-    }
+    foreach($file in Get-ChildItem -LiteralPath $base -File -Recurse | Sort-Object FullName) { $files[[IO.Path]::GetRelativePath($base,$file.FullName).Replace('\','/')]=(Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash }
     @{version=$Version;sourceCompiled=$true;files=$files} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $base 'release-manifest.json') -Encoding utf8
 }
 Write-Host 'Create application and developer archives.'
-$archives=@(@{root=$kit;name="ApexAudio-DevKit-$Version.zip"})
-if(-not $DevKitOnly) { $archives=@(@{root=$app;name="ApexAudio-Windows-x64-$Version.zip"})+$archives }
-foreach($spec in $archives) {
+foreach($spec in @(@{root=$app;name="ApexAudio-Windows-x64-$Version.zip"},@{root=$kit;name="ApexAudio-DevKit-$Version.zip"})) {
     $archive=Join-Path $output $spec.name
     if(Test-Path -LiteralPath $archive) { throw "Release already exists: $archive" }
     [IO.Compression.ZipFile]::CreateFromDirectory($spec.root,$archive,[IO.Compression.CompressionLevel]::Optimal,$true)
