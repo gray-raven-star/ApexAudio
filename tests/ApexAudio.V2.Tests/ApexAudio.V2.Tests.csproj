@@ -1,1 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType></PropertyGroup><ItemGroup><ProjectReference Include="../../src/ApexAudio.Core/ApexAudio.Core.csproj" /></ItemGroup></Project>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/ApexAudio.Core/ApexAudio.Core.csproj" />
+    <Compile Include="../../adapters/Fmod/GameDefinition.cs" Link="FmodGameDefinition.cs" />
+  </ItemGroup>
+</Project>

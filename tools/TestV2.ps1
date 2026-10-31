@@ -16,7 +16,7 @@ foreach ($line in Get-Content -LiteralPath (Join-Path $packages 'SHA256SUMS.txt'
 if ($Compiler) {
     # Rebuild into a separate test directory; never replace the historical inputs.
     $output = Join-Path $projectRoot ('artifacts/source-v2-' + [Guid]::NewGuid().ToString('N'))
-    $backend = Join-Path $output 'ApexAudio-Fmod-0.2.0.gbackend'
+    $backend = Join-Path $output 'ApexAudio-Fmod-0.3.0.gbackend'
     & (Join-Path $PSScriptRoot 'BuildV2Backend.ps1') -Compiler $Compiler -Destination $backend
     if ($LASTEXITCODE -ne 0) { throw 'Source backend build failed.' }
     & dotnet build (Join-Path $projectRoot 'tools/PackV2/ApexAudio.PackV2.csproj') -c Release -m:1 --nologo
@@ -29,9 +29,20 @@ if ($Compiler) {
         [IO.Compression.ZipFile]::ExtractToDirectory($pack.FullName, $definition)
         $manifestPath = Join-Path $definition 'manifest.json'
         $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
-        foreach ($profile in $manifest.profiles) { $profile.backend.descriptorSha256 = $digest }
+        $manifest.version = '0.3.0'; $manifest.minHostVersion = '0.3.0'
+        foreach ($profile in $manifest.profiles) {
+            $profile.backend.version = '0.3.0'; $profile.backend.descriptorSha256 = $digest
+            $parametersPath = Join-Path $definition $profile.parameters
+            $parameters = Get-Content -LiteralPath $parametersPath -Raw | ConvertFrom-Json -AsHashtable
+            foreach ($build in $manifest.games | Where-Object profileId -eq $profile.id) {
+                $build | Add-Member -NotePropertyName modules -NotePropertyValue $parameters.modules -Force
+            }
+            foreach ($name in @('executable','executableSha256','modules','captureFile','captureSha256')) { $parameters.Remove($name) }
+            $parameters.schemaVersion = 2
+            $parameters | ConvertTo-Json -Depth 64 | Set-Content -LiteralPath $parametersPath -Encoding utf8
+        }
         $manifest | ConvertTo-Json -Depth 64 | Set-Content -LiteralPath $manifestPath -Encoding utf8
-        & dotnet (Join-Path $projectRoot 'tools/PackV2/bin/Release/net8.0-windows/ApexAudio.PackV2.dll') $definition (Join-Path $output $pack.Name)
+        & dotnet (Join-Path $projectRoot 'tools/PackV2/bin/Release/net8.0-windows/ApexAudio.PackV2.dll') $definition (Join-Path $output ($pack.Name -replace '0\.2\.0', '0.3.0'))
         if ($LASTEXITCODE -ne 0) { throw 'Source test configuration packaging failed.' }
     }
     $packages = $output

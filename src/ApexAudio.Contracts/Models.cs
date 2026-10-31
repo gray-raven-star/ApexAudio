@@ -44,7 +44,8 @@ public sealed class PackManifest
     public string? MinHostVersion { get; set; }
     public List<CaptureProfile> Profiles { get; set; } = new();
 }
-public sealed record GameMatch(string Executable, string? Sha256 = null, string? ProfileId = null);
+public sealed record GameMatch(string Executable, string? Sha256 = null, string? ProfileId = null,
+    Dictionary<string, string>? Modules = null);
 
 public sealed class SoundPreset
 {

@@ -46,7 +46,7 @@ public sealed class AudioWorkspace : IAsyncDisposable
         client.Audio += Accept; client.Failed += reason => { if (!ReferenceEquals(adapter, client)) return; status = reason; ConnectionLost?.Invoke(connectionId, reason); };
         try
         {
-            await client.Launch(pack, path); await client.Connect(pid, path); Groups = client.Groups; GamePid = pid;
+            await client.Launch(pack, path, pid); await client.Connect(pid, path); Groups = client.Groups; GamePid = pid;
             var options = Presets.List(pack); string? first = options.FirstOrDefault(o => o.Id == LastPresetId)?.Id ?? options.FirstOrDefault()?.Id;
             Preset = previousPreset ?? (first != null ? Presets.Load(pack, first, Groups) : Presets.Empty(pack, Groups)); LastPresetId = Preset.Id; Dirty = previousPreset != null && previousDirty;
             Apply(); status = "已连接 · 等待音频数据";

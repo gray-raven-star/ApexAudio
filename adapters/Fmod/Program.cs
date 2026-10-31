@@ -14,25 +14,8 @@ sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter, IPreparedAdapter
     CancellationTokenSource? capture; Task? worker; long dropped; string detail = "等待游戏连接";
     public AdapterInfo Info => new("fmod.profile", game.Name, Wire.Version, new(true, true, true, false, false, true));
     public IReadOnlyList<AudioGroup> Groups { get; }
-    long? validatedStart;
     public BackendIdentity BackendIdentity => game.Identity ?? throw new IOException("当前使用 V1 包内配置。");
-    public TargetValidation ValidateTarget(ConnectRequest request)
-    {
-        try
-        {
-            game.Validate(); using var p = Process.GetProcessById(request.ProcessId);
-            string path = p.MainModule?.FileName ?? throw new IOException("无法读取目标进程路径。");
-            if (!Path.GetFileName(path).Equals(game.Executable,StringComparison.OrdinalIgnoreCase) || request.GamePath != null && !Path.GetFullPath(request.GamePath).Equals(path,StringComparison.OrdinalIgnoreCase) || !Native.Hash(path).Equals(game.ExecutableSha256,StringComparison.OrdinalIgnoreCase)) throw new IOException("目标游戏构建不匹配。");
-            foreach(var (name,hash) in game.Modules) {
-                var module=p.Modules.Cast<ProcessModule>().SingleOrDefault(m=>m.ModuleName.Equals(name,StringComparison.OrdinalIgnoreCase));
-                if(module==null || !Native.Hash(module.FileName).Equals(hash,StringComparison.OrdinalIgnoreCase)) throw new IOException("关键音频模块不匹配："+name);
-            }
-            long started=p.StartTime.ToUniversalTime().Ticks;
-            if(validatedStart != null && validatedStart != started) throw new IOException("目标进程已更换，请重新连接。");
-            validatedStart=started; return new(true,"游戏构建和关键模块匹配；采集效果仍需实测。");
-        }
-        catch(Exception e) { return new(false,e.Message); }
-    }
+    public TargetValidation ValidateTarget(ConnectRequest request) => game.ValidateTarget(request);
     public AdapterStatus Status => new(target != null && !target.Process.HasExited, worker is { IsCompleted: false }, detail, dropped);
     public FeedbackSource FeedbackSource => new("apex-f32-planar-ring-v1", $"Local\\ApexFmodMix-{target?.Process.Id ?? throw new IOException("尚未连接。")}", target.Process.Id);
     public FmodAdapter(GameDefinition definition)

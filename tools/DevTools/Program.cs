@@ -126,7 +126,7 @@ try
         client.Failed += message => { lock(gate) errors.Add(message); };
         string? launchPath = null;
         if (command == "capture") { using var selectedGame = Process.GetProcessById(int.Parse(Required("--pid"))); launchPath = selectedGame.MainModule?.FileName; }
-        context.Stage = "adapter-launch"; await client.Launch(pack, launchPath); context.AdapterExecuted = true;
+        context.Stage = "adapter-launch"; await client.Launch(pack, launchPath, command == "capture" ? int.Parse(Required("--pid")) : null); context.AdapterExecuted = true;
         context.Stage = "protocol";
         var groups=await client.Call<List<AudioGroup>>("GetAudioGroups");
         AdapterStatus? status=null; object? realtime=null;

@@ -25,32 +25,42 @@ public sealed class AdapterClient : IAsyncDisposable
         control = new(controlName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly);
         audio = new(audioName, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly);
     }
-    public async Task Launch(InstalledPack pack, string? gamePath = null)
+    public async Task Launch(InstalledPack pack, string? gamePath = null, int? processId = null)
     {
-        PackageStore.Validate(pack.Directory, pack.Manifest);
-        string executable = pack.Manifest.EntryPoint, programRoot = pack.Directory;
-        if (pack.Manifest.SchemaVersion == 2)
+        try
         {
-            var profile = V2Packages.Select(pack, gamePath);
-            string dataRoot = Path.GetDirectoryName(Path.GetDirectoryName(pack.Directory))!;
-            programRoot = new BackendStore(dataRoot).Resolve(profile.Backend);
-            var descriptor = BackendFiles.Read(programRoot, profile.Backend); executable = descriptor.EntryPoint;
-            var parameters = System.Text.Json.JsonDocument.Parse(File.ReadAllText(PackageStore.SafePath(pack.Directory, profile.Parameters)));
-            var context = new LaunchContext(1, pack.Manifest.Id, pack.Manifest.Version, PackageStore.Hash(Path.Combine(pack.Directory,"manifest.json")), profile.Id, profile.Backend, parameters.RootElement.Clone());
-            string sessions = Path.Combine(dataRoot, "sessions"); Directory.CreateDirectory(sessions);
-            contextFile = Path.Combine(sessions, Guid.NewGuid().ToString("N") + ".json");
-            File.WriteAllText(contextFile, System.Text.Json.JsonSerializer.Serialize(context, Wire.Json));
-            parameters.Dispose();
-            backendIdentity = new(profile.Backend.Id, profile.Backend.Version, profile.Backend.Variant, PackageStore.Hash(contextFile));
+            PackageStore.Validate(pack.Directory, pack.Manifest);
+            string executable = pack.Manifest.EntryPoint, programRoot = pack.Directory;
+            if (pack.Manifest.SchemaVersion == 2)
+            {
+                var profile = V2Packages.Select(pack, gamePath);
+                string dataRoot = Path.GetDirectoryName(Path.GetDirectoryName(pack.Directory))!;
+                programRoot = new BackendStore(dataRoot).Resolve(profile.Backend);
+                var descriptor = BackendFiles.Read(programRoot, profile.Backend); executable = descriptor.EntryPoint;
+                using var parameters = System.Text.Json.JsonDocument.Parse(File.ReadAllText(PackageStore.SafePath(pack.Directory, profile.Parameters)));
+                GameMatch? build = null; TargetIdentity? target = null;
+                if (descriptor.ContextVersion == 2 && gamePath != null)
+                {
+                    build = V2Packages.SelectBuild(pack, gamePath);
+                    if (build.ProfileId != profile.Id || processId == null) throw new IOException("缺少一致的游戏构建或目标进程。");
+                    target = TargetIdentity.Read(processId.Value);
+                    target.Validate(new(processId.Value, gamePath));
+                }
+                var context = new LaunchContext(descriptor.ContextVersion, pack.Manifest.Id, pack.Manifest.Version, PackageStore.Hash(Path.Combine(pack.Directory,"manifest.json")), profile.Id, profile.Backend, parameters.RootElement.Clone(), build, target);
+                string sessions = Path.Combine(dataRoot, "sessions"); Directory.CreateDirectory(sessions);
+                contextFile = Path.Combine(sessions, Guid.NewGuid().ToString("N") + ".json");
+                File.WriteAllText(contextFile, System.Text.Json.JsonSerializer.Serialize(context, Wire.Json));
+                backendIdentity = new(profile.Backend.Id, profile.Backend.Version, profile.Backend.Variant, PackageStore.Hash(contextFile));
+            }
+            var start = new ProcessStartInfo(PackageStore.SafePath(programRoot, executable)) { WorkingDirectory = programRoot, UseShellExecute = false, CreateNoWindow = true };
+            if (contextFile != null) { start.ArgumentList.Add("--context"); start.ArgumentList.Add(contextFile); }
+            start.ArgumentList.Add("--control"); start.ArgumentList.Add(controlName);
+            start.ArgumentList.Add("--audio"); start.ArgumentList.Add(audioName);
+            using var timeout = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token); timeout.CancelAfter(10000);
+            var c = control.WaitForConnectionAsync(timeout.Token); var a = audio.WaitForConnectionAsync(timeout.Token);
+            process = Process.Start(start) ?? throw new IOException("适配程序未能启动。");
+            await Task.WhenAll(c, a); Info = await Call<AdapterInfo>("GetInfo"); if (Info.ProtocolVersion != Wire.Version) throw new IOException("适配程序协议版本不匹配。"); if (backendIdentity != null && await Call<BackendIdentity>("GetBackendInfo") != backendIdentity) throw new IOException("实际后端身份与启动配置不匹配。"); receive = Task.Run(Receive);
         }
-        var start = new ProcessStartInfo(PackageStore.SafePath(programRoot, executable)) { WorkingDirectory = programRoot, UseShellExecute = false, CreateNoWindow = true };
-        if (contextFile != null) { start.ArgumentList.Add("--context"); start.ArgumentList.Add(contextFile); }
-        start.ArgumentList.Add("--control"); start.ArgumentList.Add(controlName);
-        start.ArgumentList.Add("--audio"); start.ArgumentList.Add(audioName);
-        using var timeout = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token); timeout.CancelAfter(10000);
-        var c = control.WaitForConnectionAsync(timeout.Token); var a = audio.WaitForConnectionAsync(timeout.Token);
-        process = Process.Start(start) ?? throw new IOException("适配程序未能启动。");
-        try { await Task.WhenAll(c, a); Info = await Call<AdapterInfo>("GetInfo"); if (Info.ProtocolVersion != Wire.Version) throw new IOException("适配程序协议版本不匹配。"); if (backendIdentity != null && await Call<BackendIdentity>("GetBackendInfo") != backendIdentity) throw new IOException("实际后端身份与启动配置不匹配。"); receive = Task.Run(Receive); }
         catch { await DisposeAsync(); throw; }
     }
     public async Task<T> Call<T>(string method, object? parameters = null, int timeoutMs = 8000)

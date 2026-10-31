@@ -2,6 +2,8 @@
 
 使用说明位于 `user/`；适配制作方法位于 `authoring/`；格式和字段位于 `reference/`；架构、环境及实现维护位于 `development/`。
 
+[项目术语](../CONTEXT.md)统一游戏音频系统、采集后端、适配包和采集会话的含义。
+
 ## 使用软件
 
 - [项目首页](../README.md)：下载、导入适配包和运行条件。
@@ -36,8 +38,8 @@
 
 ## 开发和维护
 
-- [Owner FMOD 试验基线](development/owner-v2-baseline.md)：源码来源、验证证据、已知契约缺口与后续实施建议。
-- [V2 本地试验](development/v2-trial.md)：当前 FMOD 试验格式、离线共享后端与工具入口；尚不是正式 V2 规范。
+- [Owner FMOD 试验基线](development/owner-v2-baseline.md)：原始交付来源、旧后端与新源码验证、当前限制及后续范围。
+- [FMOD JSON 共享后端试验](development/v2-trial.md)：0.3.0 构建/参数分离、目标上下文和 0.2.0 兼容边界；尚不是完整 V2 规范。
 - [构建环境](development/build-environment.md)：源码与开发套件的依赖、编译器和诊断工具。
 - [架构](development/architecture.md)：宿主、适配器及反馈提供器的职责。
 - [适配器维护与迁移](development/adapter-maintenance.md)：Mock、旧 Wwise 配置迁移和原生构建。
