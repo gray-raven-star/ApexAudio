@@ -1,4 +1,4 @@
-/* FMOD 2.02 pass-through DSP taps. All game differences arrive as package data.
+/* FMOD 2.02/2.03 pass-through DSP taps. All game differences arrive as package data.
  * Uses FMOD's exported C API; never changes game audio volumes or output buffers. */
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
@@ -23,6 +23,11 @@ typedef struct {void*bus,*group,*dsp;volatile LONG selected,touched;uint32_t fra
 static Configuration cfg;static Source*source;static Recording*recording;static HANDLE sourceMap,recordMap;
 static Route routes[ROUTES];static void*studio,*core,*masterDsp,*masterGroup;
 static int(*studioValid)(void*),(*getCore)(void*,void**),(*getVersion)(void*,unsigned*),(*getFormat)(void*,int*,int*,int*);
+static int runtimeVersion(void*system,unsigned*version){
+ if((cfg.runtimeVersion>>8)==0x203){unsigned build=0;int(*v203)(void*,unsigned*,unsigned*)=(void*)getVersion;return v203(system,version,&build);}
+ if((cfg.runtimeVersion>>8)==0x202)return getVersion(system,version);
+ return 1;
+}
 static int(*getBus)(void*,const void*,void**),(*busLock)(void*),(*busUnlock)(void*),(*busGroup)(void*,void**);
 static int(*createDsp)(void*,const Description*,void**),(*dspUser)(void*,void*),(*getDspUser)(void*,void**);
 static int(*addDsp)(void*,int,void*),(*removeDsp)(void*,void*),(*releaseDsp)(void*),(*lockDsp)(void*),(*unlockDsp)(void*),(*getMaster)(void*,void**);
@@ -73,7 +78,7 @@ API DWORD FmodStop(void*unused){
  for(unsigned i=0;i<cfg.count;i++){Route*r=&routes[i];if(r->dsp){removeDsp(r->group,r->dsp);releaseDsp(r->dsp);r->dsp=NULL;}if(r->bus){busUnlock(r->bus);r->bus=NULL;}}
  unlockDsp(core);return 0;
 }
-API DWORD FmodConfigure(void*configuration){if(source&&source->active)return 100;Configuration*c=configuration;if(!c||c->magic!=0x314d4641||c->version!=2||c->count<1||c->count>ROUTES||c->wrapperModule[127]||c->stateOffset>4092||c->studioOffset>4088)return 1;cfg=*c;return 0;}
+API DWORD FmodConfigure(void*configuration){if(source&&source->active)return 100;Configuration*c=configuration;if(!c||c->magic!=0x314d4641||c->version!=2||c->count<1||c->count>ROUTES||c->wrapperModule[127]||(c->wrapperRva?c->stateOffset>4092:c->stateOffset==0)||c->studioOffset>4088)return 1;cfg=*c;return 0;}
 #define LOAD(module,variable,entry) variable=(void*)GetProcAddress(module,entry);if(!variable)return 2
 API DWORD FmodStart(void*unused){
  (void)unused;if(source&&source->active)return 100;
@@ -82,9 +87,16 @@ API DWORD FmodStart(void*unused){
  LOAD(s,getBus,"FMOD_Studio_System_GetBusByID");LOAD(s,busLock,"FMOD_Studio_Bus_LockChannelGroup");LOAD(s,busUnlock,"FMOD_Studio_Bus_UnlockChannelGroup");LOAD(s,busGroup,"FMOD_Studio_Bus_GetChannelGroup");
  LOAD(c,createDsp,"FMOD_System_CreateDSP");LOAD(c,dspUser,"FMOD_DSP_SetUserData");LOAD(c,getDspUser,"FMOD_DSP_GetUserData");LOAD(c,addDsp,"FMOD_ChannelGroup_AddDSP");LOAD(c,removeDsp,"FMOD_ChannelGroup_RemoveDSP");LOAD(c,releaseDsp,"FMOD_DSP_Release");
  LOAD(c,lockDsp,"FMOD_System_LockDSP");LOAD(c,unlockDsp,"FMOD_System_UnlockDSP");LOAD(c,getMaster,"FMOD_System_GetMasterChannelGroup");
- unsigned char*object=*(void**)((unsigned char*)wrapper+cfg.wrapperRva);if(!object||*(unsigned*)(object+cfg.stateOffset)!=2)return 3;
- studio=*(void**)(object+cfg.studioOffset);if(!studioValid(studio)||getCore(studio,&core))return 3;
- unsigned version=0;if(getVersion(core,&version)||version!=cfg.runtimeVersion)return 4;int rate=0;if(getFormat(core,&rate,NULL,NULL)||rate!=48000)return 5;
+ if(!cfg.wrapperRva){studio=(void*)(uintptr_t)cfg.stateOffset;}
+ else {
+  MEMORY_BASIC_INFORMATION region;unsigned char**global=(void*)((unsigned char*)wrapper+cfg.wrapperRva);
+  if(!VirtualQuery(global,&region,sizeof(region))||region.State!=MEM_COMMIT||(region.Protect&(PAGE_NOACCESS|PAGE_GUARD))||(uintptr_t)global+sizeof(void*)>(uintptr_t)region.BaseAddress+region.RegionSize)return 3;
+  unsigned char*object=*global;size_t need=(cfg.stateOffset+4>cfg.studioOffset+8)?cfg.stateOffset+4:cfg.studioOffset+8;
+  if(!object||!VirtualQuery(object,&region,sizeof(region))||region.State!=MEM_COMMIT||(region.Protect&(PAGE_NOACCESS|PAGE_GUARD))||(uintptr_t)object+need>(uintptr_t)region.BaseAddress+region.RegionSize||*(unsigned*)(object+cfg.stateOffset)!=2)return 3;
+  studio=*(void**)(object+cfg.studioOffset);
+ }
+ if(!studioValid(studio)||getCore(studio,&core))return 3;
+ unsigned version=0;if(runtimeVersion(core,&version)||version!=cfg.runtimeVersion)return 4;int rate=0;if(getFormat(core,&rate,NULL,NULL)||rate!=48000)return 5;
  WCHAR mapping[64];if(!source){name(mapping,L"Local\\ApexFmodMix-");sourceMap=CreateFileMappingW(INVALID_HANDLE_VALUE,NULL,PAGE_READWRITE,0,sizeof(Source),mapping);if(sourceMap)source=MapViewOfFile(sourceMap,FILE_MAP_ALL_ACCESS,0,0,sizeof(Source));
   if(source&&source->magic==0x37504341&&source->active){UnmapViewOfFile(source);CloseHandle(sourceMap);source=NULL;sourceMap=NULL;return 108;}}
  if(!recording){name(mapping,L"Local\\ApexFmodTracks-");recordMap=CreateFileMappingW(INVALID_HANDLE_VALUE,NULL,PAGE_READWRITE,0,sizeof(Recording),mapping);if(recordMap)recording=MapViewOfFile(recordMap,FILE_MAP_ALL_ACCESS,0,0,sizeof(Recording));}

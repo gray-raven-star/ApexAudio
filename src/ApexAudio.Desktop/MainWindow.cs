@@ -93,7 +93,8 @@ sealed partial class MainWindow : Form
     {
         string key = pack.Manifest.Id + ":" + PackageStore.Hash(Path.Combine(pack.Directory, "manifest.json"));
         if (trusted.Contains(key)) return true;
-        if (MessageBox.Show(this, $"即将运行适配包中的程序。\n\n{pack.Manifest.Name}  {pack.Manifest.Version}\n作者：{pack.Manifest.Author}\n来源：{pack.Manifest.Source}\n\n请仅运行你信任的适配包。", "首次运行适配包", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK) return false;
+        string behavior = pack.Manifest.SchemaVersion == 2 ? "即将使用配置包指定的共享后端连接游戏。" : "即将运行适配包中的程序。";
+        if (MessageBox.Show(this, $"{behavior}\n\n{pack.Manifest.Name}  {pack.Manifest.Version}\n作者：{pack.Manifest.Author}\n来源：{pack.Manifest.Source}\n\n请仅运行你信任的适配包。", "首次运行适配包", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK) return false;
         trusted.Add(key); PresetStore.AtomicWrite(Path.Combine(dataRoot, "trusted.json"), trusted.ToArray()); return true;
     }
     async Task Connect()
@@ -120,11 +121,19 @@ sealed partial class MainWindow : Form
                 case "connect": autoSuppressed = null; nextConnectionRetry = 0; await RefreshGames(); await Connect(); break;
                 case "disconnect": autoSuppressed = workspace.Pack?.Manifest.Id; await EndRecording(); await workspace.Disconnect(); feedbackDetail = "反馈已关闭"; break;
                 case "install":
-                    using (var dialog = new OpenFileDialog { Filter = "游戏适配包 (*.gpack)|*.gpack", InitialDirectory = Path.Combine(AppContext.BaseDirectory, "packages") })
+                    using (var dialog = new OpenFileDialog { Filter = "适配包与共享后端 (*.gpack;*.gbackend)|*.gpack;*.gbackend", InitialDirectory = Path.Combine(AppContext.BaseDirectory, "packages") })
                     {
                         if (dialog.ShowDialog(this) != DialogResult.OK) break;
+                        if (Path.GetExtension(dialog.FileName).Equals(".gbackend", StringComparison.OrdinalIgnoreCase))
+                        {
+                            if (MessageBox.Show(this,"导入共享采集后端？后端包含可执行程序，请确认文件来源可信。","导入共享后端",MessageBoxButtons.OKCancel)!=DialogResult.OK) break;
+                            await EndRecording(); await workspace.Disconnect();
+                            await Task.Run(()=>new BackendStore(dataRoot).Install(dialog.FileName));
+                            MessageBox.Show(this,"共享后端已导入，可以连接对应的 V2 适配包。","导入完成"); break;
+                        }
                         var manifest = workspace.Packages.Inspect(dialog.FileName);
-                        if (MessageBox.Show(this, $"安装 {manifest.Name} {manifest.Version}\n作者：{manifest.Author}\n来源：{manifest.Source}\n\n适配包包含可执行程序。", "导入适配包", MessageBoxButtons.OKCancel) != DialogResult.OK) break;
+                        string contents = manifest.SchemaVersion == 2 ? "V2 配置包需要对应版本的共享后端。" : "适配包包含可执行程序。";
+                        if (MessageBox.Show(this, $"安装 {manifest.Name} {manifest.Version}\n作者：{manifest.Author}\n来源：{manifest.Source}\n\n{contents}", "导入适配包", MessageBoxButtons.OKCancel) != DialogResult.OK) break;
                         await EndRecording(); await workspace.Disconnect(); var installed = await Task.Run(() => workspace.Packages.Install(dialog.FileName)); await workspace.SelectPack(installed.Manifest.Id); autoSuppressed = null;
                     }
                     break;

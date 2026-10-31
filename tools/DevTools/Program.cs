@@ -115,7 +115,8 @@ try
         string temporaryRoot = Environment.GetEnvironmentVariable("APEX_AUDIO_TEMP") ?? Path.GetTempPath();
         string scratch = context.Scratch = Path.Combine(temporaryRoot,"ApexAudio-DevTools-"+Guid.NewGuid().ToString("N"));
         var pack = new PackageStore(scratch).Install(archive);
-        context.InstalledPackDirectory = pack.Directory; context.EntryPointPath = PackageStore.SafePath(pack.Directory, pack.Manifest.EntryPoint);
+        context.InstalledPackDirectory = pack.Directory; context.EntryPointPath = pack.Manifest.SchemaVersion == 1 ? PackageStore.SafePath(pack.Directory, pack.Manifest.EntryPoint) : null;
+        if (Option("--backend") is string backendArchive) new BackendStore(scratch).Install(Path.GetFullPath(backendArchive));
         context.ModulePaths = pack.Manifest.Files.Keys.Where(p => p.EndsWith(".dll", StringComparison.OrdinalIgnoreCase)).Select(p => PackageStore.SafePath(pack.Directory, p)).ToArray();
         bool launch = command == "capture" || args.Contains("--launch");
         if (!launch) { Emit(new { integrity=true, id=pack.Manifest.Id, version=pack.Manifest.Version, adapterExecuted=false, gameConnected=false, scratch }); return; }
@@ -123,7 +124,9 @@ try
         long packets=0, frames=0; var peaks=new Dictionary<uint,float>(); var payloads=new Dictionary<uint,string>(); object gate=new(); var errors=new List<string>();
         client.Audio += p => { lock(gate) { packets++; frames+=p.Frames; peaks[p.GroupIndex]=Math.Max(peaks.GetValueOrDefault(p.GroupIndex),p.Peak); if(p.Peak>0)payloads.TryAdd(p.GroupIndex,Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(p.Pcm))); } };
         client.Failed += message => { lock(gate) errors.Add(message); };
-        context.Stage = "adapter-launch"; await client.Launch(pack); context.AdapterExecuted = true;
+        string? launchPath = null;
+        if (command == "capture") { using var selectedGame = Process.GetProcessById(int.Parse(Required("--pid"))); launchPath = selectedGame.MainModule?.FileName; }
+        context.Stage = "adapter-launch"; await client.Launch(pack, launchPath); context.AdapterExecuted = true;
         context.Stage = "protocol";
         var groups=await client.Call<List<AudioGroup>>("GetAudioGroups");
         AdapterStatus? status=null; object? realtime=null;
@@ -156,7 +159,7 @@ try
         try { uint result=Marshal.GetDelegateForFunctionPointer<NativeCheck>(NativeLibrary.GetExport(module,entry))(0); Emit(new {file,sha256=PackageStore.Hash(file),entry,result,gameConnected=false}); if(result!=0)Environment.ExitCode=1; }
         finally { NativeLibrary.Free(module); }
     }
-    else if (command == "help") Console.WriteLine("ApexAudio.DevTools\ninspect --exe PATH [--pid PID] [--module NAME] [--resources DIR] [--output REPORT.json]\nread-memory --pid PID --address 0xADDRESS [--bytes 256] [--binary snippet.bin] [--output REPORT.json]\nbank-index --file RAW_BANK [--output REPORT.json]\ncheck --pack FILE.gpack [--launch] [--demo-audio] [--seconds 5] [--output REPORT.json]\ncapture --pack FILE.gpack --pid PID --allow-game-connection [--seconds 5] [--output REPORT.json]\nnative-check --module YOUR.dll --entry YOUR_SELF_TEST [--output REPORT.json]\ncheck without --launch only validates/extracts files. --launch executes adapter code. capture performs its normal game connection. native-check executes code in this process. No command starts physical feedback.");
+    else if (command == "help") Console.WriteLine("ApexAudio.DevTools\ninspect --exe PATH [--pid PID] [--module NAME] [--resources DIR] [--output REPORT.json]\nread-memory --pid PID --address 0xADDRESS [--bytes 256] [--binary snippet.bin] [--output REPORT.json]\nbank-index --file RAW_BANK [--output REPORT.json]\ncheck --pack FILE.gpack [--backend FILE.gbackend] [--launch] [--demo-audio] [--seconds 5] [--output REPORT.json]\ncapture --pack FILE.gpack [--backend FILE.gbackend] --pid PID --allow-game-connection [--seconds 5] [--output REPORT.json]\nnative-check --module YOUR.dll --entry YOUR_SELF_TEST [--output REPORT.json]\ncheck without --launch only validates/extracts files. --launch executes adapter code. capture performs its normal game connection. native-check executes code in this process. No command starts physical feedback.");
     else throw new ArgumentException("Unknown command: " + command);
 }
 catch(Exception e) { failure = e; Environment.ExitCode=1; }

@@ -41,8 +41,10 @@ public sealed class PackManifest
     public List<GameMatch> Games { get; set; } = new();
     public string[] Presets { get; set; } = Array.Empty<string>();
     public Dictionary<string, string> Files { get; set; } = new();
+    public string? MinHostVersion { get; set; }
+    public List<CaptureProfile> Profiles { get; set; } = new();
 }
-public sealed record GameMatch(string Executable, string? Sha256 = null);
+public sealed record GameMatch(string Executable, string? Sha256 = null, string? ProfileId = null);
 
 public sealed class SoundPreset
 {

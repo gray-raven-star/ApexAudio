@@ -11,6 +11,7 @@ public sealed class AdapterClient : IAsyncDisposable
     readonly CancellationTokenSource lifetime = new();
     readonly string controlName, audioName;
     Process? process; Task? receive; long id; int disposing;
+    string? contextFile; BackendIdentity? backendIdentity;
     public IReadOnlyList<AudioGroup> Groups { get; private set; } = Array.Empty<AudioGroup>();
     public AdapterInfo? Info { get; private set; }
     public event Action<AudioPacket>? Audio;
@@ -24,16 +25,32 @@ public sealed class AdapterClient : IAsyncDisposable
         control = new(controlName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly);
         audio = new(audioName, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly);
     }
-    public async Task Launch(InstalledPack pack)
+    public async Task Launch(InstalledPack pack, string? gamePath = null)
     {
         PackageStore.Validate(pack.Directory, pack.Manifest);
-        var start = new ProcessStartInfo(PackageStore.SafePath(pack.Directory, pack.Manifest.EntryPoint)) { WorkingDirectory = pack.Directory, UseShellExecute = false, CreateNoWindow = true };
+        string executable = pack.Manifest.EntryPoint, programRoot = pack.Directory;
+        if (pack.Manifest.SchemaVersion == 2)
+        {
+            var profile = V2Packages.Select(pack, gamePath);
+            string dataRoot = Path.GetDirectoryName(Path.GetDirectoryName(pack.Directory))!;
+            programRoot = new BackendStore(dataRoot).Resolve(profile.Backend);
+            var descriptor = BackendFiles.Read(programRoot, profile.Backend); executable = descriptor.EntryPoint;
+            var parameters = System.Text.Json.JsonDocument.Parse(File.ReadAllText(PackageStore.SafePath(pack.Directory, profile.Parameters)));
+            var context = new LaunchContext(1, pack.Manifest.Id, pack.Manifest.Version, PackageStore.Hash(Path.Combine(pack.Directory,"manifest.json")), profile.Id, profile.Backend, parameters.RootElement.Clone());
+            string sessions = Path.Combine(dataRoot, "sessions"); Directory.CreateDirectory(sessions);
+            contextFile = Path.Combine(sessions, Guid.NewGuid().ToString("N") + ".json");
+            File.WriteAllText(contextFile, System.Text.Json.JsonSerializer.Serialize(context, Wire.Json));
+            parameters.Dispose();
+            backendIdentity = new(profile.Backend.Id, profile.Backend.Version, profile.Backend.Variant, PackageStore.Hash(contextFile));
+        }
+        var start = new ProcessStartInfo(PackageStore.SafePath(programRoot, executable)) { WorkingDirectory = programRoot, UseShellExecute = false, CreateNoWindow = true };
+        if (contextFile != null) { start.ArgumentList.Add("--context"); start.ArgumentList.Add(contextFile); }
         start.ArgumentList.Add("--control"); start.ArgumentList.Add(controlName);
         start.ArgumentList.Add("--audio"); start.ArgumentList.Add(audioName);
         using var timeout = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token); timeout.CancelAfter(10000);
         var c = control.WaitForConnectionAsync(timeout.Token); var a = audio.WaitForConnectionAsync(timeout.Token);
         process = Process.Start(start) ?? throw new IOException("适配程序未能启动。");
-        try { await Task.WhenAll(c, a); Info = await Call<AdapterInfo>("GetInfo"); if (Info.ProtocolVersion != Wire.Version) throw new IOException("适配程序协议版本不匹配。"); receive = Task.Run(Receive); }
+        try { await Task.WhenAll(c, a); Info = await Call<AdapterInfo>("GetInfo"); if (Info.ProtocolVersion != Wire.Version) throw new IOException("适配程序协议版本不匹配。"); if (backendIdentity != null && await Call<BackendIdentity>("GetBackendInfo") != backendIdentity) throw new IOException("实际后端身份与启动配置不匹配。"); receive = Task.Run(Receive); }
         catch { await DisposeAsync(); throw; }
     }
     public async Task<T> Call<T>(string method, object? parameters = null, int timeoutMs = 8000)
@@ -57,6 +74,11 @@ public sealed class AdapterClient : IAsyncDisposable
     }
     public async Task Connect(int pid, string? gamePath)
     {
+        if (backendIdentity != null)
+        {
+            var validation = await Call<TargetValidation>("ValidateTarget", new ConnectRequest(pid, gamePath));
+            if (!validation.Allowed) throw new IOException(validation.Detail);
+        }
         await Call<AdapterStatus>("Connect", new ConnectRequest(pid, gamePath), 15000);
         Groups = await Call<List<AudioGroup>>("GetAudioGroups");
         if (Groups.Count > 2000 || Groups.Select(g => g.Id).Distinct().Count() != Groups.Count) throw new InvalidDataException("声音分组列表无效。");
@@ -98,6 +120,7 @@ public sealed class AdapterClient : IAsyncDisposable
             if (!process.HasExited) { using var timeout = new CancellationTokenSource(1500); try { await process.WaitForExitAsync(timeout.Token); } catch (OperationCanceledException) { process.Kill(true); await process.WaitForExitAsync(); } }
             process.Dispose(); process = null;
         }
+        if (contextFile != null) { File.Delete(contextFile); contextFile = null; }
     }
 }
 public sealed class AdapterOperationException(string message) : IOException(message);

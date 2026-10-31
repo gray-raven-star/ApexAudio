@@ -4,9 +4,9 @@ using ApexAudio.Contracts;
 using ApexAudio.Windows;
 using ApexAudio.Fmod;
 
-await AdapterServer.Run(args, new FmodAdapter(GameDefinition.Load()));
+await AdapterServer.Run(args, new FmodAdapter(GameDefinition.Load(args)));
 
-sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter
+sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter, IPreparedAdapter
 {
     const int Capacity = 8192, BlockSize = 8224;
     readonly GameDefinition game;
@@ -14,18 +14,39 @@ sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter
     CancellationTokenSource? capture; Task? worker; long dropped; string detail = "等待游戏连接";
     public AdapterInfo Info => new("fmod.profile", game.Name, Wire.Version, new(true, true, true, false, false, true));
     public IReadOnlyList<AudioGroup> Groups { get; }
+    long? validatedStart;
+    public BackendIdentity BackendIdentity => game.Identity ?? throw new IOException("当前使用 V1 包内配置。");
+    public TargetValidation ValidateTarget(ConnectRequest request)
+    {
+        try
+        {
+            game.Validate(); using var p = Process.GetProcessById(request.ProcessId);
+            string path = p.MainModule?.FileName ?? throw new IOException("无法读取目标进程路径。");
+            if (!Path.GetFileName(path).Equals(game.Executable,StringComparison.OrdinalIgnoreCase) || request.GamePath != null && !Path.GetFullPath(request.GamePath).Equals(path,StringComparison.OrdinalIgnoreCase) || !Native.Hash(path).Equals(game.ExecutableSha256,StringComparison.OrdinalIgnoreCase)) throw new IOException("目标游戏构建不匹配。");
+            foreach(var (name,hash) in game.Modules) {
+                var module=p.Modules.Cast<ProcessModule>().SingleOrDefault(m=>m.ModuleName.Equals(name,StringComparison.OrdinalIgnoreCase));
+                if(module==null || !Native.Hash(module.FileName).Equals(hash,StringComparison.OrdinalIgnoreCase)) throw new IOException("关键音频模块不匹配："+name);
+            }
+            long started=p.StartTime.ToUniversalTime().Ticks;
+            if(validatedStart != null && validatedStart != started) throw new IOException("目标进程已更换，请重新连接。");
+            validatedStart=started; return new(true,"游戏构建和关键模块匹配；采集效果仍需实测。");
+        }
+        catch(Exception e) { return new(false,e.Message); }
+    }
     public AdapterStatus Status => new(target != null && !target.Process.HasExited, worker is { IsCompleted: false }, detail, dropped);
     public FeedbackSource FeedbackSource => new("apex-f32-planar-ring-v1", $"Local\\ApexFmodMix-{target?.Process.Id ?? throw new IOException("尚未连接。")}", target.Process.Id);
     public FmodAdapter(GameDefinition definition)
     {
         game = definition;
-        Groups = game.Buses.Select(b => new AudioGroup(b.Id, b.Name, b.ParentId, b.Category, true, b.ContainsChildren, "FMOD 总线路径")).ToArray();
+        var ids = game.Buses.ToDictionary(b => b.Id, b => b.StableId ?? b.Id);
+        Groups = game.Buses.Select(b => new AudioGroup(ids[b.Id], b.Name, b.ParentId == null ? null : ids.GetValueOrDefault(b.ParentId), b.Category, true, b.ContainsChildren, "FMOD 总线路径")).ToArray();
     }
     public async Task Connect(ConnectRequest request, CancellationToken token)
     {
         await Disconnect();
         try
         {
+            if (game.Context != null) { var check = ValidateTarget(request); if(!check.Allowed) throw new IOException(check.Detail); BackendFiles.Read(AppContext.BaseDirectory,game.Context.Backend); }
             var process = Process.GetProcessById(request.ProcessId); target = new(process, game.Executable, game.ExecutableSha256);
             foreach (var (name, hash) in game.Modules)
             {
@@ -33,7 +54,7 @@ sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter
                 if (module == null || Native.Hash(module.FileName) != hash) throw new IOException("游戏音频模块与适配包版本不匹配。");
             }
             var wrapper = process.Modules.Cast<ProcessModule>().Single(m => m.ModuleName.Equals(game.WrapperModule, StringComparison.OrdinalIgnoreCase));
-            if (game.WrapperRva >= wrapper.ModuleMemorySize - 8) throw new IOException("音频实例定位超出模块范围。");
+            if (game.Locator == "wrapper" && game.WrapperRva >= wrapper.ModuleMemorySize - 8) throw new IOException("音频实例定位超出模块范围。");
             string dll = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, game.CaptureFile));
             if (!dll.StartsWith(AppContext.BaseDirectory, StringComparison.OrdinalIgnoreCase)) throw new IOException("FMOD 采集模块路径无效。");
             if (Native.Hash(dll) != game.CaptureSha256) throw new IOException("FMOD 采集模块校验失败。");

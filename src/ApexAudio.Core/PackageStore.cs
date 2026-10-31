@@ -17,8 +17,9 @@ public sealed class PackageStore
     public static PackManifest ReadManifest(string file)
     {
         using var doc = JsonDocument.Parse(File.ReadAllText(file));
-        foreach (string field in new[] { "schemaVersion", "id", "name", "version", "protocolVersion", "entryPoint", "games", "presets", "files" })
+        foreach (string field in new[] { "schemaVersion", "id", "name", "version", "protocolVersion", "games", "presets", "files" })
             if (!doc.RootElement.TryGetProperty(field, out _)) throw new InvalidDataException("适配包清单缺少字段：" + field);
+        if (doc.RootElement.GetProperty("schemaVersion").GetInt32() == 1 && !doc.RootElement.TryGetProperty("entryPoint", out _)) throw new InvalidDataException("V1 适配包缺少 entryPoint。");
         return Wire.Read<PackManifest>(doc.RootElement);
     }
     public static string SafePath(string root, string relative)
@@ -31,9 +32,10 @@ public sealed class PackageStore
     public static string Hash(string file) { using var s = File.OpenRead(file); return Convert.ToHexString(SHA256.HashData(s)); }
     public static void Validate(string directory, PackManifest manifest)
     {
-        if (manifest.SchemaVersion != 1 || manifest.ProtocolVersion != Wire.Version) throw new InvalidDataException("此适配包的格式或协议版本不受支持。");
+        if (manifest.SchemaVersion is not (1 or 2) || manifest.ProtocolVersion != Wire.Version) throw new InvalidDataException("此适配包的格式或协议版本不受支持。");
         if (!Regex.IsMatch(manifest.Id, "^[a-z0-9][a-z0-9.-]{2,79}$") || !Version.TryParse(manifest.Version, out _) || string.IsNullOrWhiteSpace(manifest.Name)) throw new InvalidDataException("适配包身份信息无效。");
-        if (!manifest.EntryPoint.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || !manifest.Files.ContainsKey(manifest.EntryPoint)) throw new InvalidDataException("适配包缺少启动程序。");
+        if (manifest.SchemaVersion == 1 && (!manifest.EntryPoint.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || !manifest.Files.ContainsKey(manifest.EntryPoint))) throw new InvalidDataException("适配包缺少启动程序。");
+        if (manifest.SchemaVersion == 2) V2Packages.Validate(directory, manifest);
         var declared = new HashSet<string>(manifest.Files.Keys, StringComparer.OrdinalIgnoreCase);
         foreach (var file in Directory.EnumerateFiles(directory, "*", SearchOption.AllDirectories))
         {

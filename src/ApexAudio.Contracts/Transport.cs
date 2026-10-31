@@ -90,6 +90,8 @@ public static class AdapterServer
                     switch (request.Method)
                     {
                         case "GetInfo": result = adapter.Info; break;
+                        case "GetBackendInfo": result = (adapter as IPreparedAdapter)?.BackendIdentity ?? throw new InvalidDataException("当前适配器不提供共享后端身份。"); break;
+                        case "ValidateTarget": result = (adapter as IPreparedAdapter)?.ValidateTarget(Wire.Read<ConnectRequest>(request.Params)) ?? throw new InvalidDataException("当前适配器不提供连接前检查。"); break;
                         case "GetCapabilities": result = adapter.Info.Capabilities; break;
                         case "GetAudioGroups": result = adapter.Groups; break;
                         case "GetStatus": result = adapter.Status; break;
