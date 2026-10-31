@@ -3,7 +3,9 @@ using System.Text.Json;
 using ApexAudio.Contracts;
 using ApexAudio.Core;
 
-string root=Path.GetFullPath(args[0]), packages=Path.Combine(root,"artifacts/v2-packages"), scratch=Path.Combine(root,"artifacts/v2-test-"+Guid.NewGuid().ToString("N"));
+string root=Path.GetFullPath(args[0]), packages=Path.Combine(root,"tests/fixtures/v2"), scratch=Path.Combine(root,"artifacts/v2-test-"+Guid.NewGuid().ToString("N"));
+int packagesAt=Array.IndexOf(args,"--packages");
+if(packagesAt>=0) packages=Path.GetFullPath(args[packagesAt+1]);
 Directory.CreateDirectory(scratch);
 void Check(bool yes,string text) { if(!yes)throw new Exception(text); Console.WriteLine("PASS: "+text); }
 void Reject(Action work,string text) { try {work();}catch(Exception e) when(e is IOException or InvalidDataException){Check(true,text);return;} throw new Exception("Unexpected acceptance: "+text); }

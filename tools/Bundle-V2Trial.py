@@ -8,7 +8,7 @@ if target.exists():
     raise SystemExit('Trial output already exists; choose a new destination.')
 shutil.copytree(root / 'dist', target, ignore=shutil.ignore_patterns('*.pdb'))
 packages = target / '试用包'
-shutil.copytree(root / 'artifacts/v2-packages', packages)
+shutil.copytree(root / 'tests/fixtures/v2', packages)
 docs = target / '开发说明'
 docs.mkdir()
 shutil.copy2(root / 'docs/development/v2-trial.md', docs / 'V2技术说明.md')

@@ -36,6 +36,8 @@
 
 ## 开发和维护
 
+- [Owner FMOD 试验基线](development/owner-v2-baseline.md)：源码来源、验证证据、已知契约缺口与后续实施建议。
+- [V2 本地试验](development/v2-trial.md)：当前 FMOD 试验格式、离线共享后端与工具入口；尚不是正式 V2 规范。
 - [构建环境](development/build-environment.md)：源码与开发套件的依赖、编译器和诊断工具。
 - [架构](development/architecture.md)：宿主、适配器及反馈提供器的职责。
 - [适配器维护与迁移](development/adapter-maintenance.md)：Mock、旧 Wwise 配置迁移和原生构建。

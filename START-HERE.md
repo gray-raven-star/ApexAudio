@@ -1,6 +1,8 @@
 # Apex Audio：适配开发入口
 
-仓库包含 Apex Audio 源码、通用适配器、空白模板和开发文档，不含具体游戏的定义、定位数据或初始配置。这些内容由适配者调查、制作并验证。
+仓库包含 Apex Audio 源码、通用适配器、空白模板和开发文档。本试验分支另在 `tests/fixtures/v2/` 保存 Owner 随包提供的两款游戏配置包及共享后端，供基线验证使用。新游戏的定义、定位数据和初始配置仍需由适配者调查、制作并验证。
+
+维护本分支时先读[Owner FMOD 试验基线](docs/development/owner-v2-baseline.md)和[V2 本地试验](docs/development/v2-trial.md)。以下通用制作入口及 `schemas/` 仍以 V1 为主，不能据此认定正式 V2 格式已经完成。
 
 在包含 `ApexAudio.sln` 的目录中操作。源码和开发套件的工具准备方法见[构建环境](docs/development/build-environment.md)，完整文档见[文档入口](docs/README.md)。
 
