@@ -43,14 +43,15 @@ public sealed class AudioWorkspace : IAsyncDisposable
         var pack = requestedVersion!=null ? Packages.GetVersion(requestedVersion) : Packages.GetCurrent(id)
             ?? throw new OperationException("package_invalid","当前版本已清除，请重新选择。","choose_package_version");
         if(pack.Manifest.Id!=id) throw new OperationException("package_invalid","准备的版本不属于所选适配包。","choose_package_version");
+        using var prepared=PreparedSession.Prepare(pack,path,pid);
         var previousPreset = Preset?.PackId == pack.Manifest.Id ? Preset : null; bool previousDirty = Dirty;
-        await Disconnect(); Pack=pack; status = "正在连接采集接口…";
+        await Disconnect(); Pack=prepared.Pack; status = "正在连接采集接口…";
         var client = new AdapterClient(); adapter = client;
         long connectionId = ++ConnectionId;
         client.Audio += Accept; client.Failed += reason => { if (!ReferenceEquals(adapter, client)) return; status = reason; ConnectionLost?.Invoke(connectionId, reason); };
         try
         {
-            await client.Launch(pack, path, pid); await client.Connect(pid, path); Groups = client.Groups; GamePid = pid;
+            await client.Launch(prepared); await client.Connect(pid, path); Groups = client.Groups; GamePid = pid;
             var options = Presets.List(pack); string? first = options.FirstOrDefault(o => o.Id == LastPresetId)?.Id ?? options.FirstOrDefault()?.Id;
             Preset = previousPreset ?? (first != null ? Presets.Load(pack, first, Groups) : Presets.Empty(pack, Groups)); LastPresetId = Preset.Id; Dirty = previousPreset != null && previousDirty;
             Apply(); status = "已连接 · 等待音频数据";

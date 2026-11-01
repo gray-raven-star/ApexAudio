@@ -8,27 +8,34 @@ public sealed record BackendDependency(string Id, string Version, string Descrip
 public sealed record CaptureProfile(string Id, BackendDependency Backend, string Parameters);
 public sealed record BackendDescriptor(string Id, string Version, string EntryPoint, int ContextVersion,
     Dictionary<string, string> Files, Dictionary<string, string> Variants);
-public sealed record TargetValidation(bool Allowed, string Detail);
+public sealed record TargetValidation(bool Allowed, string Detail,OperationError? Failure=null,GameMatch[]? Matches=null);
 public sealed record BackendIdentity(string Id, string Version, string Variant, string ContextSha256);
 public sealed record LaunchContext(int Version, string PackId, string PackVersion, string PackSha256,
     string ProfileId, BackendDependency Backend, JsonElement Parameters,
-    GameMatch? Build = null, TargetIdentity? Target = null);
+    GameMatch? Build = null, TargetIdentity? Target = null,GameMatch[]? Candidates=null);
 public sealed record TargetIdentity(int ProcessId, long StartedUtcTicks, string Path)
 {
     public static TargetIdentity Read(int pid)
     {
-        using var process = Process.GetProcessById(pid);
-        return new(pid, process.StartTime.ToUniversalTime().Ticks,
-            process.MainModule?.FileName ?? throw new IOException("无法读取目标进程路径。"));
+        try
+        {
+            using var process = Process.GetProcessById(pid);
+            return new(pid, process.StartTime.ToUniversalTime().Ticks,
+                process.MainModule?.FileName ?? throw new OperationException("evidence_insufficient","无法读取目标进程路径。","check_permissions"));
+        }
+        catch(Exception e)when(e is ArgumentException or InvalidOperationException)
+        {throw new OperationException("target_changed","目标进程已退出或更换，请重新选择。","choose_target",innerException:e);}
+        catch(System.ComponentModel.Win32Exception e)
+        {throw new OperationException("evidence_insufficient","无法读取目标身份："+e.Message,"check_permissions",innerException:e);}
     }
     public void Validate(ConnectRequest request)
     {
         if (request.ProcessId != ProcessId || request.GamePath != null &&
             !System.IO.Path.GetFullPath(request.GamePath).Equals(Path, StringComparison.OrdinalIgnoreCase))
-            throw new IOException("连接请求与本次会话的目标不一致。");
+            throw new OperationException("target_changed","连接请求与本次会话的目标不一致。","choose_target");
         var actual = Read(ProcessId);
         if (actual.StartedUtcTicks != StartedUtcTicks || !actual.Path.Equals(Path, StringComparison.OrdinalIgnoreCase))
-            throw new IOException("目标进程已更换，请重新连接。");
+            throw new OperationException("target_changed","目标进程已更换，请重新连接。","choose_target");
     }
 }
 public interface IPreparedAdapter

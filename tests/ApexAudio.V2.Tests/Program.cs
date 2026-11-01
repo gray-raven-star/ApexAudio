@@ -16,6 +16,7 @@ Check(packs.Length==2 && packs.All(p=>p.Manifest.SchemaVersion==2),"two executab
 var dependency=packs[0].Manifest.Profiles[0].Backend;
 FmodBoundaryChecks.Run(packs[0],scratch,Check,Reject);
 await FmodStreamChecks.Run(Check);
+BuildMatchingChecks.Run(Check);
 Reject(()=>backends.Resolve(dependency),"missing shared backend remains an explicit dependency error");
 string backendArchive=Directory.GetFiles(packages,"*.gbackend").Single();
 string shared=backends.Install(backendArchive);
@@ -46,24 +47,25 @@ foreach(var pack in packs)
     File.AppendAllText(config," ");Reject(()=>PackageStore.Validate(pack.Directory,pack.Manifest),"tampered V2 parameters rejected");File.WriteAllText(config,before);
     var rules=pack.Manifest.Games.ToArray(); var profile=pack.Manifest.Profiles[0];
     pack.Manifest.Profiles.Add(profile with{Id="ambiguous"});pack.Manifest.Games.Add(rules[0] with{ProfileId="ambiguous"});
-    Reject(()=>V2Packages.Select(pack,null),"ambiguous profile is not silently selected");
+    Reject(()=>V2Packages.SelectOffline(pack),"ambiguous profile is not silently selected");
     pack.Manifest.Profiles.RemoveAt(pack.Manifest.Profiles.Count-1);pack.Manifest.Games.RemoveAt(pack.Manifest.Games.Count-1);
 }
 if(dependency.Version=="0.3.0")
 {
-    var pack=packs[0]; var saved=pack.Manifest.Games.ToArray();
+    var pack=packs[0];string packManifestFile=Path.Combine(pack.Directory,"manifest.json"),savedManifest=File.ReadAllText(packManifestFile);
     var identity=TargetIdentity.Read(Environment.ProcessId);
     try
     {
-        pack.Manifest.Games.Clear();
-        pack.Manifest.Games.Add(saved[0] with{Executable=Path.GetFileName(identity.Path),Sha256=PackageStore.Hash(identity.Path)});
-        await using var bound=new AdapterClient(); await bound.Launch(pack,identity.Path,identity.ProcessId);
-        var validation=await bound.Call<TargetValidation>("ValidateTarget",new ConnectRequest(identity.ProcessId,identity.Path));
-        Check(!validation.Allowed && validation.Detail.StartsWith("关键音频模块不匹配"),"rebuilt backend receives frozen target/build and rejects missing modules over IPC");
-        var other=await bound.Call<TargetValidation>("ValidateTarget",new ConnectRequest(0,null));
-        Check(!other.Allowed && other.Detail.Contains("目标不一致"),"rebuilt backend rejects a different target over IPC");
+        var manifest=JsonNode.Parse(savedManifest)!;
+        manifest["games"]![0]!["executable"]=Path.GetFileName(identity.Path);manifest["games"]![0]!["sha256"]=PackageStore.Hash(identity.Path);
+        File.WriteAllText(packManifestFile,manifest.ToJsonString(Wire.Json));bool denied=false;
+        var changedPack=new InstalledPack(pack.Directory,PackageStore.ReadManifest(packManifestFile),pack.DataRoot);
+        try{using var prepared=PreparedSession.Prepare(changedPack,identity.Path,identity.ProcessId);}
+        catch(OperationException e)when(e.Error.Code=="evidence_insufficient"){denied=true;}
+        Check(denied && !store.IsInUse(pack),"host preparation rejects unavailable modules before starting a backend and releases its version use");
     }
-    finally {pack.Manifest.Games.Clear();pack.Manifest.Games.AddRange(saved);}
+    finally {File.WriteAllText(packManifestFile,savedManifest);}
+    await BackendPreflightChecks.Run(pack,shared,scratch,Check);
     string descriptorPath=Path.Combine(shared,"backend.json"),originalDescriptor=File.ReadAllText(descriptorPath);
     string invalidExecutable=Path.Combine(shared,"InvalidBackend.exe");
     var originalProfile=pack.Manifest.Profiles[0];
@@ -74,13 +76,16 @@ if(dependency.Version=="0.3.0")
         descriptor["entryPoint"]="InvalidBackend.exe";descriptor["files"]!["InvalidBackend.exe"]=PackageStore.Hash(invalidExecutable);
         File.WriteAllText(descriptorPath,descriptor.ToJsonString(Wire.Json));
         pack.Manifest.Profiles[0]=originalProfile with{Backend=originalProfile.Backend with{DescriptorSha256=PackageStore.Hash(descriptorPath)}};
+        var manifest=JsonNode.Parse(savedManifest)!;manifest["profiles"]![0]!["backend"]!["descriptorSha256"]=PackageStore.Hash(descriptorPath);
+        File.WriteAllText(packManifestFile,manifest.ToJsonString(Wire.Json));
         await using var failed=new AdapterClient();bool rejected=false;
-        try{await failed.Launch(pack);}catch(System.ComponentModel.Win32Exception){rejected=true;}
+        var changedPack=new InstalledPack(pack.Directory,PackageStore.ReadManifest(packManifestFile),pack.DataRoot);
+        try{await failed.Launch(changedPack);}catch(System.ComponentModel.Win32Exception){rejected=true;}
         Check(rejected && Directory.GetFiles(Path.Combine(scratch,"sessions")).Length==0,"failed process start removes prepared context and disposes client");
     }
     finally
     {
-        File.WriteAllText(descriptorPath,originalDescriptor);File.Delete(invalidExecutable);pack.Manifest.Profiles[0]=originalProfile;
+        File.WriteAllText(descriptorPath,originalDescriptor);File.Delete(invalidExecutable);pack.Manifest.Profiles[0]=originalProfile;File.WriteAllText(packManifestFile,savedManifest);
     }
 }
 Check(Directory.GetFiles(Path.Combine(scratch,"sessions")).Length==0,"session contexts removed after orderly shutdown");

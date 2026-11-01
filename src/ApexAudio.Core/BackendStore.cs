@@ -78,24 +78,9 @@ public static class V2Packages
             if (build.Modules != null && build.Modules.Any(m => string.IsNullOrWhiteSpace(m.Key) || m.Key.Contains('/') || m.Key.Contains('\\') || m.Key.Contains(':') || !Regex.IsMatch(m.Value, "^[0-9a-fA-F]{64}$")))
                 throw new InvalidDataException("游戏构建的关键模块声明无效。");
     }
-    public static CaptureProfile Select(InstalledPack pack, string? gamePath)
+    public static CaptureProfile SelectOffline(InstalledPack pack)
     {
-        if (gamePath == null)
-        {
-            if (pack.Manifest.Profiles.Count == 1) return pack.Manifest.Profiles[0];
-            throw new IOException("包含多个采集方案，请先指定运行的游戏构建。");
-        }
-        string hash = PackageStore.Hash(gamePath), name = Path.GetFileName(gamePath);
-        var ids = pack.Manifest.Games.Where(g => g.Executable.Equals(name, StringComparison.OrdinalIgnoreCase) && hash.Equals(g.Sha256, StringComparison.OrdinalIgnoreCase)).Select(g => g.ProfileId).Distinct().ToArray();
-        if (ids.Length != 1) throw new IOException(ids.Length == 0 ? "未匹配已知游戏构建，未连接。" : "多个采集配置匹配同一构建，请修正配置。");
-        return pack.Manifest.Profiles.Single(p => p.Id == ids[0]);
-    }
-    public static GameMatch SelectBuild(InstalledPack pack, string gamePath)
-    {
-        string hash = PackageStore.Hash(gamePath), name = Path.GetFileName(gamePath);
-        var builds = pack.Manifest.Games.Where(g => g.Executable.Equals(name, StringComparison.OrdinalIgnoreCase) &&
-            hash.Equals(g.Sha256, StringComparison.OrdinalIgnoreCase)).ToArray();
-        if (builds.Length != 1) throw new IOException("游戏构建未匹配或存在冲突，未连接。");
-        return builds[0];
+        if (pack.Manifest.Profiles.Count == 1) return pack.Manifest.Profiles[0];
+        throw new OperationException("profile_conflict","包含多个采集方案，请先指定运行的游戏构建。","choose_target");
     }
 }

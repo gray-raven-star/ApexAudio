@@ -23,6 +23,7 @@ sealed class GameDefinition
     public List<BusDefinition> Buses { get; set; } = new();
     public LaunchContext? Context { get; private set; }
     public BackendIdentity? Identity { get; private set; }
+    GameMatch[] PreparedBuilds=>Context?.Candidates ?? (Context?.Build is {} build?new[]{build}:Array.Empty<GameMatch>());
     long? validatedStart;
     public static GameDefinition Load(string[] args)
     {
@@ -47,10 +48,10 @@ sealed class GameDefinition
         var game = context.Parameters.Deserialize<GameDefinition>(Wire.Json) ?? throw new IOException("采集参数为空。");
         if (game.SchemaVersion != 2) throw new IOException("不支持的 FMOD 参数格式。");
         game.Context = context;
-        if (context.Target != null && context.Build == null) throw new IOException("目标缺少选中的游戏构建。");
-        if (context.Build is { } build)
+        if (context.Target != null && game.PreparedBuilds.Length==0) throw new IOException("目标缺少选中的游戏构建。");
+        if (game.PreparedBuilds.FirstOrDefault() is { } build)
         {
-            if (build.ProfileId != context.ProfileId) throw new IOException("游戏构建与 Profile 不一致。");
+            if (game.PreparedBuilds.Any(b=>b.ProfileId!=context.ProfileId)) throw new IOException("游戏构建与 Profile 不一致。");
             game.Executable = build.Executable; game.ExecutableSha256 = build.Sha256 ?? "";
             game.Modules = build.Modules == null ? new() : new(build.Modules, StringComparer.OrdinalIgnoreCase);
         }
@@ -60,8 +61,14 @@ sealed class GameDefinition
     {
         if ((RuntimeVersion >> 8) is not (0x202 or 0x203)) throw new IOException("共享 FMOD 后端仅支持已核对的 2.02/2.03 接口系列。");
         if (Locator is not ("wrapper" or "studioHandle") || Locator == "studioHandle" && StudioHandle == 0 || Locator == "wrapper" && (WrapperRva == 0 || StateOffset > 4092 || StudioOffset > 4088)) throw new IOException("FMOD 实例定位参数无效。");
-        if ((Context?.Version != 2 || Context.Build != null) && (!System.Text.RegularExpressions.Regex.IsMatch(ExecutableSha256, "^[0-9a-fA-F]{64}$") || string.IsNullOrWhiteSpace(Executable) || Path.GetFileName(Executable) != Executable ||
-            !Modules.ContainsKey("fmod.dll") || !Modules.ContainsKey("fmodstudio.dll") || !Modules.ContainsKey(WrapperModule) || Modules.Values.Any(h => !System.Text.RegularExpressions.Regex.IsMatch(h,"^[0-9a-fA-F]{64}$")))) throw new IOException("缺少关键模块和游戏构建的摘要。");
+        var builds=Context?.Version==2?PreparedBuilds:new[]{new GameMatch(Executable,ExecutableSha256,Modules:Modules)};
+        foreach(var build in builds)
+        {
+            var modules=build.Modules==null?new Dictionary<string,string>():new(build.Modules,StringComparer.OrdinalIgnoreCase);
+            if(!System.Text.RegularExpressions.Regex.IsMatch(build.Sha256 ?? "", "^[0-9a-fA-F]{64}$") || string.IsNullOrWhiteSpace(build.Executable) || Path.GetFileName(build.Executable)!=build.Executable ||
+                !modules.ContainsKey("fmod.dll") || !modules.ContainsKey("fmodstudio.dll") || !modules.ContainsKey(WrapperModule) || modules.Values.Any(h=>!System.Text.RegularExpressions.Regex.IsMatch(h,"^[0-9a-fA-F]{64}$")))
+                throw new IOException("缺少关键模块和游戏构建的摘要。");
+        }
         if (Buses.Count is < 1 or > 64 || Buses.Select(b => b.Id).Distinct().Count() != Buses.Count || Buses.Any(b => !System.Text.RegularExpressions.Regex.IsMatch(b.Id,"^[0-9a-fA-F]{32}$"))) throw new IOException("FMOD 总线编号无效。");
         var stable = Buses.Select(b => b.StableId ?? b.Id).ToArray();
         if (stable.Any(string.IsNullOrWhiteSpace) || stable.Distinct().Count() != stable.Length) throw new IOException("稳定分组 ID 重复或为空。");
@@ -74,8 +81,13 @@ sealed class GameDefinition
         {
             if (Context is { Version: 2 } context)
             {
-                if (context.Target == null || context.Build == null) throw new IOException("此后端仅用于离线查询；连接游戏需要重新准备目标上下文。");
+                if (context.Target == null || PreparedBuilds.Length==0) throw new OperationException("capture_not_ready","此后端仅用于离线查询；连接游戏需要重新准备目标上下文。","prepare_session");
                 context.Target.Validate(request);
+                Validate();
+                var evidence=TargetEvidence.Collect(context.Target,PreparedBuilds.SelectMany(b=>b.Modules?.Keys.AsEnumerable() ?? Array.Empty<string>()));
+                var result=BuildMatcher.Match(PreparedBuilds,evidence);
+                if(result.Failure is {} error)return new(false,error.Message,error,Array.Empty<GameMatch>());
+                return new(true,"游戏构建和关键模块匹配。",Matches:result.Candidates);
             }
             Validate(); using var process = Process.GetProcessById(request.ProcessId);
             string path = process.MainModule?.FileName ?? throw new IOException("无法读取目标进程路径。");
@@ -91,7 +103,7 @@ sealed class GameDefinition
             if (validatedStart != null && validatedStart != started) throw new IOException("目标进程已更换，请重新连接。");
             validatedStart = started; return new(true, "游戏构建和关键模块匹配。");
         }
-        catch (Exception e) { return new(false, e.Message); }
+        catch (Exception e) { return new(false, e.Message,(e as OperationException)?.Error); }
     }
     public byte[] Configuration()
     {

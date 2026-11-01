@@ -23,11 +23,19 @@ static class FmodBoundaryChecks
         var b = a with { Sha256 = PackageStore.Hash(second), Modules = new Dictionary<string, string>(modules) { ["fmod.dll"] = new string('F',64) } };
         var manifest = new PackManifest { Profiles = [profile], Games = [a, b] };
         var pack = new InstalledPack(example.Directory, manifest);
-        check(V2Packages.Select(pack, first) == V2Packages.Select(pack, second), "different EXE builds select the same Profile");
+        TargetEvidence Evidence(string path,GameMatch build)=>new(new(1,1,path),PackageStore.Hash(path),build.Modules!.Select(m=>new ModuleEvidence(m.Key,m.Key,m.Value)).ToArray());
+        var ea=Evidence(first,a);var eb=Evidence(second,b);
+        GameMatch Selected(InstalledPack installed,TargetEvidence evidence)
+        {
+            var result=BuildMatcher.Match(installed.Manifest.Games,evidence);
+            if(result.Failure is {} e)throw new OperationException(e.Code,e.Message,e.NextAction,e.Details);
+            return result.Candidates.Single();
+        }
+        check(BuildMatcher.Match(manifest.Games,ea).ProfileId==BuildMatcher.Match(manifest.Games,eb).ProfileId,"different EXE builds select the same Profile");
         LaunchContext Context(GameMatch? build) => new(2, example.Manifest.Id, "0.3.0", "test", profile.Id,
             dependency, Wire.Element(parameters), build);
-        var ca = Context(V2Packages.SelectBuild(pack, first));
-        var cb = Context(V2Packages.SelectBuild(pack, second));
+        var ca = Context(Selected(pack,ea));
+        var cb = Context(Selected(pack,eb));
         var ga = GameDefinition.FromContext(ca); var gb = GameDefinition.FromContext(cb);
         check(ga.ExecutableSha256 == a.Sha256 && gb.ExecutableSha256 == b.Sha256 && ga.Configuration().SequenceEqual(gb.Configuration()),
             "backend uses selected build evidence while preserving identical native capture parameters");
@@ -47,12 +55,12 @@ static class FmodBoundaryChecks
         File.WriteAllText(Path.Combine(definition,"manifest.json"),document.ToJsonString(Wire.Json));
         ZipFile.CreateFromDirectory(definition,archive);
         var imported=new PackageStore(Path.Combine(scratch,"roundtrip")).Install(archive);
-        var importedA=V2Packages.SelectBuild(imported,first);var importedB=V2Packages.SelectBuild(imported,second);
+        var importedA=Selected(imported,ea);var importedB=Selected(imported,eb);
         check(importedA.ProfileId==importedB.ProfileId && importedA.Modules!["fmod.dll"]==a.Modules!["fmod.dll"] &&
             importedB.Modules!["fmod.dll"]==b.Modules!["fmod.dll"], "packaging and import preserve separate build evidence referencing one Profile");
-        reject(() => V2Packages.SelectBuild(pack, Environment.ProcessPath!), "unknown EXE build rejected");
+        check(BuildMatcher.Match(manifest.Games,ea with{ExeSha256=new string('0',64)}).Failure?.Code=="build_mismatch","unknown EXE build rejected");
         manifest.Games.Add(a with { ProfileId = "other" });
-        reject(() => V2Packages.SelectBuild(pack, first), "conflicting build records rejected"); manifest.Games.RemoveAt(2);
+        check(BuildMatcher.Match(manifest.Games,ea).Failure?.Code=="profile_conflict","conflicting build records rejected"); manifest.Games.RemoveAt(2);
         reject(() => GameDefinition.FromContext(ca with { Build = a with { Modules = null } }), "omitting required FMOD modules cannot bypass backend checks");
         reject(() => GameDefinition.FromContext(ca with { Build = a with { ProfileId = "other" } }), "build and Profile mismatch rejected");
         parameters["executableSha256"] = a.Sha256;
@@ -73,7 +81,7 @@ static class FmodBoundaryChecks
         var current = a with { Executable = Path.GetFileName(identity.Path), Sha256 = PackageStore.Hash(identity.Path) };
         var actual = GameDefinition.FromContext(Context(current) with { Target = identity });
         var validation = actual.ValidateTarget(request);
-        check(!validation.Allowed && validation.Detail.StartsWith("关键音频模块不匹配"), "matching process still fails required-module checks before injection");
+        check(!validation.Allowed && validation.Failure?.Code=="evidence_insufficient", "matching process still fails required-module checks before injection");
         var stale = GameDefinition.FromContext(Context(current) with { Target = identity with { StartedUtcTicks = identity.StartedUtcTicks + 1 } });
         check(!stale.ValidateTarget(request).Allowed, "FMOD backend independently rejects stale target identity");
     }

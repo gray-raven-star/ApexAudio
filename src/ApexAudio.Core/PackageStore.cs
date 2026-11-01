@@ -8,7 +8,9 @@ namespace ApexAudio.Core;
 
 public sealed record InstalledPack(string Directory, PackManifest Manifest, string? DataRoot = null)
 {
-    public PackageVersionRef Reference => new(Manifest.Id, Manifest.Version, PackageStore.Hash(Path.Combine(Directory,"manifest.json")));
+    readonly PackageVersionRef? reference=File.Exists(Path.Combine(Directory,"manifest.json"))
+        ? new(Manifest.Id,Manifest.Version,PackageStore.Hash(Path.Combine(Directory,"manifest.json"))) : null;
+    public PackageVersionRef Reference => reference ?? throw new InvalidDataException("此包记录没有可读取的安装清单。");
 }
 
 public sealed partial class PackageStore

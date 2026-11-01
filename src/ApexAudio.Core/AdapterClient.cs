@@ -10,9 +10,10 @@ public sealed class AdapterClient : IAsyncDisposable
     readonly SemaphoreSlim commands = new(1);
     readonly CancellationTokenSource lifetime = new();
     readonly string controlName, audioName;
-    Process? process; Task? receive; long id; int disposing;
+    Process? process; Task? receive; long id; int disposing,launched;
     string? contextFile; BackendIdentity? backendIdentity;
     IDisposable? packageUse;
+    public PreparedSession? Session { get; private set; }
     public IReadOnlyList<AudioGroup> Groups { get; private set; } = Array.Empty<AudioGroup>();
     public AdapterInfo? Info { get; private set; }
     public event Action<AudioPacket>? Audio;
@@ -26,33 +27,28 @@ public sealed class AdapterClient : IAsyncDisposable
         control = new(controlName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly);
         audio = new(audioName, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly);
     }
-    public async Task Launch(InstalledPack pack, string? gamePath = null, int? processId = null)
+    public Task Launch(InstalledPack pack, string? gamePath = null, int? processId = null)
+        => Launch(()=>PreparedSession.Prepare(pack,gamePath,processId));
+    public Task Launch(PreparedSession session)=>Launch(()=>session);
+    async Task Launch(Func<PreparedSession> prepare)
     {
+        if(Interlocked.Exchange(ref launched,1)!=0 || Volatile.Read(ref disposing)!=0)
+            throw new InvalidOperationException("一个采集客户端只能启动一个会话，请建立新的客户端。");
         try
         {
-            PackageStore.Validate(pack.Directory, pack.Manifest);
-            if(pack.DataRoot!=null) packageUse=new PackageStore(pack.DataRoot).AcquireUse(pack);
-            string executable = pack.Manifest.EntryPoint, programRoot = pack.Directory;
-            if (pack.Manifest.SchemaVersion == 2)
+            var session=prepare();packageUse=session.TakeUse();Session=session;
+            var pack=session.Pack;string programRoot=session.ProgramRoot,executable=session.Executable;
+            if(!PackageStore.Hash(Path.Combine(pack.Directory,"manifest.json")).Equals(session.Package.ManifestSha256,StringComparison.OrdinalIgnoreCase))
+                throw new OperationException("package_invalid","准备后的适配包清单已改变。","choose_package_version");
+            PackageStore.Validate(pack.Directory,PackageStore.ReadManifest(Path.Combine(pack.Directory,"manifest.json")));
+            if(session.Context is {} context)
             {
-                var profile = V2Packages.Select(pack, gamePath);
-                string dataRoot = pack.DataRoot ?? throw new IOException("共享后端启动需要明确的数据仓库位置。");
-                programRoot = new BackendStore(dataRoot).Resolve(profile.Backend);
-                var descriptor = BackendFiles.Read(programRoot, profile.Backend); executable = descriptor.EntryPoint;
-                using var parameters = System.Text.Json.JsonDocument.Parse(File.ReadAllText(PackageStore.SafePath(pack.Directory, profile.Parameters)));
-                GameMatch? build = null; TargetIdentity? target = null;
-                if (descriptor.ContextVersion == 2 && gamePath != null)
-                {
-                    build = V2Packages.SelectBuild(pack, gamePath);
-                    if (build.ProfileId != profile.Id || processId == null) throw new IOException("缺少一致的游戏构建或目标进程。");
-                    target = TargetIdentity.Read(processId.Value);
-                    target.Validate(new(processId.Value, gamePath));
-                }
-                var context = new LaunchContext(descriptor.ContextVersion, pack.Manifest.Id, pack.Manifest.Version, PackageStore.Hash(Path.Combine(pack.Directory,"manifest.json")), profile.Id, profile.Backend, parameters.RootElement.Clone(), build, target);
-                string sessions = Path.Combine(dataRoot, "sessions"); Directory.CreateDirectory(sessions);
-                contextFile = Path.Combine(sessions, Guid.NewGuid().ToString("N") + ".json");
-                File.WriteAllText(contextFile, System.Text.Json.JsonSerializer.Serialize(context, Wire.Json));
-                backendIdentity = new(profile.Backend.Id, profile.Backend.Version, profile.Backend.Variant, PackageStore.Hash(contextFile));
+                BackendFiles.Read(programRoot,context.Backend);
+                context.Target?.Validate(new(context.Target.ProcessId,context.Target.Path));
+                string sessions=Path.Combine(pack.DataRoot!,"sessions");Directory.CreateDirectory(sessions);
+                contextFile=Path.Combine(sessions,session.Id.ToString("N")+".json");
+                File.WriteAllText(contextFile,System.Text.Json.JsonSerializer.Serialize(context,Wire.Json));
+                backendIdentity=new(context.Backend.Id,context.Backend.Version,context.Backend.Variant,PackageStore.Hash(contextFile));
             }
             var start = new ProcessStartInfo(PackageStore.SafePath(programRoot, executable)) { WorkingDirectory = programRoot, UseShellExecute = false, CreateNoWindow = true };
             if (contextFile != null) { start.ArgumentList.Add("--context"); start.ArgumentList.Add(contextFile); }
@@ -89,10 +85,11 @@ public sealed class AdapterClient : IAsyncDisposable
     }
     public async Task Connect(int pid, string? gamePath)
     {
+        Session?.Match?.Evidence.Target.Validate(new(pid,gamePath));
         if (backendIdentity != null)
         {
             var validation = await Call<TargetValidation>("ValidateTarget", new ConnectRequest(pid, gamePath));
-            if (!validation.Allowed) throw new IOException(validation.Detail);
+            if (!validation.Allowed) throw new AdapterOperationException(validation.Detail,"target_rejected",validation.Failure);
         }
         await Call<AdapterStatus>("Connect", new ConnectRequest(pid, gamePath), 15000);
         Groups = await Call<List<AudioGroup>>("GetAudioGroups");

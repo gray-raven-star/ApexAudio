@@ -29,18 +29,25 @@ sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter, IPreparedAdapter
         await Disconnect();
         try
         {
-            if (game.Context != null) { var check = ValidateTarget(request); if(!check.Allowed) throw new IOException(check.Detail); BackendFiles.Read(AppContext.BaseDirectory,game.Context.Backend); }
-            var process = Process.GetProcessById(request.ProcessId); target = new(process, game.Executable, game.ExecutableSha256);
-            foreach (var (name, hash) in game.Modules)
+            TargetValidation? validation=null;
+            if (game.Context != null)
+            {
+                validation=ValidateTarget(request);
+                if(!validation.Allowed){var error=validation.Failure;throw new OperationException(error?.Code ?? "target_rejected",validation.Detail,error?.NextAction ?? "check_target",error?.Details);}
+                BackendFiles.Read(AppContext.BaseDirectory,game.Context.Backend);
+            }
+            var matchedBuild=validation?.Matches?.FirstOrDefault();
+            var process = Process.GetProcessById(request.ProcessId); target = new(process, matchedBuild?.Executable ?? game.Executable, matchedBuild?.Sha256 ?? game.ExecutableSha256);
+            foreach (var (name, hash) in matchedBuild?.Modules ?? game.Modules)
             {
                 var module = process.Modules.Cast<ProcessModule>().SingleOrDefault(m => m.ModuleName.Equals(name, StringComparison.OrdinalIgnoreCase));
-                if (module == null || Native.Hash(module.FileName) != hash) throw new IOException("游戏音频模块与适配包版本不匹配。");
+                if (module == null || !Native.Hash(module.FileName).Equals(hash,StringComparison.OrdinalIgnoreCase)) throw new OperationException("build_mismatch","游戏音频模块与准备结果不匹配："+name,"prepare_session");
             }
             var wrapper = process.Modules.Cast<ProcessModule>().Single(m => m.ModuleName.Equals(game.WrapperModule, StringComparison.OrdinalIgnoreCase));
             if (game.Locator == "wrapper" && game.WrapperRva >= wrapper.ModuleMemorySize - 8) throw new IOException("音频实例定位超出模块范围。");
             string dll = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, game.CaptureFile));
             if (!dll.StartsWith(AppContext.BaseDirectory, StringComparison.OrdinalIgnoreCase)) throw new IOException("FMOD 采集模块路径无效。");
-            if (Native.Hash(dll) != game.CaptureSha256) throw new IOException("FMOD 采集模块校验失败。");
+            if (!Native.Hash(dll).Equals(game.CaptureSha256,StringComparison.OrdinalIgnoreCase)) throw new IOException("FMOD 采集模块校验失败。");
             nint address = target.Load(dll); stop = target.Export(dll, address, "FmodStop"); select = target.Export(dll, address, "FmodSelect");
             uint result = target.CallData(target.Export(dll, address, "FmodConfigure"), game.Configuration());
             if (result != 0) throw new IOException("FMOD 配置未应用：" + result);

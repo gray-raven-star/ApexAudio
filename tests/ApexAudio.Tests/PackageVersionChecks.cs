@@ -26,6 +26,21 @@ static class PackageVersionChecks
         }
         Reject(()=>store.RemoveVersion(second.Reference),"current_version_selected");
         check(new PackageStore(data).GetCurrent(second.Manifest.Id)!.Reference==second.Reference,"current version persists across store restart");
+        {
+            using var prepared=PreparedSession.Prepare(first);
+            await using var client=new AdapterClient();await client.Launch(prepared);prepared.Dispose();
+            check(client.Session!.Package==first.Reference && store.IsInUse(first),"launch consumes prepared resources while disposing the preparation handle cannot unpin an active backend");
+            bool repeated=false;try{await client.Launch(first);}catch(InvalidOperationException){repeated=true;}
+            check(repeated && client.IsAlive && store.IsInUse(first),"a repeated launch is rejected without replacing or unpinning the active session");
+        }
+        string firstManifest=Path.Combine(first.Directory,"manifest.json");byte[] firstBytes=File.ReadAllBytes(firstManifest);var fixedReference=first.Reference;
+        try
+        {
+            File.AppendAllText(firstManifest," ");
+            check(first.Reference==fixedReference,"an installed package handle keeps its original version identity when disk contents change");
+            Reject(()=>store.GetVersion(fixedReference),"package_invalid");
+        }
+        finally{File.WriteAllBytes(firstManifest,firstBytes);}
         string recording=Path.Combine(data,"recordings/example.wav"),preset=Path.Combine(data,"presets/example.json");
         Directory.CreateDirectory(Path.GetDirectoryName(recording)!);Directory.CreateDirectory(Path.GetDirectoryName(preset)!);
         File.WriteAllText(recording,"recording bytes");File.WriteAllText(preset,"preset bytes");
@@ -61,6 +76,15 @@ static class PackageVersionChecks
             await workspace.SelectPack(a.Manifest.Id);await workspace.Connect(0,null);
             var b=workspace.Packages.Install(next);workspace.Packages.SelectCurrent(b.Manifest.Id,b.Reference);
             check(workspace.Pack!.Reference==a.Reference && workspace.Connected && workspace.Packages.IsInUse(a),"selecting new default leaves active session and old version pin unchanged");
+            string authorFile=PackageStore.SafePath(b.Directory,b.Manifest.Presets[0]);byte[] authorBytes=File.ReadAllBytes(authorFile);long connection=workspace.ConnectionId;
+            try
+            {
+                File.AppendAllText(authorFile," ");bool rejected=false;
+                try{await workspace.Connect(0,null,b.Reference);}catch(InvalidDataException){rejected=true;}
+                check(rejected && workspace.Connected && workspace.Pack!.Reference==a.Reference && workspace.ConnectionId==connection && !workspace.Packages.IsInUse(b),
+                    "failed preparation preserves the old active session and releases the attempted version");
+            }
+            finally{File.WriteAllBytes(authorFile,authorBytes);}
             var confirmed=b.Reference;workspace.Packages.SelectCurrent(a.Manifest.Id,a.Reference);
             await workspace.Connect(0,null,confirmed);
             check(workspace.Pack!.Reference==confirmed && workspace.Packages.GetCurrent(a.Manifest.Id)!.Reference==a.Reference,"explicitly confirmed version is used even when default changes before connect");

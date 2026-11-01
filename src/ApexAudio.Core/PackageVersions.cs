@@ -48,7 +48,7 @@ public sealed partial class PackageStore
                 VerifyDirectory(directory);var manifest=ReadManifest(Path.Combine(directory,"manifest.json"));
                 if(manifest.Id!=id || version!=null && manifest.Version!=version || !Version.TryParse(manifest.Version,out _))
                     throw new InvalidDataException("适配包目录与版本身份不一致。");
-                result.Add(new(directory,manifest,DataRoot));
+                var pack=new InstalledPack(directory,manifest,DataRoot);_ = pack.Reference;result.Add(pack);
             }
             catch(Exception e) when(e is IOException or InvalidDataException or ArgumentException or JsonException or UnauthorizedAccessException)
             {issues.Add(new("package_invalid","安装记录损坏，请打开数据目录处理该版本后重新导入："+e.Message,"open_data_folder",new Dictionary<string,string>{{"id",id},{"version",version??"legacy"},{"directory",directory}}));}
