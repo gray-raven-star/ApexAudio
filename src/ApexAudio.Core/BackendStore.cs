@@ -12,7 +12,8 @@ public sealed class BackendStore(string dataRoot)
     {
         ValidateIdentity(dependency.Id, dependency.Version);
         string folder = Path.Combine(Root, dependency.Id, dependency.Version);
-        if (!Directory.Exists(folder)) throw new IOException($"缺少共享后端 {dependency.Id} {dependency.Version}，请先导入对应 .gbackend 文件。");
+        if (!Directory.Exists(folder)) throw new OperationException("backend_missing", $"缺少共享后端 {dependency.Id} {dependency.Version}，请先导入对应 .gbackend 文件。", "import_backend",
+            new Dictionary<string,string>{{"backendId",dependency.Id},{"version",dependency.Version},{"variant",dependency.Variant}});
         BackendFiles.Read(folder, dependency); return folder;
     }
     static void ValidateIdentity(string id, string version)

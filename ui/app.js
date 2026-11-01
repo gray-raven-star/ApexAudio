@@ -96,15 +96,24 @@ function showHapticNote() {
     : (h?.note || '本次没有 X-Haptics 震动记录，独立声音轨道仍可试听。');
 }
 function renderPackages() {
-  const signature=JSON.stringify([state.packs,state.packId]); if($('packageList').dataset.signature===signature)return; $('packageList').dataset.signature=signature; $('packageList').replaceChildren();
-  for(const pack of state.packs || []) {
+  const signature=JSON.stringify([state.packVersions,state.packageCatalogIssues,state.packId,state.packVersion,state.busy]); if($('packageList').dataset.signature===signature)return; $('packageList').dataset.signature=signature; $('packageList').replaceChildren();
+  for(const pack of state.packVersions || []) {
     const card=document.createElement('div');card.className='card package-card';
     const heading=document.createElement('h3');heading.textContent=pack.name;
-    const meta=document.createElement('div');meta.className='package-meta';meta.textContent=pack.version;
-    const actions=document.createElement('div');actions.className='package-actions';const use=document.createElement('button');use.textContent=pack.id===state.packId?'当前适配包':'使用此包';use.onclick=()=>{if(safeToLeave()){send('selectPack',{id:pack.id});page('workspace');}};
-    const remove=document.createElement('button');remove.className='subtle';remove.textContent='卸载';remove.onclick=()=>send('uninstall',{id:pack.id});actions.append(use,remove);card.append(heading,meta,actions);$('packageList').append(card);
+    const meta=document.createElement('div');meta.className='package-meta';meta.textContent=pack.version+' · '+pack.kind+(pack.current?' · 当前默认':'')+(pack.inUse?' · 会话正在使用':'');
+    const source=document.createElement('p');source.className='muted';source.textContent='作者：'+(pack.author||'未提供')+' · 来源：'+(pack.source||'未提供');
+    const issues=document.createElement('p');issues.className='muted';issues.textContent=(pack.issues||[]).map(i=>i.message).join('；');
+    const ref={id:pack.id,version:pack.version,manifestSha256:pack.manifestSha256};
+    const actions=document.createElement('div');actions.className='package-actions';
+    const use=document.createElement('button');use.textContent=pack.current?'当前默认版本':'设为当前默认';use.disabled=pack.current||!pack.ready||state.busy;use.onclick=()=>send('setCurrent',ref);actions.append(use);
+    if(pack.current){
+      const open=document.createElement('button');open.className='subtle';open.textContent='打开工作台';open.onclick=()=>{if(state.packId===pack.id){page('workspace');return;}if(safeToLeave()){send('selectPack',{id:pack.id});page('workspace');}};
+      const clear=document.createElement('button');clear.className='subtle';clear.textContent='清除默认';clear.disabled=state.busy;clear.onclick=()=>send('clearCurrent',{id:pack.id});actions.append(open,clear);
+    }
+    const remove=document.createElement('button');remove.className='subtle';remove.textContent='移除此版本';remove.disabled=pack.current||pack.inUse||state.busy;remove.onclick=()=>send('removeVersion',ref);actions.append(remove);card.append(heading,meta,source,issues,actions);$('packageList').append(card);
   }
-  if(!state.packs?.length){const p=document.createElement('div');p.className='card empty';p.textContent='还没有适配包，点击右上角导入 .gpack。';$('packageList').append(p);}
+  if(!state.packVersions?.length){const p=document.createElement('div');p.className='card empty';p.textContent='还没有适配包，点击右上角导入 .gpack。';$('packageList').append(p);}
+  for(const issue of state.packageCatalogIssues||[]){const p=document.createElement('div');p.className='card';p.textContent='安装记录需要处理：'+(issue.details?.id||'')+' '+issue.message;$('packageList').append(p);}
 }
 function recordButtons(phase) {
   for(const id of ['recordFromTimeline']){
@@ -119,7 +128,7 @@ function render() {
   $('dirty').hidden=!state.dirty; $('saveTrackNames').hidden=!state.preset || state.take?.packId!==state.packId || !state.dirty; $('saveTrackNames').disabled=state.busy; $('connectionDot').classList.toggle('on',state.connected);$('connectionText').textContent=state.connected?'采集已连接':'采集未连接';$('footerStatus').textContent=state.status;$('busyText').textContent=state.busy?'正在处理…':'';
   document.querySelector('[data-menu=restore]').disabled=!state.preset?.basePresetId;
   document.querySelector('[data-menu=delete]').disabled=!state.preset?.id?.startsWith('user-');
-  $('gameState').textContent=state.status;$('connect').textContent=state.connected?'断开采集':'连接采集';$('connect').disabled=state.busy||!state.packId;
+  $('gameState').textContent=state.status+(state.connected&&state.packVersion?' · 本次版本 '+state.packVersion:'');$('connect').textContent=state.connected?'断开采集':'连接采集';$('connect').disabled=state.busy||!state.packId;
   $('error').hidden=!state.error;$('errorText').textContent=state.error || '';
   for(const id of ['presetSelect','savePreset','saveAs','presetMore','addFolder','applyEdit']) $(id).disabled=state.busy||!state.preset;
   $('feedback').checked=!!state.settings?.autoFeedback;$('feedback').disabled=state.busy||!state.connected;

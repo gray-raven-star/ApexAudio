@@ -38,6 +38,7 @@
 
 ## 开发和维护
 
+- [FMOD JSON V2 本地架构](development/fmod-v2-architecture.md)：架构草案，定义职责、数据归属、逻辑接口、状态与失败契约；不表示实现进度。
 - [Owner FMOD 试验基线](development/owner-v2-baseline.md)：原始交付来源、旧后端与新源码验证、当前限制及后续范围。
 - [FMOD JSON 共享后端试验](development/v2-trial.md)：0.3.0 构建/参数分离、目标上下文和 0.2.0 兼容边界；尚不是完整 V2 规范。
 - [构建环境](development/build-environment.md)：源码与开发套件的依赖、编译器和诊断工具。

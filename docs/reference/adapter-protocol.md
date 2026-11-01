@@ -32,12 +32,22 @@ adapter.exe --control <唯一管道名> --audio <唯一管道名>
 {"version":1,"id":1,"ok":false,"result":null,"error":"程序版本不匹配","code":"version_mismatch"}
 ```
 
+协议版本仍为 1，`error`、`code` 和原有状态字段继续保留。新宿主及参考服务支持可选的 `failure` 结构，提供稳定 `code`、`message`、`nextAction` 和按需填写的 `details`；未提供该字段的旧包仍按原消息处理。例如：
+
+```json
+{"version":1,"id":2,"ok":false,"result":null,"error":"请求包含未知分组","code":"group_invalid","failure":{"code":"group_invalid","message":"请求包含未知分组","nextAction":"refresh_groups"}}
+```
+
+结构化字段只描述已有证据；普通异常仍可能返回 `adapter_error`，不能从旧消息猜出更细的失败类别。
+
 每个请求有一个同 id 响应。V1 宿主串行发请求；不在控制管道发送未约定通知。普通请求超时 8 秒，Connect 15 秒，后台状态查询 2 秒，Shutdown 1.5 秒。超时后连接失效，不能继续读取迟到响应。
 
 | 方法 | params | result |
 |---|---|---|
 | GetInfo | null | id、name、protocolVersion、capabilities |
 | GetCapabilities | null | 能力对象 |
+| GetBackendInfo | null | 共享后端身份及上下文摘要，仅共享后端流程 |
+| ValidateTarget | processId、gamePath | 连接前只读检查结果，仅支持该流程的共享后端 |
 | Connect | processId、gamePath | 状态 |
 | GetAudioGroups | null | 完整有序分组数组 |
 | StartCapture | groupIds 字符串数组 | 状态 |
@@ -46,6 +56,10 @@ adapter.exe --control <唯一管道名> --audio <唯一管道名>
 | GetFeedbackSource | null | 实时混音源描述，仅 realtimeMix=true |
 | SetFeedbackGroups | groupIds 字符串数组 | 状态，仅 realtimeMix=true |
 | Disconnect / Shutdown | null | 状态 |
+
+`GetBackendInfo` 和 `ValidateTarget` 不要求旧 V1 适配器实现，宿主不向不支持的新旧包流程混发指令。包格式、启动上下文及参数格式与 IPC 版本分别判断。
+
+状态继续包含 `connected`、`capturing`、`detail`、`droppedBlocks`，可选 `failure` 表达运行中的结构化故障。新 FMOD 状态以非 null 的 `captureGroupIds` 声明独立范围语义，明确的 `[]` 表示不请求任何独立组；范围非空也不保证此刻一定有非零声音。对此状态，宿主不把 `capturing=false` 本身当作目标断开，而按实际连接及明确故障处理恢复。旧包省略该字段或返回 null 时不视为空选择，继续采用旧行为：声明独立 PCM 能力却停止采集时触发连接恢复。
 
 能力：`groups`、`independentPcm`、`activity`、`sourceInfo`、`wholeMix`，都是布尔值。V1 分组录制要求 independentPcm；活动由 PCM 峰值计算。独立的事件／来源数据和 activity-only 传输不在 V1 协议内，相关能力当前应为 false，未来升版定义。
 
@@ -58,6 +72,10 @@ adapter.exe --control <唯一管道名> --audio <唯一管道名>
 id 稳定且唯一，层级不得循环，parentId 必须存在或为 null。最多 2000 条。hasPcm=false 的显示节点不能输出音频。containsChildren=true 表示输出包含实际子总线，宿主用于避免重复混合。
 
 GetAudioGroups 后的数组顺序在整个连接期间固定；音频 groupIndex 引用此数组。层级改变需要断开重连。无法获得真实独立音频时，只能输出一个明确标识的整体混音节点，不能复制给多个分组。
+
+源码 FMOD 后端在改变独立采集请求前检查组 ID，未知或不可采集的组返回 `group_invalid` 并保留原范围。`StartCapture` 空列表清空独立范围，正常连接仍为 `connected=true`、`capturing=false`；不默认全选。`StopCapture` 等待在途音频帧完成后停止独立传输，保留控制连接。连接心跳由连接自身维持，停止或更换独立范围不停止心跳或实时反馈；之后可以重新请求独立组。这是当前 FMOD 实现的行为，不能据此推定旧 V1 二进制也有相同内部生命周期。
+
+wire `Disconnect` 释放游戏目标、映射及原生采集控制，控制管道和后端进程仍可接受后续 `Shutdown`；`Shutdown` 返回后结束服务。主程序关闭整个会话时另外保存录音、结束后端并释放 IPC 及版本使用保护。原生模块已加载不表示可以任意卸载，失败清理存在残留时应保留具体原因。
 
 ## 二进制音频帧
 

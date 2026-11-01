@@ -22,9 +22,11 @@ public sealed record AdapterInfo(string Id, string Name, int ProtocolVersion, Ad
 public sealed record AudioGroup(string Id, string Name, string? ParentId, string Category, bool HasPcm, bool ContainsChildren = false, string NameSource = "适配包");
 public sealed record ConnectRequest(int ProcessId, string? GamePath);
 public sealed record CaptureRequest(string[] GroupIds);
-public sealed record AdapterStatus(bool Connected, bool Capturing, string Detail, long DroppedBlocks = 0);
+public sealed record AdapterStatus(bool Connected, bool Capturing, string Detail, long DroppedBlocks = 0,
+    OperationError? Failure = null, string[]? CaptureGroupIds = null);
 public sealed record Request(int Version, long Id, string Method, JsonElement Params);
-public sealed record Response(int Version, long Id, bool Ok, JsonElement Result, string? Error = null, string? Code = null);
+public sealed record Response(int Version, long Id, bool Ok, JsonElement Result, string? Error = null, string? Code = null,
+    OperationError? Failure = null);
 
 public sealed class PackManifest
 {

@@ -108,7 +108,11 @@ public static class AdapterServer
                     }
                     response = new(Wire.Version, request.Id, true, Wire.Element(result));
                 }
-                catch (Exception e) { response = new(Wire.Version, request.Id, false, Wire.Element(null), e.Message, "adapter_error"); }
+                catch (Exception e)
+                {
+                    var failure=(e as OperationException)?.Error;
+                    response = new(Wire.Version, request.Id, false, Wire.Element(null), e.Message, failure?.Code ?? "adapter_error",failure);
+                }
                 await Framing.WriteJson(control, response, lifetime.Token);
                 if (request.Method == "Shutdown") break;
             }

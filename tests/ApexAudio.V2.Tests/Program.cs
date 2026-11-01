@@ -15,6 +15,7 @@ var packs=Directory.GetFiles(packages,"*.gpack").Select(store.Install).ToArray()
 Check(packs.Length==2 && packs.All(p=>p.Manifest.SchemaVersion==2),"two executable-free V2 configuration packages imported");
 var dependency=packs[0].Manifest.Profiles[0].Backend;
 FmodBoundaryChecks.Run(packs[0],scratch,Check,Reject);
+await FmodStreamChecks.Run(Check);
 Reject(()=>backends.Resolve(dependency),"missing shared backend remains an explicit dependency error");
 string backendArchive=Directory.GetFiles(packages,"*.gbackend").Single();
 string shared=backends.Install(backendArchive);
@@ -32,6 +33,15 @@ foreach(var pack in packs)
     Check(groups.Count>0 && groups.Select(g=>g.Id).Distinct().Count()==groups.Count && groupsBefore.All(id=>groups.Any(g=>g.Id==id)),"stable group IDs match presets: "+pack.Manifest.Id);
     var result=await client.Call<TargetValidation>("ValidateTarget",new ConnectRequest(Environment.ProcessId,Environment.ProcessPath));
     Check(!result.Allowed,"wrong target rejected before native module loading: "+pack.Manifest.Id);
+    if(dependency.Version=="0.3.0")
+    {
+        bool rejected=false;
+        try{await client.Call<AdapterStatus>("StartCapture",new CaptureRequest(new[]{"unknown"}));}
+        catch(AdapterOperationException e)when(e.Error.Code=="capture_not_ready" && e.Error.NextAction=="connect"){rejected=true;}
+        Check(rejected,"structured backend operation errors survive IPC with an actionable code");
+        var stopped=await client.Call<AdapterStatus>("StopCapture");
+        Check(!stopped.Connected && !stopped.Capturing && stopped.Failure==null,"stopping an offline backend is idempotent and control remains responsive");
+    }
     string config=PackageStore.SafePath(pack.Directory,pack.Manifest.Profiles[0].Parameters),before=File.ReadAllText(config);
     File.AppendAllText(config," ");Reject(()=>PackageStore.Validate(pack.Directory,pack.Manifest),"tampered V2 parameters rejected");File.WriteAllText(config,before);
     var rules=pack.Manifest.Games.ToArray(); var profile=pack.Manifest.Profiles[0];
@@ -74,6 +84,17 @@ if(dependency.Version=="0.3.0")
     }
 }
 Check(Directory.GetFiles(Path.Combine(scratch,"sessions")).Length==0,"session contexts removed after orderly shutdown");
+{
+    var client=new AdapterClient();await client.Launch(packs[0]);
+    string contextFile=Directory.GetFiles(Path.Combine(scratch,"sessions")).Single();
+    using(var held=new FileStream(contextFile,FileMode.Open,FileAccess.Read,FileShare.Read))
+    {
+        bool cleanupFailure=false;
+        try{await client.DisposeAsync();}catch(OperationException e) when(e.Error.Code=="cleanup_incomplete"){cleanupFailure=true;}
+        Check(cleanupFailure && !store.IsInUse(packs[0]),"context cleanup failure still releases package use after backend exit");
+    }
+    File.Delete(contextFile);
+}
 if(args.Contains("--legacy"))
 {
     int at=Array.IndexOf(args,"--legacy");var legacy=new PackageStore(Path.Combine(scratch,"v1")).Install(args[at+1]);

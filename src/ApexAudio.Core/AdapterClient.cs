@@ -12,6 +12,7 @@ public sealed class AdapterClient : IAsyncDisposable
     readonly string controlName, audioName;
     Process? process; Task? receive; long id; int disposing;
     string? contextFile; BackendIdentity? backendIdentity;
+    IDisposable? packageUse;
     public IReadOnlyList<AudioGroup> Groups { get; private set; } = Array.Empty<AudioGroup>();
     public AdapterInfo? Info { get; private set; }
     public event Action<AudioPacket>? Audio;
@@ -30,11 +31,12 @@ public sealed class AdapterClient : IAsyncDisposable
         try
         {
             PackageStore.Validate(pack.Directory, pack.Manifest);
+            if(pack.DataRoot!=null) packageUse=new PackageStore(pack.DataRoot).AcquireUse(pack);
             string executable = pack.Manifest.EntryPoint, programRoot = pack.Directory;
             if (pack.Manifest.SchemaVersion == 2)
             {
                 var profile = V2Packages.Select(pack, gamePath);
-                string dataRoot = Path.GetDirectoryName(Path.GetDirectoryName(pack.Directory))!;
+                string dataRoot = pack.DataRoot ?? throw new IOException("共享后端启动需要明确的数据仓库位置。");
                 programRoot = new BackendStore(dataRoot).Resolve(profile.Backend);
                 var descriptor = BackendFiles.Read(programRoot, profile.Backend); executable = descriptor.EntryPoint;
                 using var parameters = System.Text.Json.JsonDocument.Parse(File.ReadAllText(PackageStore.SafePath(pack.Directory, profile.Parameters)));
@@ -61,7 +63,10 @@ public sealed class AdapterClient : IAsyncDisposable
             process = Process.Start(start) ?? throw new IOException("适配程序未能启动。");
             await Task.WhenAll(c, a); Info = await Call<AdapterInfo>("GetInfo"); if (Info.ProtocolVersion != Wire.Version) throw new IOException("适配程序协议版本不匹配。"); if (backendIdentity != null && await Call<BackendIdentity>("GetBackendInfo") != backendIdentity) throw new IOException("实际后端身份与启动配置不匹配。"); receive = Task.Run(Receive);
         }
-        catch { await DisposeAsync(); throw; }
+        catch(Exception primary)
+        {
+            try{await DisposeAsync();}catch(Exception cleanup){throw OperationException.WithCleanup(primary,cleanup);}throw;
+        }
     }
     public async Task<T> Call<T>(string method, object? parameters = null, int timeoutMs = 8000)
     {
@@ -75,7 +80,7 @@ public sealed class AdapterClient : IAsyncDisposable
                 await Framing.WriteJson(control, request, timeout.Token);
                 var response = await Framing.ReadJson<Response>(control, timeout.Token);
                 if (response.Id != request.Id || response.Version != Wire.Version) throw new InvalidDataException("适配程序响应不匹配。");
-                if (!response.Ok) throw new AdapterOperationException(response.Error ?? "适配操作失败。");
+                if (!response.Ok) throw new AdapterOperationException(response.Error ?? "适配操作失败。",response.Code,response.Failure);
                 return Wire.Read<T>(response.Result);
             }
             catch (OperationCanceledException) { lifetime.Cancel(); throw new IOException("适配程序响应超时，连接已停止。"); }
@@ -123,14 +128,46 @@ public sealed class AdapterClient : IAsyncDisposable
         if (Interlocked.Exchange(ref disposing, 1) != 0) return;
         if (control.IsConnected && !lifetime.IsCancellationRequested)
         { try { await Call<AdapterStatus>("Shutdown", timeoutMs: 1500); } catch (Exception) { } }
-        lifetime.Cancel(); control.Dispose(); audio.Dispose();
-        if (receive != null) { try { await receive; } catch (Exception) { } }
-        if (process != null)
+        try
         {
-            if (!process.HasExited) { using var timeout = new CancellationTokenSource(1500); try { await process.WaitForExitAsync(timeout.Token); } catch (OperationCanceledException) { process.Kill(true); await process.WaitForExitAsync(); } }
-            process.Dispose(); process = null;
+            lifetime.Cancel(); control.Dispose(); audio.Dispose();
+            if (receive != null) { try { await receive; } catch (Exception) { } }
+            if (process != null)
+            {
+                if (!process.HasExited) { using var timeout = new CancellationTokenSource(1500); try { await process.WaitForExitAsync(timeout.Token); } catch (OperationCanceledException) { process.Kill(true); await process.WaitForExitAsync(); } }
+                process.Dispose(); process = null;
+            }
         }
-        if (contextFile != null) { File.Delete(contextFile); contextFile = null; }
+        finally
+        {
+            if(process==null || process.HasExited)
+            {
+                process?.Dispose();process=null;
+                try {if(contextFile!=null)File.Delete(contextFile);}
+                catch(IOException e){throw new OperationException("cleanup_incomplete","后端已结束，但启动上下文未能删除："+e.Message,"retry_cleanup");}
+                finally {contextFile=null;packageUse?.Dispose();packageUse=null;}
+            }
+            else
+            {
+                // Keep the version pinned until the still-running process really exits.
+                var remaining=process;var use=packageUse;string? file=contextFile;
+                process=null;packageUse=null;contextFile=null;
+                _=ReleaseAfterExit(remaining,use,file);
+            }
+        }
+    }
+    static async Task ReleaseAfterExit(Process process,IDisposable? use,string? context)
+    {
+        try {await process.WaitForExitAsync();}
+        finally
+        {
+            if(process.HasExited)
+            {
+                try {if(context!=null)File.Delete(context);}catch(IOException) { }
+                finally {use?.Dispose();process.Dispose();}
+            }
+        }
     }
 }
-public sealed class AdapterOperationException(string message) : IOException(message);
+public sealed class AdapterOperationException(string message,string? code=null,OperationError? failure=null)
+    : OperationException(failure?.Code ?? code ?? "adapter_error",failure?.Message ?? message,failure?.NextAction ?? "review_adapter_error",failure?.Details);

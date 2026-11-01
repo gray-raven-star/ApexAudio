@@ -3,5 +3,6 @@
   <ItemGroup>
     <ProjectReference Include="../../src/ApexAudio.Core/ApexAudio.Core.csproj" />
     <Compile Include="../../adapters/Fmod/GameDefinition.cs" Link="FmodGameDefinition.cs" />
+    <Compile Include="../../adapters/Fmod/FmodStream.cs" Link="FmodStream.cs" />
   </ItemGroup>
 </Project>
