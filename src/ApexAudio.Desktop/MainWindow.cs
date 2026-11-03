@@ -80,7 +80,7 @@ sealed partial class MainWindow : Form
         packVersions=workspace.Packages.ListVersions().Where(v=>smokeDirectory!=null || !v.Pack.Manifest.Demo).Select(v=>new{
             v.Pack.Manifest.Id,v.Pack.Manifest.Name,v.Pack.Manifest.Version,v.Pack.Manifest.Author,v.Pack.Manifest.Source,
             manifestSha256=v.Pack.Reference.ManifestSha256,kind=v.Pack.Manifest.SchemaVersion==1?"包含独立程序":"JSON 共享后端配置",
-            v.Current,v.InUse,v.Ready,v.Issues}),
+            v.Current,v.InUse,v.Ready,v.Issues,dependencies=v.Pack.Manifest.Profiles.Select(p=>DescribeDependency(p,v.Backends)).ToArray()}),
         packageCatalogIssues=workspace.Packages.CatalogIssues,
         groups = workspace.Groups, preset = workspace.Preset, presetNotice=workspace.PresetNotice,dirty = workspace.Dirty,
         presets = workspace.Pack == null ? new List<PresetOption>() : workspace.Presets.List(workspace.Pack),
@@ -88,6 +88,13 @@ sealed partial class MainWindow : Form
         games, feedback = workspace.Feedback.Enabled, gain = workspace.Feedback.Gain, port = workspace.Feedback.Port,
         recording = workspace.Recordings.IsRecording, recordingPhase = RecordingPhase, settings, feedbackDetail = FeedbackStatus
     });
+    static object DescribeDependency(CaptureProfile profile,IReadOnlyList<ResolvedBackend>? backends)
+    {
+        var description=backends?.FirstOrDefault(b=>b.Dependency==profile.Backend)?.Description;
+        var parameters=description?.Support?.Parameters.GetValueOrDefault(profile.Backend.Variant);
+        return new{profileId=profile.Id,profile.Backend.Id,profile.Backend.Version,profile.Backend.Variant,
+            available=description!=null,parameterVersion=parameters?.Version};
+    }
     async Task Run(Func<Task> work, bool reportError = true)
     {
         await operations.WaitAsync();

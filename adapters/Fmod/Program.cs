@@ -64,11 +64,9 @@ sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter, IPreparedAdapter
             CaptureModuleGuard.Require(process,dll,game.CaptureSha256);
             nint address = target.Load(dll); nint stopAddress = target.Export(dll, address, "FmodStop"); select = target.Export(dll, address, "FmodSelect");
             uint result = target.CallData(target.Export(dll, address, "FmodConfigure"), game.Configuration());
-            if(result==100)throw new OperationException("capture_busy","此游戏的 FMOD 采集已被其他会话使用，请先关闭原连接。","close_other_session");
-            if (result != 0) throw new IOException("FMOD 配置未应用：" + result);
+            NativeCaptureError.RequireSuccess("configure",result);
             result = target.Call(target.Export(dll, address, "FmodStart"));
-            if(result is 100 or 108)throw new OperationException("capture_busy","此游戏的 FMOD 采集已被其他会话使用，请先关闭原连接。","close_other_session");
-            if (result != 0) throw new IOException(result == 3 ? "游戏音频尚未初始化。" : "FMOD 采集未连接：" + result);
+            NativeCaptureError.RequireSuccess("start",result);
             stop=stopAddress; // Own native cleanup only after this connection has started capture.
             tracksMap = Native.OpenFileMapping(6, false, $"Local\\ApexFmodTracks-{process.Id}"); tracks = Native.MapViewOfFile(tracksMap, 6, 0, 0, 64 + Capacity * BlockSize);
             sourceMap = Native.OpenFileMapping(6, false, $"Local\\ApexFmodMix-{process.Id}"); source = Native.MapViewOfFile(sourceMap, 6, 0, 0, 3150488);

@@ -8,6 +8,12 @@ static class CaptureConflictChecks
 {
     public static async Task Run(InstalledPack pack,string backend,string scratch,Action<bool,string> check)
     {
+        OperationError Error(string stage,uint result){try{NativeCaptureError.RequireSuccess(stage,result);}catch(OperationException e){return e.Error;}throw new Exception("Expected native rejection");}
+        var notReady=Error("start",3);
+        check(notReady.Code=="capture_not_ready" && notReady.NextAction=="wait_game_audio" && notReady.Details?["nativeResult"]=="3" && notReady.Details?["stage"]=="start",
+            "unavailable native audio instance retains structured retry action and original result");
+        check(Error("configure",100).Code=="capture_busy" && Error("start",108).NextAction=="close_other_session","native busy results are distinguishable from configuration or initialization failures");
+        check(Error("start",1007).Details?["nativeResult"]=="1007","other native failures preserve their exact result for author feedback");
         const string name="ApexFmodCapture-current.dll";string hash=new('A',64);
         check(CaptureModuleGuard.Check(name,hash,new[]{new ModuleEvidence(name,null,hash)})==null,"same capture revision may be reused after disconnect");
         check(CaptureModuleGuard.Check(name,hash,new[]{new ModuleEvidence(name,null,new('B',64))})?.Code=="restart_required","same filename with different capture content requires game restart");

@@ -40,6 +40,9 @@ static class AuthoringChecks
         try{configured.SelectCurrent(invalid.Manifest.Id,invalid.Reference);}catch(OperationException e)when(e.Error.Code=="backend_unsupported"){selectionRefused=true;}
         check(selectionRefused && configured.GetCurrent(example.Manifest.Id)!.Reference==example.Reference,"invalid new current selection preserves the previous usable default");
         check(store.Readiness(example).Any(e=>e.Code=="backend_unsupported"),"an unconfigured host cannot declare an unknown parameter contract ready");
+        var states=configured.ListVersions();
+        check(states.Single(s=>s.Pack.Reference==invalid.Reference).Backends?.Single().Description.Version==example.Manifest.Profiles[0].Backend.Version,
+            "version state retains fixed backend description even when package parameters are not ready");
         bool runtimeRefused=false;await using(var client=new AdapterClient(new FmodConfigurationValidator()))
         {
             try{await client.Launch(invalid);}
@@ -56,6 +59,11 @@ static class AuthoringChecks
         document["files"]!["profiles/second.json"]=PackageStore.Hash(secondFile);File.WriteAllText(manifest,document.ToJsonString());
         string multiple=Path.Combine(scratch,"invalid-second-profile.gpack");ZipFile.CreateFromDirectory(definition,multiple);var multiplePack=store.Install(multiple);
         check(configured.Readiness(multiplePack).Any(e=>e.Details?.GetValueOrDefault("file")=="profiles/second.json"),"readiness checks every profile rather than only the first one");
+        document["version"]="0.3.96";document["profiles"]![1]!["backend"]!["descriptorSha256"]=new string('0',64);File.WriteAllText(manifest,document.ToJsonString());
+        string wrongDescriptor=Path.Combine(scratch,"wrong-profile-backend.gpack");ZipFile.CreateFromDirectory(definition,wrongDescriptor);var wrongBackend=store.Install(wrongDescriptor);
+        var wrongState=configured.ListVersions().Single(s=>s.Pack.Reference==wrongBackend.Reference);
+        check(!wrongState.Ready && wrongState.Backends!.All(b=>b.Dependency!=wrongBackend.Manifest.Profiles[1].Backend),
+            "backend descriptions retain exact digest identity and cannot satisfy another profile with a wrong descriptor hash");
         File.Delete(secondFile);File.WriteAllBytes(manifest,originalManifest);
         document=JsonNode.Parse(File.ReadAllText(manifest))!;((JsonObject)document["games"]![0]!["modules"]!).Remove("fmod.dll");File.WriteAllText(manifest,document.ToJsonString());
         check(GamepackAuthoring.Validate(definition,new[]{backend}).Any(d=>d.Code=="required_evidence" && d.Path=="$.games[0].modules.fmod.dll"),"author and host validator require complete per-build FMOD module evidence");

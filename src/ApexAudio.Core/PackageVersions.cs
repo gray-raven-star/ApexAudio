@@ -3,7 +3,8 @@ using ApexAudio.Contracts;
 
 namespace ApexAudio.Core;
 
-public sealed record PackageVersionState(InstalledPack Pack, bool Current, bool InUse, IReadOnlyList<OperationError> Issues)
+public sealed record ResolvedBackend(BackendDependency Dependency,BackendDescription Description);
+public sealed record PackageVersionState(InstalledPack Pack, bool Current, bool InUse, IReadOnlyList<OperationError> Issues,IReadOnlyList<ResolvedBackend>? Backends=null)
 {
     public bool Ready => Issues.Count == 0;
 }
@@ -81,7 +82,8 @@ public sealed partial class PackageStore
             {issues.Add(new("package_invalid",e.Message,"choose_package_version",new Dictionary<string,string>{{"id",id}}));}
         CatalogIssues=issues;return result;
     }
-    public IReadOnlyList<OperationError> Readiness(InstalledPack pack)
+    public IReadOnlyList<OperationError> Readiness(InstalledPack pack)=>Readiness(pack,new Dictionary<BackendDependency,BackendDescriptor>());
+    IReadOnlyList<OperationError> Readiness(InstalledPack pack,Dictionary<BackendDependency,BackendDescriptor> backends)
     {
         var issues=new List<OperationError>();
         try { Validate(pack.Directory,pack.Manifest); }
@@ -89,7 +91,11 @@ public sealed partial class PackageStore
         foreach(var profile in pack.Manifest.Profiles.Where(_=>pack.Manifest.SchemaVersion==2))
             try
             {
-                string root=new BackendStore(DataRoot).Resolve(profile.Backend);var descriptor=BackendFiles.Read(root,profile.Backend);
+                if(!backends.TryGetValue(profile.Backend,out var descriptor))
+                {
+                    string root=new BackendStore(DataRoot).Resolve(profile.Backend);descriptor=BackendFiles.Read(root,profile.Backend);
+                    backends.Add(profile.Backend,descriptor);
+                }
                 if(descriptor.Support==null)continue; // Preserve historical workflows without claiming new validation.
                 string file=SafePath(pack.Directory,profile.Parameters);
                 if(new FileInfo(file).Length>descriptor.Support.Parameters[profile.Backend.Variant].MaxBytes)
@@ -135,14 +141,17 @@ public sealed partial class PackageStore
     }
     public List<PackageVersionState> ListVersions()
     {
-        var all=List();var issues=CatalogIssues.ToList();var result=new List<PackageVersionState>();
+        var all=List();var issues=CatalogIssues.ToList();var result=new List<PackageVersionState>();var backends=new Dictionary<BackendDependency,BackendDescriptor>();
         foreach(var pack in all)
         {
             bool current=false;
             try {current=Same(GetCurrent(pack.Manifest.Id)?.Reference,pack.Reference);}
             catch(Exception e) when(e is IOException or InvalidDataException or ArgumentException or JsonException or UnauthorizedAccessException)
             {issues.Add(new("package_invalid",e.Message,"choose_package_version",new Dictionary<string,string>{{"id",pack.Manifest.Id}}));}
-            result.Add(new(pack,current,IsInUse(pack),Readiness(pack)));
+            var readiness=Readiness(pack,backends);
+            var descriptions=pack.Manifest.Profiles.Where(p=>backends.ContainsKey(p.Backend)).Select(p=>
+                {var d=backends[p.Backend];return new ResolvedBackend(p.Backend,new(d.Id,d.Version,p.Backend.Variant,d.ContextVersion,d.Support));}).Distinct().ToArray();
+            result.Add(new(pack,current,IsInUse(pack),readiness,descriptions));
         }
         CatalogIssues=issues;return result;
     }
