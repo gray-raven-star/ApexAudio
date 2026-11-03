@@ -42,7 +42,7 @@ if ($Compiler) {
             $parameters | ConvertTo-Json -Depth 64 | Set-Content -LiteralPath $parametersPath -Encoding utf8
         }
         $manifest | ConvertTo-Json -Depth 64 | Set-Content -LiteralPath $manifestPath -Encoding utf8
-        & dotnet (Join-Path $projectRoot 'tools/PackV2/bin/Release/net8.0-windows/ApexAudio.PackV2.dll') $definition (Join-Path $output ($pack.Name -replace '0\.2\.0', '0.3.0'))
+        & dotnet (Join-Path $projectRoot 'tools/PackV2/bin/Release/net8.0-windows/ApexAudio.PackV2.dll') package $definition (Join-Path $output ($pack.Name -replace '0\.2\.0', '0.3.0')) --backend $descriptorRoot
         if ($LASTEXITCODE -ne 0) { throw 'Source test configuration packaging failed.' }
     }
     $packages = $output

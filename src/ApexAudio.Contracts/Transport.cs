@@ -70,15 +70,23 @@ public interface IRealtimeMixAdapter
 
 public static class AdapterServer
 {
-    public static async Task Run(string[] args, IGameAdapter adapter)
+    public static Task Run(string[] args, IGameAdapter adapter)=>Run(args,null,adapter);
+    public static Task Run(string[] args, Func<IGameAdapter> create)=>Run(args,create,null);
+    static async Task Run(string[] args,Func<IGameAdapter>? create,IGameAdapter? adapter)
     {
         string Arg(string name) { int at = Array.IndexOf(args, name); return at >= 0 && at + 1 < args.Length ? args[at + 1] : throw new ArgumentException(name); }
         using var lifetime = new CancellationTokenSource();
         using var control = new NamedPipeClientStream(".", Arg("--control"), PipeDirection.InOut, PipeOptions.Asynchronous);
         using var audio = new NamedPipeClientStream(".", Arg("--audio"), PipeDirection.Out, PipeOptions.Asynchronous);
-        await control.ConnectAsync(10000, lifetime.Token); await audio.ConnectAsync(10000, lifetime.Token);
         try
         {
+            await control.ConnectAsync(10000, lifetime.Token); await audio.ConnectAsync(10000, lifetime.Token);
+            OperationError? initialization=null;
+            if(adapter==null)
+            {
+                try{adapter=create!();}
+                catch(Exception e){initialization=(e as OperationException)?.Error ?? new("backend_start_failed",e.Message,"check_backend");}
+            }
             while (!lifetime.IsCancellationRequested)
             {
                 Request request = await Framing.ReadJson<Request>(control, lifetime.Token);
@@ -86,8 +94,10 @@ public static class AdapterServer
                 try
                 {
                     if (request.Version != Wire.Version) throw new InvalidDataException("IPC 协议版本不匹配。");
+                    if(adapter==null && request.Method!="Shutdown")throw new OperationException(initialization!.Code,initialization.Message,initialization.NextAction,initialization.Details);
                     object? result;
-                    switch (request.Method)
+                    if(adapter==null)result=new AdapterStatus(false,false,"后端未初始化，已结束。",Failure:initialization);
+                    else switch (request.Method)
                     {
                         case "GetInfo": result = adapter.Info; break;
                         case "GetBackendInfo": result = (adapter as IPreparedAdapter)?.BackendIdentity ?? throw new InvalidDataException("当前适配器不提供共享后端身份。"); break;
@@ -119,6 +129,6 @@ public static class AdapterServer
         }
         catch (EndOfStreamException) { }
         catch (IOException) { }
-        finally { lifetime.Cancel(); await adapter.DisposeAsync(); }
+        finally { lifetime.Cancel(); if(adapter!=null)await adapter.DisposeAsync(); }
     }
 }

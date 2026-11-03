@@ -1,1 +1,1 @@
-<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType></PropertyGroup><ItemGroup><ProjectReference Include="../../src/ApexAudio.Core/ApexAudio.Core.csproj" /></ItemGroup></Project>
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType></PropertyGroup><ItemGroup><ProjectReference Include="../../src/ApexAudio.Core/ApexAudio.Core.csproj" /><ProjectReference Include="../../adapters/Fmod/Definition/ApexAudio.Fmod.Definition.csproj" /></ItemGroup></Project>

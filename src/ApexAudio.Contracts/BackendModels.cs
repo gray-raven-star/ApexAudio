@@ -7,12 +7,16 @@ namespace ApexAudio.Contracts;
 public sealed record BackendDependency(string Id, string Version, string DescriptorSha256, string Variant);
 public sealed record CaptureProfile(string Id, BackendDependency Backend, string Parameters);
 public sealed record BackendDescriptor(string Id, string Version, string EntryPoint, int ContextVersion,
-    Dictionary<string, string> Files, Dictionary<string, string> Variants);
+    Dictionary<string, string> Files, Dictionary<string, string> Variants,BackendSupport? Support=null);
+public sealed record BackendSupport(string Platform,int ProtocolVersion,Dictionary<string,ParameterSupport> Parameters);
+public sealed record ParameterSupport(string Format,int Version,int MaxBytes,JsonElement Constraints);
+public sealed record BackendDescription(string Id,string Version,string Variant,int ContextVersion,BackendSupport? Support);
+public sealed record ConfigurationDiagnostic(string File,string Path,string Code,string Message);
 public sealed record TargetValidation(bool Allowed, string Detail,OperationError? Failure=null,GameMatch[]? Matches=null);
 public sealed record BackendIdentity(string Id, string Version, string Variant, string ContextSha256);
 public sealed record LaunchContext(int Version, string PackId, string PackVersion, string PackSha256,
     string ProfileId, BackendDependency Backend, JsonElement Parameters,
-    GameMatch? Build = null, TargetIdentity? Target = null,GameMatch[]? Candidates=null);
+    GameMatch? Build = null, TargetIdentity? Target = null,GameMatch[]? Candidates=null,string? ParametersFile=null);
 public sealed record TargetIdentity(int ProcessId, long StartedUtcTicks, string Path)
 {
     public static TargetIdentity Read(int pid)
@@ -63,10 +67,25 @@ public static class BackendFiles
         string file = PathIn(root, "backend.json");
         if (!Hash(file).Equals(requirement.DescriptorSha256, StringComparison.OrdinalIgnoreCase)) throw new IOException("共享后端描述校验失败。");
         var d = JsonSerializer.Deserialize<BackendDescriptor>(File.ReadAllText(file), Wire.Json) ?? throw new IOException("后端描述为空。");
-        if (d.Id != requirement.Id || d.Version != requirement.Version || d.ContextVersion is not (1 or 2) || !d.Variants.ContainsKey(requirement.Variant)) throw new IOException("共享后端版本或采集变体不匹配。");
+        if (d.Files==null || d.Variants==null || d.EntryPoint==null || d.Id != requirement.Id || d.Version != requirement.Version || d.ContextVersion is not (1 or 2) || !d.Variants.ContainsKey(requirement.Variant)) throw new IOException("共享后端版本或采集变体不匹配。");
+        if(d.Support is {} support)
+        {
+            if(support.Platform!="windows-x64" || support.ProtocolVersion!=Wire.Version || support.Parameters==null ||
+                d.Variants.Keys.Any(v=>!support.Parameters.ContainsKey(v)) || support.Parameters.Keys.Any(v=>!d.Variants.ContainsKey(v)) ||
+                support.Parameters.Values.Any(p=>p==null || string.IsNullOrWhiteSpace(p.Format) || p.Version<1 || p.MaxBytes is <1 or >4194304 || p.Constraints.ValueKind!=JsonValueKind.Object))
+                throw new OperationException("backend_unsupported","共享后端声明的平台、协议或参数支持范围不受支持。","choose_backend_version");
+        }
         if (!d.Files.ContainsKey(d.EntryPoint) || !d.EntryPoint.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || d.Variants.Values.Any(v => !d.Files.ContainsKey(v))) throw new IOException("后端入口或变体文件未登记。");
         foreach (var (name, hash) in d.Files)
             if (!Hash(PathIn(root, name)).Equals(hash, StringComparison.OrdinalIgnoreCase)) throw new IOException("共享后端文件校验失败：" + name);
         return d;
+    }
+    public static void ValidateParameterHeader(BackendDescriptor descriptor,BackendDependency dependency,JsonElement parameters,string file)
+    {
+        if(descriptor.Support==null)return; // Historical backends retain their original validation path.
+        var support=descriptor.Support.Parameters[dependency.Variant];
+        var version=parameters.ValueKind==JsonValueKind.Object?parameters.EnumerateObject().Where(p=>p.Name.Equals("schemaVersion",StringComparison.OrdinalIgnoreCase)).ToArray():Array.Empty<JsonProperty>();
+        if(version.Length!=1 || version[0].Value.ValueKind!=JsonValueKind.Number || !version[0].Value.TryGetInt32(out int actual) || actual!=support.Version)
+            throw new OperationException("backend_unsupported","参数格式与固定后端声明不一致。","edit_parameters",new Dictionary<string,string>{{"file",file},{"field","$.schemaVersion"},{"format",support.Format},{"expected",support.Version.ToString()}});
     }
 }

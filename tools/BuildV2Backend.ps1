@@ -18,7 +18,9 @@ Move-Item -LiteralPath $native -Destination (Join-Path $stage $nativeName)
 Get-ChildItem -LiteralPath $stage -File | Where-Object Extension -in '.pdb','.lib' | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
 $files = [ordered]@{}
 Get-ChildItem -LiteralPath $stage -File | Sort-Object Name | ForEach-Object { $files[$_.Name] = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash }
-$descriptor = [ordered]@{ id='apex.fmod'; version='0.3.0'; entryPoint='ApexAudio.Fmod.exe'; contextVersion=2; files=$files; variants=@{ 'studio-v1'=$nativeName } }
+$supportJson = & dotnet (Join-Path $stage 'ApexAudio.Fmod.dll') --describe
+if ($LASTEXITCODE -ne 0) { throw 'FMOD support description failed.' }
+$descriptor = [ordered]@{ id='apex.fmod'; version='0.3.0'; entryPoint='ApexAudio.Fmod.exe'; contextVersion=2; files=$files; variants=@{ 'studio-v1'=$nativeName }; support=($supportJson | ConvertFrom-Json) }
 [IO.File]::WriteAllText((Join-Path $stage 'backend.json'), ($descriptor | ConvertTo-Json -Depth 8), [Text.UTF8Encoding]::new($false))
 New-Item -ItemType Directory -Path (Split-Path $Destination -Parent) -Force | Out-Null
 [IO.Compression.ZipFile]::CreateFromDirectory($stage, $Destination)

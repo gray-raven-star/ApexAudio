@@ -1,26 +1,17 @@
 using System.Text.Json;
 using System.Diagnostics;
 using ApexAudio.Contracts;
+using ApexAudio.Fmod.Definition;
 
 namespace ApexAudio.Fmod;
 
-sealed class GameDefinition
+sealed class GameDefinition : FmodParameters
 {
-    public int SchemaVersion { get; set; } = 1;
-    public string Name { get; set; } = "";
     public string Executable { get; set; } = "";
     public string ExecutableSha256 { get; set; } = "";
     public Dictionary<string, string> Modules { get; set; } = new();
-    public string WrapperModule { get; set; } = "";
-    public uint WrapperRva { get; set; }
-    public uint RuntimeVersion { get; set; }
-    public uint StateOffset { get; set; }
-    public uint StudioOffset { get; set; }
-    public string Locator { get; set; } = "wrapper";
-    public uint StudioHandle { get; set; }
     public string CaptureFile { get; set; } = "";
     public string CaptureSha256 { get; set; } = "";
-    public List<BusDefinition> Buses { get; set; } = new();
     public LaunchContext? Context { get; private set; }
     public BackendIdentity? Identity { get; private set; }
     GameMatch[] PreparedBuilds=>Context?.Candidates ?? (Context?.Build is {} build?new[]{build}:Array.Empty<GameMatch>());
@@ -34,6 +25,9 @@ sealed class GameDefinition
         var context = JsonSerializer.Deserialize<LaunchContext>(File.ReadAllText(path), Wire.Json) ?? throw new IOException("启动上下文为空。");
         var descriptor = BackendFiles.Read(AppContext.BaseDirectory, context.Backend);
         if (descriptor.ContextVersion != context.Version) throw new IOException("后端与启动上下文版本不匹配。");
+        BackendFiles.ValidateParameterHeader(descriptor,context.Backend,context.Parameters,context.ParametersFile ?? "parameters");
+        if(descriptor.Support is {} support && !FmodParameterContract.MatchesSupport(support.Parameters[context.Backend.Variant]))
+            throw new OperationException("backend_unsupported","后端声明与此 FMOD 实现的参数支持范围不一致。","choose_backend_version");
         var game = FromContext(context);
         game.Identity = new(context.Backend.Id, context.Backend.Version, context.Backend.Variant, BackendFiles.Hash(path));
         game.CaptureFile = descriptor.Variants[context.Backend.Variant]; game.CaptureSha256 = descriptor.Files[game.CaptureFile];
@@ -42,9 +36,7 @@ sealed class GameDefinition
     internal static GameDefinition FromContext(LaunchContext context)
     {
         if (context.Version != 2 || context.Backend.Id != "apex.fmod" || context.Backend.Version != "0.3.0" || context.Backend.Variant != "studio-v1") throw new IOException("不受支持的共享后端身份或上下文格式。");
-        var reserved = new HashSet<string>(new[] { "executable", "executableSha256", "modules", "captureFile", "captureSha256" }, StringComparer.OrdinalIgnoreCase);
-        if (context.Parameters.EnumerateObject().Any(property => reserved.Contains(property.Name)))
-            throw new IOException("FMOD 参数格式 2 不得包含构建摘要或采集 DLL 路径。");
+        FmodParameterContract.Require(context.Parameters,context.ParametersFile ?? "parameters");
         var game = context.Parameters.Deserialize<GameDefinition>(Wire.Json) ?? throw new IOException("采集参数为空。");
         if (game.SchemaVersion != 2) throw new IOException("不支持的 FMOD 参数格式。");
         game.Context = context;
@@ -59,8 +51,8 @@ sealed class GameDefinition
     }
     public void Validate()
     {
-        if ((RuntimeVersion >> 8) is not (0x202 or 0x203)) throw new IOException("共享 FMOD 后端仅支持已核对的 2.02/2.03 接口系列。");
-        if (Locator is not ("wrapper" or "studioHandle") || Locator == "studioHandle" && StudioHandle == 0 || Locator == "wrapper" && (WrapperRva == 0 || StateOffset > 4092 || StudioOffset > 4088)) throw new IOException("FMOD 实例定位参数无效。");
+        var invalid=FmodParameterContract.CheckValues(this,Context?.ParametersFile ?? "game.json").FirstOrDefault();
+        if(invalid!=null)throw new OperationException("backend_unsupported",invalid.File+" "+invalid.Path+"："+invalid.Message,"edit_parameters",new Dictionary<string,string>{{"file",invalid.File},{"field",invalid.Path}});
         var builds=Context?.Version==2?PreparedBuilds:new[]{new GameMatch(Executable,ExecutableSha256,Modules:Modules)};
         foreach(var build in builds)
         {
@@ -69,11 +61,6 @@ sealed class GameDefinition
                 !modules.ContainsKey("fmod.dll") || !modules.ContainsKey("fmodstudio.dll") || !modules.ContainsKey(WrapperModule) || modules.Values.Any(h=>!System.Text.RegularExpressions.Regex.IsMatch(h,"^[0-9a-fA-F]{64}$")))
                 throw new IOException("缺少关键模块和游戏构建的摘要。");
         }
-        if (Buses.Count is < 1 or > 64 || Buses.Select(b => b.Id).Distinct().Count() != Buses.Count || Buses.Any(b => !System.Text.RegularExpressions.Regex.IsMatch(b.Id,"^[0-9a-fA-F]{32}$"))) throw new IOException("FMOD 总线编号无效。");
-        var stable = Buses.Select(b => b.StableId ?? b.Id).ToArray();
-        if (stable.Any(string.IsNullOrWhiteSpace) || stable.Distinct().Count() != stable.Length) throw new IOException("稳定分组 ID 重复或为空。");
-        var map = Buses.ToDictionary(b => b.Id);
-        foreach(var bus in Buses) { var seen = new HashSet<string>{bus.Id}; var parent = bus.ParentId; while(parent != null) { if(!map.TryGetValue(parent,out var next) || !seen.Add(parent)) throw new IOException("FMOD 父组无效。"); parent=next.ParentId; } }
     }
     public TargetValidation ValidateTarget(ConnectRequest request)
     {
@@ -117,4 +104,3 @@ sealed class GameDefinition
         return stream.ToArray();
     }
 }
-sealed record BusDefinition(string Id, string Path, string Name, string? ParentId, string Category, bool ContainsChildren, string? StableId = null);

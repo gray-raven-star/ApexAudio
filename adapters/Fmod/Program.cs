@@ -3,8 +3,11 @@ using System.Runtime.InteropServices;
 using ApexAudio.Contracts;
 using ApexAudio.Windows;
 using ApexAudio.Fmod;
+using ApexAudio.Fmod.Definition;
+using System.Text.Json;
 
-await AdapterServer.Run(args, new FmodAdapter(GameDefinition.Load(args)));
+if(args.Length==1 && args[0]=="--describe")Console.WriteLine(JsonSerializer.Serialize(FmodParameterContract.Support,Wire.Json));
+else await AdapterServer.Run(args, ()=>new FmodAdapter(GameDefinition.Load(args)));
 
 sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter, IPreparedAdapter
 {
@@ -21,7 +24,7 @@ sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter, IPreparedAdapter
     public FmodAdapter(GameDefinition definition)
     {
         game = definition;
-        var ids = game.Buses.ToDictionary(b => b.Id, b => b.StableId ?? b.Id);
+        var ids = game.Buses.ToDictionary(b => b.Id, b => b.StableId ?? b.Id,StringComparer.OrdinalIgnoreCase);
         Groups = game.Buses.Select(b => new AudioGroup(ids[b.Id], b.Name, b.ParentId == null ? null : ids.GetValueOrDefault(b.ParentId), b.Category, true, b.ContainsChildren, "FMOD 总线路径")).ToArray();
     }
     public async Task Connect(ConnectRequest request, CancellationToken token)

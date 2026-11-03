@@ -14,6 +14,10 @@ public sealed class PresetStore
     public static void Validate(SoundPreset preset, string packId)
     {
         if (preset == null || preset.SchemaVersion != 1 || preset.PackId != packId || string.IsNullOrWhiteSpace(preset.Id) || string.IsNullOrWhiteSpace(preset.Name)) throw new InvalidDataException("预设格式或适配包身份不匹配。");
+        if(preset.Folders==null || preset.Folders.Any(f=>f==null || f.Id==null || f.Name==null))
+            throw new OperationException("package_invalid","预设 folders 及其条目、编号、名称不可为 null。","edit_preset",new Dictionary<string,string>{{"field","$.folders"}});
+        if(preset.Groups==null || preset.Groups.Values.Any(g=>g==null))
+            throw new OperationException("package_invalid","预设 groups 及其条目不可为 null。","edit_preset",new Dictionary<string,string>{{"field","$.groups"}});
         if (preset.Folders.Select(f => f.Id).Distinct().Count() != preset.Folders.Count || preset.Folders.Any(f => !f.Id.StartsWith("folder:"))) throw new InvalidDataException("显示文件夹编号无效。");
         var folders = preset.Folders.ToDictionary(f => f.Id);
         foreach (var folder in preset.Folders)

@@ -45,10 +45,14 @@ public sealed class PreparedSession : IDisposable
             }
             string dataRoot=pack.DataRoot ?? throw new IOException("共享后端准备需要明确的数据仓库位置。");
             string root=new BackendStore(dataRoot).Resolve(profile.Backend);var descriptor=BackendFiles.Read(root,profile.Backend);
-            using var parameters=JsonDocument.Parse(File.ReadAllText(PackageStore.SafePath(pack.Directory,profile.Parameters)));
+            string parameterFile=PackageStore.SafePath(pack.Directory,profile.Parameters);
+            int maxBytes=descriptor.Support?.Parameters[profile.Backend.Variant].MaxBytes ?? 4194304;
+            if(new FileInfo(parameterFile).Length>maxBytes)throw new OperationException("backend_unsupported","参数文件超过后端支持的大小。","edit_parameters",new Dictionary<string,string>{{"file",profile.Parameters}});
+            using var parameters=JsonDocument.Parse(File.ReadAllText(parameterFile));
+            BackendFiles.ValidateParameterHeader(descriptor,profile.Backend,parameters.RootElement,profile.Parameters);
             var candidates=descriptor.ContextVersion==2?match?.Candidates:null;
             var context=new LaunchContext(descriptor.ContextVersion,pack.Manifest.Id,pack.Manifest.Version,pack.Reference.ManifestSha256,
-                profile.Id,profile.Backend,parameters.RootElement.Clone(),candidates?.FirstOrDefault(),descriptor.ContextVersion==2?target:null,candidates);
+                profile.Id,profile.Backend,parameters.RootElement.Clone(),candidates?.FirstOrDefault(),descriptor.ContextVersion==2?target:null,candidates,profile.Parameters);
             return new(pack,root,descriptor.EntryPoint,context,match,use);
         }
         catch{use?.Dispose();throw;}

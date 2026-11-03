@@ -8,6 +8,11 @@ namespace ApexAudio.Core;
 public sealed class BackendStore(string dataRoot)
 {
     public string Root { get; } = Path.Combine(dataRoot, "backends");
+    public BackendDescription Describe(BackendDependency dependency)
+    {
+        var descriptor=BackendFiles.Read(Resolve(dependency),dependency);
+        return new(descriptor.Id,descriptor.Version,dependency.Variant,descriptor.ContextVersion,descriptor.Support);
+    }
     public string Resolve(BackendDependency dependency)
     {
         ValidateIdentity(dependency.Id, dependency.Version);
@@ -43,7 +48,7 @@ public sealed class BackendStore(string dataRoot)
             string descriptor = Path.Combine(stage, "backend.json");
             var d = JsonSerializer.Deserialize<BackendDescriptor>(File.ReadAllText(descriptor), Wire.Json) ?? throw new InvalidDataException("共享后端描述为空。");
             ValidateIdentity(d.Id, d.Version);
-            if (d.Variants.Count == 0) throw new InvalidDataException("后端没有采集变体。");
+            if (d.Variants==null || d.Variants.Count == 0) throw new InvalidDataException("后端没有采集变体。");
             var requirement = new BackendDependency(d.Id, d.Version, BackendFiles.Hash(descriptor), d.Variants.Keys.First());
             BackendFiles.Read(stage, requirement);
             foreach (string file in Directory.EnumerateFiles(stage, "*", SearchOption.AllDirectories))
