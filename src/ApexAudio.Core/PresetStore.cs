@@ -5,7 +5,7 @@ namespace ApexAudio.Core;
 
 public sealed record PresetOption(string Id, string Name, bool Author);
 
-public sealed class PresetStore
+public sealed partial class PresetStore
 {
     readonly string root;
     public PresetStore(string dataRoot) { root = Path.Combine(dataRoot, "presets"); Directory.CreateDirectory(root); }
@@ -31,7 +31,8 @@ public sealed class PresetStore
     string UserDirectory(string packId) { string path = PackageStore.SafePath(root, packId); Directory.CreateDirectory(path); return path; }
     public List<PresetOption> List(InstalledPack pack) => Authors(pack).Select(p => new PresetOption("author:" + p.Id, p.Name, true))
         .Concat(Directory.EnumerateFiles(UserDirectory(pack.Manifest.Id), "*.json").Select(Read).Select(p => new PresetOption(p.Id, p.Name, false))).ToList();
-    public SoundPreset Load(InstalledPack pack, string id, IReadOnlyList<AudioGroup> groups)
+    public SoundPreset Load(InstalledPack pack, string id, IReadOnlyList<AudioGroup> groups)=>LoadResolution(pack,id,groups).Preset;
+    public PresetResolution LoadResolution(InstalledPack pack, string id, IReadOnlyList<AudioGroup> groups)
     {
         SoundPreset preset;
         if (id.StartsWith("author:"))
@@ -40,9 +41,7 @@ public sealed class PresetStore
             preset.BasePresetId = preset.Id; preset.Id = id; preset.BasePackVersion = pack.Manifest.Version;
         }
         else preset = Read(Path.Combine(UserDirectory(pack.Manifest.Id), id + ".json"));
-        Validate(preset, pack.Manifest.Id);
-        foreach (var g in groups) preset.Groups.TryAdd(g.Id, new(null, false));
-        return preset;
+        return ResolveForGroups(pack,preset,groups,existingSelection:!id.StartsWith("author:"));
     }
     public SoundPreset Empty(InstalledPack pack, IReadOnlyList<AudioGroup> groups) => new()
     {
@@ -70,8 +69,8 @@ public sealed class PresetStore
     }
     public SoundPreset Import(InstalledPack pack, string file, IReadOnlyList<AudioGroup> groups)
     {
-        var p = Read(file); Validate(p, pack.Manifest.Id); p = Save(pack, p, p.Name, true);
-        foreach (var g in groups) p.Groups.TryAdd(g.Id, new()); return p;
+        var p = Read(file); Validate(p, pack.Manifest.Id);p=Save(pack,p,p.Name,true);
+        return ResolveForGroups(pack,p,groups).Preset;
     }
     public static void AtomicWrite<T>(string file, T value)
     {

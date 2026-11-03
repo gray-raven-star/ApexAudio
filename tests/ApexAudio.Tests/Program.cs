@@ -12,6 +12,7 @@ Directory.CreateDirectory(scratch);
 var checks = new List<string>();
 void Check(bool condition, string name) { if (!condition) throw new Exception("FAIL: " + name); checks.Add(name); Console.WriteLine("PASS: " + name); }
 WaveformChecks.Run(scratch, Check);
+PresetResolutionChecks.Run(scratch,Check);
 if (args.Contains("--waveform-only")) return;
 await FeedbackChecks.Run((condition, name) => { if (!condition) throw new Exception("FAIL: " + name); if (!checks.Contains(name)) Check(true, name); });
 await HapticChecks.Run(Check);

@@ -17,7 +17,10 @@ sealed partial class MainWindow
             var demo = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "artifacts", "packages", "demo.gpack"));
             var installed=workspace.Packages.Install(demo);workspace.Packages.SelectCurrent(installed.Manifest.Id,installed.Reference);
             await Run(async () => { await workspace.SelectPack("demo.independent-audio"); await workspace.Connect(0, null); });
+            workspace.Preset!.Groups.Remove(workspace.Groups.First(g=>g.HasPcm).Id);workspace.Preset.Groups["historical"]=new(Enabled:true);
+            await Run(()=>workspace.Connect(0,null));
             await Task.Delay(500); FullState(); await Task.Delay(200);
+            bool presetNotice=await browser.CoreWebView2.ExecuteScriptAsync("!document.getElementById('presetNotice').hidden && document.getElementById('presetNotice').textContent.includes('重新配置')")=="true";
             await CaptureLayout("workspace-wide");
             string next=Path.Combine(smokeDirectory!,"next-demo.gpack");
             File.Copy(demo,next);
@@ -52,7 +55,7 @@ sealed partial class MainWindow
             settings.RecordingDelay = 0; Shortcut(); await Task.Delay(1700);
             bool timedStop = !workspace.Recordings.IsRecording && workspace.Take?.Duration is > .8 and < 1.2;
             var dom = await browser.CoreWebView2.ExecuteScriptAsync("JSON.stringify({rows:document.querySelectorAll('.tree-row').length,tracks:document.querySelectorAll('.track').length,bodyWidth:document.body.scrollWidth,viewport:innerWidth,error:document.getElementById('errorText').textContent})");
-            File.WriteAllText(Path.Combine(smokeDirectory!, "ui-result.json"), JsonSerializer.Serialize(new { success = workspace.Take?.Tracks.Count == 4 && countdown && cancelled && timedStop && versionSelection, countdown, cancelled, timedStop, versionSelection, dom }, Wire.Json));
+            File.WriteAllText(Path.Combine(smokeDirectory!, "ui-result.json"), JsonSerializer.Serialize(new { success = workspace.Take?.Tracks.Count == 4 && countdown && cancelled && timedStop && versionSelection && presetNotice, countdown, cancelled, timedStop, versionSelection,presetNotice, dom }, Wire.Json));
         }
         catch (Exception e) { File.WriteAllText(Path.Combine(smokeDirectory!, "ui-error.txt"), e.ToString()); }
         finally { Close(); }

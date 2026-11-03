@@ -21,3 +21,16 @@ tree.update(groups,{folders:[{id:'custom',name:'我的声音'}],groups:{steps:{f
 assert.equal(tree.nodes.get('steps').parent,'custom');
 assert.equal(tree.nodes.get('steps').name,'我的脚步');
 console.log('PASS: category browsing keeps music and voice visible, original hierarchy and user folders remain available');
+
+const previousDocument=globalThis.document;
+const element=()=>({children:[],dataset:{},classList:{toggle(){}},setAttribute(){},append(...items){this.children.push(...items);},replaceChildren(){this.children=[];}});
+try{
+  globalThis.document={createElement:element};
+  const rendered=new GroupTree(element(),()=>{},()=>{},()=>{});
+  rendered.mode='hierarchy';rendered.update(groups,{groups:{master:{enabled:true},music:{enabled:true},voice:{enabled:false},steps:{enabled:false}}});
+  rendered.expanded.add('category:混音总线');rendered.render();
+  const checkbox=rendered.rows.get('master').row.children[1];
+  assert.equal(checkbox.indeterminate,true);assert.equal(checkbox.checked,false);
+  assert.equal(rendered.preset.groups.master.enabled,true);
+  console.log('PASS: hierarchy renders a mixed checkbox without rewriting the enabled parent mix');
+}finally{if(previousDocument===undefined)delete globalThis.document;else globalThis.document=previousDocument;}

@@ -82,7 +82,7 @@ sealed partial class MainWindow : Form
             manifestSha256=v.Pack.Reference.ManifestSha256,kind=v.Pack.Manifest.SchemaVersion==1?"包含独立程序":"JSON 共享后端配置",
             v.Current,v.InUse,v.Ready,v.Issues}),
         packageCatalogIssues=workspace.Packages.CatalogIssues,
-        groups = workspace.Groups, preset = workspace.Preset, dirty = workspace.Dirty,
+        groups = workspace.Groups, preset = workspace.Preset, presetNotice=workspace.PresetNotice,dirty = workspace.Dirty,
         presets = workspace.Pack == null ? new List<PresetOption>() : workspace.Presets.List(workspace.Pack),
         capabilities = workspace.Capabilities, recordings = workspace.Recordings.List(), take = workspace.Take,
         games, feedback = workspace.Feedback.Enabled, gain = workspace.Feedback.Gain, port = workspace.Feedback.Port,

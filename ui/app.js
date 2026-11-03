@@ -122,6 +122,7 @@ function recordButtons(phase) {
   }
 }
 function render() {
+  $('presetNotice').hidden=!state.presetNotice;$('presetNotice').textContent=state.presetNotice || '';
   if(packId!==state.packId){packId=state.packId;selected=null;tree.reset();}
   options($('packSelect'),(state.packs || []).map(p=>({id:p.id,name:p.name+(p.demo?' · 演示':'')})),state.packId,'导入游戏适配包开始使用');
   options($('presetSelect'),(state.presets || []).map(p=>({id:p.id,name:p.name})),state.preset?.id,'连接后获取作者预设');

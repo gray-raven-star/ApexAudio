@@ -20,6 +20,7 @@ public sealed class AudioWorkspace : IAsyncDisposable
     public FeedbackOutput Feedback { get; } = new();
     public InstalledPack? Pack { get; private set; }
     public SoundPreset? Preset { get; private set; }
+    public string PresetNotice { get; private set; }="";
     public IReadOnlyList<AudioGroup> Groups { get; private set; } = Array.Empty<AudioGroup>();
     public AdapterCapabilities? Capabilities => adapter?.Info?.Capabilities;
     public int GamePid { get; private set; }
@@ -34,7 +35,7 @@ public sealed class AudioWorkspace : IAsyncDisposable
     {
         var selected=Packages.GetCurrent(id) ?? throw new OperationException("package_invalid","请先为这个适配包选择当前版本。","choose_package_version");
         await Disconnect(); Pack = selected;
-        Groups = Array.Empty<AudioGroup>(); Preset = null; LastPresetId = null; Take = Recordings.List().FirstOrDefault(t => t.PackId == id);
+        Groups = Array.Empty<AudioGroup>(); Preset = null; PresetNotice="";LastPresetId = null; Take = Recordings.List().FirstOrDefault(t => t.PackId == id);
         status = Pack.Manifest.Demo ? "演示适配包 · 可直接连接" : "等待游戏运行";
     }
     public async Task Connect(int pid, string? path, PackageVersionRef? requestedVersion = null)
@@ -53,7 +54,9 @@ public sealed class AudioWorkspace : IAsyncDisposable
         {
             await client.Launch(prepared); await client.Connect(pid, path); Groups = client.Groups; GamePid = pid;
             var options = Presets.List(pack); string? first = options.FirstOrDefault(o => o.Id == LastPresetId)?.Id ?? options.FirstOrDefault()?.Id;
-            Preset = previousPreset ?? (first != null ? Presets.Load(pack, first, Groups) : Presets.Empty(pack, Groups)); LastPresetId = Preset.Id; Dirty = previousPreset != null && previousDirty;
+            var resolution=previousPreset!=null?PresetStore.ResolveForGroups(pack,previousPreset,Groups)
+                : first!=null?Presets.LoadResolution(pack,first,Groups):PresetStore.ResolveForGroups(pack,Presets.Empty(pack,Groups),Groups);
+            Preset=resolution.Preset;PresetNotice=resolution.Notice;LastPresetId=Preset.Id;Dirty=previousPreset!=null && previousDirty;
             Apply(); status = "已连接 · 等待音频数据";
         }
         catch(Exception primary)
@@ -129,7 +132,7 @@ public sealed class AudioWorkspace : IAsyncDisposable
         {
             string? parent = group.ParentId; while (parent != null) { var old = Preset.Groups.GetValueOrDefault(parent) ?? new(); Preset.Groups[parent] = old with { Enabled = false }; parent = Groups.Single(g => g.Id == parent).ParentId; }
         }
-        Dirty = true; Apply();
+        PresetNotice=PresetStore.ResolveForGroups(Pack!,Preset,Groups).Notice;Dirty = true; Apply();
     }
     public void SetFolder(string folderId, bool value)
     {
@@ -159,9 +162,9 @@ public sealed class AudioWorkspace : IAsyncDisposable
         }
         Dirty = true;
     }
-    public void LoadPreset(string id) { Preset = Presets.Load(Pack!, id, Groups); LastPresetId = id; Dirty = false; Apply(); }
-    public void SavePreset(string name, bool copy) { Preset = Presets.Save(Pack!, Preset!, name, copy); LastPresetId = Preset.Id; Dirty = false; Apply(); }
-    public void RestorePreset() { Preset = Presets.Restore(Pack!, Preset!, Groups); Dirty = true; Apply(); }
+    public void LoadPreset(string id) { var resolved=Presets.LoadResolution(Pack!,id,Groups);Preset=resolved.Preset;PresetNotice=resolved.Notice;LastPresetId=id;Dirty=false;Apply(); }
+    public void SavePreset(string name, bool copy) { Preset = Presets.Save(Pack!, Preset!, name, copy); LastPresetId = Preset.Id; Dirty = false;PresetNotice=PresetStore.ResolveForGroups(Pack!,Preset,Groups).Notice;Apply(); }
+    public void RestorePreset() { Preset = Presets.Restore(Pack!, Preset!, Groups);PresetNotice=PresetStore.ResolveForGroups(Pack!,Preset,Groups,existingSelection:false).Notice;Dirty = true; Apply(); }
     public Task StartRecording()
     {
         if (!Connected || Capabilities?.IndependentPcm != true) throw new InvalidOperationException("需要连接能够提供独立音轨的适配包。");
@@ -217,7 +220,7 @@ public sealed class AudioWorkspace : IAsyncDisposable
     }
     public async Task ClearPack()
     {
-        await Disconnect();Pack=null;Groups=Array.Empty<AudioGroup>();Preset=null;LastPresetId=null;Dirty=false;
+        await Disconnect();Pack=null;Groups=Array.Empty<AudioGroup>();Preset=null;PresetNotice="";LastPresetId=null;Dirty=false;
     }
     public async ValueTask DisposeAsync() { await Disconnect(); await Feedback.DisposeAsync(); Recordings.Dispose(); }
 }
