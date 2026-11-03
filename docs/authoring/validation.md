@@ -62,7 +62,7 @@ prebuilt/devtools/ApexAudio.DevTools.exe capture --pack "your-game.gpack" --back
 
 报告的 `lifecycle` 包含各阶段状态 `initial`、`stopped`、`resumed`、`afterResume`、`empty`，以及 `controlsPassed`、`dataObserved`、`idlePackets`、`resumedPackets`、`sequenceRegressions`。`controlsPassed` 表示连接/传输状态与空范围满足条件，且停止等待期间未继续收到包；`dataObserved` 只表示初次与恢复阶段均收到包，不表示包内有非零声音。仍须另看 `nonZeroGroups` 和 `peaks`，不能据这些布尔值认定声音语义、实机兼容性或物理震动已通过。
 
-控制状态不符、序列未递增或运行错误会使命令以 1 退出；仅 `dataObserved=false` 不自动判定实现故障，应结合游戏声源、各阶段状态及错误检查。此处描述工具行为，不表示该生命周期已经过真实游戏验收。
+控制状态不符、序列未递增或运行错误会使命令以 1 退出；仅 `dataObserved=false` 不自动判定实现故障，应结合游戏声源、各阶段状态及错误检查。生命周期的实机验收范围以具体游戏构建的报告为准，不能从工具行为推定。
 
 ### 原生模块自己的离线测试
 
