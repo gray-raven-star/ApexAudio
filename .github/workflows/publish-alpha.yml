@@ -78,7 +78,7 @@ jobs:
             ${{ runner.temp }}/apex-alpha/SHA256SUMS-*
           if-no-files-found: error
           retention-days: 14
-      - name: Create draft release and publish assets
+      - name: Create pre-release and publish assets
         if: startsWith(github.ref, 'refs/tags/alpha-')
         shell: pwsh
         env:
@@ -98,12 +98,12 @@ jobs:
             "",
             "SHA256：",
             $checksums,
-            "这是 Alpha 测试包，不是正式版。实机验证范围与限制见压缩包内 README.md 与 docs/。"
+            "这是预发布（pre-release）Alpha 测试包，不是正式版。实机验证范围与限制见压缩包内 README.md 与 docs/。"
           ) -join "`n"
-          gh release create $tag --repo $env:GITHUB_REPOSITORY --verify-tag --draft --title "ApexAudio Alpha $version" --notes $notes
+          gh release create $tag --repo $env:GITHUB_REPOSITORY --verify-tag --draft --prerelease --title "ApexAudio Alpha $version" --notes $notes
           if($LASTEXITCODE -ne 0) { throw 'Draft release creation failed; existing releases are not overwritten.' }
           $assets=@(Get-ChildItem -LiteralPath $output -File | ForEach-Object FullName)
           gh release upload $tag --repo $env:GITHUB_REPOSITORY @assets
           if($LASTEXITCODE -ne 0) { throw 'Asset upload failed; release remains draft.' }
-          gh release edit $tag --repo $env:GITHUB_REPOSITORY --draft=false --latest=false
+          gh release edit $tag --repo $env:GITHUB_REPOSITORY --draft=false --prerelease --latest=false
           if($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }
