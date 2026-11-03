@@ -9,8 +9,6 @@ on:
         default: 0.3.0-alpha.1
         type: string
   push:
-    branches:
-      - feat/ci-alpha # 临时验证触发，随验证 revert 一起移除
     tags:
       - 'alpha-*'
 
@@ -58,8 +56,6 @@ jobs:
           $ErrorActionPreference='Stop'
           if($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
             $version=$env:VERSION_INPUT
-          } elseif($env:GITHUB_REF -like 'refs/heads/*') {
-            $version='0.3.0-alpha.1'
           } else {
             if($env:GITHUB_REF_NAME -notmatch '^alpha-(.+)$') { throw 'Alpha tags use the alpha-<version> shape.' }
             $version=$Matches[1]
