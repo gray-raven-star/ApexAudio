@@ -7,10 +7,11 @@ using ApexAudio.Core;
 static class BackendPreflightChecks
 {
     // Deliberately bypass host preparation to verify the backend's independent pre-injection boundary.
-    public static async Task Run(InstalledPack pack,string backend,string scratch,Action<bool,string> check,bool invalidParameters=false)
+    public static async Task Run(InstalledPack pack,string backend,string scratch,Action<bool,string> check,bool invalidParameters=false,bool captureConflict=false)
     {
         var profile=pack.Manifest.Profiles[0];var target=TargetIdentity.Read(Environment.ProcessId);
         var build=pack.Manifest.Games[0] with{Executable=Path.GetFileName(target.Path),Sha256=PackageStore.Hash(target.Path)};
+        if(captureConflict)build=build with{Modules=build.Modules!.Keys.ToDictionary(name=>name,name=>PackageStore.Hash(Path.Combine(scratch,"capture-conflict",name)))};
         using var parameters=JsonDocument.Parse(File.ReadAllText(PackageStore.SafePath(pack.Directory,profile.Parameters)));
         var context=new LaunchContext(2,pack.Manifest.Id,pack.Manifest.Version,pack.Reference.ManifestSha256,profile.Id,profile.Backend,
             parameters.RootElement.Clone(),build,target,new[]{build});
@@ -45,6 +46,15 @@ static class BackendPreflightChecks
                 await Call("Shutdown");await process.WaitForExitAsync(timeout.Token);return;
             }
             var validation=Wire.Read<TargetValidation>((await Call("ValidateTarget",new ConnectRequest(target.ProcessId,target.Path))).Result);
+            if(captureConflict)
+            {
+                check(!validation.Allowed && validation.Failure?.Code=="restart_required" && validation.Failure.NextAction=="restart_game",
+                    "backend preflight reports loaded capture revision conflict with restart action over IPC");
+                var blocked=await Call("Connect",new ConnectRequest(target.ProcessId,target.Path));
+                check(!blocked.Ok && blocked.Failure?.Code=="restart_required" && !Wire.Read<AdapterStatus>((await Call("GetStatus")).Result).Connected,
+                    "Connect independently rejects capture revision conflict before injecting or calling native capture");
+                await Call("Shutdown");await process.WaitForExitAsync(timeout.Token);return;
+            }
             check(!validation.Allowed && validation.Failure?.Code=="evidence_insufficient","backend independently rechecks frozen candidates and rejects unavailable modules over IPC");
             var changed=Wire.Read<TargetValidation>((await Call("ValidateTarget",new ConnectRequest(0,null))).Result);
             check(!changed.Allowed && changed.Failure?.Code=="target_changed","backend rejects a different target over IPC");

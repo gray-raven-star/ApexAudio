@@ -23,7 +23,11 @@ string backendArchive=Directory.GetFiles(packages,"*.gbackend").Single();
 string shared=backends.Install(backendArchive);
 Check(shared==backends.Resolve(packs[1].Manifest.Profiles[0].Backend),"two games resolve to exactly one immutable backend installation");
 Check(backends.Install(backendArchive)==shared,"reimporting identical backend does not create another copy");
-if(BackendFiles.Read(shared,dependency).Support!=null)await AuthoringChecks.Run(packs[0],shared,scratch,store,Check);
+if(BackendFiles.Read(shared,dependency).Support!=null)
+{
+    await AuthoringChecks.Run(packs[0],shared,scratch,store,Check);
+    await CaptureConflictChecks.Run(packs[0],shared,scratch,Check);
+}
 Reject(()=>BackendFiles.PathIn(shared,"../other.dll"),"backend traversal rejected");
 Reject(()=>backends.Resolve(dependency with {DescriptorSha256=new string('0',64)}),"wrong backend descriptor digest rejected");
 foreach(var pack in packs)

@@ -18,7 +18,17 @@ sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter, IPreparedAdapter
     public AdapterInfo Info => new("fmod.profile", game.Name, Wire.Version, new(true, true, true, false, false, true));
     public IReadOnlyList<AudioGroup> Groups { get; }
     public BackendIdentity BackendIdentity => game.Identity ?? throw new IOException("当前使用 V1 包内配置。");
-    public TargetValidation ValidateTarget(ConnectRequest request) => game.ValidateTarget(request);
+    public TargetValidation ValidateTarget(ConnectRequest request)
+    {
+        var result=game.ValidateTarget(request);if(!result.Allowed)return result;
+        try
+        {
+            using var process=Process.GetProcessById(request.ProcessId);
+            CaptureModuleGuard.Require(process,game.CaptureFile,game.CaptureSha256);return result;
+        }
+        catch(OperationException e){return new(false,e.Message,e.Error,result.Matches);}
+        catch(ArgumentException){return new(false,"目标游戏已退出。",new("target_changed","目标游戏已退出。","choose_target"));}
+    }
     public AdapterStatus Status => stream?.Status ?? new(false,false,detail);
     public FeedbackSource FeedbackSource => new("apex-f32-planar-ring-v1", $"Local\\ApexFmodMix-{target?.Process.Id ?? throw new IOException("尚未连接。")}", target.Process.Id);
     public FmodAdapter(GameDefinition definition)
@@ -51,11 +61,15 @@ sealed class FmodAdapter : IGameAdapter, IRealtimeMixAdapter, IPreparedAdapter
             string dll = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, game.CaptureFile));
             if (!dll.StartsWith(AppContext.BaseDirectory, StringComparison.OrdinalIgnoreCase)) throw new IOException("FMOD 采集模块路径无效。");
             if (!Native.Hash(dll).Equals(game.CaptureSha256,StringComparison.OrdinalIgnoreCase)) throw new IOException("FMOD 采集模块校验失败。");
-            nint address = target.Load(dll); stop = target.Export(dll, address, "FmodStop"); select = target.Export(dll, address, "FmodSelect");
+            CaptureModuleGuard.Require(process,dll,game.CaptureSha256);
+            nint address = target.Load(dll); nint stopAddress = target.Export(dll, address, "FmodStop"); select = target.Export(dll, address, "FmodSelect");
             uint result = target.CallData(target.Export(dll, address, "FmodConfigure"), game.Configuration());
+            if(result==100)throw new OperationException("capture_busy","此游戏的 FMOD 采集已被其他会话使用，请先关闭原连接。","close_other_session");
             if (result != 0) throw new IOException("FMOD 配置未应用：" + result);
             result = target.Call(target.Export(dll, address, "FmodStart"));
+            if(result is 100 or 108)throw new OperationException("capture_busy","此游戏的 FMOD 采集已被其他会话使用，请先关闭原连接。","close_other_session");
             if (result != 0) throw new IOException(result == 3 ? "游戏音频尚未初始化。" : "FMOD 采集未连接：" + result);
+            stop=stopAddress; // Own native cleanup only after this connection has started capture.
             tracksMap = Native.OpenFileMapping(6, false, $"Local\\ApexFmodTracks-{process.Id}"); tracks = Native.MapViewOfFile(tracksMap, 6, 0, 0, 64 + Capacity * BlockSize);
             sourceMap = Native.OpenFileMapping(6, false, $"Local\\ApexFmodMix-{process.Id}"); source = Native.MapViewOfFile(sourceMap, 6, 0, 0, 3150488);
             if (tracks == 0 || source == 0 || Marshal.ReadInt32(tracks) != 0x31544641 || Marshal.ReadInt32(tracks, 28) != BlockSize) throw new IOException("FMOD 音轨缓冲区格式不匹配。");

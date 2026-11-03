@@ -6,5 +6,6 @@
     <ProjectReference Include="../../tools/PackV2/ApexAudio.PackV2.csproj" />
     <Compile Include="../../adapters/Fmod/GameDefinition.cs" Link="FmodGameDefinition.cs" />
     <Compile Include="../../adapters/Fmod/FmodStream.cs" Link="FmodStream.cs" />
+    <Compile Include="../../adapters/Fmod/CaptureModuleGuard.cs" Link="CaptureModuleGuard.cs" />
   </ItemGroup>
 </Project>
