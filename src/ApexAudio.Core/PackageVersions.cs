@@ -86,10 +86,22 @@ public sealed partial class PackageStore
         var issues=new List<OperationError>();
         try { Validate(pack.Directory,pack.Manifest); }
         catch(Exception e) when(e is IOException or InvalidDataException or ArgumentException or JsonException or UnauthorizedAccessException) { return new[]{new OperationError("package_invalid",e.Message,"reimport_package")}; }
-        foreach(var dependency in pack.Manifest.Profiles.Where(_=>pack.Manifest.SchemaVersion==2).Select(p=>p.Backend).Distinct())
-            try { new BackendStore(DataRoot).Resolve(dependency); }
+        foreach(var profile in pack.Manifest.Profiles.Where(_=>pack.Manifest.SchemaVersion==2))
+            try
+            {
+                string root=new BackendStore(DataRoot).Resolve(profile.Backend);var descriptor=BackendFiles.Read(root,profile.Backend);
+                if(descriptor.Support==null)continue; // Preserve historical workflows without claiming new validation.
+                string file=SafePath(pack.Directory,profile.Parameters);
+                if(new FileInfo(file).Length>descriptor.Support.Parameters[profile.Backend.Variant].MaxBytes)
+                    throw new OperationException("backend_unsupported","参数文件超过后端支持的大小。","edit_parameters",new Dictionary<string,string>{{"file",profile.Parameters}});
+                using var parameters=JsonDocument.Parse(File.ReadAllText(file));
+                BackendFiles.ValidateParameterHeader(descriptor,profile.Backend,parameters.RootElement,profile.Parameters);
+                if(configurationValidator==null)throw new OperationException("backend_unsupported","本程序缺少该参数契约的静态验证器，不能设为当前版本。","update_host");
+                foreach(var error in configurationValidator.Validate(descriptor,profile,parameters.RootElement,pack.Manifest.Games,profile.Parameters))
+                    issues.Add(new("backend_unsupported",error.File+" "+error.Path+"："+error.Message,"edit_parameters",new Dictionary<string,string>{{"file",error.File},{"field",error.Path},{"reason",error.Code}}));
+            }
             catch(OperationException e) { issues.Add(e.Error); }
-            catch(Exception e) when(e is IOException or InvalidDataException or UnauthorizedAccessException) { issues.Add(new("backend_unsupported",e.Message,"import_backend")); }
+            catch(Exception e) when(e is IOException or InvalidDataException or UnauthorizedAccessException or JsonException or ArgumentException) { issues.Add(new("backend_unsupported",e.Message,"check_configuration")); }
         return issues;
     }
     public void SelectCurrent(string id, PackageVersionRef? reference)

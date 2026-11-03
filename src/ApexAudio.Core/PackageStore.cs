@@ -16,8 +16,10 @@ public sealed record InstalledPack(string Directory, PackManifest Manifest, stri
 public sealed partial class PackageStore
 {
     public string Root { get; }
-    public PackageStore(string dataRoot)
+    readonly IBackendConfigurationValidator? configurationValidator;
+    public PackageStore(string dataRoot,IBackendConfigurationValidator? configurationValidator=null)
     {
+        this.configurationValidator=configurationValidator;
         DataRoot = Path.GetFullPath(dataRoot); Root = Path.Combine(DataRoot, "packs");
         VersionsRoot = Path.Combine(DataRoot, "pack-versions");
         Directory.CreateDirectory(Root); Directory.CreateDirectory(VersionsRoot);

@@ -7,13 +7,18 @@ using ApexAudio.Core;
 static class BackendPreflightChecks
 {
     // Deliberately bypass host preparation to verify the backend's independent pre-injection boundary.
-    public static async Task Run(InstalledPack pack,string backend,string scratch,Action<bool,string> check)
+    public static async Task Run(InstalledPack pack,string backend,string scratch,Action<bool,string> check,bool invalidParameters=false)
     {
         var profile=pack.Manifest.Profiles[0];var target=TargetIdentity.Read(Environment.ProcessId);
         var build=pack.Manifest.Games[0] with{Executable=Path.GetFileName(target.Path),Sha256=PackageStore.Hash(target.Path)};
         using var parameters=JsonDocument.Parse(File.ReadAllText(PackageStore.SafePath(pack.Directory,profile.Parameters)));
         var context=new LaunchContext(2,pack.Manifest.Id,pack.Manifest.Version,pack.Reference.ManifestSha256,profile.Id,profile.Backend,
             parameters.RootElement.Clone(),build,target,new[]{build});
+        if(invalidParameters)
+        {
+            var json=System.Text.Json.Nodes.JsonNode.Parse(parameters.RootElement.GetRawText())!;json["unknownOperation"]=true;
+            context=context with{Parameters=Wire.Element(json)};
+        }
         string file=Path.Combine(scratch,"preflight-context.json"),key="ApexAudio-Preflight-"+Guid.NewGuid().ToString("N");
         File.WriteAllText(file,JsonSerializer.Serialize(context,Wire.Json));
         using var control=new NamedPipeServerStream(key+"-control",PipeDirection.InOut,1,PipeTransmissionMode.Byte,PipeOptions.Asynchronous|PipeOptions.CurrentUserOnly);
@@ -31,6 +36,13 @@ static class BackendPreflightChecks
             {
                 await Framing.WriteJson(control,new Request(Wire.Version,++id,method,Wire.Element(value)),timeout.Token);
                 return await Framing.ReadJson<Response>(control,timeout.Token);
+            }
+            if(invalidParameters)
+            {
+                var failed=await Call("GetInfo");
+                check(!failed.Ok && failed.Failure?.Code=="backend_unsupported" && failed.Failure.Details?.GetValueOrDefault("field")=="$.unknownOperation",
+                    "bypassing host validation still gets independent backend parameter rejection over IPC");
+                await Call("Shutdown");await process.WaitForExitAsync(timeout.Token);return;
             }
             var validation=Wire.Read<TargetValidation>((await Call("ValidateTarget",new ConnectRequest(target.ProcessId,target.Path))).Result);
             check(!validation.Allowed && validation.Failure?.Code=="evidence_insufficient","backend independently rechecks frozen candidates and rejects unavailable modules over IPC");

@@ -21,14 +21,15 @@ public sealed class PreparedSession : IDisposable
         if(context!=null)contextSnapshot=Wire.Element(context);
         if(match!=null)matchSnapshot=Wire.Element(match);
     }
-    public static PreparedSession Prepare(InstalledPack pack,string? gamePath=null,int? processId=null)
+    public static PreparedSession Prepare(InstalledPack pack,string? gamePath=null,int? processId=null,IBackendConfigurationValidator? validator=null)
     {
         IDisposable? use=null;
         try
         {
             if(pack.DataRoot!=null)
             {
-                var store=new PackageStore(pack.DataRoot);pack=store.GetVersion(pack.Reference);use=store.AcquireUse(pack);
+                var store=new PackageStore(pack.DataRoot,validator);pack=store.GetVersion(pack.Reference);use=store.AcquireUse(pack);
+                if(store.Readiness(pack).FirstOrDefault() is {} error)throw new OperationException(error.Code,error.Message,error.NextAction,error.Details);
             }
             PackageStore.Validate(pack.Directory,pack.Manifest);
             if(pack.Manifest.SchemaVersion==1)return new(pack,pack.Directory,pack.Manifest.EntryPoint,null,null,use);

@@ -22,7 +22,7 @@ sealed partial class MainWindow : Form
     readonly string? smokeDirectory;
     public MainWindow(string root, string? smoke = null)
     {
-        dataRoot = root; smokeDirectory = smoke; workspace = new(root);
+        dataRoot = root; smokeDirectory = smoke; workspace = new(root,new ApexAudio.Fmod.Definition.FmodConfigurationValidator());
         Text = "Apex Audio · 声音采集"; Size = new(1380, 900); MinimumSize = new(900, 650); StartPosition = FormStartPosition.CenterScreen;
         Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "assets", "apex.ico")); Controls.Add(browser);
         string trust = Path.Combine(root, "trusted.json"); if (File.Exists(trust)) foreach (string key in JsonSerializer.Deserialize<string[]>(File.ReadAllText(trust), Wire.Json) ?? Array.Empty<string>()) trusted.Add(key);

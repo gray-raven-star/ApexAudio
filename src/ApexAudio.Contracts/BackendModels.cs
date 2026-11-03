@@ -12,6 +12,10 @@ public sealed record BackendSupport(string Platform,int ProtocolVersion,Dictiona
 public sealed record ParameterSupport(string Format,int Version,int MaxBytes,JsonElement Constraints);
 public sealed record BackendDescription(string Id,string Version,string Variant,int ContextVersion,BackendSupport? Support);
 public sealed record ConfigurationDiagnostic(string File,string Path,string Code,string Message);
+public interface IBackendConfigurationValidator
+{
+    IReadOnlyList<ConfigurationDiagnostic> Validate(BackendDescriptor descriptor,CaptureProfile profile,JsonElement parameters,IReadOnlyList<GameMatch> builds,string file);
+}
 public sealed record TargetValidation(bool Allowed, string Detail,OperationError? Failure=null,GameMatch[]? Matches=null);
 public sealed record BackendIdentity(string Id, string Version, string Variant, string ContextSha256);
 public sealed record LaunchContext(int Version, string PackId, string PackVersion, string PackSha256,

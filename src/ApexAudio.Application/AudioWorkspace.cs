@@ -30,7 +30,8 @@ public sealed class AudioWorkspace : IAsyncDisposable
     public string? LastPresetId { get; private set; }
     public long ConnectionId { get; private set; }
     public event Action<long, string>? ConnectionLost;
-    public AudioWorkspace(string root) { Packages = new(root); Presets = new(root); Recordings = new(root); Feedback.Engine.SessionFile=Path.Combine(root,"xh-engine-session.json"); }
+    readonly IBackendConfigurationValidator? configurationValidator;
+    public AudioWorkspace(string root,IBackendConfigurationValidator? configurationValidator=null) { this.configurationValidator=configurationValidator;Packages = new(root,configurationValidator); Presets = new(root); Recordings = new(root); Feedback.Engine.SessionFile=Path.Combine(root,"xh-engine-session.json"); }
     public async Task SelectPack(string id)
     {
         var selected=Packages.GetCurrent(id) ?? throw new OperationException("package_invalid","请先为这个适配包选择当前版本。","choose_package_version");
@@ -44,7 +45,7 @@ public sealed class AudioWorkspace : IAsyncDisposable
         var pack = requestedVersion!=null ? Packages.GetVersion(requestedVersion) : Packages.GetCurrent(id)
             ?? throw new OperationException("package_invalid","当前版本已清除，请重新选择。","choose_package_version");
         if(pack.Manifest.Id!=id) throw new OperationException("package_invalid","准备的版本不属于所选适配包。","choose_package_version");
-        using var prepared=PreparedSession.Prepare(pack,path,pid);
+        using var prepared=PreparedSession.Prepare(pack,path,pid,configurationValidator);
         var previousPreset = Preset?.PackId == pack.Manifest.Id ? Preset : null; bool previousDirty = Dirty;
         await Disconnect(); Pack=prepared.Pack; status = "正在连接采集接口…";
         var client = new AdapterClient(); adapter = client;

@@ -34,13 +34,35 @@ static class AuthoringChecks
         var document=JsonNode.Parse(File.ReadAllText(manifest))!;document["version"]="0.3.99";
         document["files"]![example.Manifest.Profiles[0].Parameters]=PackageStore.Hash(parameters);File.WriteAllText(manifest,document.ToJsonString());
         string bypass=Path.Combine(scratch,"bypass-author-checks.gpack");ZipFile.CreateFromDirectory(definition,bypass);var invalid=store.Install(bypass);
-        bool runtimeRefused=false;await using(var client=new AdapterClient())
+        var configured=new PackageStore(store.DataRoot,new FmodConfigurationValidator());configured.SelectCurrent(example.Manifest.Id,example.Reference);
+        check(configured.Readiness(invalid).Any(e=>e.Details?.GetValueOrDefault("field")=="$.unknownOperation"),"readiness identifies unsupported parameters without executing a backend");
+        bool selectionRefused=false;
+        try{configured.SelectCurrent(invalid.Manifest.Id,invalid.Reference);}catch(OperationException e)when(e.Error.Code=="backend_unsupported"){selectionRefused=true;}
+        check(selectionRefused && configured.GetCurrent(example.Manifest.Id)!.Reference==example.Reference,"invalid new current selection preserves the previous usable default");
+        check(store.Readiness(example).Any(e=>e.Code=="backend_unsupported"),"an unconfigured host cannot declare an unknown parameter contract ready");
+        bool runtimeRefused=false;await using(var client=new AdapterClient(new FmodConfigurationValidator()))
         {
             try{await client.Launch(invalid);}
-            catch(AdapterOperationException e)when(e.Error.Code=="backend_unsupported" && e.Error.Details?.GetValueOrDefault("field")=="$.unknownOperation"){runtimeRefused=true;}
+            catch(OperationException e)when(e.Error.Code=="backend_unsupported" && e.Error.Details?.GetValueOrDefault("field")=="$.unknownOperation"){runtimeRefused=true;}
         }
-        check(runtimeRefused && !store.IsInUse(invalid),"runtime independently reports invalid parameters over IPC and cleans up instead of timing out");
+        check(runtimeRefused && !store.IsInUse(invalid),"normal launch rejects invalid parameters before starting a backend and releases its pin");
+        await BackendPreflightChecks.Run(example,backend,scratch,check,invalidParameters:true);
         File.WriteAllBytes(manifest,originalManifest);File.WriteAllText(parameters,validParameters);
+        document=JsonNode.Parse(File.ReadAllText(manifest))!;document["version"]="0.3.98";
+        var second=document["profiles"]![0]!.DeepClone();second["id"]="second";second["parameters"]="profiles/second.json";
+        ((JsonArray)document["profiles"]!).Add(second);
+        var secondBuild=document["games"]![0]!.DeepClone();secondBuild["profileId"]="second";((JsonArray)document["games"]!).Add(secondBuild);
+        json=JsonNode.Parse(validParameters)!;json["unknownOperation"]=true;string secondFile=Path.Combine(definition,"profiles/second.json");File.WriteAllText(secondFile,json.ToJsonString());
+        document["files"]!["profiles/second.json"]=PackageStore.Hash(secondFile);File.WriteAllText(manifest,document.ToJsonString());
+        string multiple=Path.Combine(scratch,"invalid-second-profile.gpack");ZipFile.CreateFromDirectory(definition,multiple);var multiplePack=store.Install(multiple);
+        check(configured.Readiness(multiplePack).Any(e=>e.Details?.GetValueOrDefault("file")=="profiles/second.json"),"readiness checks every profile rather than only the first one");
+        File.Delete(secondFile);File.WriteAllBytes(manifest,originalManifest);
+        document=JsonNode.Parse(File.ReadAllText(manifest))!;((JsonObject)document["games"]![0]!["modules"]!).Remove("fmod.dll");File.WriteAllText(manifest,document.ToJsonString());
+        check(GamepackAuthoring.Validate(definition,new[]{backend}).Any(d=>d.Code=="required_evidence" && d.Path=="$.games[0].modules.fmod.dll"),"author and host validator require complete per-build FMOD module evidence");
+        File.WriteAllBytes(manifest,originalManifest);
+        document=JsonNode.Parse(File.ReadAllText(manifest))!;document["games"]![0]!["executable"]="../Game.exe";File.WriteAllText(manifest,document.ToJsonString());
+        check(GamepackAuthoring.Validate(definition,new[]{backend}).Any(d=>d.Path=="$.games[0].executable"),"static checks reject executable paths that runtime cannot accept");
+        File.WriteAllBytes(manifest,originalManifest);
         string presetFile=PackageStore.SafePath(definition,example.Manifest.Presets[0]);string presetText=File.ReadAllText(presetFile);
         foreach(string bad in new[]{"folders-null","groups-null","folders-item","groups-item"})
         {

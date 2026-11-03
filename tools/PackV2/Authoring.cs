@@ -114,18 +114,11 @@ public static class GamepackAuthoring
                 string file=BackendFiles.PathIn(stage,profile.Parameters);
                 if(new FileInfo(file).Length>FmodParameterContract.MaxBytes)throw new InvalidDataException("参数文件超过 1 MiB。");
                 var json=JsonNode.Parse(File.ReadAllText(file))!;Placeholders(json,"$",profile.Parameters);
-                var parameterErrors=FmodParameterContract.Check(Wire.Element(json),profile.Parameters);errors.AddRange(parameterErrors);
+                var parameterErrors=new FmodConfigurationValidator().Validate(release.Descriptor,profile,Wire.Element(json),manifest.Games,profile.Parameters);errors.AddRange(parameterErrors);
                 if(parameterErrors.Count==0)
                 {
                     var value=json.Deserialize<FmodParameters>(Wire.Json)!;
                     foreach(var bus in value.Buses)availableGroups.Add(bus.StableId ?? bus.Id);
-                    for(int b=0;b<manifest.Games.Count;b++)if(manifest.Games[b].ProfileId==profile.Id)
-                    {
-                        var build=manifest.Games[b];var modules=build.Modules==null?new(StringComparer.OrdinalIgnoreCase):new Dictionary<string,string>(build.Modules,StringComparer.OrdinalIgnoreCase);
-                        foreach(string module in new[]{"fmod.dll","fmodstudio.dll",value.WrapperModule})
-                            if(!modules.TryGetValue(module,out string? hash) || !Regex.IsMatch(hash,"^[0-9a-fA-F]{64}$"))
-                                errors.Add(new("manifest.json",$"$.games[{b}].modules.{module}","required_evidence","必须提供该已加载模块的实际 SHA-256。"));
-                    }
                 }
             }
             catch(Exception e)when(e is IOException or InvalidDataException or JsonException or ArgumentException or InvalidOperationException)

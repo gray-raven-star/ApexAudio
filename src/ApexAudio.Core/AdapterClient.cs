@@ -20,15 +20,17 @@ public sealed class AdapterClient : IAsyncDisposable
     public event Action<string>? Failed;
     public bool IsAlive => process is { HasExited: false } && !lifetime.IsCancellationRequested && Volatile.Read(ref disposing) == 0;
     public int ProcessId => process?.Id ?? 0;
-    public AdapterClient()
+    readonly IBackendConfigurationValidator? configurationValidator;
+    public AdapterClient(IBackendConfigurationValidator? configurationValidator=null)
     {
+        this.configurationValidator=configurationValidator;
         string key = "ApexAudio-" + Guid.NewGuid().ToString("N");
         controlName = key + "-control"; audioName = key + "-audio";
         control = new(controlName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly);
         audio = new(audioName, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly);
     }
     public Task Launch(InstalledPack pack, string? gamePath = null, int? processId = null)
-        => Launch(()=>PreparedSession.Prepare(pack,gamePath,processId));
+        => Launch(()=>PreparedSession.Prepare(pack,gamePath,processId,configurationValidator));
     public Task Launch(PreparedSession session)=>Launch(()=>session);
     async Task Launch(Func<PreparedSession> prepare)
     {

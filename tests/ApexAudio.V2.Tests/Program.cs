@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using ApexAudio.Contracts;
 using ApexAudio.Core;
+using ApexAudio.Fmod.Definition;
 
 string root=Path.GetFullPath(args[0]), packages=Path.Combine(root,"tests/fixtures/v2"), scratch=Path.Combine(root,"artifacts/v2-test-"+Guid.NewGuid().ToString("N"));
 int packagesAt=Array.IndexOf(args,"--packages");
@@ -28,7 +29,7 @@ Reject(()=>backends.Resolve(dependency with {DescriptorSha256=new string('0',64)
 foreach(var pack in packs)
 {
     var groupsBefore=new PresetStore(scratch).Authors(pack).SelectMany(p=>p.Groups.Keys).Distinct().ToHashSet();
-    await using var client=new AdapterClient();await client.Launch(pack);
+    await using var client=new AdapterClient(new FmodConfigurationValidator());await client.Launch(pack);
     var info=await client.Call<BackendIdentity>("GetBackendInfo");
     var groups=await client.Call<List<AudioGroup>>("GetAudioGroups");
     Check(info.Id==dependency.Id && info.Version==dependency.Version,"shared executable identity handshake: "+pack.Manifest.Id);
@@ -61,7 +62,7 @@ if(dependency.Version=="0.3.0")
         manifest["games"]![0]!["executable"]=Path.GetFileName(identity.Path);manifest["games"]![0]!["sha256"]=PackageStore.Hash(identity.Path);
         File.WriteAllText(packManifestFile,manifest.ToJsonString(Wire.Json));bool denied=false;
         var changedPack=new InstalledPack(pack.Directory,PackageStore.ReadManifest(packManifestFile),pack.DataRoot);
-        try{using var prepared=PreparedSession.Prepare(changedPack,identity.Path,identity.ProcessId);}
+        try{using var prepared=PreparedSession.Prepare(changedPack,identity.Path,identity.ProcessId,new FmodConfigurationValidator());}
         catch(OperationException e)when(e.Error.Code=="evidence_insufficient"){denied=true;}
         Check(denied && !store.IsInUse(pack),"host preparation rejects unavailable modules before starting a backend and releases its version use");
     }
@@ -79,7 +80,7 @@ if(dependency.Version=="0.3.0")
         pack.Manifest.Profiles[0]=originalProfile with{Backend=originalProfile.Backend with{DescriptorSha256=PackageStore.Hash(descriptorPath)}};
         var manifest=JsonNode.Parse(savedManifest)!;manifest["profiles"]![0]!["backend"]!["descriptorSha256"]=PackageStore.Hash(descriptorPath);
         File.WriteAllText(packManifestFile,manifest.ToJsonString(Wire.Json));
-        await using var failed=new AdapterClient();bool rejected=false;
+        await using var failed=new AdapterClient(new FmodConfigurationValidator());bool rejected=false;
         var changedPack=new InstalledPack(pack.Directory,PackageStore.ReadManifest(packManifestFile),pack.DataRoot);
         try{await failed.Launch(changedPack);}catch(System.ComponentModel.Win32Exception){rejected=true;}
         Check(rejected && Directory.GetFiles(Path.Combine(scratch,"sessions")).Length==0,"failed process start removes prepared context and disposes client");
@@ -91,7 +92,7 @@ if(dependency.Version=="0.3.0")
 }
 Check(Directory.GetFiles(Path.Combine(scratch,"sessions")).Length==0,"session contexts removed after orderly shutdown");
 {
-    var client=new AdapterClient();await client.Launch(packs[0]);
+    var client=new AdapterClient(new FmodConfigurationValidator());await client.Launch(packs[0]);
     string contextFile=Directory.GetFiles(Path.Combine(scratch,"sessions")).Single();
     using(var held=new FileStream(contextFile,FileMode.Open,FileAccess.Read,FileShare.Read))
     {
@@ -104,7 +105,7 @@ Check(Directory.GetFiles(Path.Combine(scratch,"sessions")).Length==0,"session co
 if(args.Contains("--legacy"))
 {
     int at=Array.IndexOf(args,"--legacy");var legacy=new PackageStore(Path.Combine(scratch,"v1")).Install(args[at+1]);
-    await using var old=new AdapterClient();await old.Launch(legacy);
+    await using var old=new AdapterClient(new FmodConfigurationValidator());await old.Launch(legacy);
     Check((await old.Call<List<AudioGroup>>("GetAudioGroups")).Count>0,"unchanged V1 package imports and launches through original entry point");
 }
 if(args.Contains("--capture"))
@@ -112,7 +113,7 @@ if(args.Contains("--capture"))
     int at=Array.IndexOf(args,"--capture");int pid=int.Parse(args[at+1]);string id=args[at+2];
     using var process=System.Diagnostics.Process.GetProcessById(pid);string path=process.MainModule!.FileName;
     var pack=packs.Single(p=>p.Manifest.Id==id);
-    await using var client=new AdapterClient();long packets=0;float peak=0;var peaks=new System.Collections.Concurrent.ConcurrentDictionary<uint,float>();
+    await using var client=new AdapterClient(new FmodConfigurationValidator());long packets=0;float peak=0;var peaks=new System.Collections.Concurrent.ConcurrentDictionary<uint,float>();
     client.Audio+=p=>{Interlocked.Increment(ref packets);peak=Math.Max(peak,p.Peak);peaks.AddOrUpdate(p.GroupIndex,p.Peak,(_,v)=>Math.Max(v,p.Peak));};
     await client.Launch(pack,path,pid);await client.Connect(pid,path);await Task.Delay(5000);
     var report=new{pack=pack.Manifest.Id,packets,peak,groups=peaks.Select(p=>new{id=client.Groups[(int)p.Key].Id,name=client.Groups[(int)p.Key].Name,peak=p.Value}),status=await client.Call<AdapterStatus>("GetStatus")};
