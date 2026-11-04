@@ -20,6 +20,7 @@ public sealed class AudioWorkspace : IAsyncDisposable
     public FeedbackOutput Feedback { get; } = new();
     public InstalledPack? Pack { get; private set; }
     public SoundPreset? Preset { get; private set; }
+    public string PresetNotice { get; private set; }="";
     public IReadOnlyList<AudioGroup> Groups { get; private set; } = Array.Empty<AudioGroup>();
     public AdapterCapabilities? Capabilities => adapter?.Info?.Capabilities;
     public int GamePid { get; private set; }
@@ -29,29 +30,40 @@ public sealed class AudioWorkspace : IAsyncDisposable
     public string? LastPresetId { get; private set; }
     public long ConnectionId { get; private set; }
     public event Action<long, string>? ConnectionLost;
-    public AudioWorkspace(string root) { Packages = new(root); Presets = new(root); Recordings = new(root); Feedback.Engine.SessionFile=Path.Combine(root,"xh-engine-session.json"); }
+    readonly IBackendConfigurationValidator? configurationValidator;
+    public AudioWorkspace(string root,IBackendConfigurationValidator? configurationValidator=null) { this.configurationValidator=configurationValidator;Packages = new(root,configurationValidator); Presets = new(root); Recordings = new(root); Feedback.Engine.SessionFile=Path.Combine(root,"xh-engine-session.json"); }
     public async Task SelectPack(string id)
     {
-        await Disconnect(); Pack = Packages.List().Single(p => p.Manifest.Id == id);
-        Groups = Array.Empty<AudioGroup>(); Preset = null; LastPresetId = null; Take = Recordings.List().FirstOrDefault(t => t.PackId == id);
+        var selected=Packages.GetCurrent(id) ?? throw new OperationException("package_invalid","请先为这个适配包选择当前版本。","choose_package_version");
+        await Disconnect(); Pack = selected;
+        Groups = Array.Empty<AudioGroup>(); Preset = null; PresetNotice="";LastPresetId = null; Take = Recordings.List().FirstOrDefault(t => t.PackId == id);
         status = Pack.Manifest.Demo ? "演示适配包 · 可直接连接" : "等待游戏运行";
     }
-    public async Task Connect(int pid, string? path)
+    public async Task Connect(int pid, string? path, PackageVersionRef? requestedVersion = null)
     {
-        var pack = Pack ?? throw new InvalidOperationException("请先选择适配包。");
+        string id=Pack?.Manifest.Id ?? throw new InvalidOperationException("请先选择适配包。");
+        var pack = requestedVersion!=null ? Packages.GetVersion(requestedVersion) : Packages.GetCurrent(id)
+            ?? throw new OperationException("package_invalid","当前版本已清除，请重新选择。","choose_package_version");
+        if(pack.Manifest.Id!=id) throw new OperationException("package_invalid","准备的版本不属于所选适配包。","choose_package_version");
+        using var prepared=PreparedSession.Prepare(pack,path,pid,configurationValidator);
         var previousPreset = Preset?.PackId == pack.Manifest.Id ? Preset : null; bool previousDirty = Dirty;
-        await Disconnect(); status = "正在连接采集接口…";
+        await Disconnect(); Pack=prepared.Pack; status = "正在连接采集接口…";
         var client = new AdapterClient(); adapter = client;
         long connectionId = ++ConnectionId;
         client.Audio += Accept; client.Failed += reason => { if (!ReferenceEquals(adapter, client)) return; status = reason; ConnectionLost?.Invoke(connectionId, reason); };
         try
         {
-            await client.Launch(pack); await client.Connect(pid, path); Groups = client.Groups; GamePid = pid;
+            await client.Launch(prepared); await client.Connect(pid, path); Groups = client.Groups; GamePid = pid;
             var options = Presets.List(pack); string? first = options.FirstOrDefault(o => o.Id == LastPresetId)?.Id ?? options.FirstOrDefault()?.Id;
-            Preset = previousPreset ?? (first != null ? Presets.Load(pack, first, Groups) : Presets.Empty(pack, Groups)); LastPresetId = Preset.Id; Dirty = previousPreset != null && previousDirty;
+            var resolution=previousPreset!=null?PresetStore.ResolveForGroups(pack,previousPreset,Groups)
+                : first!=null?Presets.LoadResolution(pack,first,Groups):PresetStore.ResolveForGroups(pack,Presets.Empty(pack,Groups),Groups);
+            Preset=resolution.Preset;PresetNotice=resolution.Notice;LastPresetId=Preset.Id;Dirty=previousPreset!=null && previousDirty;
             Apply(); status = "已连接 · 等待音频数据";
         }
-        catch { await Disconnect(); throw; }
+        catch(Exception primary)
+        {
+            try{await Disconnect();}catch(Exception cleanup){throw OperationException.WithCleanup(primary,cleanup);}throw;
+        }
     }
     void Accept(AudioPacket packet)
     {
@@ -121,14 +133,15 @@ public sealed class AudioWorkspace : IAsyncDisposable
         {
             string? parent = group.ParentId; while (parent != null) { var old = Preset.Groups.GetValueOrDefault(parent) ?? new(); Preset.Groups[parent] = old with { Enabled = false }; parent = Groups.Single(g => g.Id == parent).ParentId; }
         }
-        Dirty = true; Apply();
+        PresetNotice=PresetStore.ResolveForGroups(Pack!,Preset,Groups).Notice;Dirty = true; Apply();
     }
     public void SetFolder(string folderId, bool value)
     {
         if (Preset == null) return;
         var folders = new HashSet<string> { folderId }; bool changed;
         do { changed = false; foreach (var f in Preset.Folders) if (f.ParentId != null && folders.Contains(f.ParentId)) changed |= folders.Add(f.Id); } while (changed);
-        foreach (string id in Preset.Groups.Where(k => k.Value.FolderId != null && folders.Contains(k.Value.FolderId)).Select(k => k.Key).ToArray()) SetGroup(id, value);
+        var available=Groups.Select(g=>g.Id).ToHashSet();
+        foreach (string id in Preset.Groups.Where(k => available.Contains(k.Key) && k.Value.FolderId != null && folders.Contains(k.Value.FolderId)).Select(k => k.Key).ToArray()) SetGroup(id, value);
     }
     public void EditGroup(string id, string name, string? folderId, int order)
     {
@@ -150,9 +163,9 @@ public sealed class AudioWorkspace : IAsyncDisposable
         }
         Dirty = true;
     }
-    public void LoadPreset(string id) { Preset = Presets.Load(Pack!, id, Groups); LastPresetId = id; Dirty = false; Apply(); }
-    public void SavePreset(string name, bool copy) { Preset = Presets.Save(Pack!, Preset!, name, copy); LastPresetId = Preset.Id; Dirty = false; Apply(); }
-    public void RestorePreset() { Preset = Presets.Restore(Pack!, Preset!, Groups); Dirty = true; Apply(); }
+    public void LoadPreset(string id) { var resolved=Presets.LoadResolution(Pack!,id,Groups);Preset=resolved.Preset;PresetNotice=resolved.Notice;LastPresetId=id;Dirty=false;Apply(); }
+    public void SavePreset(string name, bool copy) { Preset = Presets.Save(Pack!, Preset!, name, copy); LastPresetId = Preset.Id; Dirty = false;PresetNotice=PresetStore.ResolveForGroups(Pack!,Preset,Groups).Notice;Apply(); }
+    public void RestorePreset() { Preset = Presets.Restore(Pack!, Preset!, Groups);PresetNotice=PresetStore.ResolveForGroups(Pack!,Preset,Groups,existingSelection:false).Notice;Dirty = true; Apply(); }
     public Task StartRecording()
     {
         if (!Connected || Capabilities?.IndependentPcm != true) throw new InvalidOperationException("需要连接能够提供独立音轨的适配包。");
@@ -171,7 +184,8 @@ public sealed class AudioWorkspace : IAsyncDisposable
         var result = await client.Call<AdapterStatus>("GetStatus", timeoutMs: 2000);
         if (!ReferenceEquals(adapter, client)) return null;
         status = result.Detail;
-        if (!result.Connected || (Capabilities?.IndependentPcm == true && !result.Capturing)) ConnectionLost?.Invoke(connectionId, result.Detail);
+        bool legacyCaptureStopped=Capabilities?.IndependentPcm==true && !result.Capturing && result.CaptureGroupIds==null;
+        if (!result.Connected || result.Failure!=null || legacyCaptureStopped) ConnectionLost?.Invoke(connectionId, result.Failure?.Message ?? result.Detail);
         return result;
     }
     public void SelectTake(string id) => Take = Recordings.Load(id);
@@ -192,10 +206,22 @@ public sealed class AudioWorkspace : IAsyncDisposable
     {
         ++ConnectionId;
         var client = adapter; adapter = null;
-        await StopRecording("采集连接结束。"); await Feedback.Stop();
-        if (client != null) { client.Audio -= Accept; await client.DisposeAsync(); }
-        lock (gate) { levels.Clear(); verified.Clear(); enabled.Clear(); sequence = -1; missing = 0; }
-        GamePid = 0; status = "已断开";
+        try
+        {
+            try { await StopRecording("采集连接结束。"); }
+            finally
+            {
+                try { await Feedback.Stop(); }
+                finally { if (client != null) { client.Audio -= Accept; await client.DisposeAsync(); } }
+            }
+            status="已断开";
+        }
+        catch {status="连接清理未完成，请查看错误信息。";throw;}
+        finally {lock (gate) { levels.Clear(); verified.Clear(); enabled.Clear(); sequence = -1; missing = 0; }GamePid = 0;}
+    }
+    public async Task ClearPack()
+    {
+        await Disconnect();Pack=null;Groups=Array.Empty<AudioGroup>();Preset=null;PresetNotice="";LastPresetId=null;Dirty=false;
     }
     public async ValueTask DisposeAsync() { await Disconnect(); await Feedback.DisposeAsync(); Recordings.Dispose(); }
 }

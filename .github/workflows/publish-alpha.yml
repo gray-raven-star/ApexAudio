@@ -1,0 +1,109 @@
+name: Publish Alpha package
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Alpha version recorded in the archive, manifest and checksum file
+        required: true
+        default: 0.3.0-alpha.1
+        type: string
+  push:
+    tags:
+      - 'alpha-*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-alpha-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  package:
+    name: Build Alpha package
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install .NET SDK
+        uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+        with:
+          dotnet-version: '8.0.x'
+      - name: Download and verify pinned Zig compiler
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $zip=Join-Path $env:RUNNER_TEMP 'zig.zip'
+          Invoke-WebRequest -Uri 'https://ziglang.org/download/0.15.2/zig-x86_64-windows-0.15.2.zip' -OutFile $zip
+          if((Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash -ne '3A0ED1E8799A2F8CE2A6E6290A9FF22E6906F8227865911FB7DDEDC3CC14CB0C') { throw 'Compiler download checksum mismatch.' }
+          $directory=Join-Path $env:RUNNER_TEMP 'zig'
+          Expand-Archive -LiteralPath $zip -DestinationPath $directory
+          $roots=@(Get-ChildItem -LiteralPath $directory -Directory)
+          if($roots.Count -ne 1) { throw 'Unexpected compiler archive root.' }
+          $compiler=Join-Path $roots[0].FullName 'zig.exe'
+          if(-not (Test-Path -LiteralPath $compiler)) { throw 'Compiler executable missing.' }
+          "APEX_ALPHA_COMPILER=$compiler" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+      - name: Resolve Alpha version
+        id: meta
+        shell: pwsh
+        env:
+          VERSION_INPUT: ${{ inputs.version }}
+        run: |
+          $ErrorActionPreference='Stop'
+          if($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') {
+            $version=$env:VERSION_INPUT
+          } else {
+            if($env:GITHUB_REF_NAME -notmatch '^alpha-(.+)$') { throw 'Alpha tags use the alpha-<version> shape.' }
+            $version=$Matches[1]
+          }
+          if($version -notmatch '^[0-9A-Za-z.-]+$' -or $version -notmatch '^[0-9]+\.[0-9]+\.[0-9]+') { throw "Invalid Alpha version: $version" }
+          "ALPHA_VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          "version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+      - name: Build V2 backend, packages and Alpha archive
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $output=Join-Path $env:RUNNER_TEMP 'apex-alpha'
+          ./tools/Package-V2Alpha.ps1 -Version $env:ALPHA_VERSION -Compiler $env:APEX_ALPHA_COMPILER -OutputDirectory $output -SourceCommit $env:GITHUB_SHA -PullRequestUrl "https://github.com/$env:GITHUB_REPOSITORY/pull/4"
+      - name: Upload Alpha artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: apexaudio-alpha-${{ steps.meta.outputs.version }}
+          path: |
+            ${{ runner.temp }}/apex-alpha/ApexAudio-*
+            ${{ runner.temp }}/apex-alpha/SHA256SUMS-*
+          if-no-files-found: error
+          retention-days: 14
+      - name: Create pre-release and publish assets
+        if: startsWith(github.ref, 'refs/tags/alpha-')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference='Stop'
+          $tag=$env:GITHUB_REF_NAME
+          $version=$env:ALPHA_VERSION
+          $output=Join-Path $env:RUNNER_TEMP 'apex-alpha'
+          $checksums=Get-Content -LiteralPath (Join-Path $output "SHA256SUMS-$version.txt") -Raw
+          $notes=@(
+            "ApexAudio $version Alpha（Windows x64，framework-dependent）。",
+            "",
+            "- 源码提交：$($env:GITHUB_SHA)",
+            "- 评审 PR：https://github.com/$($env:GITHUB_REPOSITORY)/pull/4",
+            "- 需要 .NET 8 Desktop Runtime (x64) 与 Microsoft Edge WebView2 Runtime；不包含 X-Haptics 驱动。",
+            "",
+            "SHA256：",
+            $checksums,
+            "这是预发布（pre-release）Alpha 测试包，不是正式版。实机验证范围与限制见压缩包内 README.md 与 docs/。"
+          ) -join "`n"
+          gh release create $tag --repo $env:GITHUB_REPOSITORY --verify-tag --draft --prerelease --title "ApexAudio Alpha $version" --notes $notes
+          if($LASTEXITCODE -ne 0) { throw 'Draft release creation failed; existing releases are not overwritten.' }
+          $assets=@(Get-ChildItem -LiteralPath $output -File | ForEach-Object FullName)
+          gh release upload $tag --repo $env:GITHUB_REPOSITORY @assets
+          if($LASTEXITCODE -ne 0) { throw 'Asset upload failed; release remains draft.' }
+          gh release edit $tag --repo $env:GITHUB_REPOSITORY --draft=false --prerelease --latest=false
+          if($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }

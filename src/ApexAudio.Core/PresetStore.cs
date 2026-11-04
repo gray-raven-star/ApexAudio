@@ -5,7 +5,7 @@ namespace ApexAudio.Core;
 
 public sealed record PresetOption(string Id, string Name, bool Author);
 
-public sealed class PresetStore
+public sealed partial class PresetStore
 {
     readonly string root;
     public PresetStore(string dataRoot) { root = Path.Combine(dataRoot, "presets"); Directory.CreateDirectory(root); }
@@ -14,6 +14,10 @@ public sealed class PresetStore
     public static void Validate(SoundPreset preset, string packId)
     {
         if (preset == null || preset.SchemaVersion != 1 || preset.PackId != packId || string.IsNullOrWhiteSpace(preset.Id) || string.IsNullOrWhiteSpace(preset.Name)) throw new InvalidDataException("预设格式或适配包身份不匹配。");
+        if(preset.Folders==null || preset.Folders.Any(f=>f==null || f.Id==null || f.Name==null))
+            throw new OperationException("package_invalid","预设 folders 及其条目、编号、名称不可为 null。","edit_preset",new Dictionary<string,string>{{"field","$.folders"}});
+        if(preset.Groups==null || preset.Groups.Values.Any(g=>g==null))
+            throw new OperationException("package_invalid","预设 groups 及其条目不可为 null。","edit_preset",new Dictionary<string,string>{{"field","$.groups"}});
         if (preset.Folders.Select(f => f.Id).Distinct().Count() != preset.Folders.Count || preset.Folders.Any(f => !f.Id.StartsWith("folder:"))) throw new InvalidDataException("显示文件夹编号无效。");
         var folders = preset.Folders.ToDictionary(f => f.Id);
         foreach (var folder in preset.Folders)
@@ -27,7 +31,8 @@ public sealed class PresetStore
     string UserDirectory(string packId) { string path = PackageStore.SafePath(root, packId); Directory.CreateDirectory(path); return path; }
     public List<PresetOption> List(InstalledPack pack) => Authors(pack).Select(p => new PresetOption("author:" + p.Id, p.Name, true))
         .Concat(Directory.EnumerateFiles(UserDirectory(pack.Manifest.Id), "*.json").Select(Read).Select(p => new PresetOption(p.Id, p.Name, false))).ToList();
-    public SoundPreset Load(InstalledPack pack, string id, IReadOnlyList<AudioGroup> groups)
+    public SoundPreset Load(InstalledPack pack, string id, IReadOnlyList<AudioGroup> groups)=>LoadResolution(pack,id,groups).Preset;
+    public PresetResolution LoadResolution(InstalledPack pack, string id, IReadOnlyList<AudioGroup> groups)
     {
         SoundPreset preset;
         if (id.StartsWith("author:"))
@@ -36,9 +41,7 @@ public sealed class PresetStore
             preset.BasePresetId = preset.Id; preset.Id = id; preset.BasePackVersion = pack.Manifest.Version;
         }
         else preset = Read(Path.Combine(UserDirectory(pack.Manifest.Id), id + ".json"));
-        Validate(preset, pack.Manifest.Id);
-        foreach (var g in groups) preset.Groups.TryAdd(g.Id, new(null, false));
-        return preset;
+        return ResolveForGroups(pack,preset,groups,existingSelection:!id.StartsWith("author:"));
     }
     public SoundPreset Empty(InstalledPack pack, IReadOnlyList<AudioGroup> groups) => new()
     {
@@ -66,8 +69,8 @@ public sealed class PresetStore
     }
     public SoundPreset Import(InstalledPack pack, string file, IReadOnlyList<AudioGroup> groups)
     {
-        var p = Read(file); Validate(p, pack.Manifest.Id); p = Save(pack, p, p.Name, true);
-        foreach (var g in groups) p.Groups.TryAdd(g.Id, new()); return p;
+        var p = Read(file); Validate(p, pack.Manifest.Id);p=Save(pack,p,p.Name,true);
+        return ResolveForGroups(pack,p,groups).Preset;
     }
     public static void AtomicWrite<T>(string file, T value)
     {

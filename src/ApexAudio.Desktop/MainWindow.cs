@@ -18,10 +18,11 @@ sealed partial class MainWindow : Form
     AppSettings settings;
     List<DetectedGame> games = new(); int ticks; bool ready, busy, closing, closed, detecting, autoConnect = true;
     string? autoSuppressed; string lastError = ""; long nextConnectionRetry;
+    OperationError? operationError;
     readonly string? smokeDirectory;
     public MainWindow(string root, string? smoke = null)
     {
-        dataRoot = root; smokeDirectory = smoke; workspace = new(root);
+        dataRoot = root; smokeDirectory = smoke; workspace = new(root,new ApexAudio.Fmod.Definition.FmodConfigurationValidator());
         Text = "Apex Audio · 声音采集"; Size = new(1380, 900); MinimumSize = new(900, 650); StartPosition = FormStartPosition.CenterScreen;
         Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "assets", "apex.ico")); Controls.Add(browser);
         string trust = Path.Combine(root, "trusted.json"); if (File.Exists(trust)) foreach (string key in JsonSerializer.Deserialize<string[]>(File.ReadAllText(trust), Wire.Json) ?? Array.Empty<string>()) trusted.Add(key);
@@ -74,36 +75,56 @@ sealed partial class MainWindow : Form
     void FullState() => Post(new
     {
         type = "state", busy, autoConnect, error = lastError, status = workspace.Status, connected = workspace.Connected,
-        packs = workspace.Packages.List().Where(p => smokeDirectory != null || !p.Manifest.Demo).Select(p => p.Manifest), packId = workspace.Pack?.Manifest.Id,
-        groups = workspace.Groups, preset = workspace.Preset, dirty = workspace.Dirty,
+        packs = workspace.Packages.Current().Concat(workspace.Pack == null ? Array.Empty<InstalledPack>() : new[]{workspace.Pack}).DistinctBy(p=>p.Manifest.Id).Where(p => smokeDirectory != null || !p.Manifest.Demo).Select(p => p.Manifest), packId = workspace.Pack?.Manifest.Id,
+        packVersion=workspace.Pack?.Manifest.Version, operationError,
+        packVersions=workspace.Packages.ListVersions().Where(v=>smokeDirectory!=null || !v.Pack.Manifest.Demo).Select(v=>new{
+            v.Pack.Manifest.Id,v.Pack.Manifest.Name,v.Pack.Manifest.Version,v.Pack.Manifest.Author,v.Pack.Manifest.Source,
+            manifestSha256=v.Pack.Reference.ManifestSha256,kind=v.Pack.Manifest.SchemaVersion==1?"包含独立程序":"JSON 共享后端配置",
+            v.Current,v.InUse,v.Ready,v.Issues,dependencies=v.Pack.Manifest.Profiles.Select(p=>DescribeDependency(p,v.Backends)).ToArray()}),
+        packageCatalogIssues=workspace.Packages.CatalogIssues,
+        groups = workspace.Groups, preset = workspace.Preset, presetNotice=workspace.PresetNotice,dirty = workspace.Dirty,
         presets = workspace.Pack == null ? new List<PresetOption>() : workspace.Presets.List(workspace.Pack),
         capabilities = workspace.Capabilities, recordings = workspace.Recordings.List(), take = workspace.Take,
         games, feedback = workspace.Feedback.Enabled, gain = workspace.Feedback.Gain, port = workspace.Feedback.Port,
         recording = workspace.Recordings.IsRecording, recordingPhase = RecordingPhase, settings, feedbackDetail = FeedbackStatus
     });
+    static object DescribeDependency(CaptureProfile profile,IReadOnlyList<ResolvedBackend>? backends)
+    {
+        var description=backends?.FirstOrDefault(b=>b.Dependency==profile.Backend)?.Description;
+        var parameters=description?.Support?.Parameters.GetValueOrDefault(profile.Backend.Variant);
+        return new{profileId=profile.Id,profile.Backend.Id,profile.Backend.Version,profile.Backend.Variant,
+            available=description!=null,parameterVersion=parameters?.Version};
+    }
     async Task Run(Func<Task> work, bool reportError = true)
     {
         await operations.WaitAsync();
-        busy = true; lastError = ""; FullState();
-        try { await work(); }
-        catch (Exception e) { lastError = e.Message; if (reportError) Post(new { type = "error", message = e.Message }); }
-        finally { busy = false; operations.Release(); FullState(); }
+        busy = true; lastError = "";operationError=null;
+        try { FullState();await work(); }
+        catch (Exception e) { lastError = e.Message; operationError=(e as OperationException)?.Error; if (reportError) Post(new { type = "error", message = e.Message,operationError }); }
+        finally
+        {
+            busy = false;operations.Release();
+            try {FullState();}catch(Exception e){lastError=e.Message;Post(new{type="error",message=e.Message});}
+        }
     }
     bool Trust(InstalledPack pack)
     {
         string key = pack.Manifest.Id + ":" + PackageStore.Hash(Path.Combine(pack.Directory, "manifest.json"));
         if (trusted.Contains(key)) return true;
-        if (MessageBox.Show(this, $"即将运行适配包中的程序。\n\n{pack.Manifest.Name}  {pack.Manifest.Version}\n作者：{pack.Manifest.Author}\n来源：{pack.Manifest.Source}\n\n请仅运行你信任的适配包。", "首次运行适配包", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK) return false;
+        string behavior = pack.Manifest.SchemaVersion == 2 ? "即将使用配置包指定的共享后端连接游戏。" : "即将运行适配包中的程序。";
+        if (MessageBox.Show(this, $"{behavior}\n\n{pack.Manifest.Name}  {pack.Manifest.Version}\n作者：{pack.Manifest.Author}\n来源：{pack.Manifest.Source}\n\n请仅运行你信任的适配包。", "首次运行适配包", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK) return false;
         trusted.Add(key); PresetStore.AtomicWrite(Path.Combine(dataRoot, "trusted.json"), trusted.ToArray()); return true;
     }
     async Task Connect()
     {
-        var pack = workspace.Pack ?? throw new InvalidOperationException("请选择适配包。"); if (!Trust(pack)) return;
-        if (pack.Manifest.Demo) { await workspace.Connect(0, null); return; }
+        string id=workspace.Pack?.Manifest.Id ?? throw new InvalidOperationException("请选择适配包。");
+        var pack=workspace.Packages.GetCurrent(id) ?? throw new OperationException("package_invalid","请先选择当前默认版本。","choose_package_version");
+        var selected=pack.Reference;if (!Trust(pack)) return;
+        if (pack.Manifest.Demo) { await workspace.Connect(0, null,selected); return; }
         var match = games.Where(g => g.PackIds.Contains(pack.Manifest.Id) && g.VersionMatched).ToList();
         if (match.Count == 0) throw new IOException("没有找到版本匹配的游戏进程，请启动游戏或更新适配包。");
         if (match.Count > 1) throw new IOException("检测到多个匹配进程，请只保留一个游戏实例。");
-        await workspace.Connect(match[0].ProcessId, match[0].Path);
+        await workspace.Connect(match[0].ProcessId, match[0].Path,selected);
         if (!workspace.Dirty) RestorePresetSelection(); RememberSelection(); nextConnectionRetry = 0; await MaintainFeedback();
     }
     async Task HandleMessage(JsonElement message)
@@ -111,26 +132,46 @@ sealed partial class MainWindow : Form
         string action = message.GetProperty("action").GetString()!;
         string Text(string key) => message.TryGetProperty(key, out var v) ? v.GetString() ?? "" : "";
         bool Bool(string key) => message.TryGetProperty(key, out var v) && v.GetBoolean();
-        if (action == "ready") { ready = true; var packs = workspace.Packages.List().Where(p => !p.Manifest.Demo).ToList(); var initial = packs.FirstOrDefault(p => p.Manifest.Id == settings.LastPackId) ?? packs.FirstOrDefault(); if (initial != null) await workspace.SelectPack(initial.Manifest.Id); FullState(); if (smokeDirectory != null) _ = Smoke(); return; }
+        if (action == "ready") { ready = true; var packs = workspace.Packages.Current().Where(p => !p.Manifest.Demo).ToList(); var initial = packs.FirstOrDefault(p => p.Manifest.Id == settings.LastPackId) ?? packs.FirstOrDefault(); if (initial != null) await workspace.SelectPack(initial.Manifest.Id); FullState(); if (smokeDirectory != null) _ = Smoke(); return; }
         await Run(async () =>
         {
             switch (action)
             {
                 case "selectPack": await EndRecording(); await workspace.SelectPack(Text("id")); autoSuppressed = null; nextConnectionRetry = 0; RememberSelection(); break;
+                case "setCurrent":
+                    workspace.Packages.SelectCurrent(Text("id"),new(Text("id"),Text("version"),Text("manifestSha256")));
+                    if(!workspace.Connected && !workspace.Dirty) await workspace.SelectPack(Text("id"));
+                    await RefreshGames();break;
+                case "clearCurrent": workspace.Packages.SelectCurrent(Text("id"),null);await RefreshGames();break;
+                case "removeVersion":
+                    if(MessageBox.Show(this,"移除此版本？用户预设和录音会保留。","移除版本",MessageBoxButtons.OKCancel)==DialogResult.OK)
+                    {
+                        workspace.Packages.RemoveVersion(new(Text("id"),Text("version"),Text("manifestSha256")));
+                        if(workspace.Pack?.Manifest.Id==Text("id") && workspace.Pack.Manifest.Version==Text("version")) await workspace.ClearPack();
+                    }
+                    await RefreshGames();break;
                 case "connect": autoSuppressed = null; nextConnectionRetry = 0; await RefreshGames(); await Connect(); break;
                 case "disconnect": autoSuppressed = workspace.Pack?.Manifest.Id; await EndRecording(); await workspace.Disconnect(); feedbackDetail = "反馈已关闭"; break;
                 case "install":
-                    using (var dialog = new OpenFileDialog { Filter = "游戏适配包 (*.gpack)|*.gpack", InitialDirectory = Path.Combine(AppContext.BaseDirectory, "packages") })
+                    using (var dialog = new OpenFileDialog { Filter = "适配包与共享后端 (*.gpack;*.gbackend)|*.gpack;*.gbackend", InitialDirectory = Path.Combine(AppContext.BaseDirectory, "packages") })
                     {
                         if (dialog.ShowDialog(this) != DialogResult.OK) break;
+                        if (Path.GetExtension(dialog.FileName).Equals(".gbackend", StringComparison.OrdinalIgnoreCase))
+                        {
+                            if (MessageBox.Show(this,"导入共享采集后端？后端包含可执行程序，请确认文件来源可信。","导入共享后端",MessageBoxButtons.OKCancel)!=DialogResult.OK) break;
+                            await Task.Run(()=>new BackendStore(dataRoot).Install(dialog.FileName));
+                            MessageBox.Show(this,"共享后端已导入，可以连接对应的 V2 适配包。","导入完成"); break;
+                        }
                         var manifest = workspace.Packages.Inspect(dialog.FileName);
-                        if (MessageBox.Show(this, $"安装 {manifest.Name} {manifest.Version}\n作者：{manifest.Author}\n来源：{manifest.Source}\n\n适配包包含可执行程序。", "导入适配包", MessageBoxButtons.OKCancel) != DialogResult.OK) break;
-                        await EndRecording(); await workspace.Disconnect(); var installed = await Task.Run(() => workspace.Packages.Install(dialog.FileName)); await workspace.SelectPack(installed.Manifest.Id); autoSuppressed = null;
+                        string contents = manifest.SchemaVersion == 2 ? "V2 配置包需要对应版本的共享后端。" : "适配包包含可执行程序。";
+                        if (MessageBox.Show(this, $"安装 {manifest.Name} {manifest.Version}\n作者：{manifest.Author}\n来源：{manifest.Source}\n\n{contents}", "导入适配包", MessageBoxButtons.OKCancel) != DialogResult.OK) break;
+                        await Task.Run(() => workspace.Packages.Install(dialog.FileName));
+                        MessageBox.Show(this,"版本已安装。请在游戏适配包页面明确选择当前默认版本。进行中的会话不受影响。","导入完成");
                     }
                     break;
                 case "uninstall":
                     if (MessageBox.Show(this, "卸载适配包？用户预设和录音会保留。", "卸载", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                    { await EndRecording(); await workspace.Disconnect(); workspace.Packages.Uninstall(Text("id")); if (workspace.Packages.List().FirstOrDefault(p => !p.Manifest.Demo) is { } followingPack) await workspace.SelectPack(followingPack.Manifest.Id); }
+                    { workspace.Packages.Uninstall(Text("id")); }
                     break;
                 case "group": workspace.SetGroup(Text("id"), Bool("enabled")); break;
                 case "folderToggle": workspace.SetFolder(Text("id"), Bool("enabled")); break;
@@ -176,7 +217,7 @@ sealed partial class MainWindow : Form
             if (action is "savePreset" or "loadPreset" or "restorePreset" or "importPreset") RememberSelection();
         });
     }
-    async Task RefreshGames() { var packs = workspace.Packages.List(); games = await Task.Run(() => GameDetector.Detect(packs)); }
+    async Task RefreshGames() { var packs = workspace.Packages.Current(); games = await Task.Run(() => GameDetector.Detect(packs)); }
     async Task RecoverConnection(string reason)
     {
         recordingTimer?.Cancel(); countdownEnd = 0;
@@ -203,7 +244,7 @@ sealed partial class MainWindow : Form
                 var matches = games.Where(g => g.VersionMatched).SelectMany(g => g.PackIds).Distinct().ToArray();
                 if (matches.Length == 1)
                 {
-                    var pack = workspace.Packages.List().Single(p => p.Manifest.Id == matches[0]);
+                    var pack = workspace.Packages.Current().Single(p => p.Manifest.Id == matches[0]);
                     string key = pack.Manifest.Id + ":" + PackageStore.Hash(Path.Combine(pack.Directory, "manifest.json"));
                     if (trusted.Contains(key)) await Run(async () =>
                     {

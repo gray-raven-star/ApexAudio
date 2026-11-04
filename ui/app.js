@@ -95,16 +95,41 @@ function showHapticNote() {
     ? description+(!hasSupplement&&mode!=='final'?' 这段录音没有单独的补充分量。':'')+' '+(h.note||'曲线为引擎输出数据，非马达实测。')
     : (h?.note || '本次没有 X-Haptics 震动记录，独立声音轨道仍可试听。');
 }
+function nextStep(error) {
+  return ({import_backend:'导入所需版本的 .gbackend 后重试。',choose_backend_version:'请导入适配包指定版本的后端，或选择其他包版本。',
+    edit_parameters:'请将文件与字段信息提供给适配作者，获取修正版；也可选择旧版本。',update_host:'请使用支持此参数格式的主程序版本。',
+    choose_package_version:'在游戏适配包页选择其他可用版本。',reimport_package:'请重新导入原包。',
+    restart_game:'重启游戏后重新连接；切换包版本不会替换游戏中已加载的 DLL。',close_other_session:'请先断开其他正在使用该游戏的采集连接。',
+    choose_target:'启动对应游戏后刷新并重新连接。',prepare_session:'刷新目标后重新连接。',reconnect:'请重新连接游戏。',
+    retry_target_check:'请检查游戏进程及权限，然后刷新并重试。',check_permissions:'请确认程序有权限读取游戏进程与模块。',
+    wait_game_audio:'等待游戏音频可用后重试；持续失败时请联系适配作者。',check_capture_configuration:'请把操作阶段和原生返回值提供给适配作者。',
+    check_configuration:'请检查配置包及固定后端文件，必要时重新导入。',retry_cleanup:'请检查游戏及后端进程状态；清理未完成时重启游戏。'})[error?.nextAction] || '';
+}
 function renderPackages() {
-  const signature=JSON.stringify([state.packs,state.packId]); if($('packageList').dataset.signature===signature)return; $('packageList').dataset.signature=signature; $('packageList').replaceChildren();
-  for(const pack of state.packs || []) {
-    const card=document.createElement('div');card.className='card package-card';
+  const signature=JSON.stringify([state.packVersions,state.packageCatalogIssues,state.packId,state.packVersion,state.busy]); if($('packageList').dataset.signature===signature)return; $('packageList').dataset.signature=signature; $('packageList').replaceChildren();
+  for(const pack of state.packVersions || []) {
+    const card=document.createElement('div');card.className='card package-card';card.dataset.packId=pack.id;card.dataset.packVersion=pack.version;
     const heading=document.createElement('h3');heading.textContent=pack.name;
-    const meta=document.createElement('div');meta.className='package-meta';meta.textContent=pack.version;
-    const actions=document.createElement('div');actions.className='package-actions';const use=document.createElement('button');use.textContent=pack.id===state.packId?'当前适配包':'使用此包';use.onclick=()=>{if(safeToLeave()){send('selectPack',{id:pack.id});page('workspace');}};
-    const remove=document.createElement('button');remove.className='subtle';remove.textContent='卸载';remove.onclick=()=>send('uninstall',{id:pack.id});actions.append(use,remove);card.append(heading,meta,actions);$('packageList').append(card);
+    const meta=document.createElement('div');meta.className='package-meta';meta.textContent=pack.version+' · '+pack.kind+(pack.current?' · 当前默认':'')+(pack.inUse?' · 会话正在使用':'');
+    const source=document.createElement('p');source.className='muted';source.textContent='作者：'+(pack.author||'未提供')+' · 来源：'+(pack.source||'未提供');
+    const dependencies=document.createElement('div');dependencies.className='package-dependencies';
+    for(const dependency of pack.dependencies || []) {
+      const line=document.createElement('p');line.className='muted';
+      line.textContent=`采集方案 ${dependency.profileId}：${dependency.id} ${dependency.version} / ${dependency.variant} · ${dependency.available?'后端已安装':'后端不可用'}`+
+        (dependency.parameterVersion?` · 参数格式 ${dependency.parameterVersion}`:'');dependencies.append(line);
+    }
+    const issues=document.createElement('p');issues.className='muted';issues.textContent=(pack.issues||[]).map(i=>i.message+' '+nextStep(i)).join('；');
+    const ref={id:pack.id,version:pack.version,manifestSha256:pack.manifestSha256};
+    const actions=document.createElement('div');actions.className='package-actions';
+    const use=document.createElement('button');use.textContent=pack.current?'当前默认版本':'设为当前默认';use.disabled=pack.current||!pack.ready||state.busy;use.onclick=()=>send('setCurrent',ref);actions.append(use);
+    if(pack.current){
+      const open=document.createElement('button');open.className='subtle';open.textContent='打开工作台';open.onclick=()=>{if(state.packId===pack.id){page('workspace');return;}if(safeToLeave()){send('selectPack',{id:pack.id});page('workspace');}};
+      const clear=document.createElement('button');clear.className='subtle';clear.textContent='清除默认';clear.disabled=state.busy;clear.onclick=()=>send('clearCurrent',{id:pack.id});actions.append(open,clear);
+    }
+    const remove=document.createElement('button');remove.className='subtle';remove.textContent='移除此版本';remove.disabled=pack.current||pack.inUse||state.busy;remove.onclick=()=>send('removeVersion',ref);actions.append(remove);card.append(heading,meta,source,dependencies,issues,actions);$('packageList').append(card);
   }
-  if(!state.packs?.length){const p=document.createElement('div');p.className='card empty';p.textContent='还没有适配包，点击右上角导入 .gpack。';$('packageList').append(p);}
+  if(!state.packVersions?.length){const p=document.createElement('div');p.className='card empty';p.textContent='还没有适配包，点击右上角导入 .gpack。';$('packageList').append(p);}
+  for(const issue of state.packageCatalogIssues||[]){const p=document.createElement('div');p.className='card';p.textContent='安装记录需要处理：'+(issue.details?.id||'')+' '+issue.message;$('packageList').append(p);}
 }
 function recordButtons(phase) {
   for(const id of ['recordFromTimeline']){
@@ -113,14 +138,15 @@ function recordButtons(phase) {
   }
 }
 function render() {
+  $('presetNotice').hidden=!state.presetNotice;$('presetNotice').textContent=state.presetNotice || '';
   if(packId!==state.packId){packId=state.packId;selected=null;tree.reset();}
   options($('packSelect'),(state.packs || []).map(p=>({id:p.id,name:p.name+(p.demo?' · 演示':'')})),state.packId,'导入游戏适配包开始使用');
   options($('presetSelect'),(state.presets || []).map(p=>({id:p.id,name:p.name})),state.preset?.id,'连接后获取作者预设');
   $('dirty').hidden=!state.dirty; $('saveTrackNames').hidden=!state.preset || state.take?.packId!==state.packId || !state.dirty; $('saveTrackNames').disabled=state.busy; $('connectionDot').classList.toggle('on',state.connected);$('connectionText').textContent=state.connected?'采集已连接':'采集未连接';$('footerStatus').textContent=state.status;$('busyText').textContent=state.busy?'正在处理…':'';
   document.querySelector('[data-menu=restore]').disabled=!state.preset?.basePresetId;
   document.querySelector('[data-menu=delete]').disabled=!state.preset?.id?.startsWith('user-');
-  $('gameState').textContent=state.status;$('connect').textContent=state.connected?'断开采集':'连接采集';$('connect').disabled=state.busy||!state.packId;
-  $('error').hidden=!state.error;$('errorText').textContent=state.error || '';
+  $('gameState').textContent=state.status+(state.connected&&state.packVersion?' · 本次版本 '+state.packVersion:'');$('connect').textContent=state.connected?'断开采集':'连接采集';$('connect').disabled=state.busy||!state.packId;
+  $('error').hidden=!state.error;$('errorText').textContent=state.error ? state.error+' '+nextStep(state.operationError) : '';
   for(const id of ['presetSelect','savePreset','saveAs','presetMore','addFolder','applyEdit']) $(id).disabled=state.busy||!state.preset;
   $('feedback').checked=!!state.settings?.autoFeedback;$('feedback').disabled=state.busy||!state.connected;
   $('feedbackState').textContent=state.feedbackDetail || '补充震动已关闭';

@@ -12,6 +12,7 @@ Directory.CreateDirectory(scratch);
 var checks = new List<string>();
 void Check(bool condition, string name) { if (!condition) throw new Exception("FAIL: " + name); checks.Add(name); Console.WriteLine("PASS: " + name); }
 WaveformChecks.Run(scratch, Check);
+PresetResolutionChecks.Run(scratch,Check);
 if (args.Contains("--waveform-only")) return;
 await FeedbackChecks.Run((condition, name) => { if (!condition) throw new Exception("FAIL: " + name); if (!checks.Contains(name)) Check(true, name); });
 await HapticChecks.Run(Check);
@@ -20,7 +21,9 @@ if (args.Contains("--feedback-only"))
     File.WriteAllText(Path.Combine(root, "artifacts", "feedback-repair.json"), JsonSerializer.Serialize(new { success = true, checks }, new JsonSerializerOptions { WriteIndented = true }));
     return;
 }
+await PackageVersionChecks.Run(root,scratch,Check);
 var store = new PackageStore(scratch); var pack = store.Install(Path.Combine(root, "artifacts", "packages", "demo.gpack"));
+store.SelectCurrent(pack.Manifest.Id,pack.Reference);
 Check(store.List().Count == 1, "complete package import and integrity");
 var presets = new PresetStore(scratch);
 int shutdownFailures = 0;
@@ -38,6 +41,9 @@ await using (var workspace = new AudioWorkspace(scratch))
     await workspace.Connect(0, null);
     Check(workspace.Connected && workspace.ConnectionId != connectionId && lost == 0, "reconnecting replaces the connection without stale failure events");
     Check(workspace.Dirty && !workspace.Preset!.Groups["impact"].Enabled, "reconnecting preserves unsaved sound selections");
+    workspace.Preset!.Folders.Add(new("folder:retired","历史组"));workspace.Preset.Groups["retired"]=new(null,true,"folder:retired");
+    workspace.SetFolder("folder:retired",false);
+    Check(workspace.Preset.Groups["retired"].Enabled,"folder operations ignore unavailable historical groups while preserving their settings");
     await workspace.StartRecording(); await Task.Delay(400); await workspace.StopRecording();
     var take = workspace.Take!; byte[] beforeRename = workspace.Recordings.Clip(take.Id, "impact", 0, .2, 1);
     workspace.RenameTrack(take.Id, "impact", "我的撞击音效");
@@ -130,6 +136,6 @@ manifest.ProtocolVersion = 1; PresetStore.AtomicWrite(manifestFile,manifest);
 File.AppendAllText(Path.Combine(pack.Directory,"presets","author.json")," ");
 rejected = false; try { PackageStore.Validate(pack.Directory,manifest); } catch (InvalidDataException) { rejected = true; }
 Check(rejected, "modified package content rejected");
-store.Uninstall(pack.Manifest.Id);
+store.SelectCurrent(pack.Manifest.Id,null);store.Uninstall(pack.Manifest.Id);
 Check(store.List().Count == 0 && Directory.EnumerateFiles(Path.Combine(scratch,"presets",pack.Manifest.Id),"*.json").Count() == 2, "uninstall retains user data");
 File.WriteAllText(Path.Combine(root,"artifacts","acceptance.json"),JsonSerializer.Serialize(new { success=true, checks, testedAt=DateTime.Now },Wire.Json));

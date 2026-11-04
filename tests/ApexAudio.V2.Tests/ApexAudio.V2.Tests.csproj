@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/ApexAudio.Core/ApexAudio.Core.csproj" />
+    <ProjectReference Include="../../adapters/Fmod/Definition/ApexAudio.Fmod.Definition.csproj" />
+    <ProjectReference Include="../../tools/PackV2/ApexAudio.PackV2.csproj" />
+    <Compile Include="../../adapters/Fmod/GameDefinition.cs" Link="FmodGameDefinition.cs" />
+    <Compile Include="../../adapters/Fmod/FmodStream.cs" Link="FmodStream.cs" />
+    <Compile Include="../../adapters/Fmod/CaptureModuleGuard.cs" Link="CaptureModuleGuard.cs" />
+    <Compile Include="../../adapters/Fmod/NativeCaptureError.cs" Link="NativeCaptureError.cs" />
+  </ItemGroup>
+</Project>

@@ -24,6 +24,8 @@ prebuilt/devtools/ApexAudio.DevTools.exe check --pack dist/packages/author.examp
 
 第一条只校验并解压，不执行适配器；第二条执行包里的适配器并读取信息及分组，不连接游戏。只能对来源可信的包使用执行选项。临时目录在报告 scratch 字段中。未连接游戏的检查可在文件不用后清理；capture 加载的模块可能仍被游戏占用，只在目标正常退出后清理对应目录。
 
+JSON 配置包执行 `check --launch` 或 `capture` 时，增加 `--backend <配套.gbackend>`，将固定依赖安装到本次独立临时仓库；应用中已安装的后端不会自动供此仓库使用。当前源码构建的 DevTools 注入第一方纯 FMOD 参数验证器，新 0.3.0 配置仍须通过完整静态参数检查；单纯 `check` 不带 `--launch` 时只检查包完整性。
+
 ### 开发示例音轨
 
 先构建 `tools/Build.ps1`，生成的开发示例在 artifacts/packages/demo.gpack。它不随用户版自动安装。
@@ -47,6 +49,20 @@ prebuilt/devtools/ApexAudio.DevTools.exe capture --pack dist/packages/author.exa
 realtime.blocks 增长不能证明块内有非零样本；active=1 只代表生产端启用。packets / frames 对应独立音频管道，nonZeroGroups / peaks 才能证明本次观察收到非零 PCM。多条分组的累计 frames 不能直接当作录音时长。
 
 不同组摘要相同可能来自父子内容或真实重复，也可能是错误复制，必须结合路由与试听。非零 PCM 不证明命名和语义正确。
+
+### FMOD 停止与恢复观察
+
+`capture --lifecycle` 仅用于 `apex.fmod` 0.3.0、上下文 2 的配套 JSON 包和后端：
+
+```powershell
+prebuilt/devtools/ApexAudio.DevTools.exe capture --pack "your-game.gpack" --backend "matching-backend.gbackend" --pid 1234 --allow-game-connection --seconds 5 --lifecycle --output evidence/lifecycle.json
+```
+
+工具先采集 `--seconds` 指定时长，调用 `StopCapture` 并等待 200 毫秒排空在途数据，再等待 12 秒，超过原生心跳租约的 10 秒期限；随后恢复全部可采集组并观察同样时长，最后以空组列表调用 `StartCapture`。它观察停止独立 PCM 时连接能否保留、传输能否恢复，以及空选择的状态，不启动 X-Haptics 或物理反馈，也不增加主程序测试面板。
+
+报告的 `lifecycle` 包含各阶段状态 `initial`、`stopped`、`resumed`、`afterResume`、`empty`，以及 `controlsPassed`、`dataObserved`、`idlePackets`、`resumedPackets`、`sequenceRegressions`。`controlsPassed` 表示连接/传输状态与空范围满足条件，且停止等待期间未继续收到包；`dataObserved` 只表示初次与恢复阶段均收到包，不表示包内有非零声音。仍须另看 `nonZeroGroups` 和 `peaks`，不能据这些布尔值认定声音语义、实机兼容性或物理震动已通过。
+
+控制状态不符、序列未递增或运行错误会使命令以 1 退出；仅 `dataObserved=false` 不自动判定实现故障，应结合游戏声源、各阶段状态及错误检查。生命周期的实机验收范围以具体游戏构建的报告为准，不能从工具行为推定。
 
 ### 原生模块自己的离线测试
 

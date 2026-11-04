@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using ApexAudio.Contracts;
 using ApexAudio.Core;
+using ApexAudio.Fmod.Definition;
 
 string? Option(string key) { int i = Array.IndexOf(args, key); return i < 0 ? null : i + 1 < args.Length ? args[i + 1] : throw new ArgumentException("Missing value: " + key); }
 string Required(string key) => Option(key) ?? throw new ArgumentException("Required: " + key);
@@ -115,18 +116,23 @@ try
         string temporaryRoot = Environment.GetEnvironmentVariable("APEX_AUDIO_TEMP") ?? Path.GetTempPath();
         string scratch = context.Scratch = Path.Combine(temporaryRoot,"ApexAudio-DevTools-"+Guid.NewGuid().ToString("N"));
         var pack = new PackageStore(scratch).Install(archive);
-        context.InstalledPackDirectory = pack.Directory; context.EntryPointPath = PackageStore.SafePath(pack.Directory, pack.Manifest.EntryPoint);
+        context.InstalledPackDirectory = pack.Directory; context.EntryPointPath = pack.Manifest.SchemaVersion == 1 ? PackageStore.SafePath(pack.Directory, pack.Manifest.EntryPoint) : null;
+        if (Option("--backend") is string backendArchive) new BackendStore(scratch).Install(Path.GetFullPath(backendArchive));
         context.ModulePaths = pack.Manifest.Files.Keys.Where(p => p.EndsWith(".dll", StringComparison.OrdinalIgnoreCase)).Select(p => PackageStore.SafePath(pack.Directory, p)).ToArray();
         bool launch = command == "capture" || args.Contains("--launch");
         if (!launch) { Emit(new { integrity=true, id=pack.Manifest.Id, version=pack.Manifest.Version, adapterExecuted=false, gameConnected=false, scratch }); return; }
-        var client = activeClient = new AdapterClient(); context.Cleanup = "pending";
-        long packets=0, frames=0; var peaks=new Dictionary<uint,float>(); var payloads=new Dictionary<uint,string>(); object gate=new(); var errors=new List<string>();
-        client.Audio += p => { lock(gate) { packets++; frames+=p.Frames; peaks[p.GroupIndex]=Math.Max(peaks.GetValueOrDefault(p.GroupIndex),p.Peak); if(p.Peak>0)payloads.TryAdd(p.GroupIndex,Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(p.Pcm))); } };
+        var client = activeClient = new AdapterClient(new FmodConfigurationValidator()); context.Cleanup = "pending";
+        long packets=0, frames=0, lastSequence=-1, sequenceRegressions=0; var peaks=new Dictionary<uint,float>(); var payloads=new Dictionary<uint,string>(); object gate=new(); var errors=new List<string>();
+        client.Audio += p => { lock(gate) { if(lastSequence>=0 && p.Sequence<=lastSequence)sequenceRegressions++;lastSequence=p.Sequence;packets++; frames+=p.Frames; peaks[p.GroupIndex]=Math.Max(peaks.GetValueOrDefault(p.GroupIndex),p.Peak); if(p.Peak>0)payloads.TryAdd(p.GroupIndex,Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(p.Pcm))); } };
         client.Failed += message => { lock(gate) errors.Add(message); };
-        context.Stage = "adapter-launch"; await client.Launch(pack); context.AdapterExecuted = true;
+        string? launchPath = null;
+        if (command == "capture") { using var selectedGame = Process.GetProcessById(int.Parse(Required("--pid"))); launchPath = selectedGame.MainModule?.FileName; }
+        context.Stage = "adapter-launch"; await client.Launch(pack, launchPath, command == "capture" ? int.Parse(Required("--pid")) : null); context.AdapterExecuted = true;
+        if(args.Contains("--lifecycle") && (command!="capture" || client.Session?.Context is not {Version:2,Backend.Id:"apex.fmod",Backend.Version:"0.3.0"}))
+            throw new ArgumentException("--lifecycle observes the FMOD 0.3.0 connection contract; use it with capture and its matching JSON package/backend.");
         context.Stage = "protocol";
         var groups=await client.Call<List<AudioGroup>>("GetAudioGroups");
-        AdapterStatus? status=null; object? realtime=null;
+        AdapterStatus? status=null; object? realtime=null,lifecycle=null;
         bool connect=command=="capture" || (pack.Manifest.Demo && args.Contains("--demo-audio"));
         if(connect)
         {
@@ -139,6 +145,31 @@ try
             int seconds=int.Parse(Option("--seconds")??"5"); if(seconds<1||seconds>60)throw new ArgumentException("seconds must be 1..60.");
             await Task.Delay(TimeSpan.FromSeconds(seconds));
             status=await client.Call<AdapterStatus>("GetStatus");
+            if(args.Contains("--lifecycle"))
+            {
+                context.Stage="stop-and-resume";
+                var initial=status;
+                await client.Call<AdapterStatus>("StopCapture");await Task.Delay(200);long stoppedPackets;
+                lock(gate)stoppedPackets=packets;
+                // Longer than the native ten-second heartbeat lease: stopping PCM must keep the connection alive.
+                await Task.Delay(TimeSpan.FromSeconds(12));
+                var stopped=await client.Call<AdapterStatus>("GetStatus");long idlePackets;
+                lock(gate)idlePackets=packets-stoppedPackets;
+                var resumed=await client.Call<AdapterStatus>("StartCapture",new CaptureRequest(groups.Where(g=>g.HasPcm).Select(g=>g.Id).ToArray()));
+                long resumeStart;lock(gate)resumeStart=packets;
+                await Task.Delay(TimeSpan.FromSeconds(seconds));long resumedPackets;lock(gate)resumedPackets=packets-resumeStart;
+                var afterResume=await client.Call<AdapterStatus>("GetStatus");
+                var empty=await client.Call<AdapterStatus>("StartCapture",new CaptureRequest(Array.Empty<string>()));
+                bool controlsPassed=initial.Connected && initial.Capturing && stopped.Connected && !stopped.Capturing && idlePackets==0 &&
+                    resumed.Connected && resumed.Capturing && afterResume.Connected && afterResume.Capturing && empty.Connected && !empty.Capturing && empty.CaptureGroupIds is { Length:0 };
+                lock(gate)
+                {
+                    lifecycle=new{initial,stopped,waitSeconds=12,idlePackets,resumed,afterResume,resumedPackets,empty,sequenceRegressions,
+                        controlsPassed,dataObserved=stoppedPackets>0 && resumedPackets>0};
+                    if(!controlsPassed || sequenceRegressions!=0 || errors.Count!=0)Environment.ExitCode=1;
+                }
+                status=empty;
+            }
             if(client.Info?.Capabilities.RealtimeMix==true)
             {
                 var source=await client.Call<FeedbackSource>("GetFeedbackSource");
@@ -146,7 +177,7 @@ try
             }
         }
         lock(gate) Emit(new { integrity=true, id=pack.Manifest.Id, version=pack.Manifest.Version, adapterExecuted=true, gameConnected=command=="capture", demoConnected=connect&&pack.Manifest.Demo, groups, packets, frames, nonZeroGroups=peaks.Count(p=>p.Value>0), peaks=peaks.Select(p=>new {id=groups[(int)p.Key].Id,peak=p.Value,firstPayloadSha256=payloads.GetValueOrDefault(p.Key)}), status, realtime, errors,
-            limitations="PCM proves received data, not semantic separation. Matching hashes may indicate parent/child overlap or duplicate data and require listening. No X-Haptics engine or physical feedback was started.", scratch });
+            lifecycle,limitations="PCM proves received data, not semantic separation. Matching hashes may indicate parent/child overlap or duplicate data and require listening. No X-Haptics engine or physical feedback was started.", scratch });
     }
     else if(command=="native-check")
     {
@@ -156,7 +187,7 @@ try
         try { uint result=Marshal.GetDelegateForFunctionPointer<NativeCheck>(NativeLibrary.GetExport(module,entry))(0); Emit(new {file,sha256=PackageStore.Hash(file),entry,result,gameConnected=false}); if(result!=0)Environment.ExitCode=1; }
         finally { NativeLibrary.Free(module); }
     }
-    else if (command == "help") Console.WriteLine("ApexAudio.DevTools\ninspect --exe PATH [--pid PID] [--module NAME] [--resources DIR] [--output REPORT.json]\nread-memory --pid PID --address 0xADDRESS [--bytes 256] [--binary snippet.bin] [--output REPORT.json]\nbank-index --file RAW_BANK [--output REPORT.json]\ncheck --pack FILE.gpack [--launch] [--demo-audio] [--seconds 5] [--output REPORT.json]\ncapture --pack FILE.gpack --pid PID --allow-game-connection [--seconds 5] [--output REPORT.json]\nnative-check --module YOUR.dll --entry YOUR_SELF_TEST [--output REPORT.json]\ncheck without --launch only validates/extracts files. --launch executes adapter code. capture performs its normal game connection. native-check executes code in this process. No command starts physical feedback.");
+    else if (command == "help") Console.WriteLine("ApexAudio.DevTools\ninspect --exe PATH [--pid PID] [--module NAME] [--resources DIR] [--output REPORT.json]\nread-memory --pid PID --address 0xADDRESS [--bytes 256] [--binary snippet.bin] [--output REPORT.json]\nbank-index --file RAW_BANK [--output REPORT.json]\ncheck --pack FILE.gpack [--backend FILE.gbackend] [--launch] [--demo-audio] [--seconds 5] [--output REPORT.json]\ncapture --pack FILE.gpack [--backend FILE.gbackend] --pid PID --allow-game-connection [--seconds 5] [--lifecycle] [--output REPORT.json]\nnative-check --module YOUR.dll --entry YOUR_SELF_TEST [--output REPORT.json]\ncheck without --launch only validates/extracts files. --launch executes adapter code. capture performs its normal game connection. native-check executes code in this process. No command starts physical feedback.");
     else throw new ArgumentException("Unknown command: " + command);
 }
 catch(Exception e) { failure = e; Environment.ExitCode=1; }

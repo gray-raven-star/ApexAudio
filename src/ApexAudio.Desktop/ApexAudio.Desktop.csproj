@@ -4,6 +4,7 @@
     <ApplicationIcon>../../assets/apex.ico</ApplicationIcon><ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup><ProjectReference Include="../ApexAudio.Application/ApexAudio.Application.csproj" /></ItemGroup>
+  <ItemGroup><ProjectReference Include="../../adapters/Fmod/Definition/ApexAudio.Fmod.Definition.csproj" /></ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.WebView2.Core"><HintPath>../../vendor/webview2/Microsoft.Web.WebView2.Core.dll</HintPath></Reference>
     <Reference Include="Microsoft.Web.WebView2.WinForms"><HintPath>../../vendor/webview2/Microsoft.Web.WebView2.WinForms.dll</HintPath></Reference>
