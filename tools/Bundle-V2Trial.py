@@ -52,7 +52,7 @@ if engine.exists():
 “开发说明”包含技术说明和两个可直接修改的配置目录。打包不需要编译采集 DLL，例如：
 
 ```powershell
-.\\tools\\PackV2\\ApexAudio.PackV2.exe "定义目录" "输出.gpack"
+.\\tools\\PackV2\\ApexAudio.PackV2.exe package "定义目录" "输出.gpack" --backend "已验证的后端目录"
 ```
 
 “tools/DevTools”提供包检查工具。共享后端本身仍包含可执行代码；应确认来源后导入。配置摘要用于完整性检查，不代表作者身份认证。
