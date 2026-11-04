@@ -80,6 +80,22 @@ public static class BackendFiles
                 throw new OperationException("backend_unsupported","共享后端声明的平台、协议或参数支持范围不受支持。","choose_backend_version");
         }
         if (!d.Files.ContainsKey(d.EntryPoint) || !d.EntryPoint.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || d.Variants.Values.Any(v => !d.Files.ContainsKey(v))) throw new IOException("后端入口或变体文件未登记。");
+        var directories = new Stack<string>();
+        directories.Push(root);
+        while (directories.TryPop(out var directory))
+        {
+            foreach (string path in Directory.EnumerateFileSystemEntries(directory))
+            {
+                var attributes = File.GetAttributes(path);
+                string relative = Path.GetRelativePath(root, path).Replace('\\', '/');
+                if ((attributes & FileAttributes.ReparsePoint) != 0)
+                    throw new InvalidDataException("共享后端路径不能使用链接：" + relative);
+                if ((attributes & FileAttributes.Directory) != 0)
+                    directories.Push(path);
+                else if (relative != "backend.json" && !d.Files.ContainsKey(relative))
+                    throw new InvalidDataException("共享后端包含未登记文件：" + relative);
+            }
+        }
         foreach (var (name, hash) in d.Files)
             if (!Hash(PathIn(root, name)).Equals(hash, StringComparison.OrdinalIgnoreCase)) throw new IOException("共享后端文件校验失败：" + name);
         return d;

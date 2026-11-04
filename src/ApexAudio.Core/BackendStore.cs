@@ -51,8 +51,6 @@ public sealed class BackendStore(string dataRoot)
             if (d.Variants==null || d.Variants.Count == 0) throw new InvalidDataException("后端没有采集变体。");
             var requirement = new BackendDependency(d.Id, d.Version, BackendFiles.Hash(descriptor), d.Variants.Keys.First());
             BackendFiles.Read(stage, requirement);
-            foreach (string file in Directory.EnumerateFiles(stage, "*", SearchOption.AllDirectories))
-                if (file != descriptor && !d.Files.ContainsKey(Path.GetRelativePath(stage, file).Replace('\\', '/'))) throw new InvalidDataException("后端包含未登记文件。");
             string destination = Path.Combine(Root, d.Id, d.Version);
             if (Directory.Exists(destination)) { BackendFiles.Read(destination, requirement); return destination; }
             Directory.CreateDirectory(Path.GetDirectoryName(destination)!); Directory.Move(stage, destination); return destination;
