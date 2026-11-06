@@ -14,4 +14,4 @@
 
 发布前准备完整 `.gpack`、SHA-256、支持的游戏构建及[实际验证结果](verify-a-gamepack.md)。保留该版本的游戏定义和专用采集器源码，并记录构建命令和依赖来源，方便后续更新。发布后核对公开附件和摘要，再更新[适配包下载目录](../user/gamepack-downloads.md)。
 
-现有公开包在 [ApexAudio 2026.10.18](https://github.com/gray-raven-star/ApexAudio/releases/tag/bundle-2026.10.18) 的附件中。早期的 `bundle-*` 工作流从发布标签的快照上传附件，龙之信条 2 则由[专用工作流](https://github.com/gray-raven-star/ApexAudio/blob/main/.github/workflows/publish-gamepack.yml)校验仓库中的输入后追加到该 Release。应用和 DevKit 的构建见[发行版构建](../development/release-builds.md)。
+官方适配包由 [ApexAudio-GamePacks 发布工作流](https://github.com/gray-raven-star/ApexAudio-GamePacks/actions/workflows/publish-pack.yml)从源码构建，按包版本发布并更新下载索引。早期版本可在 [ApexAudio 2026.10.18](https://github.com/gray-raven-star/ApexAudio/releases/tag/bundle-2026.10.18) 的附件中找到。应用和 DevKit 的构建见[发行版构建](../development/release-builds.md)。
