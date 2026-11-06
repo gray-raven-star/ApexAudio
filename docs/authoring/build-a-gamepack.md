@@ -138,7 +138,7 @@ pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory ../my-game -Compiler C:
 pwsh -File tools/Pack.ps1 -Directory ./my-complete-pack -Output ./dist/packages/author.my-game.gpack
 ```
 
-发布包保留运行文件和允许再分发的依赖；排除源码项目、`data/`、诊断内存、录音及游戏资源原包。接口和采集效果按下一步验证。
+发布包保留运行文件和允许再分发的依赖；排除源码项目、`data/`、诊断用的内存转储、录音及游戏资源原包。接口和采集效果按下一步验证。
 
 
 生成包后，继续[验证采集与反馈](verify-a-gamepack.md)。
