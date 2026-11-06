@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType><UseWindowsForms>true</UseWindowsForms><AssemblyName>ApexAudio</AssemblyName>
+    <Version>0.1.2</Version>
     <ApplicationIcon>../../assets/apex.ico</ApplicationIcon><ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup><ProjectReference Include="../ApexAudio.Application/ApexAudio.Application.csproj" /></ItemGroup>
