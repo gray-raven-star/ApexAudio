@@ -10,6 +10,8 @@ Apex Audio 是面向飞智八爪鱼 6 Pro 的 Windows 游戏音频工具。用�
 2. 从[游戏适配包目录](docs/user/gamepack-downloads.md)下载对应的 `.gpack`。
 3. 按[导入适配包、连接与录音](docs/user/connect-and-record.md)开始使用。
 
+可在 GitHub Discussions 的[适配包分享](https://github.com/gray-raven-star/ApexAudio/discussions/categories/%E9%80%82%E9%85%8D%E5%8C%85%E5%88%86%E4%BA%AB)分类查找或分享社区适配包。
+
 ## 制作适配包
 
 从包含 `ApexAudio.sln` 的目录操作，先按[构建环境](docs/development/build-environment.md)准备工具。仓库提供采集器、构建工具、[官方适配包源码](https://github.com/gray-raven-star/ApexAudio/tree/main/gamepacks)和可复制的[新包示例](gamepack-starter/README.md)。

@@ -10,6 +10,8 @@ Apex Audio captures separate game audio tracks on Windows. Choose which sounds f
 2. Pick a `.gpack` from the [gamepack downloads](docs/user/gamepack-downloads.md).
 3. Follow the [guide to importing, connecting and recording](docs/user/connect-and-record.md).
 
+Browse or share community gamepacks in [Gamepack Sharing](https://github.com/gray-raven-star/ApexAudio/discussions/categories/%E9%80%82%E9%85%8D%E5%8C%85%E5%88%86%E4%BA%AB).
+
 ## Build a gamepack
 
 Work from the directory containing `ApexAudio.sln`. Set up the [build environment](docs/development/build-environment.md). This repository provides capture adapters, build tools, [official gamepack sources](https://github.com/gray-raven-star/ApexAudio/tree/main/gamepacks), and a [starter definition](gamepack-starter/README.md) for new packs.
