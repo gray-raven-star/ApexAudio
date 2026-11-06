@@ -2,7 +2,7 @@
 
 ## 作者预设
 
-适配包的 manifest.presets 引用预设文件。其原稿不在编辑时修改。
+适配包的 manifest.presets 引用预设文件。编辑不会修改其原稿。
 
 ```json
 {
@@ -42,7 +42,7 @@ session.json 包含 schemaVersion、id、packId、packVersion、name、created�
 
 每个 track：groupId、name、file（相对路径）、frames、peaks（每 10 毫秒一项峰值）。轨道名记录录制时显示名称，后续改预设不改历史录音。
 
-每个 haptics.block：seconds、span、left、right、trigger、supplementLeft、supplementRight、supplementTrigger。值为该块峰值，缺少字段表示未提供，不能视作 0。显示默认对照声音补充分量与引擎合成输出，可切换单独来源。X-Haptics 未启动时会话仍保存声音，提示未录到震动。
+每个 haptics.block：seconds、span、left、right、trigger、supplementLeft、supplementRight、supplementTrigger。值为该块峰值，缺少字段表示未提供，不能视作 0。震动来源默认对照声音补充分量与引擎合成输出，可切换为单独一种来源。X-Haptics 未启动时会话仍保存声音，提示未录到震动。
 
 试听页的“曲线放大”提供 1×、4×、10×，默认 4×，只放大震动曲线的显示高度。显示超过单个通道高度时截顶，原始幅度、录音、游戏包与手柄反馈强度均不改变。设为 1× 可查看原始比例。
 
