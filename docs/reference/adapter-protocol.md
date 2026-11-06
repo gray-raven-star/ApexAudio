@@ -80,7 +80,7 @@ GetAudioGroups 后的数组顺序在整个连接期间固定；音频 groupIndex
 
 音频回调不应直接阻塞写管道。适配器应在回调外从有界缓冲区发送，丢帧时报告 droppedBlocks。Wwise 示例读取原生有界环形缓冲；阻塞只发生在后台转送任务。宿主保留序列缺口与峰值统计，V1 不对任意第三方数据的语义真实性自动认证。
 
-在 `Contracts/Transport.cs` 提供 C# 参考服务，Mock 提供完整可运行实现。其他语言无需引用这些 DLL，只遵循字节协议。
+在 `src/ApexAudio.Contracts/Transport.cs` 提供 C# 参考服务，Mock 提供完整可运行实现。其他语言无需引用这些 DLL，只遵循字节协议。
 
 ## 可选实时反馈混音
 

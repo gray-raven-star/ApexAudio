@@ -4,7 +4,7 @@
 
 ## Wwise
 
-参考 `adapters/Wwise/GameDefinition.cs` 和 `native/ApexWwiseCapture.c`，最多 1024 个可采集组。需要实际引擎模块具有可解析的受支持 SoundEngine 接口。当前导出解析器包含已实现的类型签名变体；仅凭相似符号不能证明 ABI 一致。
+参考 `adapters/Wwise/GameDefinition.cs` 和 `adapters/Wwise/native/ApexWwiseCapture.c`，最多 1024 个可采集组。需要实际引擎模块具有可解析的受支持 SoundEngine 接口。当前导出解析器包含已实现的类型签名变体；仅凭相似符号不能证明 ABI 一致。
 
 | 字段 | 填写依据 |
 |---|---|
