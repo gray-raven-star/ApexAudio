@@ -1,5 +1,5 @@
 param(
-    [ValidatePattern('^[a-zA-Z0-9.-]+$')][string]$Version='0.1.1',
+    [ValidatePattern('^[a-zA-Z0-9.-]+$')][string]$Version='0.1.2',
     [Parameter(Mandatory)][string]$CompilerDirectory,
     [string]$OutputDirectory
 )
