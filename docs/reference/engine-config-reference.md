@@ -4,7 +4,7 @@
 
 ## Wwise
 
-参考 `adapters/Wwise/GameDefinition.cs` 和 `native/ApexWwiseCapture.c`，最多 1024 个可采集组。需要实际引擎模块具有可解析的受支持 SoundEngine 接口。当前导出解析器包含已实现的类型签名变体；只有相似符号不能证明 ABI 一致。
+参考 `adapters/Wwise/GameDefinition.cs` 和 `adapters/Wwise/native/ApexWwiseCapture.c`，最多 1024 个可采集组。需要实际引擎模块具有可解析的受支持 SoundEngine 接口。当前导出解析器包含已实现的类型签名变体；仅凭相似符号不能证明 ABI 一致。
 
 | 字段 | 填写依据 |
 |---|---|
@@ -34,7 +34,7 @@
 | runtimeVersion | FMOD 实际返回的版本整数，而非任意显示字符串 |
 | buses | 稳定 GUID、原始 path、name、parentId、category、containsChildren |
 
-Bus 的 id 为 16 字节 GUID 的实际小端内存 hex（32 个十六进制字符），不能直接误用带短横线的打印顺序。GUID 与 path 应来自银行工具／API 或经验证的数据，不靠声音语义猜测。当前定位器只支持以上包装方式，换一种 System 存储方式必须修改包内定位代码。构建器写入 captureFile / captureSha256。
+Bus 的 id 为 16 字节 GUID 的实际小端内存 hex（32 个十六进制字符），不能把带短横线的打印顺序直接当作 id 使用。GUID 与 path 应来自银行工具／API 或经验证的数据，不靠声音语义猜测。当前定位器只支持以上包装方式，换一种 System 存储方式必须修改包内定位代码。构建器写入 captureFile / captureSha256。
 
 ## Unreal AudioMixer
 
@@ -56,10 +56,10 @@ Bus 的 id 为 16 字节 GUID 的实际小端内存 hex（32 个十六进制字�
 
 ## 兼容性核对
 
-SDK 110 是插件接口编号，不是 FMOD 2.02 的同义词；2.03 的部分 C API 也可能有参数变化。先按 [最小验证](../authoring/first-probes.md)逐项核对，不整体推断兼容或不兼容。包装对象状态=2 是当前定位器假设，不是任何游戏都必须满足的结构。
+SDK 110 是插件接口编号，不是 FMOD 2.02 的同义词；2.03 的部分 C API 也可能有参数变化。先按 [FMOD 探查指南](../authoring/probe-fmod-runtime.md)逐项核对，不整体推断兼容或不兼容。包装对象状态=2 是当前定位器假设，不是任何游戏都必须满足的结构。
 
 ## 新后端
 
 Custom 配置完全由自己的适配器解释。只有 manifest、预设和公共传输协议是所有后端共同要求。不得将未知后端硬套成已知后端，或放宽摘要检查以跳过布局验证。
 
-完整字段说明见 [配置参考](engine-config-reference.md)，来源和效果槽记录见 [分组依据](group-evidence.md)。
+分组名称和效果槽的证据见[分组依据](group-evidence.md)。

@@ -54,7 +54,11 @@ uv run tools/Metadata/merge_layers.py --report evidence/re-base/metadata-report.
 已有 Bus 编号和有限的名称列表时，可查找匹配候选：
 
 ```powershell
-uv run tools/Metadata/name_candidates.py --definition gamepacks/my-game/game.json --candidates evidence/names.txt --output evidence/name-candidates.json
+uv run tools/Metadata/name_candidates.py --definition ../my-game/game.json --candidates evidence/names.txt --output evidence/name-candidates.json
 ```
 
 工具保留多个候选和来源文件摘要，结果的 `auditionConfirmed` 初始为 false。随后在游戏录音中确认各组实际内容，再填写显示名称和证据记录。
+
+## 读取 Wwise 银行索引
+
+对已经取得的原始小端 Wwise 银行，可执行 `ApexAudio.DevTools.exe bank-index --file <银行路径> --output evidence/bank.json`，读取 chunk 与 HIRC 对象目录。它不解码不同版本的对象内部字段，不将所有对象当成音轨；路由、效果槽及名称需由对应版本读取器继续核对。

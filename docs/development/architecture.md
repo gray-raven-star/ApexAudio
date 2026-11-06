@@ -23,6 +23,17 @@ Desktop 不加载第三方适配器 DLL；只从已校验包启动 EXE。Adapter
 
 首版同时连接一个游戏／适配器。多个匹配包或多个游戏实例存在时不自动猜测。包作者可以使用任何语言，只需遵循 IPC 协议。
 
+## 代码入口
+
+| 要找的实现 | 起点 |
+| --- | --- |
+| Windows 启动与桌面窗口 | [Program.cs](../../src/ApexAudio.Desktop/Program.cs)、[MainWindow.cs](../../src/ApexAudio.Desktop/MainWindow.cs) |
+| 界面与录音时间轴 | [WebView 界面](../../ui/index.html) |
+| 连接、分组和会话 | [AudioWorkspace.cs](../../src/ApexAudio.Application/AudioWorkspace.cs) |
+| 安装包、识别进程和启动适配器 | [PackageStore.cs](../../src/ApexAudio.Core/PackageStore.cs)、[GameDetector.cs](../../src/ApexAudio.Core/GameDetector.cs)、[AdapterClient.cs](../../src/ApexAudio.Core/AdapterClient.cs) |
+| 采集后端与 X-Haptics 桥接 | [采集器目录](../../adapters/README.md)、[X-Haptics 桥接](xhaptics-provider.md) |
+| 主程序构建和离线测试 | [构建环境与命令](build-environment.md) |
+
 ## 用户数据
 
 - `data/packs/<id>`：安装后的完整包；安装更新先校验暂存目录，再替换。
@@ -36,7 +47,7 @@ Desktop 不加载第三方适配器 DLL；只从已校验包启动 EXE。Adapter
 
 ## 状态与真实性
 
-包清单只负责识别。Adapter 运行时报告采集能力；收到某组有效 PCM 后，本体才将其标记为“已收到独立音轨”。这只能证明收到符合协议的数据，无法从任意第三方程序输出自动证明声源语义真实；作者仍需保证独立音轨没有伪造。Mock 用不同波形验证运输与录音链路。
+包清单只负责识别。Adapter 运行时报告采集能力；收到某组有效 PCM 后，本体才将其标记为“已收到独立音轨”。这只能证明收到符合协议的数据，无法根据任何第三方程序的输出自动证明声源语义真实；作者仍需保证独立音轨没有伪造。Mock 用不同波形验证运输与录音链路。
 
 显示文件夹不改变实际混音层级。反馈选取依据实际父子路由：包含子组的父组被选择时，不再把其已选子组叠加。独立录制仍保留各组，可能存在真实的父子内容重叠。
 

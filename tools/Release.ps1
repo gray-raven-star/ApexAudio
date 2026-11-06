@@ -26,11 +26,11 @@ function Copy-Tree([string]$Source,[string]$Destination) {
     }
 }
 Write-Host 'Stage the application and adapter development kit.'
-foreach($directory in @('.github','src','adapters','providers','tests','schemas','ui','vendor','templates','packaging')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
+foreach($directory in @('.github','src','adapters','providers','tests','schemas','ui','vendor','templates','gamepack-starter','packaging')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
 # Source and runtime need one bridge revision, no old copies or debug artifacts.
 $native=Join-Path $kit 'providers/XHaptics/native'
 Get-ChildItem -LiteralPath $native -File | Where-Object Name -notin @('ApexGroupsBridge.c','ApexGroupsBridge-v5.dll','xh-support.json','xh-engines.json') | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
-foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','README.md','README.en.md','START-HERE.md','AI-INSTRUCTIONS.md','CONTRIBUTING.md','THIRD-PARTY.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
+foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','README.md','README.en.md','AGENTS.md','CONTRIBUTING.md','THIRD-PARTY.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
 foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','MakeWwisePack.ps1','BuildNative.ps1','FindCompiler.ps1','Setup.ps1','Environment.ps1','New-Pack.ps1','Build-GamePack.ps1','Release.ps1','Disassemble.py')) {
     New-Item -ItemType Directory -Force -Path (Join-Path $kit 'tools') | Out-Null
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination (Join-Path $kit 'tools')
@@ -38,10 +38,9 @@ foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','MakeWwisePack.ps1'
 Copy-Tree (Join-Path $root 'tools/DevTools') (Join-Path $kit 'tools/DevTools')
 Copy-Tree (Join-Path $root 'tools/Metadata') (Join-Path $kit 'tools/Metadata')
 Copy-Tree (Join-Path $root 'tools/FmodProbe') (Join-Path $kit 'tools/FmodProbe')
-Copy-Tree (Join-Path $root 'packs/demo') (Join-Path $kit 'packs/demo')
+Copy-Tree (Join-Path $root 'examples/demo-pack') (Join-Path $kit 'examples/demo-pack')
 Copy-Tree (Join-Path $root 'docs') (Join-Path $kit 'docs')
-New-Item -ItemType Directory -Force -Path (Join-Path $kit 'gamepacks'),(Join-Path $kit 'assets') | Out-Null
-'Create and maintain game definitions in this directory. Use tools/New-Pack.ps1 to start a package.' | Set-Content -LiteralPath (Join-Path $kit 'gamepacks/README.md') -Encoding utf8
+New-Item -ItemType Directory -Force -Path (Join-Path $kit 'assets') | Out-Null
 Copy-Item -LiteralPath (Join-Path $root 'packaging/assets/apex.ico') -Destination (Join-Path $kit 'assets/apex.ico')
 Copy-Item -LiteralPath (Join-Path $root 'packaging/assets/apex.svg') -Destination (Join-Path $kit 'assets/apex.svg')
 Write-Host 'Copy portable Zig with its complete library and license tree.'

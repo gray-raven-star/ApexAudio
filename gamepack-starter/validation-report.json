@@ -1,10 +1,10 @@
 {
-  "packId": "__REQUIRED__", "packVersion": "__REQUIRED__", "environment": {},
+  "packId": "author.my-game", "packVersion": "0.1.0", "environment": {},
   "validationTier": "basic",
   "targetVersionEvidence": [],
   "versions": { "bankFormat": null, "integrationVersion": null, "exactSdkVersion": null, "verifiedAbi": null },
   "audioInstanceEvidence": { "diskCandidates": [], "loadedModule": null, "initializedInstance": "not-tested", "realCallbacks": "not-tested" },
-  "groupEvidenceFile": null,
+  "groupEvidenceFile": "group-evidence.json",
   "stages": {
     "packageIntegrity": "not-tested", "build": "not-tested", "protocol": "not-tested",
     "resolvedObjects": "not-tested", "listenerRegistration": "not-tested", "callbacks": "not-tested",

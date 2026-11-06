@@ -19,10 +19,10 @@
 在项目根目录运行：
 
 ```powershell
-pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/my-game
+pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory ../my-game
 ```
 
-输出 `dist/packages/<包ID>.gpack`。源定义的 `captureFile` 必须使用包内 `modules/` 下的 DLL 路径；构建工具写入对应 `captureSha256`。环境和编译器选择见[环境说明](../../docs/development/build-environment.md)，分组证据及完整流程见[制作指南](../../docs/authoring/gamepack-authoring.md)。统一入口会先还原 Wwise 依赖。
+输出 `dist/packages/<包ID>.gpack`。源定义的 `captureFile` 必须使用包内 `modules/` 下的 DLL 路径；构建工具写入对应 `captureSha256`。环境和编译器选择见[环境说明](../../docs/development/build-environment.md)，分组证据及完整流程见[制作指南](../../docs/authoring/build-a-gamepack.md)。统一入口会先还原 Wwise 依赖。
 
 ## 故障定位
 

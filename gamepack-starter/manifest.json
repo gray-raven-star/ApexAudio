@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "author.my-game",
+  "name": "目标游戏",
+  "version": "0.1.0",
+  "author": "__REQUIRED__",
+  "source": "__REQUIRED__",
+  "description": "Unverified development package",
+  "protocolVersion": 1,
+  "entryPoint": "ApexAudio.Wwise.exe",
+  "demo": false,
+  "games": [
+    {"executable": "__REQUIRED__.exe", "sha256": "__REQUIRED__"}
+  ],
+  "presets": ["presets/initial.json"],
+  "files": {}
+}

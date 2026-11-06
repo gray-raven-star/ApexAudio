@@ -12,7 +12,7 @@ if($manifest.id -notmatch '^[a-z0-9][a-z0-9.-]{2,79}$'){throw 'Invalid package I
 $stage=Join-Path $root ('artifacts/fmod-packs/'+$manifest.id+'-'+[Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Force $stage,(Join-Path $stage 'native') | Out-Null
 Get-ChildItem $build -File | Copy-Item -Destination $stage -Force
-Get-ChildItem $Profile | Copy-Item -Destination $stage -Recurse -Force
+Get-ChildItem $Profile | Where-Object Name -ne 'AGENTS.md' | Copy-Item -Destination $stage -Recurse -Force
 $definition=Get-Content (Join-Path $stage 'game.json') -Raw -Encoding utf8 | ConvertFrom-Json -AsHashtable
 $compiled=Join-Path $build 'native/ApexFmodCapture-v2.dll'
 $definition.captureSha256=(Get-FileHash $compiled).Hash

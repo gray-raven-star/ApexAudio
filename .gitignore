@@ -9,8 +9,8 @@ prebuilt/
 .venv/
 evidence/
 .cache/
+.codegraph/
 **/__pycache__/
 
 # Game-specific definitions are maintained separately from the shared source.
-/gamepacks/*
-!/gamepacks/README.md
+/gamepacks/

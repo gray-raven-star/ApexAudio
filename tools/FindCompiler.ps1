@@ -11,5 +11,5 @@ function Resolve-ApexCompiler([string]$Compiler) {
             return $resolved
         }
     }
-    throw 'Zig not found. Extract the supplied toolchain into toolchain/zig, set APEX_ZIG, or pass -Compiler <zig.exe>. See START-HERE.md.'
+    throw 'Zig not found. Extract the supplied toolchain into toolchain/zig, set APEX_ZIG, or pass -Compiler <zig.exe>. See docs/development/build-environment.md.'
 }

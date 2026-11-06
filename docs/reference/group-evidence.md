@@ -21,12 +21,12 @@
 可先直接运行：
 
 ```powershell
-python tools/Metadata/name_candidates.py --definition gamepacks/example/game.json --candidates tools/Metadata/common-audio-names.txt --output evidence/name-candidates.json
+uv run tools/Metadata/name_candidates.py --definition ../example/game.json --candidates tools/Metadata/common-audio-names.txt --output evidence/name-candidates.json
 ```
 
 输入为已经取得的当前分组表，输出是候选报告，脚本不自动改名。不要仅因 Init.bnk 没有文本名表就写“任何工具都无法恢复”。
 
-已有工具：Python 3 运行 `tools/Metadata/name_candidates.py --definition gamepacks/example/game.json --candidates evidence/names.txt --output evidence/name-candidates.json`。输入每行一个候选名，工具按当前 Wwise FNV-1 实现匹配定义中的 ID，输出所有竞争候选，不自动改配置。它不是音频识别器或穷举破解器。
+已有工具：用 Python 3 运行 `tools/Metadata/name_candidates.py --definition ../example/game.json --candidates evidence/names.txt --output evidence/name-candidates.json`。输入每行一个候选名，工具按当前 Wwise FNV-1 实现匹配定义中的 ID，输出所有竞争候选，不自动改配置。它不是音频识别器或穷举破解器。
 
 ## Wwise 效果槽依据
 
@@ -78,4 +78,4 @@ SetBusEffect 返回成功、创建插件和执行音频是不同事件。不要�
 | Unreal 自带 AudioMixer | Submix 资源、对象名称与路径 | 当前设备和名称池；确认真正使用的是自带系统还是 Wwise / FMOD |
 | 自研或其他 | 正式接口、资源索引、名称表与代码引用 | 先确认 ID 生成方式和对象身份，无法确认就保留编号 |
 
-FMOD 的银行已加载，不代表 strings bank 也已加载。名称查询失败时仍可保留 GUID，不应把缺少名称当成缺少总线或无法采集。可用 first-probes.md 中的独立工具验证元数据读取；实际父子路由仍要核对，不能只按名称路径推断。官方说明：[GUID 与路径](https://fmod.com/docs/2.04/studio/advanced-topics.html#guids-and-paths)。
+FMOD 的银行已加载，不代表 strings bank 也已加载。名称查询失败时仍可保留 GUID，不应把缺少名称当成缺少总线或无法采集。可用[FMOD 探查工具](../authoring/probe-fmod-runtime.md)验证元数据读取；实际父子路由仍要核对，不能只按名称路径推断。官方说明：[GUID 与路径](https://fmod.com/docs/2.04/studio/advanced-topics.html#guids-and-paths)。

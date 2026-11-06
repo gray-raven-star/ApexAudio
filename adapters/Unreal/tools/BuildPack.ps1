@@ -18,6 +18,6 @@ $hash = (Get-FileHash -LiteralPath $compiled).Hash
 $game.captureFile = 'modules/ApexUnrealCapture-' + $hash.Substring(0,12) + '.dll'
 $game.captureSha256 = $hash
 Move-Item -LiteralPath $compiled -Destination (Join-Path $stage $game.captureFile)
-Get-ChildItem -LiteralPath $definitionRoot | Copy-Item -Destination $stage -Recurse -Force
+Get-ChildItem -LiteralPath $definitionRoot | Where-Object Name -ne 'AGENTS.md' | Copy-Item -Destination $stage -Recurse -Force
 $game | ConvertTo-Json -Depth 30 | Set-Content -Encoding utf8 -LiteralPath (Join-Path $stage 'game.json')
 & (Join-Path $root 'tools/Pack.ps1') -Directory $stage -Output (Join-Path $root ('dist/packages/' + $manifest.id + '.gpack'))
