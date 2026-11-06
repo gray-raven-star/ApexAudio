@@ -1,0 +1,2119 @@
+{
+  "schemaVersion": 1,
+  "packId": "apex.wh40k-rogue-trader",
+  "packVersion": "1.1.0",
+  "groups": [
+    {
+      "id": "3803692087",
+      "parentId": null,
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "主输出（Master Audio Bus）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "主输出",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0,
+          1
+        ],
+        "selectedSlot": 2,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "85412153",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "环境声（Ambience）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "环境",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "317282339",
+      "parentId": "85412153",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "天气（Weather）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "环境",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "186852181",
+      "parentId": "317282339",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "雷声（Thunder）"
+      ],
+      "nameSource": "FNV-1 名称候选·中置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "环境",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "379718326",
+      "parentId": "317282339",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "天气层（WeatherLayer）"
+      ],
+      "nameSource": "FNV-1 名称候选·中置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "环境",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1537061107",
+      "parentId": "317282339",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "风（Wind）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "环境",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2481666201",
+      "parentId": "317282339",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-1-4"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "722060249",
+      "parentId": "85412153",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "882140159",
+      "parentId": "85412153",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-3"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "156311856",
+      "parentId": "882140159",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-3-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "884412605",
+      "parentId": "882140159",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-3-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1050421051",
+      "parentId": "85412153",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "空气声（Air）"
+      ],
+      "nameSource": "FNV-1 名称候选·中置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "环境",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1385801509",
+      "parentId": "85412153",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-5"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2538584666",
+      "parentId": "85412153",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-6"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "860385440",
+      "parentId": "2538584666",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-6-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2357510901",
+      "parentId": "2538584666",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-6-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3573368426",
+      "parentId": "85412153",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-7"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "505125328",
+      "parentId": "3573368426",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-7-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1191649373",
+      "parentId": "3573368426",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A1-7-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "613761766",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "DSP 处理（DSP）"
+      ],
+      "nameSource": "FNV-1 名称候选·低置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "809318416",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A3"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0,
+          1
+        ],
+        "selectedSlot": 2,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "931844945",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "HDR 动态范围（HDR）"
+      ],
+      "nameSource": "FNV-1 名称候选·低置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "75618095",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "247557814",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "拟音（Foley）"
+      ],
+      "nameSource": "FNV-1 名称候选·中置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "音效",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "368791692",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-3"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "410840802",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-4"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "929405203",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-5"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1074020554",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-6"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1199502698",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-7"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1210751682",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-8"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1434974618",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-9"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1601209820",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-10"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1793969174",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-11"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1844591395",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-12"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2446376615",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "破坏（Destruction）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "音效",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2470376052",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-14"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2960513238",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-15"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2981729747",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "问询语音（Asks）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "语音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "549347228",
+      "parentId": "2981729747",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "选择语音（Selects）"
+      ],
+      "nameSource": "FNV-1 名称候选·中置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "语音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "563146235",
+      "parentId": "2981729747",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-16-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "712482109",
+      "parentId": "2981729747",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-16-3"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1512882804",
+      "parentId": "2981729747",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-16-4"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3309158463",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-17"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3614659429",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "可交互物体（InteractiveObjects）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "音效",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3694647828",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-19"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3699284957",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-20"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3826240549",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "倒地/坠落（Bodyfalls）"
+      ],
+      "nameSource": "FNV-1 名称候选·中置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "音效",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1270628146",
+      "parentId": "3826240549",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-21-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2696806780",
+      "parentId": "3826240549",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-21-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2730442764",
+      "parentId": "3826240549",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-21-3"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3647308100",
+      "parentId": "3826240549",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-21-4"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3930136735",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "对白（Dialogue）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "语音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "463135381",
+      "parentId": "3930136735",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-22-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2295679860",
+      "parentId": "3930136735",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-22-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2433839550",
+      "parentId": "3930136735",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-22-3"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "三级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "4101551376",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A4-23"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "4207818628",
+      "parentId": "931844945",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "队友闲谈（Banters）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "语音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1145758500",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A5"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1551306167",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "界面（UI）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "界面",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1885713360",
+      "parentId": "1551306167",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A6-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1710965379",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A7"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1764400846",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A8"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1769618259",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A9"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2242065222",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A10"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2381614349",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A11"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2940432316",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A12"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2982943478",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "过场视频（Video）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "视频",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3585925006",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A14"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2590351111",
+      "parentId": "3585925006",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "亚空间航行（WarpTravel）"
+      ],
+      "nameSource": "FNV-1 名称候选·中置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "音效",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3991942870",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "音乐（Music）"
+      ],
+      "nameSource": "FNV-1 名称候选·高置信（未试听确认）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "音乐",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2415184883",
+      "parentId": "3991942870",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A15-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3563523368",
+      "parentId": "3991942870",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A15-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "4018282512",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A16"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "4128530898",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A17"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0,
+          1
+        ],
+        "selectedSlot": 2,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "4262181783",
+      "parentId": "3803692087",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A18"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2204902281",
+      "parentId": "4262181783",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "A18-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "1299058465",
+      "parentId": null,
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "第二输出总线"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "主输出",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0,
+          1
+        ],
+        "selectedSlot": 2,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2663784335",
+      "parentId": "1299058465",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "B1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "一级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "2679478974",
+      "parentId": "2663784335",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "B1-1"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [],
+        "selectedSlot": 0,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "3422465165",
+      "parentId": "2663784335",
+      "objectType": "wwise-hirc-8-audio-bus",
+      "names": [
+        "B1-2"
+      ],
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "nameMethod": "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against the bank bus id; hash candidates can collide",
+      "auditionConfirmed": false,
+      "category": "二级混音",
+      "categoryInheritedFrom": null,
+      "effects": {
+        "occupiedSlots": [
+          0
+        ],
+        "selectedSlot": 1,
+        "verification": "bank-parsed",
+        "source": "Init.bnk HIRC 总线效果列表",
+        "sourceSha256": "2ECC1EE501C593DE81E2616CC9B89AEE025DA5B3C3578ACEFC0447DD8C5133F9",
+        "targetSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+        "checkedAt": "2026-10-17",
+        "runtimeOwnershipVerified": true
+      },
+      "evidenceFiles": [
+        "README.md"
+      ]
+    }
+  ]
+}

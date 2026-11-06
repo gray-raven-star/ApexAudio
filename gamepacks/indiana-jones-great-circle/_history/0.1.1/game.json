@@ -1,0 +1,1059 @@
+{
+  "title": "夺宝奇兵：古老之圈",
+  "gameSha256": "CC647F09786FE8F7093D205E55ADDFC4ABA2D86F36D0496DE9D25247030604ED",
+  "engineModule": "TheGreatCircle.exe",
+  "engineSha256": "CC647F09786FE8F7093D205E55ADDFC4ABA2D86F36D0496DE9D25247030604ED",
+  "bankVersion": 150,
+  "bankHeader": "lgAAACM6xlA+XXAXEAAAAN0mAAAAAAAAqWCjgSJstgIJryJXJkC26wAAAAAAAAAA",
+  "bankId": 2047607041,
+  "captureFile": "modules/IndianaCapture.dll",
+  "captureSha256": "5FA50973880F98610EBEC0CEC0C341A2903CFD0A6615162389CDC83FE99B6431",
+  "sdkYear": 2023,
+  "sdkSeries": 1,
+  "buses": [
+    {
+      "id": 3803692087,
+      "parent": 0,
+      "name": "总混音 · Master Audio Bus",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 393239870,
+      "parent": 3803692087,
+      "name": "音效 · sfx",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 243379636,
+      "parent": 393239870,
+      "name": "reflect",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 931844945,
+      "parent": 393239870,
+      "name": "动态范围混音 · hdr",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 320569818,
+      "parent": 931844945,
+      "name": "水面音效 · water_surface",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2213237662,
+      "parent": 931844945,
+      "name": "水下 · underwater",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2598815056,
+      "parent": 931844945,
+      "name": "水面以上 · overwater",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1695690031,
+      "parent": 2598815056,
+      "name": "物件 · objects",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2697148476,
+      "parent": 2598815056,
+      "name": "主音效混音 · main mix",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 85412153,
+      "parent": 2697148476,
+      "name": "环境音 · ambience",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3777315467,
+      "parent": 85412153,
+      "name": "环境音（7.1） · ambience_7_1",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 445639444,
+      "parent": 2697148476,
+      "name": "物理碰撞 · physics",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1467963052,
+      "parent": 2697148476,
+      "name": "武器 · weapons",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1557941045,
+      "parent": 2697148476,
+      "name": "角色 · characters",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2385628198,
+      "parent": 1557941045,
+      "name": "脚步 · footsteps",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1273124950,
+      "parent": 2385628198,
+      "name": "安静表面脚步 · quiet surface",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3201471952,
+      "parent": 2385628198,
+      "name": "响亮表面脚步 · loud surface",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2989525307,
+      "parent": 2697148476,
+      "name": "近身战斗 · closecombat",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3075111402,
+      "parent": 2697148476,
+      "name": "场景内音乐 · diegetic music",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 154224001,
+      "parent": 3075111402,
+      "name": "场景内音乐（7.1） · diegetic_music_7_1",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3561292389,
+      "parent": 931844945,
+      "name": "早期反射（原型） · early_reflection_prototype",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2128733861,
+      "parent": 3561292389,
+      "name": "early_reflection_right",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 4127617126,
+      "parent": 3561292389,
+      "name": "early_reflection_left",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3959081092,
+      "parent": 931844945,
+      "name": "body_resonance_sfx",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1233854375,
+      "parent": 393239870,
+      "name": "非动态范围混音 · non-hdr",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 646625284,
+      "parent": 1233854375,
+      "name": "屏幕提示 · hud",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3497243433,
+      "parent": 646625284,
+      "name": "命中提示 · hitmarkers",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3615621393,
+      "parent": 646625284,
+      "name": "发现提示 · reveals",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4209376331,
+      "parent": 646625284,
+      "name": "无障碍提示 · accessibility",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 877642339,
+      "parent": 1233854375,
+      "name": "过场动画 · cinematics",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1551306167,
+      "parent": 1233854375,
+      "name": "界面音效 · ui",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 348963605,
+      "parent": 1551306167,
+      "name": "reverb",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3138366898,
+      "parent": 1233854375,
+      "name": "过场环境音 · cinematics_ambience",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3423152226,
+      "parent": 1233854375,
+      "name": "不随画面淡出 · noscreenfade",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4134328469,
+      "parent": 1233854375,
+      "name": "启动流程 · bootflow",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1552113967,
+      "parent": 3803692087,
+      "name": "主混响 · reverb_main",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 91523690,
+      "parent": 1552113967,
+      "name": "int_room_stone_xlarge",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 213116528,
+      "parent": 1552113967,
+      "name": "ext_nepal_mountains_echo",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 257284723,
+      "parent": 1552113967,
+      "name": "int_room_wood_medium_dark",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 281867251,
+      "parent": 1552113967,
+      "name": "ext_urban_street_narrow",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 299204406,
+      "parent": 1552113967,
+      "name": "int_nepal_battleship_room_xlarge",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 492096772,
+      "parent": 1552113967,
+      "name": "int_nepal_battleship_room_small",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 538848996,
+      "parent": 1552113967,
+      "name": "int_cave_xxsmall",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 629663929,
+      "parent": 1552113967,
+      "name": "ext_nepal_mountains_squeeze",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 727001317,
+      "parent": 1552113967,
+      "name": "int_room_wood_large_bright",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 937616027,
+      "parent": 1552113967,
+      "name": "ext_nepal_mountains_chasm",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 959894122,
+      "parent": 1552113967,
+      "name": "int_cave_medium",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1032425009,
+      "parent": 1552113967,
+      "name": "int_gizeh_unbodied_special",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1141018430,
+      "parent": 1552113967,
+      "name": "int_cave_xlarge",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1162765961,
+      "parent": 1552113967,
+      "name": "ext_jungle_open",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1233359758,
+      "parent": 1552113967,
+      "name": "int_zeppelin",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1247313915,
+      "parent": 1552113967,
+      "name": "ext_nepal_battleship_stone01",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1377854921,
+      "parent": 1552113967,
+      "name": "ext_desert_ruins_open",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1389265295,
+      "parent": 1552113967,
+      "name": "ext_nepal_battleship_stone01_delay",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1416563562,
+      "parent": 1552113967,
+      "name": "int_room_stone_larger",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1449627199,
+      "parent": 1552113967,
+      "name": "int_sukhothai_metatron_chamber",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1489901448,
+      "parent": 1552113967,
+      "name": "int_room_stone_large",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1527972605,
+      "parent": 1552113967,
+      "name": "ext_desert_open",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1945106913,
+      "parent": 1552113967,
+      "name": "ext_colosseum",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2030713624,
+      "parent": 1552113967,
+      "name": "int_gizeh_tent",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2056205315,
+      "parent": 1552113967,
+      "name": "ext_urban_street_wide",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2270390528,
+      "parent": 1552113967,
+      "name": "ext_desert_ruins_narrow",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2314815620,
+      "parent": 1552113967,
+      "name": "int_cave_large",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2348049077,
+      "parent": 1552113967,
+      "name": "ext_urban_rooftop",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2435412284,
+      "parent": 1552113967,
+      "name": "int_nepal_battleship_room_large",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2439054994,
+      "parent": 1552113967,
+      "name": "int_nepal_battleship_ventilation",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2440587548,
+      "parent": 1552113967,
+      "name": "int_cave_xxlarge",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2448893028,
+      "parent": 1552113967,
+      "name": "int_gizeh_cave_large",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2537879704,
+      "parent": 1552113967,
+      "name": "int_room_wood_xlarge",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2820917598,
+      "parent": 1552113967,
+      "name": "int_gizeh_sunsparker_puzzleroom_resonance",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2861802930,
+      "parent": 1552113967,
+      "name": "int_nepal_battleship_room_medium",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2998389146,
+      "parent": 1552113967,
+      "name": "int_cave_xsmall",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3183507783,
+      "parent": 1552113967,
+      "name": "ext_urban_courtyard",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3209421886,
+      "parent": 1552113967,
+      "name": "int_military_tent",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3225745475,
+      "parent": 1552113967,
+      "name": "int_sukhothai_nepharchives_main_chamber",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3255885304,
+      "parent": 1552113967,
+      "name": "int_nepal_battleship_corridoor",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3307342272,
+      "parent": 1552113967,
+      "name": "int_sukhothai_wavebreaker_chamber_echo",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3366918040,
+      "parent": 1552113967,
+      "name": "int_room_wood_medium_semi_open",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3454687855,
+      "parent": 1552113967,
+      "name": "int_gizeh_resonance_medium_theme",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3528040769,
+      "parent": 1552113967,
+      "name": "special_sukothai_dream",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3700415178,
+      "parent": 1552113967,
+      "name": "int_gizeh_cave_medium",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3800672140,
+      "parent": 1552113967,
+      "name": "int_cave_small",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3817290789,
+      "parent": 1552113967,
+      "name": "int_cave_medium_chasm",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3921112211,
+      "parent": 1552113967,
+      "name": "int_sewer",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3928018811,
+      "parent": 1552113967,
+      "name": "int_room_wood_medium_bright",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3976326252,
+      "parent": 1552113967,
+      "name": "int_gizeh_cave_small",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 4006912465,
+      "parent": 1552113967,
+      "name": "int_room_wood_small_bright",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 4057557214,
+      "parent": 1552113967,
+      "name": "int_church_large",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 4107943628,
+      "parent": 1552113967,
+      "name": "int_sukhothai_long_temple_echo_slaps",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 4133815266,
+      "parent": 1552113967,
+      "name": "ext_jungle_dense",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1755285966,
+      "parent": 3803692087,
+      "name": "sfx_bass_content",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3367569208,
+      "parent": 3803692087,
+      "name": "教徒吟唱 · cultistchants",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3930136735,
+      "parent": 3803692087,
+      "name": "对话 · dialogue",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1820932827,
+      "parent": 3930136735,
+      "name": "不随画面淡出的对话 · not_screenfaded",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2792753305,
+      "parent": 3930136735,
+      "name": "随画面淡出的对话 · screenfaded",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 550149206,
+      "parent": 2792753305,
+      "name": "body_resonance_vo",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "语音",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1542261717,
+      "parent": 2792753305,
+      "name": "印第安纳静息呼吸 · breathing_indy_rest",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3435092351,
+      "parent": 2792753305,
+      "name": "harshbus",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "语音",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3991942870,
+      "parent": 3803692087,
+      "name": "背景音乐 · music",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 89505537,
+      "parent": 3991942870,
+      "name": "游戏过程音乐 · gameplay",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1121639126,
+      "parent": 89505537,
+      "name": "场景提示短乐 · spot_stinger",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1257274037,
+      "parent": 89505537,
+      "name": "发现提示音乐 · reveals_music",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1670667336,
+      "parent": 89505537,
+      "name": "压低混音短乐 · ducking_stingers",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2582085496,
+      "parent": 89505537,
+      "name": "探索音乐 · exploration",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2621569672,
+      "parent": 89505537,
+      "name": "潜行提示短乐 · stealth_stingers",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2764240573,
+      "parent": 89505537,
+      "name": "战斗音乐 · combat",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1047870521,
+      "parent": 3991942870,
+      "name": "叙事音乐 · narrative",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2607556080,
+      "parent": 3991942870,
+      "name": "菜单音乐 · menu",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3011552261,
+      "parent": 0,
+      "name": "游戏震动音频 · Master Motion Bus",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "游戏震动音频",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1418168855,
+      "parent": 3011552261,
+      "name": "震动音源 · mtn_audiosources",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "游戏震动音频",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 157255532,
+      "parent": 1418168855,
+      "name": "mtn_gameplay_low",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "游戏震动音频",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 731185388,
+      "parent": 1418168855,
+      "name": "mtn_cinematics_high",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "游戏震动音频",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2680523268,
+      "parent": 1418168855,
+      "name": "mtn_cinematics_dualsense",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "游戏震动音频",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2715088430,
+      "parent": 1418168855,
+      "name": "mtn_cinematics_low",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "游戏震动音频",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3705526894,
+      "parent": 1418168855,
+      "name": "mtn_gameplay_dualsense",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "游戏震动音频",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3785975370,
+      "parent": 1418168855,
+      "name": "mtn_gameplay_high",
+      "nameSource": "游戏名称表（名称哈希对应）；中文为翻译",
+      "category": "游戏震动音频",
+      "auxiliary": true,
+      "slot": 3
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "busCount": 80,
+  "candidatesTested": 48,
+  "matches": [
+    {
+      "candidate": "Master Audio Bus",
+      "id": 3803692087,
+      "packageName": "主输出总线",
+      "foundInCurrentInitBusObjects": true
+    },
+    {
+      "candidate": "Music",
+      "id": 3991942870,
+      "packageName": "A15",
+      "foundInCurrentInitBusObjects": true
+    },
+    {
+      "candidate": "Dialogue",
+      "id": 3930136735,
+      "packageName": "A4-22",
+      "foundInCurrentInitBusObjects": true
+    },
+    {
+      "candidate": "Ambience",
+      "id": 85412153,
+      "packageName": "A1",
+      "foundInCurrentInitBusObjects": true
+    },
+    {
+      "candidate": "UI",
+      "id": 1551306167,
+      "packageName": "A6",
+      "foundInCurrentInitBusObjects": true
+    },
+    {
+      "candidate": "Video",
+      "id": 2982943478,
+      "packageName": "A13",
+      "foundInCurrentInitBusObjects": true
+    }
+  ],
+  "note": "Hash candidates only; not original-name or semantic proof.",
+  "currentInitBank": {
+    "chunks": [
+      {
+        "tag": "BKHD",
+        "bytes": 48
+      },
+      {
+        "tag": "INIT",
+        "bytes": 170
+      },
+      {
+        "tag": "STMG",
+        "bytes": 5429
+      },
+      {
+        "tag": "HIRC",
+        "bytes": 38414
+      },
+      {
+        "tag": "ENVS",
+        "bytes": 168
+      },
+      {
+        "tag": "PLAT",
+        "bytes": 8
+      }
+    ],
+    "busObjects": 80,
+    "hasSTID": false
+  }
+}

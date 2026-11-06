@@ -1,0 +1,105 @@
+﻿{
+    "packId":  "apex.wh40k-rogue-trader",
+    "packVersion":  "1.1.0",
+    "environment":  {
+                        "date":  "2026-10-17",
+                        "os":  "Windows (build 26100)",
+                        "gamePath":  "E:\\SteamLibrary\\steamapps\\common\\Warhammer 40,000 Rogue Trader",
+                        "gameBuild":  "wh_release_1.6.1_DLC3_AfterRelease",
+                        "unity":  "6000.0.64f1",
+                        "devkit":  "ApexAudio-DevKit-2026.10.17",
+                        "compiler":  "zig 0.15.2",
+                        "dotnetSdk":  "8.0.413"
+                    },
+    "validationTier":  "runtime-audio + name-candidates",
+    "targetVersionEvidence":  [
+                                  "WwiseUnity log line: \u0027Wwise(R) SDK Version 2022.1.19 Build 8584.\u0027",
+                                  "GeneratedSoundBanks/ProjectInfo.xml: Generator=2022.1.19.8584, project WH40K_RogueTrader",
+                                  "Init.bnk BKHD version 145",
+                                  "Loaded AkSoundEngine.dll exports all seven names required by ApexWwiseCapture.c"
+                              ],
+    "versions":  {
+                     "bankFormat":  145,
+                     "integrationVersion":  "Wwise 2022.1.19 (Build 8584)",
+                     "exactSdkVersion":  "2022.1.19",
+                     "verifiedAbi":  "2022.1 effect plugin vtable; 80/80 SetBusEffect calls returned AK_Success"
+                 },
+    "audioInstanceEvidence":  {
+                                  "diskCandidates":  [
+                                                         "WH40KRT_Data/Plugins/x86_64/AkSoundEngine.dll (75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656)",
+                                                         "WH40KRT_Data/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.bnk (44285 bytes)"
+                                                     ],
+                                  "loadedModule":  "AkSoundEngine.dll in WH40KRT.exe process, same SHA256",
+                                  "initializedInstance":  "confirmed (\u0027Sound engine initialized successfully.\u0027; IsInitialized gate passed)",
+                                  "realCallbacks":  "confirmed: render callback published ~1223 blocks per 10 s at 48 kHz"
+                              },
+    "groupEvidenceFile":  "group-evidence.json",
+    "stages":  {
+                   "packageIntegrity":  "passed",
+                   "build":  "passed",
+                   "protocol":  "passed",
+                   "resolvedObjects":  "passed",
+                   "listenerRegistration":  "not-applicable",
+                   "callbacks":  "passed",
+                   "nonZeroPcm":  "passed",
+                   "independentTracks":  "partial",
+                   "selection":  "not-tested",
+                   "disconnectReconnect":  "not-tested",
+                   "feedbackSource":  "partial",
+                   "physicalHaptics":  "not-tested"
+               },
+    "evidenceFiles":  [
+                          "README.md",
+                          "group-evidence.json"
+                      ],
+    "sources":  [
+                    "ApexAudio-DevKit-2026.10.17: adapters/Wwise, docs/backend-configs.md, docs/engine-config-reference.md",
+                    "Local game files only; no Owlcat project data was used"
+                ],
+    "knownLimitations":  [
+                             "Group names are structural IDs: Wwise banks do not store bus names.",
+                             "Second output bus 0x4D6E0F21 produced no signal in the observed session.",
+                             "Only the main menu was observed; dialogue, combat, ambience and UI bus roles are unverified.",
+                             "DLC-specific banks were not inspected for extra buses.",
+                             "engineSha256 and captureSha256 must be upper-case hex; the Wwise adapter compares them case-sensitively.",
+                             "21 bus names are FNV-1 hash candidates, not audition-confirmed originals; 59 buses keep structural ids."
+                         ],
+    "blockingStage":  null,
+    "notTested":  [
+                      "in-app per-group audition",
+                      "feedback group selection changing the realtime mix",
+                      "disconnect and reconnect in the same game session",
+                      "X-Haptics engine and physical controller feedback",
+                      "gameplay scenes (dialogue, combat, ambience, DLC)"
+                  ],
+    "reproductionCommands":  [
+                                 "ApexAudio.DevTools.exe check --pack apex.wh40k-rogue-trader.gpack",
+                                 "ApexAudio.DevTools.exe check --pack apex.wh40k-rogue-trader.gpack --launch",
+                                 "ApexAudio.DevTools.exe native-check --module modules/ApexWwiseCapture.dll --entry CaptureSelfTest",
+                                 "ApexAudio.DevTools.exe capture --pack apex.wh40k-rogue-trader.gpack --pid \u003cWH40KRT pid\u003e --allow-game-connection --seconds 10"
+                             ],
+    "cleanup":  {
+                    "adapterDisconnected":  "partial",
+                    "gameModules":  "ApexWwiseCapture.dll stays loaded until the game exits; restart the game to clear a stale capture session",
+                    "temporaryDirectories":  [
+                                                 "Only the devtools scratch directories created by the validation runs"
+                                             ]
+                },
+    "groupNaming":  {
+                        "method":  "Wwise FNV-1 over UTF-8 with ASCII lowercase, matched against Init.bnk bus ids",
+                        "candidateCount":  2380022,
+                        "candidateSources":  [
+                                                 "curated mixer vocabulary",
+                                                 "managed assembly string literals (whole and word-split)"
+                                             ],
+                        "namedBuses":  21,
+                        "unnamedBuses":  59,
+                        "auditionConfirmed":  0,
+                        "lowConfidence":  [
+                                              "A2=DSP",
+                                              "A4=HDR"
+                                          ],
+                        "collisionExpectation":  "about 0.04 expected false positives for 2.38M candidates against 80 ids",
+                        "evidence":  "evidence/name-candidates.json"
+                    }
+}

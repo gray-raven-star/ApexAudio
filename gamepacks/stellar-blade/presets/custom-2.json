@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "custom-2",
+  "name": "动作与环境",
+  "packId": "local.stellarblade",
+  "folders": [],
+  "groups": {
+    "MasterSubmixDefault": {
+      "name": "主混音",
+      "enabled": false,
+      "order": 0
+    },
+    "MasterReverbSubmixDefault": {
+      "name": "主混响",
+      "enabled": false,
+      "order": 0
+    },
+    "MasterEQSubmixDefault": {
+      "name": "主均衡",
+      "enabled": false,
+      "order": 0
+    },
+    "Haptic": {
+      "name": "游戏手柄音频",
+      "enabled": false,
+      "order": 0
+    },
+    "Hit": {
+      "name": "击中音效",
+      "enabled": true,
+      "order": 0
+    },
+    "PC_SE": {
+      "name": "主角音效",
+      "enabled": true,
+      "order": 0
+    },
+    "PC_Voice": {
+      "name": "主角语音",
+      "enabled": false,
+      "order": 0
+    },
+    "EveActionVoiceSubmix": {
+      "name": "主角动作语音",
+      "enabled": false,
+      "order": 0
+    },
+    "HologramVoiceSubmix": {
+      "name": "HologramVoiceSubmix",
+      "enabled": false,
+      "order": 0
+    },
+    "HologramVoiceSubmixDiggerSpeaker": {
+      "name": "HologramVoiceSubmixDiggerSpeaker",
+      "enabled": false,
+      "order": 0
+    },
+    "FilterVoiceSubmix_Str": {
+      "name": "FilterVoiceSubmix_Str",
+      "enabled": false,
+      "order": 0
+    },
+    "TachyPrologueVoiceSubmix": {
+      "name": "TachyPrologueVoiceSubmix",
+      "enabled": false,
+      "order": 0
+    },
+    "EveVoiceSubmix": {
+      "name": "主角对白",
+      "enabled": false,
+      "order": 0
+    },
+    "DroneVoiceSubmix": {
+      "name": "无人机语音",
+      "enabled": false,
+      "order": 0
+    },
+    "DroneVoiceSubmix_High": {
+      "name": "DroneVoiceSubmix_High",
+      "enabled": false,
+      "order": 0
+    },
+    "DroneVoiceSubmix_En": {
+      "name": "DroneVoiceSubmix_En",
+      "enabled": false,
+      "order": 0
+    },
+    "NPCVoiceSubmix": {
+      "name": "NPC 语音",
+      "enabled": false,
+      "order": 0
+    },
+    "SystemAnnounceReverb2": {
+      "name": "SystemAnnounceReverb2",
+      "enabled": false,
+      "order": 0
+    },
+    "SystemAnnounceReverb": {
+      "name": "SystemAnnounceReverb",
+      "enabled": false,
+      "order": 0
+    },
+    "DialogReverb": {
+      "name": "DialogReverb",
+      "enabled": false,
+      "order": 0
+    },
+    "SystemAnnounceReverbDrone": {
+      "name": "SystemAnnounceReverbDrone",
+      "enabled": false,
+      "order": 0
+    },
+    "DroneBVoiceSubmix": {
+      "name": "DroneBVoiceSubmix",
+      "enabled": false,
+      "order": 0
+    },
+    "OperatorVoiceSubmix": {
+      "name": "OperatorVoiceSubmix",
+      "enabled": false,
+      "order": 0
+    },
+    "MotherSphereReverb": {
+      "name": "MotherSphereReverb",
+      "enabled": false,
+      "order": 0
+    },
+    "NPCVoiceSubmix_Orcal": {
+      "name": "NPCVoiceSubmix_Orcal",
+      "enabled": false,
+      "order": 0
+    },
+    "HologramVoiceSubmix2": {
+      "name": "HologramVoiceSubmix2",
+      "enabled": false,
+      "order": 0
+    },
+    "FilterVoiceSubmix": {
+      "name": "FilterVoiceSubmix",
+      "enabled": false,
+      "order": 0
+    },
+    "PS5ControllerSpeaker": {
+      "name": "PS5ControllerSpeaker",
+      "enabled": false,
+      "order": 0
+    },
+    "HologramVoiceSubmixDigger": {
+      "name": "HologramVoiceSubmixDigger",
+      "enabled": false,
+      "order": 0
+    },
+    "MasterEffect": {
+      "name": "MasterEffect",
+      "enabled": false,
+      "order": 0
+    },
+    "MenuEffect": {
+      "name": "菜单音效",
+      "enabled": true,
+      "order": 0
+    },
+    "DeathEffect": {
+      "name": "DeathEffect",
+      "enabled": false,
+      "order": 0
+    },
+    "Boss": {
+      "name": "Boss",
+      "enabled": false,
+      "order": 0
+    },
+    "BGM": {
+      "name": "背景音乐",
+      "enabled": false,
+      "order": 0
+    },
+    "Ambience": {
+      "name": "环境声",
+      "enabled": false,
+      "order": 0
+    },
+    "WorldSE": {
+      "name": "场景音效",
+      "enabled": true,
+      "order": 0
+    },
+    "Mon_Footstep": {
+      "name": "怪物脚步",
+      "enabled": true,
+      "order": 0
+    },
+    "General": {
+      "name": "通用音效",
+      "enabled": false,
+      "order": 0
+    },
+    "Monster_Vox": {
+      "name": "怪物叫声",
+      "enabled": false,
+      "order": 0
+    },
+    "Monster": {
+      "name": "Monster",
+      "enabled": false,
+      "order": 0
+    },
+    "EVE_EndpointSubmix_vib": {
+      "name": "手柄音频输出",
+      "enabled": false,
+      "order": 0
+    },
+    "DieReverbSubmixx_S": {
+      "name": "DieReverbSubmixx_S",
+      "enabled": false,
+      "order": 0
+    },
+    "DieReverbSubmixx": {
+      "name": "DieReverbSubmixx",
+      "enabled": false,
+      "order": 0
+    },
+    "DialogReverb_Large": {
+      "name": "DialogReverb_Large",
+      "enabled": false,
+      "order": 0
+    },
+    "JustActionSubmix": {
+      "name": "JustActionSubmix",
+      "enabled": true,
+      "order": 0
+    },
+    "UIReverb": {
+      "name": "UIReverb",
+      "enabled": false,
+      "order": 0
+    },
+    "Submix_Hall": {
+      "name": "Submix_Hall",
+      "enabled": false,
+      "order": 0
+    },
+    "Guard": {
+      "name": "格挡音效",
+      "enabled": true,
+      "order": 0
+    },
+    "Submix_Field": {
+      "name": "Submix_Field",
+      "enabled": false,
+      "order": 0
+    },
+    "DialogReverb_Large2": {
+      "name": "DialogReverb_Large2",
+      "enabled": false,
+      "order": 0
+    },
+    "Submix_Valley": {
+      "name": "Submix_Valley",
+      "enabled": false,
+      "order": 0
+    },
+    "Submix_Narrow_Street": {
+      "name": "Submix_Narrow_Street",
+      "enabled": false,
+      "order": 0
+    },
+    "Submix_Field2": {
+      "name": "Submix_Field2",
+      "enabled": false,
+      "order": 0
+    },
+    "DialogReverb_Mid": {
+      "name": "DialogReverb_Mid",
+      "enabled": false,
+      "order": 0
+    },
+    "DialogReverb_Large3": {
+      "name": "DialogReverb_Large3",
+      "enabled": false,
+      "order": 0
+    },
+    "Submix_Cave": {
+      "name": "Submix_Cave",
+      "enabled": false,
+      "order": 0
+    },
+    "Submix_Inside": {
+      "name": "Submix_Inside",
+      "enabled": false,
+      "order": 0
+    }
+  },
+  "basePresetId": null,
+  "basePackVersion": null
+}

@@ -9,6 +9,20 @@ $manifestText = Get-Content -LiteralPath (Join-Path $definitionRoot 'manifest.js
 if (($gameText + $manifestText).Contains('__REQUIRED__')) { throw 'Template is incomplete. Fill REQUIRED fields using verified evidence.' }
 $game = $gameText | ConvertFrom-Json
 $manifest = $manifestText | ConvertFrom-Json
+$recipePath = Join-Path $definitionRoot 'build.json'
+if (Test-Path -LiteralPath $recipePath) {
+    $recipe = Get-Content -LiteralPath $recipePath -Raw | ConvertFrom-Json
+    if ($recipe.slug -cne (Split-Path $definitionRoot -Leaf) -or
+        $recipe.slug -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*\z' -or
+        $recipe.id -cne $manifest.id -or $recipe.version -cne $manifest.version -or
+        $recipe.version -cnotmatch '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\z' -or
+        $recipe.backend -cne $game.backend) {
+        throw 'Build recipe must match the directory, package ID, version, and backend.'
+    }
+    if ($game.backend -ne 'Wwise' -and ($recipe.adapterProject -or $recipe.nativeSource)) {
+        throw 'adapterProject and nativeSource overrides require the Wwise backend.'
+    }
+}
 if ($manifest.id -notmatch '^[a-z0-9][a-z0-9.-]{2,79}$' -or $manifest.demo -or -not $manifest.games.Count) { throw 'Invalid real-game manifest.' }
 foreach ($match in $manifest.games) { if ($match.sha256 -notmatch '^[0-9a-fA-F]{64}$' -or $match.sha256 -match '^0+$') { throw 'Supply a verified executable SHA256.' } }
 if ($game.backend -ne 'Custom' -and (-not $game.buses.Count)) { throw 'No verified audio groups were supplied.' }
@@ -21,7 +35,9 @@ if ($game.backend -eq 'Custom') {
     New-Item -ItemType Directory -Path $stage -Force | Out-Null
     & dotnet publish (Join-Path $definitionRoot 'adapter/YourAdapter.csproj') -c Release --no-self-contained -o $stage --configfile (Join-Path $root 'NuGet.Config') --nologo
     if ($LASTEXITCODE -ne 0) { throw 'Custom adapter build failed.' }
-    Get-ChildItem -LiteralPath $definitionRoot | Where-Object Name -notin @('adapter','AGENTS.md') | Copy-Item -Destination $stage -Recurse -Force
+    Get-ChildItem -LiteralPath $definitionRoot |
+        Where-Object { $_.Name -notin @('adapter', 'AGENTS.md', 'build.json', 'PROVENANCE.md') -and $_.Name -notlike '_*' } |
+        Copy-Item -Destination $stage -Recurse -Force
     & (Join-Path $PSScriptRoot 'Pack.ps1') -Directory $stage -Output (Join-Path $root ('dist/packages/' + $manifest.id + '.gpack'))
     return
 }
@@ -44,12 +60,30 @@ switch ($game.backend) {
                 if ($effect.verification -notin @('static-only','runtime-verified') -or -not $effect.source -or $effect.sourceSha256 -notmatch '^[0-9a-fA-F]{64}$' -or $effect.targetSha256 -ne $game.engineSha256) { throw "Effect-slot evidence is incomplete for bus $($bus.id). Static evidence does not guarantee runtime ownership." }
             }
         } else { Write-Warning 'Legacy definition has no group-evidence.json. Static/runtime slot verification is not recorded; see docs/reference/group-evidence.md.' }
-        & dotnet restore (Join-Path $root 'adapters/Wwise/ApexAudio.Wwise.csproj') --configfile (Join-Path $root 'NuGet.Config') --nologo
+        $adapterProject = Join-Path $root 'adapters/Wwise/ApexAudio.Wwise.csproj'
+        $nativeSource = $null
+        if ($recipe.adapterProject) {
+            if ($recipe.adapterProject -cnotmatch '^_capture/(?:[\w-]+/)*[\w.-]+\.csproj\z') {
+                throw 'adapterProject must point to a project under _capture/.'
+            }
+            $adapterProject = Join-Path $definitionRoot $recipe.adapterProject
+        }
+        if ($recipe.nativeSource) {
+            if ($recipe.nativeSource -cnotmatch '^_capture/(?:[\w-]+/)*[\w.-]+\.c\z') {
+                throw 'nativeSource must point to a C file under _capture/.'
+            }
+            $nativeSource = Join-Path $definitionRoot $recipe.nativeSource
+        }
+        & dotnet restore $adapterProject --configfile (Join-Path $root 'NuGet.Config') --nologo
         if ($LASTEXITCODE -ne 0) { throw 'Adapter restore failed.' }
-        & (Join-Path $root 'adapters/Wwise/tools/BuildPack.ps1') -DefinitionDirectory $definitionRoot -Compiler $zig
+        & (Join-Path $root 'adapters/Wwise/tools/BuildPack.ps1') -DefinitionDirectory $definitionRoot -Compiler $zig -AdapterProject $adapterProject -NativeSource $nativeSource
     }
     'Fmod' {
-        if (-not $game.wrapperRva -or -not $game.runtimeVersion -or -not $game.modules.PSObject.Properties.Count) { throw 'Verify FMOD modules, system locator and runtime version first.' }
+        $hasLocator = $game.wrapperRva -gt 0 -or
+            ($game.wrapperRva -eq 0 -and $game.stateOffset -gt 0 -and $game.studioOffset -eq 0)
+        if (-not $hasLocator -or -not $game.runtimeVersion -or -not $game.modules.PSObject.Properties.Count) {
+            throw 'Verify FMOD modules, system locator and runtime version first.'
+        }
         & (Join-Path $root 'adapters/Fmod/tools/BuildPack.ps1') -Profile $definitionRoot -Compiler $zig
     }
     'Unreal' {

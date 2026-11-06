@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-15",
+  "packId": "independent.palworld.wwise",
+  "version": "0.1.0",
+  "target": {
+    "platform": "Windows x64 / Steam",
+    "buildId": "25246127",
+    "executable": "Palworld-Win64-Shipping.exe",
+    "executableSha256": "E590B5E7BFAA3FEA40FAB1A02CC72C8FC5FD6F8631EF2308E95AC56C25195837",
+    "bankVersion": 150,
+    "integration": "2023.1.3.8471.2970",
+    "engineModule": "Palworld-Win64-Shipping.exe"
+  },
+  "independence": "仅使用指定 DevKit、当前游戏原文件、公开原始资料；没有使用历史适配配置或调查结果。",
+  "stages": {
+    "environment": "passed: Windows x64, PowerShell 7, .NET SDK 8.0.413, Zig 0.15.2",
+    "build": "passed",
+    "integrity": "passed",
+    "protocol": "passed; 20 groups",
+    "nativeSelfTest": 0,
+    "registration": "passed: Connect completed; all 20 SetBusEffect calls returned success",
+    "realPcm": "passed: title BGM/master; gameplay ambient/SE/player voice/master",
+    "distinctTracks": "Distinct payloads observed for emitted tracks; parent-child overlap is expected. All 20 groups have not been individually auditioned.",
+    "feedback": "passed: empty and cleared peak 0; selected master peak 0.011720925; independent capture continues",
+    "lifecycle": "passed: stop/start, disconnect/reconnect; game exit scenario untested",
+    "physicalController": "not tested; no X-Haptics started",
+    "semantics": "partial: hash-based name candidates; exhaustive per-action listening deferred at user request"
+  },
+  "userAssistance": [
+    {
+      "action": "启动游戏并停在标题画面",
+      "count": 1
+    },
+    {
+      "action": "进入存档并进行正常动作",
+      "count": 1
+    }
+  ],
+  "nativeModuleSha256": "F8435D78AA1B66E18DC2D9A1397430C8B406FAF6D9E104A854C191E5705C199F",
+  "titleCapture": {
+    "integrity": true,
+    "id": "independent.palworld.wwise",
+    "version": "0.1.0",
+    "adapterExecuted": true,
+    "gameConnected": true,
+    "demoConnected": false,
+    "groups": [
+      {
+        "id": "3803692087",
+        "name": "Master Audio Bus",
+        "parentId": null,
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "47937584",
+        "name": "Bus 47937584",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "77978275",
+        "name": "Ambient",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "412724365",
+        "name": "BGM",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "752119174",
+        "name": "Bus 752119174",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "1551306167",
+        "name": "UI",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "1996316241",
+        "name": "Bus 1996316241",
+        "parentId": "1551306167",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "1584861537",
+        "name": "SE",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "1656082668",
+        "name": "Bus 1656082668",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2569992122",
+        "name": "Bus 2569992122",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2706548304",
+        "name": "Bus 2706548304",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3093912444",
+        "name": "Bus 3093912444",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3893417221",
+        "name": "Bus 3893417221",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "4161132316",
+        "name": "Bus 4161132316",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2139775466",
+        "name": "Bus 2139775466",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2948364142",
+        "name": "Bus 2948364142",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2948364143",
+        "name": "Bus 2948364143",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3073030106",
+        "name": "Jingle",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "3157003241",
+        "name": "Bus 3157003241",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3225742224",
+        "name": "Bus 3225742224",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      }
+    ],
+    "packets": 940,
+    "frames": 481280,
+    "nonZeroGroups": 2,
+    "peaks": [
+      {
+        "id": "412724365",
+        "peak": 0.09298706,
+        "firstPayloadSha256": "33B90CDE7A7AC04F3EABAE57C707C3A6C53133E4B2763D83461C33FEF183D07D"
+      },
+      {
+        "id": "3803692087",
+        "peak": 0.026153564,
+        "firstPayloadSha256": "2C52675E0BD0E98ACD243018F5DE2D6BBB3BE67784F5E89DC1126699A292DE91"
+      }
+    ],
+    "status": {
+      "connected": true,
+      "capturing": true,
+      "detail": "正在采集独立分组",
+      "droppedBlocks": 0
+    },
+    "realtime": {
+      "format": "apex-f32-planar-ring-v1",
+      "active": 1,
+      "blocks": 471
+    },
+    "errors": [],
+    "limitations": "PCM proves received data, not semantic separation. Matching hashes may indicate parent/child overlap or duplicate data and require listening. No X-Haptics engine or physical feedback was started."
+  },
+  "gameplayCapture": {
+    "integrity": true,
+    "id": "independent.palworld.wwise",
+    "version": "0.1.0",
+    "adapterExecuted": true,
+    "gameConnected": true,
+    "demoConnected": false,
+    "groups": [
+      {
+        "id": "3803692087",
+        "name": "Master Audio Bus",
+        "parentId": null,
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "47937584",
+        "name": "Bus 47937584",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "77978275",
+        "name": "Ambient",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "412724365",
+        "name": "BGM",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "752119174",
+        "name": "Bus 752119174",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "1551306167",
+        "name": "UI",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "1996316241",
+        "name": "Bus 1996316241",
+        "parentId": "1551306167",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "1584861537",
+        "name": "SE",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "1656082668",
+        "name": "Bus 1656082668",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2569992122",
+        "name": "Bus 2569992122",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2706548304",
+        "name": "Bus 2706548304",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3093912444",
+        "name": "Bus 3093912444",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3893417221",
+        "name": "Bus 3893417221",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "4161132316",
+        "name": "Bus 4161132316",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2139775466",
+        "name": "Bus 2139775466",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2948364142",
+        "name": "Bus 2948364142",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2948364143",
+        "name": "Bus 2948364143",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3073030106",
+        "name": "Jingle",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "3157003241",
+        "name": "Bus 3157003241",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3225742224",
+        "name": "Bus 3225742224",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      }
+    ],
+    "packets": 8417,
+    "frames": 4309504,
+    "nonZeroGroups": 4,
+    "peaks": [
+      {
+        "id": "77978275",
+        "peak": 0.016937256,
+        "firstPayloadSha256": "7B00ECC9A5009B49495D34435D11488C1DE0D0FAC45C6F2D26EEC7B3F54E1C5A"
+      },
+      {
+        "id": "1584861537",
+        "peak": 0.03842163,
+        "firstPayloadSha256": "31AA53D343E4D0376D26F741AD5EC77590EC318506576F439E78A1FEFD9AA596"
+      },
+      {
+        "id": "3803692087",
+        "peak": 0.043884277,
+        "firstPayloadSha256": "8312189E7D4C0FD1AAB1849868F82FEB5431BD29679422C5E33B781DB72CA5EF"
+      },
+      {
+        "id": "47937584",
+        "peak": 0.010681152,
+        "firstPayloadSha256": "5FDE1BE4D5DBE9E5A22E55F4283E0EF148661EBA00FD7ED7244F80BAEF704DC4"
+      }
+    ],
+    "status": {
+      "connected": true,
+      "capturing": true,
+      "detail": "正在采集独立分组",
+      "droppedBlocks": 0
+    },
+    "realtime": {
+      "format": "apex-f32-planar-ring-v1",
+      "active": 1,
+      "blocks": 4221
+    },
+    "errors": [],
+    "limitations": "PCM proves received data, not semantic separation. Matching hashes may indicate parent/child overlap or duplicate data and require listening. No X-Haptics engine or physical feedback was started."
+  },
+  "runtimeSuite": {
+    "packId": "independent.palworld.wwise",
+    "targetSha256": "E590B5E7BFAA3FEA40FAB1A02CC72C8FC5FD6F8631EF2308E95AC56C25195837",
+    "phases": [
+      {
+        "label": "empty-feedback",
+        "publishedBlocks": 113,
+        "consistentBlocks": 64,
+        "peak": 0
+      },
+      {
+        "label": "master-feedback",
+        "publishedBlocks": 114,
+        "consistentBlocks": 64,
+        "peak": 0.011720925
+      },
+      {
+        "label": "cleared-feedback",
+        "publishedBlocks": 112,
+        "consistentBlocks": 64,
+        "peak": 0
+      },
+      {
+        "label": "bgm-feedback",
+        "publishedBlocks": 113,
+        "consistentBlocks": 64,
+        "peak": 0
+      },
+      {
+        "label": "stop-capture",
+        "status": {
+          "connected": true,
+          "capturing": false,
+          "detail": "正在采集独立分组",
+          "droppedBlocks": 0
+        }
+      },
+      {
+        "label": "restart-capture",
+        "status": {
+          "connected": true,
+          "capturing": true,
+          "detail": "正在采集独立分组",
+          "droppedBlocks": 0
+        }
+      },
+      {
+        "label": "disconnect",
+        "status": {
+          "connected": false,
+          "capturing": false,
+          "detail": "已断开",
+          "droppedBlocks": 0
+        },
+        "mappingActive": 0
+      },
+      {
+        "label": "reconnect",
+        "status": {
+          "connected": true,
+          "capturing": true,
+          "detail": "正在采集独立分组",
+          "droppedBlocks": 0
+        },
+        "mappingActive": 1
+      }
+    ],
+    "statusBefore": {
+      "connected": true,
+      "capturing": true,
+      "detail": "正在采集独立分组",
+      "droppedBlocks": 0
+    },
+    "finalStatus": {
+      "connected": false,
+      "capturing": false,
+      "detail": "已断开",
+      "droppedBlocks": 0
+    },
+    "groups": [
+      {
+        "id": "3803692087",
+        "name": "Master Audio Bus",
+        "parentId": null,
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "47937584",
+        "name": "Bus 47937584",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "77978275",
+        "name": "Ambient",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "412724365",
+        "name": "BGM",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "752119174",
+        "name": "Bus 752119174",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "1551306167",
+        "name": "UI",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "1996316241",
+        "name": "Bus 1996316241",
+        "parentId": "1551306167",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "1584861537",
+        "name": "SE",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "1656082668",
+        "name": "Bus 1656082668",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2569992122",
+        "name": "Bus 2569992122",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2706548304",
+        "name": "Bus 2706548304",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3093912444",
+        "name": "Bus 3093912444",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3893417221",
+        "name": "Bus 3893417221",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "4161132316",
+        "name": "Bus 4161132316",
+        "parentId": "1584861537",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2139775466",
+        "name": "Bus 2139775466",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2948364142",
+        "name": "Bus 2948364142",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "2948364143",
+        "name": "Bus 2948364143",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3073030106",
+        "name": "Jingle",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Wwise FNV 名称候选，待试听确认"
+      },
+      {
+        "id": "3157003241",
+        "name": "Bus 3157003241",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      },
+      {
+        "id": "3225742224",
+        "name": "Bus 3225742224",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "Init.bnk HIRC 原始总线编号"
+      }
+    ],
+    "tracks": [
+      {
+        "id": "77978275",
+        "packets": 927,
+        "frames": 474624,
+        "peak": 0.011932373,
+        "firstPayloadSha256": "258214627F9F85C5AEFB0506BA3CC6488C03337799D5A035F1C22DB6A601AE62"
+      },
+      {
+        "id": "3803692087",
+        "packets": 927,
+        "frames": 474624,
+        "peak": 0.013397217,
+        "firstPayloadSha256": "A6A0C0DA6CA9FC375F0885DCEB2D3140EEA32383BC4685360D74CBCEF773EE15"
+      }
+    ],
+    "errors": [],
+    "limitations": "Activity-dependent measurements. PCM proves actual transport, not semantic names. No physical controller or X-Haptics output is started."
+  },
+  "limitations": [
+    "只适配已绑定摘要的本机游戏版本。",
+    "未对全部 20 条总线进行逐项发声和语义试听。",
+    "未验证物理震动、游戏退出和所有场景。",
+    "辅助混响组不作为独立采集组提供。"
+  ]
+}

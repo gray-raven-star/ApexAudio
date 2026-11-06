@@ -31,7 +31,7 @@ foreach($directory in @('.github','src','adapters','providers','tests','schemas'
 $native=Join-Path $kit 'providers/XHaptics/native'
 Get-ChildItem -LiteralPath $native -File | Where-Object Name -notin @('ApexGroupsBridge.c','ApexGroupsBridge-v5.dll','xh-support.json','xh-engines.json') | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
 foreach($name in @('ApexAudio.sln','Directory.Build.props','NuGet.Config','.gitignore','README.md','README.en.md','AGENTS.md','CONTRIBUTING.md','THIRD-PARTY.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $root $name) -Destination $kit }
-foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','MakeWwisePack.ps1','BuildNative.ps1','FindCompiler.ps1','Setup.ps1','Environment.ps1','New-Pack.ps1','Build-GamePack.ps1','Release.ps1','Disassemble.py')) {
+foreach($name in @('Build.ps1','Pack.ps1','MakeDemoPack.ps1','MakeWwisePack.ps1','BuildNative.ps1','FindCompiler.ps1','Setup.ps1','Environment.ps1','New-Pack.ps1','Build-GamePack.ps1','Copy-GamePackDefinition.ps1','Release.ps1','Disassemble.py')) {
     New-Item -ItemType Directory -Force -Path (Join-Path $kit 'tools') | Out-Null
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination (Join-Path $kit 'tools')
 }

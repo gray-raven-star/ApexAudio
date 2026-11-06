@@ -1,0 +1,482 @@
+{
+  "3803692087": {
+    "name": "主输出（Master Audio Bus）",
+    "category": "主输出",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "85412153": {
+    "name": "环境声（Ambience）",
+    "category": "环境",
+    "enabled": true,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "317282339": {
+    "name": "天气（Weather）",
+    "category": "环境",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "186852181": {
+    "name": "雷声（Thunder）",
+    "category": "环境",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·中置信（未试听确认）"
+  },
+  "379718326": {
+    "name": "天气层（WeatherLayer）",
+    "category": "环境",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·中置信（未试听确认）"
+  },
+  "1537061107": {
+    "name": "风（Wind）",
+    "category": "环境",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "2481666201": {
+    "name": "A1-1-4",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "722060249": {
+    "name": "A1-2",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "882140159": {
+    "name": "A1-3",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "156311856": {
+    "name": "A1-3-1",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "884412605": {
+    "name": "A1-3-2",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1050421051": {
+    "name": "空气声（Air）",
+    "category": "环境",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·中置信（未试听确认）"
+  },
+  "1385801509": {
+    "name": "A1-5",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2538584666": {
+    "name": "A1-6",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "860385440": {
+    "name": "A1-6-1",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2357510901": {
+    "name": "A1-6-2",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3573368426": {
+    "name": "A1-7",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "505125328": {
+    "name": "A1-7-1",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1191649373": {
+    "name": "A1-7-2",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "613761766": {
+    "name": "DSP 处理（DSP）",
+    "category": "混音",
+    "enabled": true,
+    "nameSource": "FNV-1 名称候选·低置信（未试听确认）"
+  },
+  "809318416": {
+    "name": "A3",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "931844945": {
+    "name": "HDR 动态范围（HDR）",
+    "category": "混音",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·低置信（未试听确认）"
+  },
+  "75618095": {
+    "name": "A4-1",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "247557814": {
+    "name": "拟音（Foley）",
+    "category": "音效",
+    "enabled": true,
+    "nameSource": "FNV-1 名称候选·中置信（未试听确认）"
+  },
+  "368791692": {
+    "name": "A4-3",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "410840802": {
+    "name": "A4-4",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "929405203": {
+    "name": "A4-5",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1074020554": {
+    "name": "A4-6",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1199502698": {
+    "name": "A4-7",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1210751682": {
+    "name": "A4-8",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1434974618": {
+    "name": "A4-9",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1601209820": {
+    "name": "A4-10",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1793969174": {
+    "name": "A4-11",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1844591395": {
+    "name": "A4-12",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2446376615": {
+    "name": "破坏（Destruction）",
+    "category": "音效",
+    "enabled": true,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "2470376052": {
+    "name": "A4-14",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2960513238": {
+    "name": "A4-15",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2981729747": {
+    "name": "问询语音（Asks）",
+    "category": "语音",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "549347228": {
+    "name": "选择语音（Selects）",
+    "category": "语音",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·中置信（未试听确认）"
+  },
+  "563146235": {
+    "name": "A4-16-2",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "712482109": {
+    "name": "A4-16-3",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1512882804": {
+    "name": "A4-16-4",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3309158463": {
+    "name": "A4-17",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3614659429": {
+    "name": "可交互物体（InteractiveObjects）",
+    "category": "音效",
+    "enabled": true,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "3694647828": {
+    "name": "A4-19",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3699284957": {
+    "name": "A4-20",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3826240549": {
+    "name": "倒地/坠落（Bodyfalls）",
+    "category": "音效",
+    "enabled": true,
+    "nameSource": "FNV-1 名称候选·中置信（未试听确认）"
+  },
+  "1270628146": {
+    "name": "A4-21-1",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2696806780": {
+    "name": "A4-21-2",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2730442764": {
+    "name": "A4-21-3",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3647308100": {
+    "name": "A4-21-4",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3930136735": {
+    "name": "对白（Dialogue）",
+    "category": "语音",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "463135381": {
+    "name": "A4-22-1",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2295679860": {
+    "name": "A4-22-2",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2433839550": {
+    "name": "A4-22-3",
+    "category": "三级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "4101551376": {
+    "name": "A4-23",
+    "category": "二级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "4207818628": {
+    "name": "队友闲谈（Banters）",
+    "category": "语音",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "1145758500": {
+    "name": "A5",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1551306167": {
+    "name": "界面（UI）",
+    "category": "界面",
+    "enabled": true,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "1885713360": {
+    "name": "A6-1",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1710965379": {
+    "name": "A7",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1764400846": {
+    "name": "A8",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1769618259": {
+    "name": "A9",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2242065222": {
+    "name": "A10",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2381614349": {
+    "name": "A11",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2940432316": {
+    "name": "A12",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2982943478": {
+    "name": "过场视频（Video）",
+    "category": "视频",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "3585925006": {
+    "name": "A14",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2590351111": {
+    "name": "亚空间航行（WarpTravel）",
+    "category": "音效",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·中置信（未试听确认）"
+  },
+  "3991942870": {
+    "name": "音乐（Music）",
+    "category": "音乐",
+    "enabled": false,
+    "nameSource": "FNV-1 名称候选·高置信（未试听确认）"
+  },
+  "2415184883": {
+    "name": "A15-1",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3563523368": {
+    "name": "A15-2",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "4018282512": {
+    "name": "A16",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "4128530898": {
+    "name": "A17",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "4262181783": {
+    "name": "A18",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2204902281": {
+    "name": "A18-1",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "1299058465": {
+    "name": "第二输出总线",
+    "category": "主输出",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2663784335": {
+    "name": "B1",
+    "category": "一级混音",
+    "enabled": true,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "2679478974": {
+    "name": "B1-1",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  },
+  "3422465165": {
+    "name": "B1-2",
+    "category": "二级混音",
+    "enabled": false,
+    "nameSource": "结构编号（Init.bnk 未保存总线名称）"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": "1.1.1",
+  "previousVersion": "1.1.0",
+  "changes": [
+    "统一显示名称与发布文件名",
+    "将当前选用的已保存配置设为初始设置",
+    "移除运行不需要的调试文件"
+  ],
+  "captureImplementationChanged": false,
+  "defaultPresetSource": "selected-package-preset",
+  "previousValidationReports": "Any included original capture report describes the previous implementation version; no game capture was repeated for this preset update."
+}

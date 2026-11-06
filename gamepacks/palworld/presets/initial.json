@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "id": "initial",
+  "name": "默认预设",
+  "packId": "independent.palworld.wwise",
+  "folders": [],
+  "groups": {
+    "3803692087": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 0
+    },
+    "47937584": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 1
+    },
+    "77978275": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 2
+    },
+    "412724365": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 10
+    },
+    "752119174": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 11
+    },
+    "1551306167": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 12
+    },
+    "1996316241": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 13
+    },
+    "1584861537": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 14
+    },
+    "1656082668": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 15
+    },
+    "2569992122": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 16
+    },
+    "2706548304": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 17
+    },
+    "3093912444": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 18
+    },
+    "3893417221": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 20
+    },
+    "4161132316": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 21
+    },
+    "2139775466": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 22
+    },
+    "2948364142": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 24
+    },
+    "2948364143": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 25
+    },
+    "3073030106": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 26
+    },
+    "3157003241": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 27
+    },
+    "3225742224": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 28
+    }
+  }
+}

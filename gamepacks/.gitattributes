@@ -1,0 +1,2 @@
+# Preserve archived and current definition bytes for manifest hash comparisons.
+* -text

@@ -1,0 +1,7 @@
+{
+  "slug": "elden-ring",
+  "id": "local.elden-ring",
+  "version": "0.2.0",
+  "backend": "Wwise",
+  "adapterProject": "_capture/ApexAudio.EldenRing.csproj"
+}

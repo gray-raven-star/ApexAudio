@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "initial",
+  "name": "初始设置",
+  "packId": "apex.slay-the-spire-2",
+  "folders": [],
+  "groups": {
+    "4DFE8406D766BE41A5F0466DA530675D": {
+      "name": "Master(根)",
+      "enabled": false,
+      "folderId": null,
+      "order": 0
+    },
+    "0E4280A01072AB41936AD9A56E426F39": {
+      "name": "master",
+      "enabled": false,
+      "folderId": null,
+      "order": 1
+    },
+    "0EA7A631021F34419316869034F110CD": {
+      "name": "sfx",
+      "enabled": true,
+      "folderId": null,
+      "order": 2
+    },
+    "62C3BD472A628B498B21F8D0C11BBB20": {
+      "name": "music",
+      "enabled": false,
+      "folderId": null,
+      "order": 3
+    },
+    "E96DB30FE9E29C48A48856A893FAE658": {
+      "name": "ambience",
+      "enabled": true,
+      "folderId": null,
+      "order": 4
+    },
+    "1F69B8A886CF6F42A12C489C55E75218": {
+      "name": "Reverb",
+      "enabled": false,
+      "folderId": null,
+      "order": 5
+    },
+    "B83E8425790F5342AED6BEE1449D8E7E": {
+      "name": "chorus",
+      "enabled": false,
+      "folderId": null,
+      "order": 6
+    },
+    "ADAD629074D9EF41B81279C56BB6C25F": {
+      "name": "sfx_ducking_bass",
+      "enabled": false,
+      "folderId": null,
+      "order": 7
+    },
+    "D331A2BFA0C79543BB214AFDF4149043": {
+      "name": "sfx_ducking_big",
+      "enabled": false,
+      "folderId": null,
+      "order": 8
+    }
+  }
+}

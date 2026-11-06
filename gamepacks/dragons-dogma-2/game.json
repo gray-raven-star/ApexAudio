@@ -1,0 +1,2509 @@
+{
+  "title": "龙之信条 2",
+  "gameSha256": "53D0FA7093CA1B560E0C881C84A6451091F87D3AB678D25F3EFFF08C22128127",
+  "engineModule": "DD2.exe",
+  "engineSha256": "53D0FA7093CA1B560E0C881C84A6451091F87D3AB678D25F3EFFF08C22128127",
+  "bankVersion": 140,
+  "bankHeader": "jAAAACM6xlA+XXAXEAAAAMQdAAAAAAAAAAAAAAAAAAA=",
+  "bankId": 2047607332,
+  "captureFile": "modules/ApexDD2Capture.dll",
+  "captureSha256": "5FC3095CE6764B1ECBB3D0B05D0D456C3D151944D077168B5592BB593E891E67",
+  "sdkYear": 2021,
+  "sdkSeries": 1,
+  "buses": [
+    {
+      "id": 3803692087,
+      "parent": 0,
+      "name": "总混音（包含音乐和对白） · Master Audio Bus",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1401767917,
+      "parent": 3803692087,
+      "name": "敌人、机关与技能混音路由 · 1401767917",
+      "nameSource": "无原始名称；描述由当前子级结构推导，编号保留",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1521018306,
+      "parent": 1401767917,
+      "name": "场景机关与物件总线 · gm_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 447408838,
+      "parent": 1521018306,
+      "name": "未命名机关与界面分组 · 447408838",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4132482924,
+      "parent": 1521018306,
+      "name": "机关与物件音效 · gm_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4132482937,
+      "parent": 1521018306,
+      "name": "机关与物件特殊音效 · gm_sp",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2054545917,
+      "parent": 1401767917,
+      "name": "未命名混合与未确认分组 · 2054545917",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 209189415,
+      "parent": 2054545917,
+      "name": "未命名混合与未确认分组 · 209189415",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1488287255,
+      "parent": 2054545917,
+      "name": "未命名混合与未确认分组 · 1488287255",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2426359878,
+      "parent": 2054545917,
+      "name": "未命名混合与未确认分组 · 2426359878",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2426359891,
+      "parent": 2054545917,
+      "name": "未命名混合与未确认分组 · 2426359891",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2535150153,
+      "parent": 2054545917,
+      "name": "未命名混合与未确认分组 · 2535150153",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2265963024,
+      "parent": 1401767917,
+      "name": "敌人总线（包含叫声） · em_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 2
+    },
+    {
+      "id": 1425423685,
+      "parent": 2265963024,
+      "name": "未命名敌人分组 · 1425423685",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 221917476,
+      "parent": 1425423685,
+      "name": "敌人物件音效 · em_se_obj",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1727747637,
+      "parent": 1425423685,
+      "name": "敌人物件发声 · em_vo_obj",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4001171034,
+      "parent": 1425423685,
+      "name": "敌人物件效果 · em_fx_obj",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1743392432,
+      "parent": 2265963024,
+      "name": "敌人对话 · em_vo_dia",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2716789688,
+      "parent": 1743392432,
+      "name": "未命名对白与发声分组 · 2716789688",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1962487222,
+      "parent": 2265963024,
+      "name": "未命名敌人分组 · 1962487222",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2147673137,
+      "parent": 2265963024,
+      "name": "敌人低频混音 · em_lfe",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2282317921,
+      "parent": 2265963024,
+      "name": "敌人吼叫 · em_vo_roars",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2692174254,
+      "parent": 2265963024,
+      "name": "敌人联动混音 · em_link",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 983086489,
+      "parent": 2692174254,
+      "name": "敌人联动音效 · em_se_link",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2609032430,
+      "parent": 2692174254,
+      "name": "敌人联动发声 · em_vo_link",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2962645366,
+      "parent": 2265963024,
+      "name": "敌人动作音效 · em_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3012978083,
+      "parent": 2265963024,
+      "name": "敌人发声 · em_vo",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3281419908,
+      "parent": 2265963024,
+      "name": "敌人效果音 · em_fx",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2451255124,
+      "parent": 3281419908,
+      "name": "敌人效果冲击 · fx_imp",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2665274041,
+      "parent": 3281419908,
+      "name": "敌人效果准备段 · fx_pre",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3670949330,
+      "parent": 2265963024,
+      "name": "敌人特殊挥动声 · em_whoosh_sp",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3964209045,
+      "parent": 2265963024,
+      "name": "敌人冲击音效 · em_se_imp",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "敌人",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4163712781,
+      "parent": 1401767917,
+      "name": "技能总线 · skill_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "武器与技能",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 649923786,
+      "parent": 4163712781,
+      "name": "魔法技能 · skill_mgc",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "武器与技能",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1171219747,
+      "parent": 4163712781,
+      "name": "技能音效 · skill_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "武器与技能",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1819944823,
+      "parent": 3803692087,
+      "name": "音乐总路由（按子级结构判断） · 1819944823",
+      "nameSource": "无原始名称；描述由当前子级结构推导，编号保留",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3442526356,
+      "parent": 1819944823,
+      "name": "背景音乐总线 · Master_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 884273065,
+      "parent": 3442526356,
+      "name": "剧情演出音乐 · cutscene_ovw_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1917576852,
+      "parent": 884273065,
+      "name": "未命名音乐分组 · 1917576852",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2270785518,
+      "parent": 884273065,
+      "name": "未命名音乐分组 · 2270785518",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1980514306,
+      "parent": 3442526356,
+      "name": "未命名音乐分组 · 1980514306",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2193628812,
+      "parent": 3442526356,
+      "name": "游玩音乐 · playable_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 134123266,
+      "parent": 2193628812,
+      "name": "犯罪事件音乐 · crime_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 637936606,
+      "parent": 134123266,
+      "name": "犯罪状态音乐 · crime_crime",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1057363778,
+      "parent": 134123266,
+      "name": "未命名音乐分组 · 1057363778",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1474931616,
+      "parent": 134123266,
+      "name": "被捕音乐 · crime_arrested",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1579993091,
+      "parent": 134123266,
+      "name": "未命名音乐分组 · 1579993091",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2750242987,
+      "parent": 134123266,
+      "name": "未命名音乐分组 · 2750242987",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 825611774,
+      "parent": 2193628812,
+      "name": "剧情相关音乐 · ovw_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1686318067,
+      "parent": 825611774,
+      "name": "ovw_qu030150（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2214754610,
+      "parent": 825611774,
+      "name": "常规剧情音乐 · ovw_normal_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1247319581,
+      "parent": 2214754610,
+      "name": "未命名音乐分组 · 1247319581",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2228129718,
+      "parent": 2214754610,
+      "name": "未命名音乐分组 · 2228129718",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2529963441,
+      "parent": 825611774,
+      "name": "未命名音乐分组 · 2529963441",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4050317642,
+      "parent": 825611774,
+      "name": "ovw_ch253001（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1116020140,
+      "parent": 2193628812,
+      "name": "战斗音乐 · battle_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 123629876,
+      "parent": 1116020140,
+      "name": "普通战斗音乐 · battle_normal_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2170919005,
+      "parent": 123629876,
+      "name": "未命名音乐分组 · 2170919005",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 933806435,
+      "parent": 1116020140,
+      "name": "剧情战斗音乐 · battle_ovw_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 619874185,
+      "parent": 933806435,
+      "name": "未命名音乐分组 · 619874185",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1079640173,
+      "parent": 933806435,
+      "name": "未命名音乐分组 · 1079640173",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1481550769,
+      "parent": 933806435,
+      "name": "未命名音乐分组 · 1481550769",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4254592374,
+      "parent": 933806435,
+      "name": "未命名音乐分组 · 4254592374",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4275049403,
+      "parent": 933806435,
+      "name": "未命名音乐分组 · 4275049403",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1006270902,
+      "parent": 1116020140,
+      "name": "首领战音乐 · battle_boss_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1003754319,
+      "parent": 1006270902,
+      "name": "未命名音乐分组 · 1003754319",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2548663173,
+      "parent": 1006270902,
+      "name": "未命名音乐分组 · 2548663173",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2934291385,
+      "parent": 1006270902,
+      "name": "未命名音乐分组 · 2934291385",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2986979771,
+      "parent": 1116020140,
+      "name": "未命名音乐分组 · 2986979771",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2994623150,
+      "parent": 1116020140,
+      "name": "优势战斗音乐 · battle_adv_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3905015500,
+      "parent": 1116020140,
+      "name": "未命名音乐分组 · 3905015500",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1116041891,
+      "parent": 2193628812,
+      "name": "骑乘与移动音乐 · field_ride_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 185551787,
+      "parent": 1116041891,
+      "name": "室内骑乘音乐 · field_indoor_ride_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 715205664,
+      "parent": 1116041891,
+      "name": "野外骑乘音乐 · field_field_ride_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3810668788,
+      "parent": 1116041891,
+      "name": "城镇骑乘音乐 · field_town_ride_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4069718242,
+      "parent": 1116041891,
+      "name": "异界骑乘音乐 · field_otherworld_ride_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1138265770,
+      "parent": 2193628812,
+      "name": "音乐混响发送 · send_reverb",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1017610807,
+      "parent": 1138265770,
+      "name": "bgm_rear_long（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1268187597,
+      "parent": 2193628812,
+      "name": "演奏者音乐 · musician_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2807115946,
+      "parent": 2193628812,
+      "name": "地牢音乐 · dungeon_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3178114896,
+      "parent": 2193628812,
+      "name": "探索音乐 · field_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1391890385,
+      "parent": 3178114896,
+      "name": "野外探索音乐 · field_field_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1787177439,
+      "parent": 3178114896,
+      "name": "城镇位置音乐 · field_town_poss_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2615529215,
+      "parent": 3178114896,
+      "name": "异界探索音乐 · field_otherworld_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2665238376,
+      "parent": 3178114896,
+      "name": "室内探索音乐 · field_indoor_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3431559237,
+      "parent": 3178114896,
+      "name": "城镇探索音乐 · field_town_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2503691457,
+      "parent": 3442526356,
+      "name": "系统音乐 · system_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3987283357,
+      "parent": 2503691457,
+      "name": "未命名音乐分组 · 3987283357",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3105653954,
+      "parent": 3442526356,
+      "name": "过场音乐 · cutscene_bgm",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3939311000,
+      "parent": 3442526356,
+      "name": "未命名音乐分组 · 3939311000",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2697148476,
+      "parent": 3803692087,
+      "name": "场景与对白混音路由 · 2697148476",
+      "nameSource": "无原始名称；描述由当前子级结构推导，编号保留",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 308500818,
+      "parent": 2697148476,
+      "name": "过场总线（含对白） · Master_cutscene",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "过场",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3580759046,
+      "parent": 308500818,
+      "name": "过场混音（含对白） · cutscene_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "过场",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1999732764,
+      "parent": 3580759046,
+      "name": "过场对白 · cutscene_dialog",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3458657328,
+      "parent": 3580759046,
+      "name": "过场音效 · cutscene_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "过场",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 714756579,
+      "parent": 2697148476,
+      "name": "随从捏脸对白 · charamake_pw_dialog",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1202187522,
+      "parent": 2697148476,
+      "name": "音效总混音（含人物发声） · Master_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 161319522,
+      "parent": 1202187522,
+      "name": "任务总线 · quest_master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 456588883,
+      "parent": 161319522,
+      "name": "未命名机关与界面分组 · 456588883",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1074647805,
+      "parent": 161319522,
+      "name": "未命名机关与界面分组 · 1074647805",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1284216844,
+      "parent": 161319522,
+      "name": "任务音效 · quest_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 779133925,
+      "parent": 1202187522,
+      "name": "未命名混合与未确认分组 · 779133925",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 20270801,
+      "parent": 779133925,
+      "name": "菜单与界面 · menu_ui",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "机关与界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3421825649,
+      "parent": 779133925,
+      "name": "NPC音轨（编号30） · npc30_a_veryhigh_ssl",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1173343445,
+      "parent": 1202187522,
+      "name": "未命名混合与未确认分组 · 1173343445",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 814334160,
+      "parent": 1173343445,
+      "name": "未命名混合与未确认分组 · 814334160",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2823531440,
+      "parent": 1173343445,
+      "name": "聚落NPC衣物与脚步 · npc_wear_foot_es_settlement",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2472534735,
+      "parent": 1202187522,
+      "name": "环境总线（含生物与人群） · env_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 208310147,
+      "parent": 2472534735,
+      "name": "环境混音 · env_table",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 70692432,
+      "parent": 208310147,
+      "name": "地形与场景环境 · env_terrain",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2397782640,
+      "parent": 70692432,
+      "name": "基础场景环境 · env_terrain_base",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3114113467,
+      "parent": 70692432,
+      "name": "空间场景环境 · env_terrain_pos",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 44958167,
+      "parent": 3114113467,
+      "name": "空间水声 · env_terrain_pos_water",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 296169990,
+      "parent": 3114113467,
+      "name": "随机空间环境声 · env_terrain_pos_rnd",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 315654545,
+      "parent": 3114113467,
+      "name": "常规空间环境声 · env_terrain_pos_com",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 362877979,
+      "parent": 3114113467,
+      "name": "空间环境混合 · env_terrain_pos_blend",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2735430590,
+      "parent": 3114113467,
+      "name": "空间天气声 · env_terrain_pos_weather",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3318196968,
+      "parent": 70692432,
+      "name": "场景布置环境声 · env_terrain_painter",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1957425687,
+      "parent": 3318196968,
+      "name": "树木环境声 · env_terrain_painter_tree",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3269355274,
+      "parent": 3318196968,
+      "name": "通用布置环境声 · env_terrain_painter_com",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3997593513,
+      "parent": 3318196968,
+      "name": "场景glass音轨（用途待确认） · env_terrain_painter_glass",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4102608464,
+      "parent": 3318196968,
+      "name": "场景布置水声 · env_terrain_painter_water",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1416464721,
+      "parent": 208310147,
+      "name": "小型生物环境声 · env_critters",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 581243387,
+      "parent": 1416464721,
+      "name": "基础小型生物声 · env_critters_base",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1284975157,
+      "parent": 1416464721,
+      "name": "场景布置生物声 · env_critters_painter",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1320850058,
+      "parent": 1416464721,
+      "name": "空间生物声 · env_critters_pos",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4130131583,
+      "parent": 208310147,
+      "name": "环境人群声（语义待试听） · env_gaya",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1071024731,
+      "parent": 2472534735,
+      "name": "天气环境声 · env_weather",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1266270403,
+      "parent": 2472534735,
+      "name": "异界环境声 · env_otherworld",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1294900668,
+      "parent": 2472534735,
+      "name": "背面世界环境声（原名backworld） · env_backworld",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1630999069,
+      "parent": 1294900668,
+      "name": "背面世界天气 · env_backworld_weather",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3104180185,
+      "parent": 1294900668,
+      "name": "未命名环境分组 · 3104180185",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4059739940,
+      "parent": 1294900668,
+      "name": "背面世界机关 · env_backworld_gimmick",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1818815792,
+      "parent": 2472534735,
+      "name": "环境事件声 · env_ev",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3089504244,
+      "parent": 2472534735,
+      "name": "通用环境机关 · env_gimmick_com",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3148058304,
+      "parent": 2472534735,
+      "name": "敌人战斗环境声 · env_em_battle",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3744296052,
+      "parent": 2472534735,
+      "name": "环境EPV音轨（用途待确认） · env_epv",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2500525744,
+      "parent": 1202187522,
+      "name": "受伤与状态总线 · dmg_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "受伤与状态",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1965400598,
+      "parent": 2500525744,
+      "name": "受伤音效 · dmg_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "受伤与状态",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3703962904,
+      "parent": 2500525744,
+      "name": "状态音效 · condition",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "受伤与状态",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2551232689,
+      "parent": 1202187522,
+      "name": "人形角色总线（含语音） · hm_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "人物动作",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2318388427,
+      "parent": 2551232689,
+      "name": "随从总线（含语音） · pw_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "人物动作",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 263484261,
+      "parent": 2318388427,
+      "name": "随从动作音效 · pw_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "人物动作",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 347372208,
+      "parent": 2318388427,
+      "name": "随从发声 · pw_vo",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2493685259,
+      "parent": 2551232689,
+      "name": "NPC总线（含语音） · npc_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "人物动作",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4210235045,
+      "parent": 2493685259,
+      "name": "NPC动作音效 · npc_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "人物动作",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4294123248,
+      "parent": 2493685259,
+      "name": "NPC发声 · npc_vo",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3223516310,
+      "parent": 2551232689,
+      "name": "玩家总线（含发声） · pl_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "人物动作",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 247908201,
+      "parent": 3223516310,
+      "name": "玩家发声 · pl_vo",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 331796096,
+      "parent": 3223516310,
+      "name": "玩家动作音效 · pl_se",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "人物动作",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2583890416,
+      "parent": 1202187522,
+      "name": "未命名混合与未确认分组 · 2583890416",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2961792041,
+      "parent": 2583890416,
+      "name": "衣物与脚步混音 · wear_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "衣物与脚步",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1946215016,
+      "parent": 2961792041,
+      "name": "NPC衣物与脚步 · wear_npc",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "衣物与脚步",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2554851755,
+      "parent": 2961792041,
+      "name": "玩家衣物与脚步 · wear_pl",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "衣物与脚步",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2554851760,
+      "parent": 2961792041,
+      "name": "随从衣物与脚步 · wear_pw",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "衣物与脚步",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3066580060,
+      "parent": 2583890416,
+      "name": "武器总线 · wep_master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "武器与技能",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 23785496,
+      "parent": 3066580060,
+      "name": "武器碰撞与命中 · wep_imp",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "武器与技能",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2984116819,
+      "parent": 3066580060,
+      "name": "武器操作与摩擦 · wep_foley",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "武器与技能",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3796380970,
+      "parent": 3066580060,
+      "name": "武器挥动 · wep_whs",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "武器与技能",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2783051634,
+      "parent": 1202187522,
+      "name": "共享混响（可能含对白） · reverb_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1801258597,
+      "parent": 2783051634,
+      "name": "未命名共享混响分组 · 1801258597",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1527302900,
+      "parent": 1801258597,
+      "name": "未命名共享混响分组 · 1527302900",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2005187239,
+      "parent": 2783051634,
+      "name": "未命名共享混响分组 · 2005187239",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 57475218,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 57475218",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 198838525,
+      "parent": 2005187239,
+      "name": "indoor_room_stone_corridor（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 407765702,
+      "parent": 2005187239,
+      "name": "outdoor_volcanon（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 496564251,
+      "parent": 2005187239,
+      "name": "indoor_cave_mid（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 516448217,
+      "parent": 2005187239,
+      "name": "npc20_a_vo_es_formal（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 572159763,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 572159763",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 606168161,
+      "parent": 2005187239,
+      "name": "town_01_01（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 606168164,
+      "parent": 2005187239,
+      "name": "town_01_04（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 735706574,
+      "parent": 2005187239,
+      "name": "indoor_room_wood_large（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 764448227,
+      "parent": 2005187239,
+      "name": "indoor_room_wood_corridor（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 803699575,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 803699575",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 836822453,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 836822453",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 872267882,
+      "parent": 2005187239,
+      "name": "indoor_room_wood_small（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 989576373,
+      "parent": 2005187239,
+      "name": "outdoor_forest（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1059590390,
+      "parent": 2005187239,
+      "name": "indoor_tower_small（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1228182489,
+      "parent": 2005187239,
+      "name": "indoor_room_wood_mid（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1359059518,
+      "parent": 2005187239,
+      "name": "indoor_hall_small（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1366733731,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 1366733731",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1421892210,
+      "parent": 2005187239,
+      "name": "outdoor_prairie（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1462623706,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 1462623706",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1685245236,
+      "parent": 2005187239,
+      "name": "indoor_room_stone_small（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1899464413,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 1899464413",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1979058465,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 1979058465",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2025694016,
+      "parent": 2005187239,
+      "name": "indoor_cave_small（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2096520650,
+      "parent": 2005187239,
+      "name": "npc20_a_vo_es_formal_mid（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2215992578,
+      "parent": 2005187239,
+      "name": "outdoor_valleys（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2240691612,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 2240691612",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2360248890,
+      "parent": 2005187239,
+      "name": "indoor_tower（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2515484588,
+      "parent": 2005187239,
+      "name": "indoor_room_stone_large（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2621951861,
+      "parent": 2005187239,
+      "name": "indoor_hall_mid（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2637801580,
+      "parent": 2005187239,
+      "name": "indoor_tent（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2751227673,
+      "parent": 2005187239,
+      "name": "npc20_a_vo_es_formal_large（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2875592285,
+      "parent": 2005187239,
+      "name": "indoor_tower_mid（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3309762555,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 3309762555",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3354418041,
+      "parent": 2005187239,
+      "name": "outdoor_alley（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3527880377,
+      "parent": 2005187239,
+      "name": "未命名共享混响分组 · 3527880377",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3553475681,
+      "parent": 2005187239,
+      "name": "npc20_a_vo_es_formal_small（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3601240706,
+      "parent": 2005187239,
+      "name": "indoor_hall（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3644878888,
+      "parent": 2005187239,
+      "name": "indoor_cave_large（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3681895370,
+      "parent": 2005187239,
+      "name": "indoor_tower_large（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3687201347,
+      "parent": 2005187239,
+      "name": "town_07（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3703979056,
+      "parent": 2005187239,
+      "name": "town_17（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3703979059,
+      "parent": 2005187239,
+      "name": "town_14（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3703979060,
+      "parent": 2005187239,
+      "name": "town_13（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3703979061,
+      "parent": 2005187239,
+      "name": "town_12（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3703979062,
+      "parent": 2005187239,
+      "name": "town_11（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3703979071,
+      "parent": 2005187239,
+      "name": "town_18（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3718877551,
+      "parent": 2005187239,
+      "name": "outdoor_mountain（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3768169394,
+      "parent": 2005187239,
+      "name": "indoor_hall_large（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3802404265,
+      "parent": 2005187239,
+      "name": "outdoor_default（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3946412273,
+      "parent": 2005187239,
+      "name": "outdoor_basin（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 4062347831,
+      "parent": 2005187239,
+      "name": "indoor_room_stone_mid（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 4085311677,
+      "parent": 2005187239,
+      "name": "outdoor_desert（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3064974266,
+      "parent": 2783051634,
+      "name": "特殊混响 · special",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1368645141,
+      "parent": 3064974266,
+      "name": "音效混响发送 · se_send_reverb",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 150123047,
+      "parent": 1368645141,
+      "name": "未命名共享混响分组 · 150123047",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 453634495,
+      "parent": 1368645141,
+      "name": "未命名共享混响分组 · 453634495",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1195326393,
+      "parent": 1368645141,
+      "name": "未命名共享混响分组 · 1195326393",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1778049525,
+      "parent": 1368645141,
+      "name": "未命名共享混响分组 · 1778049525",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3150939178,
+      "parent": 1368645141,
+      "name": "未命名共享混响分组 · 3150939178",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3265493203,
+      "parent": 1368645141,
+      "name": "se_rear_long（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3434395100,
+      "parent": 1368645141,
+      "name": "flow00_bomb（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3371445611,
+      "parent": 2783051634,
+      "name": "未命名共享混响分组 · 3371445611",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 478001232,
+      "parent": 3371445611,
+      "name": "未命名共享混响分组 · 478001232",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1284800623,
+      "parent": 3371445611,
+      "name": "未命名共享混响分组 · 1284800623",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3333113885,
+      "parent": 3371445611,
+      "name": "未命名共享混响分组 · 3333113885",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "共享混响",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3930136735,
+      "parent": 2783051634,
+      "name": "对白混响 · dialogue",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1014949217,
+      "parent": 3930136735,
+      "name": "npc_phantom_02（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1014949218,
+      "parent": 3930136735,
+      "name": "npc_phantom_01（原名，含义待确认）",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3975264820,
+      "parent": 1202187522,
+      "name": "未命名混合与未确认分组 · 3975264820",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 92586030,
+      "parent": 3975264820,
+      "name": "未命名混合与未确认分组 · 92586030",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2273912029,
+      "parent": 92586030,
+      "name": "未命名混合与未确认分组 · 2273912029",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 424047702,
+      "parent": 2273912029,
+      "name": "未命名混合与未确认分组 · 424047702",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 420089131,
+      "parent": 424047702,
+      "name": "未命名混合与未确认分组 · 420089131",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 832883924,
+      "parent": 424047702,
+      "name": "未命名混合与未确认分组 · 832883924",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 852471607,
+      "parent": 424047702,
+      "name": "未命名混合与未确认分组 · 852471607",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 970795202,
+      "parent": 424047702,
+      "name": "未命名混合与未确认分组 · 970795202",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1242396902,
+      "parent": 424047702,
+      "name": "未命名混合与未确认分组 · 1242396902",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1613447514,
+      "parent": 424047702,
+      "name": "未命名混合与未确认分组 · 1613447514",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2172715611,
+      "parent": 424047702,
+      "name": "未命名混合与未确认分组 · 2172715611",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 963909375,
+      "parent": 2273912029,
+      "name": "未命名混合与未确认分组 · 963909375",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1784260513,
+      "parent": 2273912029,
+      "name": "未命名混合与未确认分组 · 1784260513",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 592369148,
+      "parent": 1784260513,
+      "name": "未命名混合与未确认分组 · 592369148",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 614242771,
+      "parent": 1784260513,
+      "name": "未命名混合与未确认分组 · 614242771",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2739334881,
+      "parent": 1784260513,
+      "name": "未命名混合与未确认分组 · 2739334881",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3204746900,
+      "parent": 1784260513,
+      "name": "未命名混合与未确认分组 · 3204746900",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4198597642,
+      "parent": 1784260513,
+      "name": "未命名混合与未确认分组 · 4198597642",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2305607758,
+      "parent": 92586030,
+      "name": "未命名混合与未确认分组 · 2305607758",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1640255174,
+      "parent": 2305607758,
+      "name": "未命名混合与未确认分组 · 1640255174",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3595166394,
+      "parent": 2305607758,
+      "name": "未命名混合与未确认分组 · 3595166394",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3812509269,
+      "parent": 2305607758,
+      "name": "未命名混合与未确认分组 · 3812509269",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3372890476,
+      "parent": 92586030,
+      "name": "未命名混合与未确认分组 · 3372890476",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2001696495,
+      "parent": 3975264820,
+      "name": "未命名混合与未确认分组 · 2001696495",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2297411687,
+      "parent": 3975264820,
+      "name": "未命名混合与未确认分组 · 2297411687",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2440944745,
+      "parent": 3975264820,
+      "name": "未命名混合与未确认分组 · 2440944745",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2722044045,
+      "parent": 3975264820,
+      "name": "未命名混合与未确认分组 · 2722044045",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2823019616,
+      "parent": 3975264820,
+      "name": "未命名混合与未确认分组 · 2823019616",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2092096412,
+      "parent": 2823019616,
+      "name": "未命名混合与未确认分组 · 2092096412",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3028107201,
+      "parent": 2823019616,
+      "name": "未命名混合与未确认分组 · 3028107201",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3080097354,
+      "parent": 3975264820,
+      "name": "未命名混合与未确认分组 · 3080097354",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1654947788,
+      "parent": 3080097354,
+      "name": "未命名混合与未确认分组 · 1654947788",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1962375776,
+      "parent": 3080097354,
+      "name": "未命名混合与未确认分组 · 1962375776",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2720179982,
+      "parent": 3080097354,
+      "name": "未命名混合与未确认分组 · 2720179982",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3994030881,
+      "parent": 3080097354,
+      "name": "未命名混合与未确认分组 · 3994030881",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4222214689,
+      "parent": 1202187522,
+      "name": "道具总线 · item_Master",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "道具",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1222624712,
+      "parent": 4222214689,
+      "name": "道具音效 · item",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "道具",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3390284473,
+      "parent": 2697148476,
+      "name": "人物捏脸对白 · charamake_human_dialog",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3627036714,
+      "parent": 2697148476,
+      "name": "对白总线 · Master_dialog",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1024623621,
+      "parent": 3627036714,
+      "name": "随从对白 · pw_dialog",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1345706023,
+      "parent": 3627036714,
+      "name": "人物对白 · human_dialog",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1963123080,
+      "parent": 3627036714,
+      "name": "敌人对白 · enm_dialog",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "对白与发声",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 805203703,
+      "parent": 0,
+      "name": "次级总混音 · Master Secondary Bus",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2075344660,
+      "parent": 805203703,
+      "name": "未命名混合与未确认分组 · 2075344660",
+      "nameSource": "稳定编号；分类仅由父级路由推导",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3300430197,
+      "parent": 2075344660,
+      "name": "游戏手柄音效通道 · ingame_controller_sfx",
+      "nameSource": "公开目标游戏名称表与当前Bus ID哈希匹配；中文为解释，非游戏原始中文名",
+      "category": "混合与未确认",
+      "auxiliary": false,
+      "slot": 3
+    }
+  ],
+  "backend": "Wwise"
+}

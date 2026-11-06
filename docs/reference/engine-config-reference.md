@@ -29,12 +29,14 @@
 |---|---|
 | name、executable、executableSha256 | 显示名、主程序文件名及摘要 |
 | modules | 所有实际调用模块的文件名→SHA256；当前原生实现使用 fmod.dll 与 fmodstudio.dll |
-| wrapperModule、wrapperRva | 包装对象全局指针所在模块及相对模块基址的位置 |
-| stateOffset、studioOffset | 包装对象中初始化状态（当前实现要求值 2）和 Studio System 句柄位置 |
+| wrapperModule、wrapperRva | 包装对象全局指针所在模块及相对模块基址的位置。`wrapperRva = 0` 选择历史句柄模式 |
+| stateOffset、studioOffset | 包装对象内初始化状态和 Studio System 句柄的偏移。历史句柄模式下，`stateOffset` 填非零 Studio System 句柄，`studioOffset` 填 `0` |
 | runtimeVersion | FMOD 实际返回的版本整数，而非任意显示字符串 |
 | buses | 稳定 GUID、原始 path、name、parentId、category、containsChildren |
 
-Bus 的 id 为 16 字节 GUID 的实际小端内存 hex（32 个十六进制字符），不能把带短横线的打印顺序直接当作 id 使用。GUID 与 path 应来自银行工具／API 或经验证的数据，不靠声音语义猜测。当前定位器只支持以上包装方式，换一种 System 存储方式必须修改包内定位代码。构建器写入 captureFile / captureSha256。
+包装对象模式要求初始化状态为 `2`。历史句柄模式用于重建杀戮尖塔 2 的 V1 配置，句柄取自该游戏的归档验证记录，可能随运行时版本或初始化顺序变化。两种模式都会校验 Studio System 句柄、Core System 和运行时版本。
+
+Bus 的 id 为 16 字节 GUID 的实际小端内存 hex（32 个十六进制字符），不能把带短横线的打印顺序直接当作 id 使用。GUID 与 path 应来自银行工具／API 或经验证的数据，不靠声音语义猜测。其他 System 存储方式需要包内定位代码支持。构建器写入 captureFile / captureSha256。
 
 ## Unreal AudioMixer
 
@@ -56,7 +58,7 @@ Bus 的 id 为 16 字节 GUID 的实际小端内存 hex（32 个十六进制字�
 
 ## 兼容性核对
 
-SDK 110 是插件接口编号，不是 FMOD 2.02 的同义词；2.03 的部分 C API 也可能有参数变化。先按 [FMOD 探查指南](../authoring/probe-fmod-runtime.md)逐项核对，不整体推断兼容或不兼容。包装对象状态=2 是当前定位器假设，不是任何游戏都必须满足的结构。
+SDK 110 是插件接口编号，不是 FMOD 2.02 的同义词；2.03 的部分 C API 也可能有参数变化。先按 [FMOD 探查指南](../authoring/probe-fmod-runtime.md)逐项核对，不整体推断兼容或不兼容。
 
 ## 新后端
 

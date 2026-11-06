@@ -1,0 +1,2794 @@
+[
+  {
+    "id": 3803692087,
+    "parent": 0,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "Master Audio Bus"
+    ]
+  },
+  {
+    "id": 1401767917,
+    "parent": 3803692087,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1521018306,
+    "parent": 1401767917,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "gm_Master"
+    ]
+  },
+  {
+    "id": 447408838,
+    "parent": 1521018306,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 4132482924,
+    "parent": 1521018306,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "gm_se"
+    ]
+  },
+  {
+    "id": 4132482937,
+    "parent": 1521018306,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "gm_sp"
+    ]
+  },
+  {
+    "id": 2054545917,
+    "parent": 1401767917,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 209189415,
+    "parent": 2054545917,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1488287255,
+    "parent": 2054545917,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2426359878,
+    "parent": 2054545917,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2426359891,
+    "parent": 2054545917,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2535150153,
+    "parent": 2054545917,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2265963024,
+    "parent": 1401767917,
+    "auxiliary": false,
+    "occupiedSlots": [
+      3
+    ],
+    "slot": 2,
+    "names": [
+      "em_Master"
+    ]
+  },
+  {
+    "id": 1425423685,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 221917476,
+    "parent": 1425423685,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_se_obj"
+    ]
+  },
+  {
+    "id": 1727747637,
+    "parent": 1425423685,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_vo_obj"
+    ]
+  },
+  {
+    "id": 4001171034,
+    "parent": 1425423685,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_fx_obj"
+    ]
+  },
+  {
+    "id": 1743392432,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "em_vo_dia"
+    ]
+  },
+  {
+    "id": 2716789688,
+    "parent": 1743392432,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1962487222,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2147673137,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_lfe"
+    ]
+  },
+  {
+    "id": 2282317921,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "em_vo_roars"
+    ]
+  },
+  {
+    "id": 2692174254,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_link"
+    ]
+  },
+  {
+    "id": 983086489,
+    "parent": 2692174254,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_se_link"
+    ]
+  },
+  {
+    "id": 2609032430,
+    "parent": 2692174254,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_vo_link"
+    ]
+  },
+  {
+    "id": 2962645366,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_se"
+    ]
+  },
+  {
+    "id": 3012978083,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "em_vo"
+    ]
+  },
+  {
+    "id": 3281419908,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "em_fx"
+    ]
+  },
+  {
+    "id": 2451255124,
+    "parent": 3281419908,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "fx_imp"
+    ]
+  },
+  {
+    "id": 2665274041,
+    "parent": 3281419908,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "fx_pre"
+    ]
+  },
+  {
+    "id": 3670949330,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "em_whoosh_sp"
+    ]
+  },
+  {
+    "id": 3964209045,
+    "parent": 2265963024,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "em_se_imp"
+    ]
+  },
+  {
+    "id": 4163712781,
+    "parent": 1401767917,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "skill_Master"
+    ]
+  },
+  {
+    "id": 649923786,
+    "parent": 4163712781,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "skill_mgc"
+    ]
+  },
+  {
+    "id": 1171219747,
+    "parent": 4163712781,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "skill_se"
+    ]
+  },
+  {
+    "id": 1819944823,
+    "parent": 3803692087,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3442526356,
+    "parent": 1819944823,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "Master_bgm"
+    ]
+  },
+  {
+    "id": 884273065,
+    "parent": 3442526356,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "cutscene_ovw_bgm"
+    ]
+  },
+  {
+    "id": 1917576852,
+    "parent": 884273065,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2270785518,
+    "parent": 884273065,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1980514306,
+    "parent": 3442526356,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2193628812,
+    "parent": 3442526356,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "playable_bgm"
+    ]
+  },
+  {
+    "id": 134123266,
+    "parent": 2193628812,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "crime_bgm"
+    ]
+  },
+  {
+    "id": 637936606,
+    "parent": 134123266,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "crime_crime"
+    ]
+  },
+  {
+    "id": 1057363778,
+    "parent": 134123266,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1474931616,
+    "parent": 134123266,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "crime_arrested"
+    ]
+  },
+  {
+    "id": 1579993091,
+    "parent": 134123266,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2750242987,
+    "parent": 134123266,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 825611774,
+    "parent": 2193628812,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "ovw_bgm"
+    ]
+  },
+  {
+    "id": 1686318067,
+    "parent": 825611774,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "ovw_qu030150"
+    ]
+  },
+  {
+    "id": 2214754610,
+    "parent": 825611774,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "ovw_normal_bgm"
+    ]
+  },
+  {
+    "id": 1247319581,
+    "parent": 2214754610,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2228129718,
+    "parent": 2214754610,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2529963441,
+    "parent": 825611774,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 4050317642,
+    "parent": 825611774,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "ovw_ch253001"
+    ]
+  },
+  {
+    "id": 1116020140,
+    "parent": 2193628812,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "battle_bgm"
+    ]
+  },
+  {
+    "id": 123629876,
+    "parent": 1116020140,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "battle_normal_bgm"
+    ]
+  },
+  {
+    "id": 2170919005,
+    "parent": 123629876,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 933806435,
+    "parent": 1116020140,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "battle_ovw_bgm"
+    ]
+  },
+  {
+    "id": 619874185,
+    "parent": 933806435,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1079640173,
+    "parent": 933806435,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1481550769,
+    "parent": 933806435,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 4254592374,
+    "parent": 933806435,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 4275049403,
+    "parent": 933806435,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1006270902,
+    "parent": 1116020140,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "battle_boss_bgm"
+    ]
+  },
+  {
+    "id": 1003754319,
+    "parent": 1006270902,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2548663173,
+    "parent": 1006270902,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2934291385,
+    "parent": 1006270902,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2986979771,
+    "parent": 1116020140,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2994623150,
+    "parent": 1116020140,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "battle_adv_bgm"
+    ]
+  },
+  {
+    "id": 3905015500,
+    "parent": 1116020140,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1116041891,
+    "parent": 2193628812,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_ride_bgm"
+    ]
+  },
+  {
+    "id": 185551787,
+    "parent": 1116041891,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_indoor_ride_bgm"
+    ]
+  },
+  {
+    "id": 715205664,
+    "parent": 1116041891,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_field_ride_bgm"
+    ]
+  },
+  {
+    "id": 3810668788,
+    "parent": 1116041891,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_town_ride_bgm"
+    ]
+  },
+  {
+    "id": 4069718242,
+    "parent": 1116041891,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_otherworld_ride_bgm"
+    ]
+  },
+  {
+    "id": 1138265770,
+    "parent": 2193628812,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "send_reverb"
+    ]
+  },
+  {
+    "id": 1017610807,
+    "parent": 1138265770,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1,
+      2
+    ],
+    "slot": 3,
+    "names": [
+      "bgm_rear_long"
+    ]
+  },
+  {
+    "id": 1268187597,
+    "parent": 2193628812,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "musician_bgm"
+    ]
+  },
+  {
+    "id": 2807115946,
+    "parent": 2193628812,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "dungeon_bgm"
+    ]
+  },
+  {
+    "id": 3178114896,
+    "parent": 2193628812,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_bgm"
+    ]
+  },
+  {
+    "id": 1391890385,
+    "parent": 3178114896,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_field_bgm"
+    ]
+  },
+  {
+    "id": 1787177439,
+    "parent": 3178114896,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_town_poss_bgm"
+    ]
+  },
+  {
+    "id": 2615529215,
+    "parent": 3178114896,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_otherworld_bgm"
+    ]
+  },
+  {
+    "id": 2665238376,
+    "parent": 3178114896,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_indoor_bgm"
+    ]
+  },
+  {
+    "id": 3431559237,
+    "parent": 3178114896,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "field_town_bgm"
+    ]
+  },
+  {
+    "id": 2503691457,
+    "parent": 3442526356,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "system_bgm"
+    ]
+  },
+  {
+    "id": 3987283357,
+    "parent": 2503691457,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3105653954,
+    "parent": 3442526356,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "cutscene_bgm"
+    ]
+  },
+  {
+    "id": 3939311000,
+    "parent": 3442526356,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2697148476,
+    "parent": 3803692087,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 308500818,
+    "parent": 2697148476,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "Master_cutscene"
+    ]
+  },
+  {
+    "id": 3580759046,
+    "parent": 308500818,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "cutscene_Master"
+    ]
+  },
+  {
+    "id": 1999732764,
+    "parent": 3580759046,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "cutscene_dialog"
+    ]
+  },
+  {
+    "id": 3458657328,
+    "parent": 3580759046,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "cutscene_se"
+    ]
+  },
+  {
+    "id": 714756579,
+    "parent": 2697148476,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "charamake_pw_dialog"
+    ]
+  },
+  {
+    "id": 1202187522,
+    "parent": 2697148476,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "Master_se"
+    ]
+  },
+  {
+    "id": 161319522,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "quest_master"
+    ]
+  },
+  {
+    "id": 456588883,
+    "parent": 161319522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1074647805,
+    "parent": 161319522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1284216844,
+    "parent": 161319522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "quest_se"
+    ]
+  },
+  {
+    "id": 779133925,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 20270801,
+    "parent": 779133925,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "menu_ui"
+    ]
+  },
+  {
+    "id": 3421825649,
+    "parent": 779133925,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "npc30_a_veryhigh_ssl"
+    ]
+  },
+  {
+    "id": 1173343445,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 814334160,
+    "parent": 1173343445,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2823531440,
+    "parent": 1173343445,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "npc_wear_foot_es_settlement"
+    ]
+  },
+  {
+    "id": 2472534735,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_Master"
+    ]
+  },
+  {
+    "id": 208310147,
+    "parent": 2472534735,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_table"
+    ]
+  },
+  {
+    "id": 70692432,
+    "parent": 208310147,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain"
+    ]
+  },
+  {
+    "id": 2397782640,
+    "parent": 70692432,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_base"
+    ]
+  },
+  {
+    "id": 3114113467,
+    "parent": 70692432,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_pos"
+    ]
+  },
+  {
+    "id": 44958167,
+    "parent": 3114113467,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_pos_water"
+    ]
+  },
+  {
+    "id": 296169990,
+    "parent": 3114113467,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_pos_rnd"
+    ]
+  },
+  {
+    "id": 315654545,
+    "parent": 3114113467,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_pos_com"
+    ]
+  },
+  {
+    "id": 362877979,
+    "parent": 3114113467,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_pos_blend"
+    ]
+  },
+  {
+    "id": 2735430590,
+    "parent": 3114113467,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_pos_weather"
+    ]
+  },
+  {
+    "id": 3318196968,
+    "parent": 70692432,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_painter"
+    ]
+  },
+  {
+    "id": 1957425687,
+    "parent": 3318196968,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_painter_tree"
+    ]
+  },
+  {
+    "id": 3269355274,
+    "parent": 3318196968,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_painter_com"
+    ]
+  },
+  {
+    "id": 3997593513,
+    "parent": 3318196968,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_painter_glass"
+    ]
+  },
+  {
+    "id": 4102608464,
+    "parent": 3318196968,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_terrain_painter_water"
+    ]
+  },
+  {
+    "id": 1416464721,
+    "parent": 208310147,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_critters"
+    ]
+  },
+  {
+    "id": 581243387,
+    "parent": 1416464721,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_critters_base"
+    ]
+  },
+  {
+    "id": 1284975157,
+    "parent": 1416464721,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_critters_painter"
+    ]
+  },
+  {
+    "id": 1320850058,
+    "parent": 1416464721,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_critters_pos"
+    ]
+  },
+  {
+    "id": 4130131583,
+    "parent": 208310147,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_gaya"
+    ]
+  },
+  {
+    "id": 1071024731,
+    "parent": 2472534735,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_weather"
+    ]
+  },
+  {
+    "id": 1266270403,
+    "parent": 2472534735,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_otherworld"
+    ]
+  },
+  {
+    "id": 1294900668,
+    "parent": 2472534735,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_backworld"
+    ]
+  },
+  {
+    "id": 1630999069,
+    "parent": 1294900668,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_backworld_weather"
+    ]
+  },
+  {
+    "id": 3104180185,
+    "parent": 1294900668,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 4059739940,
+    "parent": 1294900668,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_backworld_gimmick"
+    ]
+  },
+  {
+    "id": 1818815792,
+    "parent": 2472534735,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_ev"
+    ]
+  },
+  {
+    "id": 3089504244,
+    "parent": 2472534735,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_gimmick_com"
+    ]
+  },
+  {
+    "id": 3148058304,
+    "parent": 2472534735,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_em_battle"
+    ]
+  },
+  {
+    "id": 3744296052,
+    "parent": 2472534735,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "env_epv"
+    ]
+  },
+  {
+    "id": 2500525744,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "dmg_Master"
+    ]
+  },
+  {
+    "id": 1965400598,
+    "parent": 2500525744,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "dmg_se"
+    ]
+  },
+  {
+    "id": 3703962904,
+    "parent": 2500525744,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "condition"
+    ]
+  },
+  {
+    "id": 2551232689,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "hm_Master"
+    ]
+  },
+  {
+    "id": 2318388427,
+    "parent": 2551232689,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "pw_Master"
+    ]
+  },
+  {
+    "id": 263484261,
+    "parent": 2318388427,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "pw_se"
+    ]
+  },
+  {
+    "id": 347372208,
+    "parent": 2318388427,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "pw_vo"
+    ]
+  },
+  {
+    "id": 2493685259,
+    "parent": 2551232689,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "npc_Master"
+    ]
+  },
+  {
+    "id": 4210235045,
+    "parent": 2493685259,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "npc_se"
+    ]
+  },
+  {
+    "id": 4294123248,
+    "parent": 2493685259,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "npc_vo"
+    ]
+  },
+  {
+    "id": 3223516310,
+    "parent": 2551232689,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "pl_Master"
+    ]
+  },
+  {
+    "id": 247908201,
+    "parent": 3223516310,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "pl_vo"
+    ]
+  },
+  {
+    "id": 331796096,
+    "parent": 3223516310,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "pl_se"
+    ]
+  },
+  {
+    "id": 2583890416,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2961792041,
+    "parent": 2583890416,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "wear_Master"
+    ]
+  },
+  {
+    "id": 1946215016,
+    "parent": 2961792041,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "wear_npc"
+    ]
+  },
+  {
+    "id": 2554851755,
+    "parent": 2961792041,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "wear_pl"
+    ]
+  },
+  {
+    "id": 2554851760,
+    "parent": 2961792041,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "wear_pw"
+    ]
+  },
+  {
+    "id": 3066580060,
+    "parent": 2583890416,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "wep_master"
+    ]
+  },
+  {
+    "id": 23785496,
+    "parent": 3066580060,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "wep_imp"
+    ]
+  },
+  {
+    "id": 2984116819,
+    "parent": 3066580060,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "wep_foley"
+    ]
+  },
+  {
+    "id": 3796380970,
+    "parent": 3066580060,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "wep_whs"
+    ]
+  },
+  {
+    "id": 2783051634,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "reverb_Master"
+    ]
+  },
+  {
+    "id": 1801258597,
+    "parent": 2783051634,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1527302900,
+    "parent": 1801258597,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2005187239,
+    "parent": 2783051634,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 57475218,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 198838525,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_room_stone_corridor"
+    ]
+  },
+  {
+    "id": 407765702,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_volcanon"
+    ]
+  },
+  {
+    "id": 496564251,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_cave_mid"
+    ]
+  },
+  {
+    "id": 516448217,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "npc20_a_vo_es_formal"
+    ]
+  },
+  {
+    "id": 572159763,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 606168161,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "town_01_01"
+    ]
+  },
+  {
+    "id": 606168164,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "town_01_04"
+    ]
+  },
+  {
+    "id": 735706574,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_room_wood_large"
+    ]
+  },
+  {
+    "id": 764448227,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_room_wood_corridor"
+    ]
+  },
+  {
+    "id": 803699575,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 836822453,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 872267882,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_room_wood_small"
+    ]
+  },
+  {
+    "id": 989576373,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1,
+      2
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_forest"
+    ]
+  },
+  {
+    "id": 1059590390,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_tower_small"
+    ]
+  },
+  {
+    "id": 1228182489,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_room_wood_mid"
+    ]
+  },
+  {
+    "id": 1359059518,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_hall_small"
+    ]
+  },
+  {
+    "id": 1366733731,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1421892210,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_prairie"
+    ]
+  },
+  {
+    "id": 1462623706,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1685245236,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_room_stone_small"
+    ]
+  },
+  {
+    "id": 1899464413,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1979058465,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2025694016,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_cave_small"
+    ]
+  },
+  {
+    "id": 2096520650,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "npc20_a_vo_es_formal_mid"
+    ]
+  },
+  {
+    "id": 2215992578,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_valleys"
+    ]
+  },
+  {
+    "id": 2240691612,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2360248890,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "indoor_tower"
+    ]
+  },
+  {
+    "id": 2515484588,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_room_stone_large"
+    ]
+  },
+  {
+    "id": 2621951861,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_hall_mid"
+    ]
+  },
+  {
+    "id": 2637801580,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_tent"
+    ]
+  },
+  {
+    "id": 2751227673,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "npc20_a_vo_es_formal_large"
+    ]
+  },
+  {
+    "id": 2875592285,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_tower_mid"
+    ]
+  },
+  {
+    "id": 3309762555,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3354418041,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_alley"
+    ]
+  },
+  {
+    "id": 3527880377,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3553475681,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "npc20_a_vo_es_formal_small"
+    ]
+  },
+  {
+    "id": 3601240706,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "indoor_hall"
+    ]
+  },
+  {
+    "id": 3644878888,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_cave_large"
+    ]
+  },
+  {
+    "id": 3681895370,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_tower_large"
+    ]
+  },
+  {
+    "id": 3687201347,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "town_07"
+    ]
+  },
+  {
+    "id": 3703979056,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "town_17"
+    ]
+  },
+  {
+    "id": 3703979059,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "town_14"
+    ]
+  },
+  {
+    "id": 3703979060,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "town_13"
+    ]
+  },
+  {
+    "id": 3703979061,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "town_12"
+    ]
+  },
+  {
+    "id": 3703979062,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      1,
+      2
+    ],
+    "slot": 3,
+    "names": [
+      "town_11"
+    ]
+  },
+  {
+    "id": 3703979071,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "town_18"
+    ]
+  },
+  {
+    "id": 3718877551,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_mountain"
+    ]
+  },
+  {
+    "id": 3768169394,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_hall_large"
+    ]
+  },
+  {
+    "id": 3802404265,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_default"
+    ]
+  },
+  {
+    "id": 3946412273,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_basin"
+    ]
+  },
+  {
+    "id": 4062347831,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "indoor_room_stone_mid"
+    ]
+  },
+  {
+    "id": 4085311677,
+    "parent": 2005187239,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "outdoor_desert"
+    ]
+  },
+  {
+    "id": 3064974266,
+    "parent": 2783051634,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "special"
+    ]
+  },
+  {
+    "id": 1368645141,
+    "parent": 3064974266,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "se_send_reverb"
+    ]
+  },
+  {
+    "id": 150123047,
+    "parent": 1368645141,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1,
+      2
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 453634495,
+    "parent": 1368645141,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1195326393,
+    "parent": 1368645141,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1778049525,
+    "parent": 1368645141,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3150939178,
+    "parent": 1368645141,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3265493203,
+    "parent": 1368645141,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1,
+      2
+    ],
+    "slot": 3,
+    "names": [
+      "se_rear_long"
+    ]
+  },
+  {
+    "id": 3434395100,
+    "parent": 1368645141,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1,
+      2
+    ],
+    "slot": 3,
+    "names": [
+      "flow00_bomb"
+    ]
+  },
+  {
+    "id": 3371445611,
+    "parent": 2783051634,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 478001232,
+    "parent": 3371445611,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1284800623,
+    "parent": 3371445611,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "slot": -1,
+    "names": []
+  },
+  {
+    "id": 3333113885,
+    "parent": 3371445611,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3930136735,
+    "parent": 2783051634,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "dialogue"
+    ]
+  },
+  {
+    "id": 1014949217,
+    "parent": 3930136735,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "npc_phantom_02"
+    ]
+  },
+  {
+    "id": 1014949218,
+    "parent": 3930136735,
+    "auxiliary": true,
+    "occupiedSlots": [
+      0,
+      1,
+      2
+    ],
+    "slot": 3,
+    "names": [
+      "npc_phantom_01"
+    ]
+  },
+  {
+    "id": 3975264820,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 92586030,
+    "parent": 3975264820,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2273912029,
+    "parent": 92586030,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 424047702,
+    "parent": 2273912029,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 420089131,
+    "parent": 424047702,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 832883924,
+    "parent": 424047702,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 852471607,
+    "parent": 424047702,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 970795202,
+    "parent": 424047702,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1242396902,
+    "parent": 424047702,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1613447514,
+    "parent": 424047702,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2172715611,
+    "parent": 424047702,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 963909375,
+    "parent": 2273912029,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1784260513,
+    "parent": 2273912029,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 592369148,
+    "parent": 1784260513,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 614242771,
+    "parent": 1784260513,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2739334881,
+    "parent": 1784260513,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3204746900,
+    "parent": 1784260513,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 4198597642,
+    "parent": 1784260513,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2305607758,
+    "parent": 92586030,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1640255174,
+    "parent": 2305607758,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3595166394,
+    "parent": 2305607758,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3812509269,
+    "parent": 2305607758,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3372890476,
+    "parent": 92586030,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2001696495,
+    "parent": 3975264820,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2297411687,
+    "parent": 3975264820,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2440944745,
+    "parent": 3975264820,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2722044045,
+    "parent": 3975264820,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2823019616,
+    "parent": 3975264820,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2092096412,
+    "parent": 2823019616,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3028107201,
+    "parent": 2823019616,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3080097354,
+    "parent": 3975264820,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1654947788,
+    "parent": 3080097354,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 1962375776,
+    "parent": 3080097354,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 2720179982,
+    "parent": 3080097354,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3994030881,
+    "parent": 3080097354,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 4222214689,
+    "parent": 1202187522,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "item_Master"
+    ]
+  },
+  {
+    "id": 1222624712,
+    "parent": 4222214689,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "item"
+    ]
+  },
+  {
+    "id": 3390284473,
+    "parent": 2697148476,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "charamake_human_dialog"
+    ]
+  },
+  {
+    "id": 3627036714,
+    "parent": 2697148476,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0
+    ],
+    "slot": 3,
+    "names": [
+      "Master_dialog"
+    ]
+  },
+  {
+    "id": 1024623621,
+    "parent": 3627036714,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "pw_dialog"
+    ]
+  },
+  {
+    "id": 1345706023,
+    "parent": 3627036714,
+    "auxiliary": false,
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "slot": 3,
+    "names": [
+      "human_dialog"
+    ]
+  },
+  {
+    "id": 1963123080,
+    "parent": 3627036714,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "enm_dialog"
+    ]
+  },
+  {
+    "id": 805203703,
+    "parent": 0,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "Master Secondary Bus"
+    ]
+  },
+  {
+    "id": 2075344660,
+    "parent": 805203703,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": []
+  },
+  {
+    "id": 3300430197,
+    "parent": 2075344660,
+    "auxiliary": false,
+    "occupiedSlots": [],
+    "slot": 3,
+    "names": [
+      "ingame_controller_sfx"
+    ]
+  }
+]

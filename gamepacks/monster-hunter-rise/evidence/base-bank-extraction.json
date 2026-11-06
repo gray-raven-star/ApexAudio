@@ -1,0 +1,22 @@
+{
+  "pak": "re_chunk_000.pak",
+  "major": 4,
+  "minor": 0,
+  "flags": 8,
+  "fileCount": 159393,
+  "indexSha256": "aa1c809a0e6297e9931b59a1794ffa444ee34770db741d80736dcb12bb586292",
+  "files": [
+    {
+      "path": "natives/stm/sound/wwise/init.bnk.2.x64",
+      "index": 38369,
+      "offset": 23572680557,
+      "compressedSize": 14462,
+      "size": 61009,
+      "compression": 2,
+      "encryption": 0,
+      "checksum": "095881DEA1103717",
+      "sha256": "b243b7d7483f2157e860c19bfab57be110520836fc6deaedd5209ef5fcff0404",
+      "first32": "424b4844200000008c000000233ac6503e5d7017100000009d0d000000000000"
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "id": "all-sounds",
+  "name": "全部声音",
+  "packId": "local.indiana-great-circle",
+  "basePresetId": null,
+  "basePackVersion": null,
+  "folders": [],
+  "groups": {
+    "3803692087": {
+      "name": "总混音 · Master Audio Bus",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "393239870": {
+      "name": "音效 · sfx",
+      "enabled": true,
+      "folderId": null,
+      "order": 1
+    },
+    "931844945": {
+      "name": "动态范围混音 · hdr",
+      "enabled": true,
+      "folderId": null,
+      "order": 3
+    },
+    "320569818": {
+      "name": "水面音效 · water_surface",
+      "enabled": true,
+      "folderId": null,
+      "order": 4
+    },
+    "2213237662": {
+      "name": "水下 · underwater",
+      "enabled": true,
+      "folderId": null,
+      "order": 5
+    },
+    "2598815056": {
+      "name": "水面以上 · overwater",
+      "enabled": true,
+      "folderId": null,
+      "order": 6
+    },
+    "1695690031": {
+      "name": "物件 · objects",
+      "enabled": true,
+      "folderId": null,
+      "order": 7
+    },
+    "2697148476": {
+      "name": "主音效混音 · main mix",
+      "enabled": true,
+      "folderId": null,
+      "order": 8
+    },
+    "85412153": {
+      "name": "环境音 · ambience",
+      "enabled": true,
+      "folderId": null,
+      "order": 9
+    },
+    "3777315467": {
+      "name": "环境音（7.1） · ambience_7_1",
+      "enabled": true,
+      "folderId": null,
+      "order": 10
+    },
+    "445639444": {
+      "name": "物理碰撞 · physics",
+      "enabled": true,
+      "folderId": null,
+      "order": 11
+    },
+    "1467963052": {
+      "name": "武器 · weapons",
+      "enabled": true,
+      "folderId": null,
+      "order": 12
+    },
+    "1557941045": {
+      "name": "角色 · characters",
+      "enabled": true,
+      "folderId": null,
+      "order": 13
+    },
+    "2385628198": {
+      "name": "脚步 · footsteps",
+      "enabled": true,
+      "folderId": null,
+      "order": 14
+    },
+    "1273124950": {
+      "name": "安静表面脚步 · quiet surface",
+      "enabled": true,
+      "folderId": null,
+      "order": 15
+    },
+    "3201471952": {
+      "name": "响亮表面脚步 · loud surface",
+      "enabled": true,
+      "folderId": null,
+      "order": 16
+    },
+    "2989525307": {
+      "name": "近身战斗 · closecombat",
+      "enabled": true,
+      "folderId": null,
+      "order": 17
+    },
+    "3075111402": {
+      "name": "场景内音乐 · diegetic music",
+      "enabled": true,
+      "folderId": null,
+      "order": 18
+    },
+    "154224001": {
+      "name": "场景内音乐（7.1） · diegetic_music_7_1",
+      "enabled": true,
+      "folderId": null,
+      "order": 19
+    },
+    "3561292389": {
+      "name": "早期反射（原型） · early_reflection_prototype",
+      "enabled": true,
+      "folderId": null,
+      "order": 20
+    },
+    "1233854375": {
+      "name": "非动态范围混音 · non-hdr",
+      "enabled": true,
+      "folderId": null,
+      "order": 24
+    },
+    "646625284": {
+      "name": "屏幕提示 · hud",
+      "enabled": true,
+      "folderId": null,
+      "order": 25
+    },
+    "3497243433": {
+      "name": "命中提示 · hitmarkers",
+      "enabled": true,
+      "folderId": null,
+      "order": 26
+    },
+    "3615621393": {
+      "name": "发现提示 · reveals",
+      "enabled": true,
+      "folderId": null,
+      "order": 27
+    },
+    "4209376331": {
+      "name": "无障碍提示 · accessibility",
+      "enabled": true,
+      "folderId": null,
+      "order": 28
+    },
+    "877642339": {
+      "name": "过场动画 · cinematics",
+      "enabled": true,
+      "folderId": null,
+      "order": 29
+    },
+    "1551306167": {
+      "name": "界面音效 · ui",
+      "enabled": true,
+      "folderId": null,
+      "order": 30
+    },
+    "3138366898": {
+      "name": "过场环境音 · cinematics_ambience",
+      "enabled": true,
+      "folderId": null,
+      "order": 32
+    },
+    "3423152226": {
+      "name": "不随画面淡出 · noscreenfade",
+      "enabled": true,
+      "folderId": null,
+      "order": 33
+    },
+    "4134328469": {
+      "name": "启动流程 · bootflow",
+      "enabled": true,
+      "folderId": null,
+      "order": 34
+    },
+    "1552113967": {
+      "name": "主混响 · reverb_main",
+      "enabled": true,
+      "folderId": null,
+      "order": 35
+    },
+    "3367569208": {
+      "name": "教徒吟唱 · cultistchants",
+      "enabled": true,
+      "folderId": null,
+      "order": 91
+    },
+    "3930136735": {
+      "name": "对话 · dialogue",
+      "enabled": true,
+      "folderId": null,
+      "order": 92
+    },
+    "1820932827": {
+      "name": "不随画面淡出的对话 · not_screenfaded",
+      "enabled": true,
+      "folderId": null,
+      "order": 93
+    },
+    "2792753305": {
+      "name": "随画面淡出的对话 · screenfaded",
+      "enabled": true,
+      "folderId": null,
+      "order": 94
+    },
+    "1542261717": {
+      "name": "印第安纳静息呼吸 · breathing_indy_rest",
+      "enabled": true,
+      "folderId": null,
+      "order": 96
+    },
+    "3991942870": {
+      "name": "背景音乐 · music",
+      "enabled": true,
+      "folderId": null,
+      "order": 98
+    },
+    "89505537": {
+      "name": "游戏过程音乐 · gameplay",
+      "enabled": true,
+      "folderId": null,
+      "order": 99
+    },
+    "1121639126": {
+      "name": "场景提示短乐 · spot_stinger",
+      "enabled": true,
+      "folderId": null,
+      "order": 100
+    },
+    "1257274037": {
+      "name": "发现提示音乐 · reveals_music",
+      "enabled": true,
+      "folderId": null,
+      "order": 101
+    },
+    "1670667336": {
+      "name": "压低混音短乐 · ducking_stingers",
+      "enabled": true,
+      "folderId": null,
+      "order": 102
+    },
+    "2582085496": {
+      "name": "探索音乐 · exploration",
+      "enabled": true,
+      "folderId": null,
+      "order": 103
+    },
+    "2621569672": {
+      "name": "潜行提示短乐 · stealth_stingers",
+      "enabled": true,
+      "folderId": null,
+      "order": 104
+    },
+    "2764240573": {
+      "name": "战斗音乐 · combat",
+      "enabled": true,
+      "folderId": null,
+      "order": 105
+    },
+    "1047870521": {
+      "name": "叙事音乐 · narrative",
+      "enabled": true,
+      "folderId": null,
+      "order": 106
+    },
+    "2607556080": {
+      "name": "菜单音乐 · menu",
+      "enabled": true,
+      "folderId": null,
+      "order": 107
+    },
+    "3011552261": {
+      "name": "游戏震动音频 · Master Motion Bus",
+      "enabled": true,
+      "folderId": null,
+      "order": 108
+    },
+    "1418168855": {
+      "name": "震动音源 · mtn_audiosources",
+      "enabled": true,
+      "folderId": null,
+      "order": 109
+    }
+  }
+}

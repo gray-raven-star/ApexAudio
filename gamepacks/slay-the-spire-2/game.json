@@ -1,0 +1,91 @@
+{
+  "name": "杀戮尖塔 2",
+  "executable": "SlayTheSpire2.exe",
+  "executableSha256": "8602C26BFFD2937E3841835FD8360EF8E974624A543E05977229FD3D062BE231",
+  "modules": {
+    "fmod.dll": "7C5948D83D11406FC1A95ACE03943A9B0429BF2EAA3B1AD949F51DE02FBDD9C6",
+    "fmodstudio.dll": "85364E241FC04BD4C4EEA93B9365BA56F37AF2F1721E9413F9A36A6CFFA6D44B"
+  },
+  "wrapperModule": "fmodstudio.dll",
+  "wrapperRva": 0,
+  "stateOffset": 2096927,
+  "studioOffset": 0,
+  "runtimeVersion": 131846,
+  "captureFile": "native/ApexFmodCapture-6B489874100C.dll",
+  "captureSha256": "6B489874100C06B0DD2BB01821134949AB0896873AC1EE40611A0DCEC479A846",
+  "buses": [
+    {
+      "id": "4DFE8406D766BE41A5F0466DA530675D",
+      "path": "bus:/",
+      "name": "Master(根)",
+      "parentId": null,
+      "category": "主输出",
+      "containsChildren": true
+    },
+    {
+      "id": "0E4280A01072AB41936AD9A56E426F39",
+      "path": "bus:/master",
+      "name": "master",
+      "parentId": "4DFE8406D766BE41A5F0466DA530675D",
+      "category": "主输出",
+      "containsChildren": true
+    },
+    {
+      "id": "0EA7A631021F34419316869034F110CD",
+      "path": "bus:/master/sfx",
+      "name": "sfx",
+      "parentId": "0E4280A01072AB41936AD9A56E426F39",
+      "category": "音效",
+      "containsChildren": true
+    },
+    {
+      "id": "62C3BD472A628B498B21F8D0C11BBB20",
+      "path": "bus:/master/music",
+      "name": "music",
+      "parentId": "0E4280A01072AB41936AD9A56E426F39",
+      "category": "音乐",
+      "containsChildren": false
+    },
+    {
+      "id": "E96DB30FE9E29C48A48856A893FAE658",
+      "path": "bus:/master/ambience",
+      "name": "ambience",
+      "parentId": "0E4280A01072AB41936AD9A56E426F39",
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "1F69B8A886CF6F42A12C489C55E75218",
+      "path": "bus:/master/sfx/Reverb",
+      "name": "Reverb",
+      "parentId": "0EA7A631021F34419316869034F110CD",
+      "category": "音效效果",
+      "containsChildren": false
+    },
+    {
+      "id": "B83E8425790F5342AED6BEE1449D8E7E",
+      "path": "bus:/master/sfx/chorus",
+      "name": "chorus",
+      "parentId": "0EA7A631021F34419316869034F110CD",
+      "category": "音效效果",
+      "containsChildren": false
+    },
+    {
+      "id": "ADAD629074D9EF41B81279C56BB6C25F",
+      "path": "bus:/master/sfx_ducking_bass",
+      "name": "sfx_ducking_bass",
+      "parentId": "0E4280A01072AB41936AD9A56E426F39",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "D331A2BFA0C79543BB214AFDF4149043",
+      "path": "bus:/master/sfx_ducking_big",
+      "name": "sfx_ducking_big",
+      "parentId": "0E4280A01072AB41936AD9A56E426F39",
+      "category": "音效",
+      "containsChildren": false
+    }
+  ],
+  "backend": "Fmod"
+}

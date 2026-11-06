@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../src/ApexAudio.Contracts/ApexAudio.Contracts.csproj" />
+    <ProjectReference Include="../../../src/ApexAudio.Windows/ApexAudio.Windows.csproj" />
+    <Compile Include="../../../adapters/Wwise/GameDefinition.cs" Link="GameDefinition.cs" />
+    <Compile Include="../../../adapters/Wwise/RenderProgress.cs" Link="RenderProgress.cs" />
+  </ItemGroup>
+</Project>

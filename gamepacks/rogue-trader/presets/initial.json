@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "id": "initial",
+  "name": "初始设置",
+  "packId": "apex.wh40k-rogue-trader",
+  "folders": [
+    {
+      "id": "folder:branch-主输出总线",
+      "name": "分支 主输出（Master Audio Bus）",
+      "parentId": null,
+      "order": 0
+    },
+    {
+      "id": "folder:branch-第二输出总线",
+      "name": "分支 第二输出总线",
+      "parentId": null,
+      "order": 1
+    }
+  ],
+  "groups": {
+    "3803692087": {
+      "name": "主输出（Master Audio Bus）",
+      "enabled": false,
+      "folderId": null,
+      "order": 0
+    },
+    "85412153": {
+      "name": "环境声（Ambience）",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 1
+    },
+    "317282339": {
+      "name": "天气（Weather）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 2
+    },
+    "186852181": {
+      "name": "雷声（Thunder）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 3
+    },
+    "379718326": {
+      "name": "天气层（WeatherLayer）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 4
+    },
+    "1537061107": {
+      "name": "风（Wind）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 5
+    },
+    "2481666201": {
+      "name": "A1-1-4",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 6
+    },
+    "722060249": {
+      "name": "A1-2",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 7
+    },
+    "882140159": {
+      "name": "A1-3",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 8
+    },
+    "156311856": {
+      "name": "A1-3-1",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 9
+    },
+    "884412605": {
+      "name": "A1-3-2",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 10
+    },
+    "1050421051": {
+      "name": "空气声（Air）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 11
+    },
+    "1385801509": {
+      "name": "A1-5",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 12
+    },
+    "2538584666": {
+      "name": "A1-6",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 13
+    },
+    "860385440": {
+      "name": "A1-6-1",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 14
+    },
+    "2357510901": {
+      "name": "A1-6-2",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 15
+    },
+    "3573368426": {
+      "name": "A1-7",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 16
+    },
+    "505125328": {
+      "name": "A1-7-1",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 17
+    },
+    "1191649373": {
+      "name": "A1-7-2",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 18
+    },
+    "613761766": {
+      "name": "DSP 处理（DSP）",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 19
+    },
+    "809318416": {
+      "name": "A3",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 20
+    },
+    "931844945": {
+      "name": "HDR 动态范围（HDR）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 21
+    },
+    "75618095": {
+      "name": "A4-1",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 22
+    },
+    "247557814": {
+      "name": "拟音（Foley）",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 23
+    },
+    "368791692": {
+      "name": "A4-3",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 24
+    },
+    "410840802": {
+      "name": "A4-4",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 25
+    },
+    "929405203": {
+      "name": "A4-5",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 26
+    },
+    "1074020554": {
+      "name": "A4-6",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 27
+    },
+    "1199502698": {
+      "name": "A4-7",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 28
+    },
+    "1210751682": {
+      "name": "A4-8",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 29
+    },
+    "1434974618": {
+      "name": "A4-9",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 30
+    },
+    "1601209820": {
+      "name": "A4-10",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 31
+    },
+    "1793969174": {
+      "name": "A4-11",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 32
+    },
+    "1844591395": {
+      "name": "A4-12",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 33
+    },
+    "2446376615": {
+      "name": "破坏（Destruction）",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 34
+    },
+    "2470376052": {
+      "name": "A4-14",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 35
+    },
+    "2960513238": {
+      "name": "A4-15",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 36
+    },
+    "2981729747": {
+      "name": "问询语音（Asks）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 37
+    },
+    "549347228": {
+      "name": "选择语音（Selects）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 38
+    },
+    "563146235": {
+      "name": "A4-16-2",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 39
+    },
+    "712482109": {
+      "name": "A4-16-3",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 40
+    },
+    "1512882804": {
+      "name": "A4-16-4",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 41
+    },
+    "3309158463": {
+      "name": "A4-17",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 42
+    },
+    "3614659429": {
+      "name": "可交互物体（InteractiveObjects）",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 43
+    },
+    "3694647828": {
+      "name": "A4-19",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 44
+    },
+    "3699284957": {
+      "name": "A4-20",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 45
+    },
+    "3826240549": {
+      "name": "倒地/坠落（Bodyfalls）",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 46
+    },
+    "1270628146": {
+      "name": "A4-21-1",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 47
+    },
+    "2696806780": {
+      "name": "A4-21-2",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 48
+    },
+    "2730442764": {
+      "name": "A4-21-3",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 49
+    },
+    "3647308100": {
+      "name": "A4-21-4",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 50
+    },
+    "3930136735": {
+      "name": "对白（Dialogue）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 51
+    },
+    "463135381": {
+      "name": "A4-22-1",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 52
+    },
+    "2295679860": {
+      "name": "A4-22-2",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 53
+    },
+    "2433839550": {
+      "name": "A4-22-3",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 54
+    },
+    "4101551376": {
+      "name": "A4-23",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 55
+    },
+    "4207818628": {
+      "name": "队友闲谈（Banters）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 56
+    },
+    "1145758500": {
+      "name": "A5",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 57
+    },
+    "1551306167": {
+      "name": "界面（UI）",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 58
+    },
+    "1885713360": {
+      "name": "A6-1",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 59
+    },
+    "1710965379": {
+      "name": "A7",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 60
+    },
+    "1764400846": {
+      "name": "A8",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 61
+    },
+    "1769618259": {
+      "name": "A9",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 62
+    },
+    "2242065222": {
+      "name": "A10",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 63
+    },
+    "2381614349": {
+      "name": "A11",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 64
+    },
+    "2940432316": {
+      "name": "A12",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 65
+    },
+    "2982943478": {
+      "name": "过场视频（Video）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 66
+    },
+    "3585925006": {
+      "name": "A14",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 67
+    },
+    "2590351111": {
+      "name": "亚空间航行（WarpTravel）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 68
+    },
+    "3991942870": {
+      "name": "音乐（Music）",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 69
+    },
+    "2415184883": {
+      "name": "A15-1",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 70
+    },
+    "3563523368": {
+      "name": "A15-2",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 71
+    },
+    "4018282512": {
+      "name": "A16",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 72
+    },
+    "4128530898": {
+      "name": "A17",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 73
+    },
+    "4262181783": {
+      "name": "A18",
+      "enabled": true,
+      "folderId": "folder:branch-主输出总线",
+      "order": 74
+    },
+    "2204902281": {
+      "name": "A18-1",
+      "enabled": false,
+      "folderId": "folder:branch-主输出总线",
+      "order": 75
+    },
+    "1299058465": {
+      "name": "第二输出总线",
+      "enabled": false,
+      "folderId": null,
+      "order": 76
+    },
+    "2663784335": {
+      "name": "B1",
+      "enabled": true,
+      "folderId": "folder:branch-第二输出总线",
+      "order": 77
+    },
+    "2679478974": {
+      "name": "B1-1",
+      "enabled": false,
+      "folderId": "folder:branch-第二输出总线",
+      "order": 78
+    },
+    "3422465165": {
+      "name": "B1-2",
+      "enabled": false,
+      "folderId": "folder:branch-第二输出总线",
+      "order": 79
+    }
+  }
+}

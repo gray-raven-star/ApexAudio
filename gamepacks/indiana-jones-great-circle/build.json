@@ -1,0 +1,7 @@
+{
+  "slug": "indiana-jones-great-circle",
+  "id": "local.indiana-great-circle",
+  "version": "0.2.1",
+  "backend": "Wwise",
+  "nativeSource": "_capture/native/IndianaCapture.c"
+}

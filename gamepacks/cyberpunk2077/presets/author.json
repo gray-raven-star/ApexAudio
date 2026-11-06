@@ -1,0 +1,2014 @@
+{
+  "packId": "local.cyberpunk2077",
+  "id": "initial",
+  "groups": {
+    "194813043": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2791646749": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1135142808": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "325903629": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "731150428": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "459850560": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2253910262": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "552182201": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3756259450": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2028701680": {
+      "order": 0,
+      "name": "Motion_Bus",
+      "enabled": false
+    },
+    "2888874631": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2319597885": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1141044821": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "971393558": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3769302016": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2727802899": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2957059992": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2924593140": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "798957958": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1859451179": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2313695938": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4061656235": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2104430563": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "312576880": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1494490713": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1535232814": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3028663054": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2132347405": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "510458560": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3119721296": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2114683907": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "744960641": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1514795834": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3669495240": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1432893738": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2993976358": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2033153600": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "923655372": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1157480591": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3880146308": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "196357682": {
+      "order": 0,
+      "name": "Footsteps_Player",
+      "enabled": true
+    },
+    "3551763505": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3553225595": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1848491236": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1923055083": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1067069200": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1277725710": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1500496461": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3641404572": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "798479073": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2651534182": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2354622832": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2074634762": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1812255941": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2996874604": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1270028157": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "220489470": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3931095814": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1678143580": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3162338265": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2525844106": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1318341354": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "488099938": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2410028510": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3435516092": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1744729707": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "643119561": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1082545196": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2275433914": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "711860611": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3073987636": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "759634331": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2366357254": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2949032253": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1514279454": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "49014326": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "370810338": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "542224046": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "257808116": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2167146184": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3326835745": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1965173445": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "703889846": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4258615617": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1349558682": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2037405323": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1157147317": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3967133825": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2889974586": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "4152634373": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2745674227": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3353437161": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1822053649": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "389521219": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3696170850": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1890835261": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "64763192": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3471405029": {
+      "order": 0,
+      "name": "Effect_Bus",
+      "enabled": false
+    },
+    "522824808": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3480223561": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2939276180": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2193775930": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "240363363": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "680414930": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2551130421": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1724654528": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2282098074": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2274444621": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "448512805": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4142240511": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2925851096": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3186961568": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2055051773": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1801258597": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2978949467": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3992623187": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3255382844": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2321364702": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "245690301": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "393239870": {
+      "order": 0,
+      "name": "SFX",
+      "enabled": false
+    },
+    "323745074": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2575813153": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2156603068": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2038609223": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1626936406": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "639994810": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2189642683": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3373438371": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "791006008": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2480476642": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "726370592": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "732380048": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2864559181": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1316598156": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3211858591": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3430679546": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2154835574": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2763088238": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "918052088": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1500857773": {
+      "order": 0,
+      "name": "UI_Menu_Ingame",
+      "enabled": true
+    },
+    "523225594": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4104613391": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1124712528": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1786569885": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1067036852": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3653497735": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2460332025": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2054241761": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3346926614": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "4090225592": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "218985959": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3134652632": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2154054513": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "899113292": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1598298728": {
+      "order": 0,
+      "name": "Music_Menu",
+      "enabled": false
+    },
+    "3404788580": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1861363129": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2089632159": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2279521924": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3787741023": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "4015314385": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "318512183": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1146682542": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "247557814": {
+      "order": 0,
+      "name": "Foley",
+      "enabled": false
+    },
+    "1190924095": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2030446394": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3463705920": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4202158342": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "82698808": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2961911118": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1007215157": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2131520888": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4056556749": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "391470068": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3565263780": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "5401656": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "605765585": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1467963052": {
+      "order": 0,
+      "name": "Weapons",
+      "enabled": true
+    },
+    "666212655": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4231432710": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "381260340": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3446732313": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "805203703": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3803692087": {
+      "order": 0,
+      "name": "Master Audio Bus",
+      "enabled": false
+    },
+    "2321503930": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2414181380": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3339495030": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3913371617": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1836253337": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1224654937": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3059195225": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1568083719": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3776664628": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1700987098": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1487312706": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2074073782": {
+      "order": 0,
+      "name": "Player_Damage",
+      "enabled": false
+    },
+    "3280714485": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3447315913": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2959248590": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "418377995": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2076562810": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3297665608": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3979284117": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "376944480": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3526489167": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3324700404": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3211575251": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2085560416": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2762137652": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1182238337": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "114113442": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2774949886": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3028475369": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "296642061": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3078163843": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2178228293": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "511093792": {
+      "order": 0,
+      "name": "3D",
+      "enabled": false
+    },
+    "2411479490": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2026145258": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1988106116": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2736480604": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2733692993": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2685604387": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3157003241": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "449621015": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3289300462": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2423244222": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "106199436": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2345583539": {
+      "order": 0,
+      "name": "UI_Player_Damage",
+      "enabled": true
+    },
+    "653032245": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "753483701": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2862415346": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3342876596": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2661127687": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2519966796": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2047221116": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "594468545": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1534528548": {
+      "order": 0,
+      "name": "VO",
+      "enabled": false
+    },
+    "65823153": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "136612758": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2592925962": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3012376147": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3981546239": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2584512008": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3890119898": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3990831318": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1441054969": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "397914549": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3617821083": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3144310764": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "141230985": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2552441574": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "853171483": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "4290840012": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3761369364": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2857081641": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1454205568": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3565781187": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "913554702": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1017660616": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "209086477": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3250843712": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "495445519": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2242381963": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1396408454": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2026000464": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2771141568": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "4109138592": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2511758829": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3896292468": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4216124289": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2912057674": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3213291899": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1283333896": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2505016976": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3477620946": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2525614280": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3524851081": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3108117186": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4067771226": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2296455106": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1042730705": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4128634359": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1151059771": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4016385821": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "726048245": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2114234235": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2663784335": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1099617233": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3895709491": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "553323816": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1963165133": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "481237593": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1824366694": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1981958702": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3861627337": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3616241129": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "4008211411": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "527871411": {
+      "order": 0,
+      "name": "2D",
+      "enabled": false
+    },
+    "494816673": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "944620167": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1806090398": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "445639444": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1847831413": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3127137806": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3942756833": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1431178884": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3308942031": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1260030455": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2034245441": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1340767148": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4111823539": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4077341316": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1165322982": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2289870587": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1260866119": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "582088744": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2600628638": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "688956056": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3787912940": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2525563356": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3492446455": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1999849818": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3339766844": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2298457047": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3674174499": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1666101222": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1284216857": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3846437170": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1410046624": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2502042838": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2303034786": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1727604603": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1706896871": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "274253080": {
+      "order": 0,
+      "name": "Ambient_EM",
+      "enabled": true
+    },
+    "774713451": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2913350406": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1954374799": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3208241451": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2958632161": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "136933457": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3991942870": {
+      "order": 0,
+      "name": "Music",
+      "enabled": false
+    },
+    "3894463427": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "321379861": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2511555531": {
+      "order": 0,
+      "name": "UI_Menu",
+      "enabled": true
+    },
+    "233788187": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2312151289": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3067935083": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2166517340": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3880589808": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "414669895": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1619481969": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4045253753": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2780522361": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "383049720": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1365591040": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3193046343": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "222449889": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1066750445": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "22264513": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3699872526": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1256430505": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1638000049": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1551306167": {
+      "order": 0,
+      "name": "UI",
+      "enabled": true
+    },
+    "4267769947": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3270923362": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2986390989": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1059022754": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2239151501": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3461357017": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "267321211": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3028693648": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2437519270": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "447861909": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2441371946": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4008042374": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3390239755": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2374078088": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "4109141481": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2239327901": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "556887514": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1248585672": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2028111431": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1159592894": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "2394414306": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2538447278": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2371608540": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "2049143192": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "886924504": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1782786287": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3937774971": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "591064667": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "393046896": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "54480332": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1217175288": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "80923277": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "1078688352": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "3936260057": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "3540297614": {
+      "order": 0,
+      "name": "",
+      "enabled": true
+    },
+    "4034655300": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    },
+    "1155715035": {
+      "order": 0,
+      "name": "",
+      "enabled": false
+    }
+  },
+  "schemaVersion": 1,
+  "folders": [],
+  "name": "默认预设"
+}

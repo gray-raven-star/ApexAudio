@@ -1,0 +1,1068 @@
+{
+  "title": "艾尔登法环",
+  "gameSha256": "1A3547101327F65D0C76DA2F9190AC0AA66871EA42BAE2AECC61E11A8B597891",
+  "engineModule": "eldenring.exe",
+  "engineSha256": "1A3547101327F65D0C76DA2F9190AC0AA66871EA42BAE2AECC61E11A8B597891",
+  "bankVersion": 135,
+  "bankHeader": "hwAAACM6xlA+XXAXEAAAAHIHAAAAAAAAAAAAAAAAAAA=",
+  "bankId": 2047607297,
+  "captureFile": "modules/ApexEldenRingCapture.dll",
+  "captureSha256": "29FCF806A0A75957F305998F663E281BBF5E5000B46DDD5D12D094E5E0687EE4",
+  "sdkYear": 2019,
+  "sdkSeries": 2,
+  "buses": [
+    {
+      "id": 3803692087,
+      "parent": 0,
+      "name": "总混音 · Master Audio Bus",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2077784188,
+      "parent": 3803692087,
+      "name": "未命名分组 2077784188",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2668876684,
+      "parent": 3803692087,
+      "name": "游戏内总混音 · InGameMaster",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 412724365,
+      "parent": 2668876684,
+      "name": "背景音乐 · Bgm",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 514358619,
+      "parent": 412724365,
+      "name": "野外音乐 · Field",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1092937338,
+      "parent": 514358619,
+      "name": "未命名分组 1092937338",
+      "nameSource": "编号",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3488556250,
+      "parent": 514358619,
+      "name": "野外探索音乐 · FieldNormal",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3137449344,
+      "parent": 3488556250,
+      "name": "野外探索辅助混音 · FieldNormalAux",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音乐",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3608943425,
+      "parent": 514358619,
+      "name": "野外战斗音乐 · FieldBattle",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 224312193,
+      "parent": 3608943425,
+      "name": "野外战斗辅助混音 · FieldBattleAux",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音乐",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1398499310,
+      "parent": 412724365,
+      "name": "未命名分组 1398499310",
+      "nameSource": "编号",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1522554916,
+      "parent": 412724365,
+      "name": "首领战音乐 · BossBattle",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2888417916,
+      "parent": 412724365,
+      "name": "飞龙战斗 · BattleWyvern",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 983310469,
+      "parent": 2668876684,
+      "name": "辅助混音 · Aux",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 713277698,
+      "parent": 983310469,
+      "name": "回声 · Echo",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1126594524,
+      "parent": 983310469,
+      "name": "未命名分组 1126594524",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3125543353,
+      "parent": 1126594524,
+      "name": "未命名分组 3125543353",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3125543356,
+      "parent": 1126594524,
+      "name": "未命名分组 3125543356",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3125543358,
+      "parent": 1126594524,
+      "name": "未命名分组 3125543358",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3125543359,
+      "parent": 1126594524,
+      "name": "未命名分组 3125543359",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1417743849,
+      "parent": 983310469,
+      "name": "未命名分组 1417743849",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 528538126,
+      "parent": 1417743849,
+      "name": "_008_Underground_HugeSpace",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 719093136,
+      "parent": 1417743849,
+      "name": "未命名分组 719093136",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1345718028,
+      "parent": 1417743849,
+      "name": "未命名分组 1345718028",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1853589643,
+      "parent": 1417743849,
+      "name": "_003_Room",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2241973003,
+      "parent": 1417743849,
+      "name": "未命名分组 2241973003",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2252513925,
+      "parent": 1417743849,
+      "name": "未命名分组 2252513925",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2352684120,
+      "parent": 1417743849,
+      "name": "_001_Outdoor",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2556314929,
+      "parent": 1417743849,
+      "name": "_000_None",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2644074703,
+      "parent": 1417743849,
+      "name": "未命名分组 2644074703",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2913009953,
+      "parent": 1417743849,
+      "name": "未命名分组 2913009953",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2995893590,
+      "parent": 1417743849,
+      "name": "未命名分组 2995893590",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3368768847,
+      "parent": 1417743849,
+      "name": "_002_Outdoor_Narrow",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3524127397,
+      "parent": 1417743849,
+      "name": "未命名分组 3524127397",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3639472402,
+      "parent": 1417743849,
+      "name": "_004_Room_Large",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3665333770,
+      "parent": 1417743849,
+      "name": "_007_Underground_Tunnel",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3695558217,
+      "parent": 1417743849,
+      "name": "_005_Hall",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3731110161,
+      "parent": 1417743849,
+      "name": "未命名分组 3731110161",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3770122600,
+      "parent": 1417743849,
+      "name": "_006_Hall_Large",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3942751198,
+      "parent": 1417743849,
+      "name": "未命名分组 3942751198",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1824148386,
+      "parent": 983310469,
+      "name": "语音效果 · VoiceEffect",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 965907223,
+      "parent": 1824148386,
+      "name": "未命名分组 965907223",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 2957365592,
+      "parent": 1824148386,
+      "name": "未命名分组 2957365592",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3822118266,
+      "parent": 1824148386,
+      "name": "未命名分组 3822118266",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1848941422,
+      "parent": 983310469,
+      "name": "未命名分组 1848941422",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3382104531,
+      "parent": 983310469,
+      "name": "玩家脚步 · PlayerFooter",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 654224750,
+      "parent": 3382104531,
+      "name": "未命名分组 654224750",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3060986496,
+      "parent": 3382104531,
+      "name": "未命名分组 3060986496",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3540168572,
+      "parent": 3382104531,
+      "name": "未命名分组 3540168572",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 3814961238,
+      "parent": 3382104531,
+      "name": "未命名分组 3814961238",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": true,
+      "slot": 3
+    },
+    {
+      "id": 1584861537,
+      "parent": 2668876684,
+      "name": "音效 · SE",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 436743010,
+      "parent": 1584861537,
+      "name": "角色 · Character",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 393239870,
+      "parent": 436743010,
+      "name": "特殊音效 · SFX",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1069431850,
+      "parent": 436743010,
+      "name": "玩家 · Player",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 559901361,
+      "parent": 1069431850,
+      "name": "乐器 · instruments",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1362963929,
+      "parent": 436743010,
+      "name": "未命名分组 1362963929",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1790315531,
+      "parent": 436743010,
+      "name": "战斗喊声 · BattleVoice",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 986433125,
+      "parent": 1790315531,
+      "name": "未命名分组 986433125",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3965536909,
+      "parent": 1790315531,
+      "name": "默认战斗喊声 · BattleVoice_default",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2129573385,
+      "parent": 436743010,
+      "name": "未命名分组 2129573385",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 94261868,
+      "parent": 2129573385,
+      "name": "流浪商人乐曲 · GypsySong",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2561315776,
+      "parent": 2129573385,
+      "name": "未命名分组 2561315776",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 280344167,
+      "parent": 2561315776,
+      "name": "未命名分组 280344167",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2202883432,
+      "parent": 2561315776,
+      "name": "未命名分组 2202883432",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2467255899,
+      "parent": 2561315776,
+      "name": "未命名分组 2467255899",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2756358378,
+      "parent": 2561315776,
+      "name": "未命名分组 2756358378",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4178685407,
+      "parent": 2561315776,
+      "name": "未命名分组 4178685407",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3012940251,
+      "parent": 2129573385,
+      "name": "未命名分组 3012940251",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3169535375,
+      "parent": 2129573385,
+      "name": "未命名分组 3169535375",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2299321487,
+      "parent": 436743010,
+      "name": "敌人 · Enemy",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 789383070,
+      "parent": 2299321487,
+      "name": "c3050",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2329431920,
+      "parent": 789383070,
+      "name": "未命名分组 2329431920",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1449930091,
+      "parent": 2299321487,
+      "name": "未命名分组 1449930091",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2329288837,
+      "parent": 2299321487,
+      "name": "未命名分组 2329288837",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2646498870,
+      "parent": 2299321487,
+      "name": "c4020",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1817942109,
+      "parent": 2646498870,
+      "name": "未命名分组 1817942109",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2882665464,
+      "parent": 2299321487,
+      "name": "c4800",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1846302144,
+      "parent": 2882665464,
+      "name": "未命名分组 1846302144",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3841132504,
+      "parent": 2882665464,
+      "name": "未命名分组 3841132504",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1613975458,
+      "parent": 1584861537,
+      "name": "图标音效 · IconSE",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 797505578,
+      "parent": 1613975458,
+      "name": "图标音效（三级） · IconSE_Lv3",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 797505579,
+      "parent": 1613975458,
+      "name": "图标音效（二级） · IconSE_Lv2",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1788190166,
+      "parent": 1584861537,
+      "name": "地图环境 · MapEnv",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1375654984,
+      "parent": 1788190166,
+      "name": "未命名分组 1375654984",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1411817582,
+      "parent": 1788190166,
+      "name": "未命名分组 1411817582",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1525972139,
+      "parent": 1788190166,
+      "name": "未命名分组 1525972139",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1952473685,
+      "parent": 1788190166,
+      "name": "未命名分组 1952473685",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2599410046,
+      "parent": 1788190166,
+      "name": "雨声 · Rains",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2798675908,
+      "parent": 1788190166,
+      "name": "入口环境 · EntranceEnv",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3127560358,
+      "parent": 1788190166,
+      "name": "材质变化 · MaterialChange",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2623632643,
+      "parent": 1584861537,
+      "name": "场景物件 · Asset",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3759290903,
+      "parent": 1584861537,
+      "name": "未命名分组 3759290903",
+      "nameSource": "编号",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1784196969,
+      "parent": 3759290903,
+      "name": "对话命中音效 · Hit_Dialogue",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2747540986,
+      "parent": 3759290903,
+      "name": "旧版命中音效 · Hit_Old",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1802970398,
+      "parent": 2668876684,
+      "name": "FE",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3764479168,
+      "parent": 1802970398,
+      "name": "未命名分组 3764479168",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3764479170,
+      "parent": 1802970398,
+      "name": "未命名分组 3764479170",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3764479171,
+      "parent": 1802970398,
+      "name": "未命名分组 3764479171",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2569233829,
+      "parent": 2668876684,
+      "name": "过场音效 · CutsceneSE",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 479358706,
+      "parent": 2569233829,
+      "name": "未命名分组 479358706",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2771280331,
+      "parent": 2569233829,
+      "name": "未命名分组 2771280331",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3735027030,
+      "parent": 2569233829,
+      "name": "未命名分组 3735027030",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2975624521,
+      "parent": 2668876684,
+      "name": "语音总混音 · VoiceParent",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1698900754,
+      "parent": 2975624521,
+      "name": "未命名分组 1698900754",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3170124113,
+      "parent": 2975624521,
+      "name": "语音 · Voice",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 720844497,
+      "parent": 3170124113,
+      "name": "未命名分组 720844497",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 737622178,
+      "parent": 3170124113,
+      "name": "未命名分组 737622178",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 771177368,
+      "parent": 3170124113,
+      "name": "未命名分组 771177368",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1862294529,
+      "parent": 3170124113,
+      "name": "未命名分组 1862294529",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1017377641,
+      "parent": 1862294529,
+      "name": "未命名分组 1017377641",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2335912179,
+      "parent": 1862294529,
+      "name": "未命名分组 2335912179",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2502849598,
+      "parent": 2335912179,
+      "name": "未命名分组 2502849598",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4169630593,
+      "parent": 3170124113,
+      "name": "未命名分组 4169630593",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4202347380,
+      "parent": 3170124113,
+      "name": "未命名分组 4202347380",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4026531462,
+      "parent": 2975624521,
+      "name": "未命名分组 4026531462",
+      "nameSource": "编号",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4235484925,
+      "parent": 3803692087,
+      "name": "未命名分组 4235484925",
+      "nameSource": "编号",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 805203703,
+      "parent": 0,
+      "name": "次级总混音 · Master Secondary Bus",
+      "nameSource": "公开名称表哈希对应；中文为翻译",
+      "category": "混合",
+      "auxiliary": false,
+      "slot": 3
+    }
+  ]
+}

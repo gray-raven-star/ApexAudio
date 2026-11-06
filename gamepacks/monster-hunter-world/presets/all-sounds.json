@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 1,
+  "id": "all-sounds",
+  "name": "全部声音",
+  "packId": "local.monsterhunterworld",
+  "basePresetId": null,
+  "basePackVersion": null,
+  "folders": [],
+  "groups": {
+    "3803692087": {
+      "name": "Master Audio Bus",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "617308330": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "501286205": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2045323936": {
+      "name": "SE Effect",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3739517901": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "4083207731": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3578193996": {
+      "name": "BGM Effect",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "663741797": {
+      "name": "SE Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "439959608": {
+      "name": "Player Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "197934075": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1192599499": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "4174037644": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1544658388": {
+      "name": "Player Voice",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "596738160": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2680573351": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3124480738": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2737698718": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3945465977": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "4191733678": {
+      "name": "Player SE",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "734376344": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3016338095": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "530242133": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1614574798": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1942455315": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "274610166": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3284112957": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "563270101": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1714597224": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1722814188": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "291309382": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2573570817": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1899277375": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1406407607": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2521705568": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2126441370": {
+      "name": "Environment Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2068648495": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "89428805": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1011622525": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1924633667": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "4206605382": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1841495931": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "547920713": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1932420736": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2707025056": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "653157873": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2424697119": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2692105584": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "4048400261": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2440069161": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3362801048": {
+      "name": "NPC Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "81353652": {
+      "name": "NPC Voice",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2658697351": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3574963536": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "172822542": {
+      "name": "NPC SE",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1805678712": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2995859087": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3421139255": {
+      "name": "Game Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3565948111": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "325636523": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "25785214": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "679888896": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3154047788": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2065949252": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1215953926": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2034234654": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2445008095": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3370714966": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2635154860": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3001664531": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3120965399": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3663095606": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3755295282": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3667001566": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "542904716": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "771610375": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1599407819": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3889427491": {
+      "name": "Otomo Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1498256293": {
+      "name": "Otomo Voice",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2168925588": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3703664495": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1631708170": {
+      "name": "Otomo_Event",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2126256750": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2747299117": {
+      "name": "Otomo SE",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "435332177": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3393055826": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "958314513": {
+      "name": "BGM Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "859839313": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2816278176": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1657622650": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2993549295": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "788111667": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3003363555": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3474150813": {
+      "name": "BGM Battle",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "802624311": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3282736403": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3637181956": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1106087093": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "4061887236": {
+      "name": "BGM System",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1044721595": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1923505846": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2073247688": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3872408066": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "4186384529": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1053265567": {
+      "name": "Dialogue Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "597639384": {
+      "name": "Voice_Otomo",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2007660816": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2242221418": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "2380081619": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3707615673": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1856326383": {
+      "name": "Event Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "1825515197": {
+      "name": "Event_Dialogue_Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3145001837": {
+      "name": "Event_BGM_Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "439837817": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3416174942": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3179867851": {
+      "name": "Event_SE_Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "3558877439": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    },
+    "805203703": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 0
+    }
+  }
+}

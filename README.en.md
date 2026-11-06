@@ -12,7 +12,7 @@ Apex Audio captures separate game audio tracks on Windows. Choose which sounds f
 
 ## Build a gamepack
 
-Work from the directory containing `ApexAudio.sln`. Set up the [build environment](docs/development/build-environment.md). This repository provides capture adapters, a copyable definition example in [gamepack-starter](gamepack-starter/README.md), and build tools. Individual game definitions are maintained by their authors.
+Work from the directory containing `ApexAudio.sln`. Set up the [build environment](docs/development/build-environment.md). This repository provides capture adapters, build tools, [official gamepack sources](https://github.com/gray-raven-star/ApexAudio/tree/main/gamepacks), and a [starter definition](gamepack-starter/README.md) for new packs.
 
 1. [Identify the game's audio system](docs/authoring/identify-audio-system.md) and choose a capture adapter.
 2. [Build a gamepack](docs/authoring/build-a-gamepack.md) from your game definition.

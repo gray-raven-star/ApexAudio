@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "id": "all-sounds",
+  "name": "全部声音",
+  "packId": "local.kingdomcome2",
+  "folders": [],
+  "groups": {
+    "07ea096c9788f245a786a638fa852345": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "09d091ee6d5bf34f8a5099157662ad00": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "11b1aa663fec9f41956914eccf42b446": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "141a3ca64178f7419ed70dafe6cfcdc1": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "18b2beb5ea7b844e87b0884983e28293": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "1ef14045a7a6ac4d9021f9322ff7af17": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "34ef356d57e3f14aac71d4aa4d4cb172": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "51da3bf987605d4db143a35e21b5cdcd": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "5aeb8aa1f1dc794b88f4526eac4cfe31": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "5f421ed8be0519499bc038ec72257927": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "661c37008551894aa8d36ad449cd47f0": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "6af6650ee3286e43a79d83014953b433": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "795fd214c50bd64c9c4e1d5e347934bf": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "8288070a5488ff44aaed5959b6a7f68e": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "8443f39a0f571147ad38c79cf0aaa90a": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "8894e4bbf128404cb830ea7877cf48af": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "9eafeb313b437e40869f4f0ad92a60dc": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "9fa8718a438cee4dad3e11c1bef9c047": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "a3a016b160d8a64ab84e4be2cb48c804": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "a3aef31af537754cb5f679fb013dd1a0": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "aaf9064ae1667f4e81abcd28b2ab8147": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "b70a43e3b7480c4b8006350b48a0ef4c": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "b8d838aeb599f84fb1cc9f63da95152e": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "d87207d03c5d4c45a749c8b84f6bb522": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "e54b0240edcac04798af1f2364a86aa2": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "f9d8fb990801c24caf27a07263b4d4ae": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "fc680781ebdb1844a8283ee7ccc3df68": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "1407068db78c544887a9c26504fab16c": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "241f2082e535f84c9cc90f6f76faea52": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "2c52b339beab49499a80d40fa2808f29": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "5f9a25d9611e3145b37db41795d13c86": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "68ca0a13fc962d449608957a4a6d9a48": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "899b5e2ac6b05f4e97edb592fb1599d8": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "a052d7e56ed0d343acab5d198d23fce8": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "ae6f4bf2f4fe5f4ea416b80c7143e7f7": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "e4cf6d36616eff49aa7de6930d8dfaa8": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "fdaace39e4d1a64888a1d308a6764ffd": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "fedc13b0670ff14cac7e79f6c248be63": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    },
+    "2f0f688df19d6a47b7fb7f654c8a2db1": {
+      "enabled": true,
+      "name": null,
+      "order": 0
+    }
+  },
+  "basePresetId": null,
+  "basePackVersion": null
+}

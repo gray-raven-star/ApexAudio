@@ -1,0 +1,24 @@
+{
+  "executableSha256": "29FA23A9CE24613A9B05CE84F7EBFA3262AAF5053B377B43FD8DFC09071AA7FC",
+  "requiredExports": [
+    "?IsInitialized@SoundEngine@AK@@YA_NXZ",
+    "?GetAudioSettings@SoundEngine@AK@@YA?AW4AKRESULT@@AEAUAkAudioSettings@@@Z",
+    "?SetBusEffect@SoundEngine@AK@@YA?AW4AKRESULT@@III@Z",
+    "?LoadBankMemoryCopy@SoundEngine@AK@@YA?AW4AKRESULT@@PEBXIAEAI@Z",
+    "?RegisterPlugin@SoundEngine@AK@@YA?AW4AKRESULT@@W4AkPluginType@@IIP6APEAVIAkPlugin@2@PEAVIAkPluginMemAlloc@2@@ZP6APEAVIAkPluginParam@2@1@ZP6A?AW43@AEAIPEAUAkDeviceDescription@@@Z@Z",
+    "?RegisterGlobalCallback@SoundEngine@AK@@YA?AW4AKRESULT@@P6AXPEAVIAkGlobalPluginContext@2@W4AkGlobalCallbackLocation@@PEAX@ZI2W4AkPluginType@@II@Z",
+    "?UnregisterGlobalCallback@SoundEngine@AK@@YA?AW4AKRESULT@@P6AXPEAVIAkGlobalPluginContext@2@W4AkGlobalCallbackLocation@@PEAX@ZI@Z"
+  ],
+  "bankVersion": 140,
+  "selectedAbi": "DevKit Wwise 2021.1 / bank 140",
+  "exactSdkBuild": "not identified; compatible ABI must be validated in actual game",
+  "masterEffects": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "metadataOnly": [
+    3803692087
+  ]
+}

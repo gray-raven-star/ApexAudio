@@ -1,0 +1,123 @@
+name: Validate official game packs
+
+on:
+  pull_request:
+    paths:
+      - 'gamepacks/**'
+      - 'adapters/**'
+      - 'src/**'
+      - 'tools/**'
+      - Directory.Build.props
+      - NuGet.Config
+      - .github/workflows/validate-packs.yml
+  push:
+    branches: [main]
+    paths:
+      - 'gamepacks/**'
+      - 'adapters/**'
+      - 'src/**'
+      - 'tools/**'
+      - Directory.Build.props
+      - NuGet.Config
+      - .github/workflows/validate-packs.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    outputs:
+      packs: ${{ steps.matrix.outputs.packs }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Select changed packages and check unique IDs
+        id: matrix
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+
+          packs = {}
+          ids = set()
+          for directory in sorted(Path("gamepacks").iterdir()):
+              if not directory.is_dir() or directory.name.startswith("_"):
+                  continue
+              manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8-sig"))
+              package_id = manifest["id"]
+              if package_id.casefold() in ids:
+                  raise SystemExit(f"Duplicate package ID: {package_id}")
+              if not (directory / "build.json").is_file():
+                  raise SystemExit(f"Missing build recipe: {directory}")
+              ids.add(package_id.casefold())
+              packs[directory.name] = package_id
+
+          base = os.environ.get("BASE")
+          if base and base.strip("0"):
+              diff = subprocess.check_output(["git", "diff", "--no-renames", "--name-only", "-z", base, "HEAD"])
+              paths = diff.decode("utf-8").rstrip("\0").split("\0")
+              shared = ("adapters/", "src/", "tools/", "Directory.Build.props", "NuGet.Config",
+                        ".github/workflows/validate-packs.yml")
+              if not any(path.startswith(shared) for path in paths):
+                  changed = {path.split("/")[1] for path in paths if path.startswith("gamepacks/")}
+                  packs = {slug: pack_id for slug, pack_id in packs.items() if slug in changed}
+
+          matrix = [{"slug": slug, "id": pack_id} for slug, pack_id in packs.items()]
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              print(f"packs={json.dumps(matrix)}", file=output)
+          PY
+
+  build:
+    needs: select
+    if: needs.select.outputs.packs != '[]'
+    runs-on: windows-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        pack: ${{ fromJSON(needs.select.outputs.packs) }}
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.cache/nuget
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+        with:
+          dotnet-version: '8.0.x'
+      - uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: .cache/nuget
+          key: nuget-${{ runner.os }}-8-${{ hashFiles('**/*.csproj', 'Directory.Build.props', 'NuGet.Config') }}
+      - name: Build and check the package offline
+        shell: pwsh
+        env:
+          PACK_SLUG: ${{ matrix.pack.slug }}
+          PACK_ID: ${{ matrix.pack.id }}
+        run: |
+          $sdk = dotnet --list-sdks | ForEach-Object { ($_ -split ' ')[0] } |
+            Where-Object { $_ -match '^8\.0\.[0-9]+$' } |
+            Sort-Object { [version]$_ } -Descending | Select-Object -First 1
+          if (-not $sdk) { throw '.NET 8 SDK is unavailable.' }
+          @{ sdk = @{ version = $sdk; rollForward = 'disable' } } |
+            ConvertTo-Json | Set-Content -Encoding utf8 global.json
+          $zip = Join-Path $env:RUNNER_TEMP 'zig.zip'
+          Invoke-WebRequest -Uri 'https://ziglang.org/download/0.15.2/zig-x86_64-windows-0.15.2.zip' -OutFile $zip
+          if ((Get-FileHash -LiteralPath $zip).Hash -ne '3A0ED1E8799A2F8CE2A6E6290A9FF22E6906F8227865911FB7DDEDC3CC14CB0C') {
+            throw 'Zig download checksum mismatch.'
+          }
+          $zigDir = Join-Path $env:RUNNER_TEMP 'zig'
+          Expand-Archive -LiteralPath $zip -DestinationPath $zigDir
+          $zig = Join-Path $zigDir 'zig-x86_64-windows-0.15.2/zig.exe'
+          ./tools/Build-GamePack.ps1 -DefinitionDirectory "gamepacks/$env:PACK_SLUG" -Compiler $zig
+          $pack = "dist/packages/$env:PACK_ID.gpack"
+          dotnet run --project tools/DevTools/ApexAudio.DevTools.csproj -c Release -- check --pack $pack
+          if ($LASTEXITCODE -ne 0) { throw 'Offline package check failed.' }

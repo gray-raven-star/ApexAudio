@@ -1,0 +1,1906 @@
+{
+  "backend": "Wwise",
+  "title": "怪物猎人：崛起 · Wwise 音频",
+  "gameSha256": "29FA23A9CE24613A9B05CE84F7EBFA3262AAF5053B377B43FD8DFC09071AA7FC",
+  "engineModule": "MonsterHunterRise.exe",
+  "engineSha256": "29FA23A9CE24613A9B05CE84F7EBFA3262AAF5053B377B43FD8DFC09071AA7FC",
+  "bankVersion": 140,
+  "bankHeader": "jAAAACM6xlA+XXAXEAAAAJ0NAAAAAAAAAAAAAAAAAAA=",
+  "bankId": 2051885056,
+  "sdkYear": 2021,
+  "sdkSeries": 1,
+  "captureFile": "modules/ApexMHRiseWwiseCapture.dll",
+  "captureSha256": "A057506379043D883D9E5632939E5E325E2E5A0F1D6298A50B53B71AEA0F7E94",
+  "buses": [
+    {
+      "id": 3803692087,
+      "parent": 0,
+      "name": "主混音（仅层级，不采集）",
+      "nameSource": "标准 Wwise 名称与 FNV 一致；输出用途未额外实测",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 253003338,
+      "parent": 3803692087,
+      "name": "主音频（Main_Audio_Bus）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 23001570,
+      "parent": 253003338,
+      "name": "未命名混音组 23001570",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 814663814,
+      "parent": 253003338,
+      "name": "音效总组（SE_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 392537532,
+      "parent": 814663814,
+      "name": "辅助混音汇总（Auxiliary_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 92979990,
+      "parent": 392537532,
+      "name": "辅助组初始化（Aux_Init）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 196593681,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 196593681",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 34432310,
+      "parent": 196593681,
+      "name": "辅助混音汇总 · 未命名组 34432310",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2186076424,
+      "parent": 196593681,
+      "name": "辅助混音汇总 · 未命名组 2186076424",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3996194420,
+      "parent": 196593681,
+      "name": "辅助混音汇总 · 未命名组 3996194420",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3996194423,
+      "parent": 196593681,
+      "name": "辅助混音汇总 · 未命名组 3996194423",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 706797525,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 706797525",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 835735623,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 835735623",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 988650139,
+      "parent": 835735623,
+      "name": "辅助混音汇总 · 未命名组 988650139",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1829744993,
+      "parent": 835735623,
+      "name": "辅助混音汇总 · 未命名组 1829744993",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2261408386,
+      "parent": 835735623,
+      "name": "辅助混音汇总 · 未命名组 2261408386",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2790677192,
+      "parent": 835735623,
+      "name": "辅助混音汇总 · 未命名组 2790677192",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3124243358,
+      "parent": 835735623,
+      "name": "辅助混音汇总 · 未命名组 3124243358",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 4157552836,
+      "parent": 835735623,
+      "name": "辅助混音汇总 · 未命名组 4157552836",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1679905368,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1679905368",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 57894653,
+      "parent": 1679905368,
+      "name": "辅助混音汇总 · 未命名组 57894653",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 517476883,
+      "parent": 1679905368,
+      "name": "辅助混音汇总 · 未命名组 517476883",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 700636128,
+      "parent": 1679905368,
+      "name": "辅助混音汇总 · 未命名组 700636128",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1209825702,
+      "parent": 1679905368,
+      "name": "辅助混音汇总 · 未命名组 1209825702",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1874376499,
+      "parent": 1679905368,
+      "name": "辅助混音汇总 · 未命名组 1874376499",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3342634946,
+      "parent": 1679905368,
+      "name": "辅助混音汇总 · 未命名组 3342634946",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3543371892,
+      "parent": 1679905368,
+      "name": "辅助混音汇总 · 未命名组 3543371892",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3844490108,
+      "parent": 1679905368,
+      "name": "辅助混音汇总 · 未命名组 3844490108",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1803442492,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1803442492",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4248702064,
+      "parent": 1803442492,
+      "name": "辅助混音汇总 · 未命名组 4248702064",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 4264612092,
+      "parent": 1803442492,
+      "name": "辅助混音汇总 · 未命名组 4264612092",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1803442493,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1803442493",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 823128023,
+      "parent": 1803442493,
+      "name": "辅助混音汇总 · 未命名组 823128023",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2321448157,
+      "parent": 1803442493,
+      "name": "辅助混音汇总 · 未命名组 2321448157",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1803442494,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1803442494",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 956271454,
+      "parent": 1803442494,
+      "name": "辅助混音汇总 · 未命名组 956271454",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3006176190,
+      "parent": 1803442494,
+      "name": "辅助混音汇总 · 未命名组 3006176190",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1836997632,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1836997632",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 742423668,
+      "parent": 1836997632,
+      "name": "辅助混音汇总 · 未命名组 742423668",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 938729867,
+      "parent": 1836997632,
+      "name": "辅助混音汇总 · 未命名组 938729867",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1223408064,
+      "parent": 1836997632,
+      "name": "辅助混音汇总 · 未命名组 1223408064",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1244159997,
+      "parent": 1836997632,
+      "name": "辅助混音汇总 · 未命名组 1244159997",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2974273605,
+      "parent": 1836997632,
+      "name": "辅助混音汇总 · 未命名组 2974273605",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3651609306,
+      "parent": 1836997632,
+      "name": "辅助混音汇总 · 未命名组 3651609306",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1836997633,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1836997633",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 526688957,
+      "parent": 1836997633,
+      "name": "辅助混音汇总 · 未命名组 526688957",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 934869016,
+      "parent": 1836997633,
+      "name": "辅助混音汇总 · 未命名组 934869016",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1781389580,
+      "parent": 1836997633,
+      "name": "辅助混音汇总 · 未命名组 1781389580",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2021550795,
+      "parent": 1836997633,
+      "name": "辅助混音汇总 · 未命名组 2021550795",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3893247185,
+      "parent": 1836997633,
+      "name": "辅助混音汇总 · 未命名组 3893247185",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 4282504188,
+      "parent": 1836997633,
+      "name": "辅助混音汇总 · 未命名组 4282504188",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1836997635,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1836997635",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2100128277,
+      "parent": 1836997635,
+      "name": "辅助混音汇总 · 未命名组 2100128277",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 4273308839,
+      "parent": 1836997635,
+      "name": "辅助混音汇总 · 未命名组 4273308839",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1836997638,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1836997638",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1580738134,
+      "parent": 1836997638,
+      "name": "辅助混音汇总 · 未命名组 1580738134",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3102479238,
+      "parent": 1836997638,
+      "name": "辅助混音汇总 · 未命名组 3102479238",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3416292035,
+      "parent": 1836997638,
+      "name": "辅助混音汇总 · 未命名组 3416292035",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1836997639,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1836997639",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 872543918,
+      "parent": 1836997639,
+      "name": "辅助混音汇总 · 未命名组 872543918",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1070459012,
+      "parent": 1836997639,
+      "name": "辅助混音汇总 · 未命名组 1070459012",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2367435870,
+      "parent": 1836997639,
+      "name": "辅助混音汇总 · 未命名组 2367435870",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2915617627,
+      "parent": 1836997639,
+      "name": "辅助混音汇总 · 未命名组 2915617627",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3997436057,
+      "parent": 1836997639,
+      "name": "辅助混音汇总 · 未命名组 3997436057",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1863469084,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 1863469084",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1636434364,
+      "parent": 1863469084,
+      "name": "辅助混音汇总 · 未命名组 1636434364",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3390215409,
+      "parent": 1863469084,
+      "name": "辅助混音汇总 · 未命名组 3390215409",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2003346832,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 2003346832",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 131826243,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 131826243",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1513500570,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 1513500570",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2717012058,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 2717012058",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3709748344,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 3709748344",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3709748345,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 3709748345",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3709748346,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 3709748346",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3709748347,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 3709748347",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3709748348,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 3709748348",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3709748349,
+      "parent": 2003346832,
+      "name": "辅助混音汇总 · 未命名组 3709748349",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2003346835,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 2003346835",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 538639175,
+      "parent": 2003346835,
+      "name": "辅助混音汇总 · 未命名组 538639175",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 747635272,
+      "parent": 2003346835,
+      "name": "辅助混音汇总 · 未命名组 747635272",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1795867672,
+      "parent": 2003346835,
+      "name": "辅助混音汇总 · 未命名组 1795867672",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2662913198,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 2662913198",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1190931014,
+      "parent": 2662913198,
+      "name": "辅助混音汇总 · 未命名组 1190931014",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3879107882,
+      "parent": 2662913198,
+      "name": "辅助混音汇总 · 未命名组 3879107882",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2767677640,
+      "parent": 392537532,
+      "name": "辅助混音汇总 · 未命名组 2767677640",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2097248492,
+      "parent": 2767677640,
+      "name": "辅助混音汇总 · 未命名组 2097248492",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2773966472,
+      "parent": 2767677640,
+      "name": "辅助混音汇总 · 未命名组 2773966472",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 392537532 的参考类别，未逐组试听确认",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3736508534,
+      "parent": 392537532,
+      "name": "营地（camp）",
+      "nameSource": "游戏音频设置元数据字符串与 Wwise FNV 一致；中文为参考释义",
+      "category": "辅助混音",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3205032327,
+      "parent": 814663814,
+      "name": "通用音效（SFX_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 50050244,
+      "parent": 3205032327,
+      "name": "怪物音效总组（Enemy_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 580059306,
+      "parent": 50050244,
+      "name": "怪物音效 · EMS（EMS）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2107988482,
+      "parent": 580059306,
+      "name": "怪物音效 · EMS · 未命名组 2107988482",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 580059306 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2698677555,
+      "parent": 580059306,
+      "name": "怪物音效 · EMS · 未命名组 2698677555",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 580059306 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3013247952,
+      "parent": 580059306,
+      "name": "怪物语音 · EMS（EMS_VO）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3257180952,
+      "parent": 580059306,
+      "name": "怪物音效 · EMS · 未命名组 3257180952",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 580059306 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3281689728,
+      "parent": 580059306,
+      "name": "怪物动作拟音 · EMS（EMS_fo）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3281689751,
+      "parent": 580059306,
+      "name": "怪物效果声 · EMS（EMS_fx）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3342556899,
+      "parent": 580059306,
+      "name": "怪物音效 · EMS · 未命名组 3342556899",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 580059306 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3670746297,
+      "parent": 580059306,
+      "name": "怪物音效 · EMS · 未命名组 3670746297",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 580059306 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1819748195,
+      "parent": 50050244,
+      "name": "怪物音效 · EM（EM）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 377287256,
+      "parent": 1819748195,
+      "name": "怪物音效 · EM · 未命名组 377287256",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 1819748195 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1744231092,
+      "parent": 1819748195,
+      "name": "怪物音效 · EM · 未命名组 1744231092",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 1819748195 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1903594596,
+      "parent": 1819748195,
+      "name": "怪物音效 · EM · 未命名组 1903594596",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 1819748195 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2838238495,
+      "parent": 1819748195,
+      "name": "怪物音效 · EM · 未命名组 2838238495",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 1819748195 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3012978083,
+      "parent": 1819748195,
+      "name": "怪物语音 · EM（EM_VO）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3281419908,
+      "parent": 1819748195,
+      "name": "怪物效果声 · EM（EM_fx）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3281419923,
+      "parent": 1819748195,
+      "name": "怪物动作拟音 · EM（EM_fo）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3647958503,
+      "parent": 1819748195,
+      "name": "怪物音效 · EM · 未命名组 3647958503",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 1819748195 的参考类别，未逐组试听确认",
+      "category": "怪物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 717843337,
+      "parent": 3205032327,
+      "name": "通用音效 · 未命名组 717843337",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3205032327 的参考类别，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 957788960,
+      "parent": 3205032327,
+      "name": "随从音效总组（Otomo_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "随从",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1933058324,
+      "parent": 957788960,
+      "name": "随从猫（Airou_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "随从猫",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1763003628,
+      "parent": 1933058324,
+      "name": "随从猫其他音效（Airou_Other）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "随从猫",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3353848690,
+      "parent": 1933058324,
+      "name": "随从猫动作语音（Airou_Action_VO）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "随从猫",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3663448410,
+      "parent": 957788960,
+      "name": "随从狗（Dog_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "随从狗",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1933463838,
+      "parent": 3663448410,
+      "name": "随从狗其他音效（Dog_Other）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "随从狗",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2529193900,
+      "parent": 3663448410,
+      "name": "随从狗动作语音（Dog_Action_VO）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "随从狗",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1090403738,
+      "parent": 3205032327,
+      "name": "环境生物音效（EC_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "环境生物",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1267086631,
+      "parent": 3205032327,
+      "name": "机关与场景互动（Gimmick_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "场景互动",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1432530473,
+      "parent": 3205032327,
+      "name": "通用音效 · 未命名组 1432530473",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3205032327 的参考类别，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1501464320,
+      "parent": 3205032327,
+      "name": "通用音效 · 未命名组 1501464320",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3205032327 的参考类别，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1664353713,
+      "parent": 3205032327,
+      "name": "通用音效 · 未命名组 1664353713",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3205032327 的参考类别，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2154761356,
+      "parent": 3205032327,
+      "name": "撞击与命中音效（Impact_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 514405275,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 514405275",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 854769676,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 854769676",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2057540599,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 2057540599",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2633393377,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 2633393377",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2774048450,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 2774048450",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2949880285,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 2949880285",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3457292308,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 3457292308",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3657774559,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 3657774559",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4146945521,
+      "parent": 2154761356,
+      "name": "撞击与命中音效 · 未命名组 4146945521",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2154761356 的参考类别，未逐组试听确认",
+      "category": "撞击与命中",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2472534735,
+      "parent": 3205032327,
+      "name": "环境声（Env_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 203987704,
+      "parent": 2472534735,
+      "name": "环境声 · 未命名组 203987704",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2472534735 的参考类别，未逐组试听确认",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 460094734,
+      "parent": 2472534735,
+      "name": "基础环境声（Env_Base）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2396605251,
+      "parent": 2472534735,
+      "name": "环境声 · 未命名组 2396605251",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2472534735 的参考类别，未逐组试听确认",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2531991544,
+      "parent": 2472534735,
+      "name": "环境声叠加层（Env_Layer）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3607995691,
+      "parent": 2472534735,
+      "name": "风声（Env_Wind）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2493685259,
+      "parent": 3205032327,
+      "name": "NPC 音效总组（NPC_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "NPC",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3429794846,
+      "parent": 2493685259,
+      "name": "NPC 音效总组 · 未命名组 3429794846",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2493685259 的参考类别，未逐组试听确认",
+      "category": "NPC",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4210235045,
+      "parent": 2493685259,
+      "name": "NPC 动作音效（NPC_SE）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "NPC",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4294123248,
+      "parent": 2493685259,
+      "name": "NPC 语音（NPC_VO）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "NPC",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2567740528,
+      "parent": 3205032327,
+      "name": "武器混音避让（Wp_Ducking）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "武器",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3223516310,
+      "parent": 3205032327,
+      "name": "玩家音效总组（PL_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 264685801,
+      "parent": 3223516310,
+      "name": "玩家武器（PL_Wp）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "武器",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3098530433,
+      "parent": 264685801,
+      "name": "武器挥动（Wp_Whoosh）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "武器",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3273465751,
+      "parent": 264685801,
+      "name": "武器其他音效（Wp_Other）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "武器",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4097032877,
+      "parent": 264685801,
+      "name": "武器命中（Wp_Impact）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "武器",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 516350030,
+      "parent": 3223516310,
+      "name": "玩家效果声（PL_fx）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1935249320,
+      "parent": 3223516310,
+      "name": "玩家动作语音（PL_Action_VO）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3036395753,
+      "parent": 3223516310,
+      "name": "玩家动作拟音（PL_Foley）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家动作拟音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 245673290,
+      "parent": 3036395753,
+      "name": "移动拟音（Foley_Movement）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家动作拟音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 478119502,
+      "parent": 3036395753,
+      "name": "脚步（Foley_Footsteps）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家动作拟音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3900222898,
+      "parent": 3223516310,
+      "name": "玩家其他音效（PL_Other）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3394440612,
+      "parent": 3205032327,
+      "name": "通用音效 · 未命名组 3394440612",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3205032327 的参考类别，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3625804358,
+      "parent": 3205032327,
+      "name": "通用音效 · 未命名组 3625804358",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3205032327 的参考类别，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4004218990,
+      "parent": 3205032327,
+      "name": "通用音效 · 未命名组 4004218990",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3205032327 的参考类别，未逐组试听确认",
+      "category": "通用音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 926848091,
+      "parent": 253003338,
+      "name": "暂停界面音效（UI_Master_Pause）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1455882868,
+      "parent": 253003338,
+      "name": "界面其他音效（UI_Other）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1875529325,
+      "parent": 253003338,
+      "name": "未命名混音组 1875529325",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 814287309,
+      "parent": 1875529325,
+      "name": "未命名混音组 814287309",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1277508763,
+      "parent": 1875529325,
+      "name": "未命名混音组 1277508763",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2028987858,
+      "parent": 1875529325,
+      "name": "未命名混音组 2028987858",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2776907015,
+      "parent": 1875529325,
+      "name": "未命名混音组 2776907015",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2983090232,
+      "parent": 1875529325,
+      "name": "未命名混音组 2983090232",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3137993214,
+      "parent": 1875529325,
+      "name": "未命名混音组 3137993214",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3339510539,
+      "parent": 1875529325,
+      "name": "未命名混音组 3339510539",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3549715305,
+      "parent": 1875529325,
+      "name": "未命名混音组 3549715305",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3559843295,
+      "parent": 1875529325,
+      "name": "未命名混音组 3559843295",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3603123945,
+      "parent": 1875529325,
+      "name": "未命名混音组 3603123945",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3800787469,
+      "parent": 1875529325,
+      "name": "未命名混音组 3800787469",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3941477710,
+      "parent": 1875529325,
+      "name": "未命名混音组 3941477710",
+      "nameSource": "Init.bnk 原始总线编号；未找到可靠名称参考",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2414365428,
+      "parent": 253003338,
+      "name": "对白总组（Dialogue_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "对白",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 509070426,
+      "parent": 2414365428,
+      "name": "玩家情境语音（PL_situation_VO）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 702945423,
+      "parent": 2414365428,
+      "name": "对白总组 · 未命名组 702945423",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 2414365428 的参考类别，未逐组试听确认",
+      "category": "对白",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 966464572,
+      "parent": 2414365428,
+      "name": "NPC 闲聊对白（Dialogue_NPC_Chat）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "对白",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2148127105,
+      "parent": 2414365428,
+      "name": "事件其他对白（Dialogue_Event_Other）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "对白",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2563992102,
+      "parent": 253003338,
+      "name": "加载界面音效（UI_Loading）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3075009468,
+      "parent": 253003338,
+      "name": "界面音效总组（UI_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1150492938,
+      "parent": 3075009468,
+      "name": "界面提示音（UI_info）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4103209199,
+      "parent": 3075009468,
+      "name": "界面音效总组 · 未命名组 4103209199",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3075009468 的参考类别，未逐组试听确认",
+      "category": "界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3145001837,
+      "parent": 253003338,
+      "name": "事件音乐（Event_BGM_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "事件音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3066415342,
+      "parent": 3145001837,
+      "name": "事件音乐 · 未命名组 3066415342",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3145001837 的参考类别，未逐组试听确认",
+      "category": "事件音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3179867851,
+      "parent": 253003338,
+      "name": "事件音效（Event_SE_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "事件音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 794264280,
+      "parent": 3179867851,
+      "name": "事件音效 · 未命名组 794264280",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3179867851 的参考类别，未逐组试听确认",
+      "category": "事件音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1814716149,
+      "parent": 3179867851,
+      "name": "主要事件音效（Event_Main）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "事件音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3223046451,
+      "parent": 3179867851,
+      "name": "事件音效 · 未命名组 3223046451",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 3179867851 的参考类别，未逐组试听确认",
+      "category": "事件音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3502364734,
+      "parent": 3179867851,
+      "name": "事件随从音效（Event_Otomo）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "事件音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3513968129,
+      "parent": 253003338,
+      "name": "事件玩家语音（Event_PL_Voice）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "玩家语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4141759354,
+      "parent": 253003338,
+      "name": "背景音乐总组（BGM_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1613532887,
+      "parent": 4141759354,
+      "name": "任务音乐总组（bgm_quest_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 913229679,
+      "parent": 1613532887,
+      "name": "任务战斗音乐（bgm_quest_Battle）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 243760356,
+      "parent": 913229679,
+      "name": "任务战斗音乐 · 未命名组 243760356",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 913229679 的参考类别，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1110447096,
+      "parent": 913229679,
+      "name": "任务战斗音乐 · 未命名组 1110447096",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 913229679 的参考类别，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4270974851,
+      "parent": 913229679,
+      "name": "任务战斗音乐 · 未命名组 4270974851",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 913229679 的参考类别，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1957127820,
+      "parent": 1613532887,
+      "name": "任务演出音乐（bgm_quest_Demo）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2728400764,
+      "parent": 1613532887,
+      "name": "任务音乐 · meat（BGM_Quest_meat）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2985039989,
+      "parent": 1613532887,
+      "name": "任务场景音乐（bgm_quest_Map）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3140653121,
+      "parent": 1613532887,
+      "name": "任务音乐总组 · 未命名组 3140653121",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 1613532887 的参考类别，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3431724106,
+      "parent": 1613532887,
+      "name": "任务音乐总组 · 未命名组 3431724106",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 1613532887 的参考类别，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3560323826,
+      "parent": 1613532887,
+      "name": "任务结算音乐（bgm_quest_result）",
+      "nameSource": "游戏音频设置元数据字符串与 Wwise FNV 一致；中文为参考释义",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3770324682,
+      "parent": 1613532887,
+      "name": "任务提示乐（BGM_Quest_Jingle）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1697325113,
+      "parent": 4141759354,
+      "name": "大厅音乐总组（bgm_lobby_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 954366176,
+      "parent": 1697325113,
+      "name": "大厅提示乐（BGM_Lobby_Jingle）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1263889584,
+      "parent": 1697325113,
+      "name": "大厅音乐（bgm_lobby）",
+      "nameSource": "游戏音频设置元数据字符串与 Wwise FNV 一致；中文为参考释义",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1002551518,
+      "parent": 1263889584,
+      "name": "大厅音乐人声（bgm_lobby_VO）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2041683921,
+      "parent": 1697325113,
+      "name": "大厅音乐总组 · 未命名组 2041683921",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 1697325113 的参考类别，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2892451698,
+      "parent": 4141759354,
+      "name": "背景音乐总组 · 未命名组 2892451698",
+      "nameSource": "具体名称未恢复；按实际父子路由归入父组 4141759354 的参考类别，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3632523416,
+      "parent": 4141759354,
+      "name": "通用音乐总组（BGM_Common_Master）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1659652729,
+      "parent": 3632523416,
+      "name": "通用提示乐（BGM_Common_Jingle）",
+      "nameSource": "有限词汇按 Wwise FNV 恢复的参考名称；原始大小写未知，未逐组试听确认",
+      "category": "背景音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 805203703,
+      "parent": 0,
+      "name": "次级输出（Master Secondary Bus）",
+      "nameSource": "标准 Wwise 名称与 FNV 一致；输出用途未额外实测",
+      "category": "混音输出",
+      "auxiliary": false,
+      "slot": 3
+    }
+  ]
+}
