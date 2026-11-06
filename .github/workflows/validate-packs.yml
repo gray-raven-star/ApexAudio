@@ -2,24 +2,26 @@ name: Validate official game packs
 
 on:
   pull_request:
-    paths:
+    paths: &gamepack-paths
       - 'gamepacks/**'
-      - 'adapters/**'
-      - 'src/**'
-      - 'tools/**'
+      - 'adapters/Fmod/**'
+      - 'adapters/Unreal/**'
+      - 'adapters/Wwise/**'
+      - 'src/ApexAudio.Contracts/**'
+      - 'src/ApexAudio.Core/**'
+      - 'src/ApexAudio.Windows/**'
+      - 'tools/DevTools/**'
+      - tools/Build-GamePack.ps1
+      - tools/Copy-GamePackDefinition.ps1
+      - tools/Environment.ps1
+      - tools/FindCompiler.ps1
+      - tools/Pack.ps1
       - Directory.Build.props
       - NuGet.Config
       - .github/workflows/validate-packs.yml
   push:
     branches: [main]
-    paths:
-      - 'gamepacks/**'
-      - 'adapters/**'
-      - 'src/**'
-      - 'tools/**'
-      - Directory.Build.props
-      - NuGet.Config
-      - .github/workflows/validate-packs.yml
+    paths: *gamepack-paths
   workflow_dispatch:
 
 permissions:
@@ -64,9 +66,14 @@ jobs:
           if base and base.strip("0"):
               diff = subprocess.check_output(["git", "diff", "--no-renames", "--name-only", "-z", base, "HEAD"])
               paths = diff.decode("utf-8").rstrip("\0").split("\0")
-              shared = ("adapters/", "src/", "tools/", "Directory.Build.props", "NuGet.Config",
-                        ".github/workflows/validate-packs.yml")
-              if not any(path.startswith(shared) for path in paths):
+              shared_dirs = ("adapters/Fmod/", "adapters/Unreal/", "adapters/Wwise/",
+                             "src/ApexAudio.Contracts/", "src/ApexAudio.Core/", "src/ApexAudio.Windows/",
+                             "tools/DevTools/")
+              shared_files = {"tools/Build-GamePack.ps1", "tools/Copy-GamePackDefinition.ps1",
+                              "tools/Environment.ps1", "tools/FindCompiler.ps1", "tools/Pack.ps1",
+                              "Directory.Build.props", "NuGet.Config", "gamepacks/.gitattributes",
+                              ".github/workflows/validate-packs.yml"}
+              if not any(path in shared_files or path.startswith(shared_dirs) for path in paths):
                   changed = {path.split("/")[1] for path in paths if path.startswith("gamepacks/")}
                   packs = {slug: pack_id for slug, pack_id in packs.items() if slug in changed}
 
