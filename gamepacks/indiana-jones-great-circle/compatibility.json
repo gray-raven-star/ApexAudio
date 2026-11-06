@@ -1,0 +1,77 @@
+{
+  "TheGreatCircle.exe": {
+    "Mode": "same-code-layout",
+    "Sections": [
+      {
+        "Name": ".text",
+        "Rva": 4096,
+        "Size": 46262572,
+        "RawSize": 46262784,
+        "Sha256": "FA7BD36121FE06F5819A90ED6F89C65D23B68D94645B49D8D7332FFD28505EDF"
+      },
+      {
+        "Name": ".rdata",
+        "Rva": 46268416,
+        "Size": 19187758,
+        "RawSize": 19188224,
+        "Sha256": "990F62C0295D18795E0F34DA5BB0D28158D000F90E3C4582138CAC89AC41E3F4"
+      },
+      {
+        "Name": ".data",
+        "Rva": 65458176,
+        "Size": 53279232,
+        "RawSize": 10436608,
+        "Sha256": null
+      },
+      {
+        "Name": ".pdata",
+        "Rva": 118738944,
+        "Size": 1866900,
+        "RawSize": 1867264,
+        "Sha256": null
+      },
+      {
+        "Name": "_RDATA",
+        "Rva": 120606720,
+        "Size": 138000,
+        "RawSize": 138240,
+        "Sha256": null
+      },
+      {
+        "Name": ".mydata",
+        "Rva": 120745984,
+        "Size": 12,
+        "RawSize": 512,
+        "Sha256": null
+      },
+      {
+        "Name": ".xbld",
+        "Rva": 120750080,
+        "Size": 449,
+        "RawSize": 512,
+        "Sha256": null
+      },
+      {
+        "Name": ".rsrc",
+        "Rva": 120754176,
+        "Size": 84776,
+        "RawSize": 84992,
+        "Sha256": null
+      },
+      {
+        "Name": ".reloc",
+        "Rva": 120840192,
+        "Size": 1525244,
+        "RawSize": 1525248,
+        "Sha256": null
+      },
+      {
+        "Name": ".bind",
+        "Rva": 122368000,
+        "Size": 233544,
+        "RawSize": 233544,
+        "Sha256": "0EB3F7D2B54812073B537C54E05CBBA747F80686E45131D5A56C17EA91B0039D"
+      }
+    ]
+  }
+}

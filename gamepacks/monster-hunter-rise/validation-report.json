@@ -1,0 +1,4156 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-15",
+  "packId": "independent.mhrise.wwise",
+  "packVersion": "0.1.1",
+  "target": {
+    "executable": "MonsterHunterRise.exe",
+    "executableSha256": "29FA23A9CE24613A9B05CE84F7EBFA3262AAF5053B377B43FD8DFC09071AA7FC",
+    "steamBuildId": "17920865",
+    "bankVersion": 140,
+    "abi": "Wwise 2021.1-compatible ABI selected from DevKit; real registration/bank load/callback/PCM succeeded",
+    "exactSdkBuild": "not identified"
+  },
+  "independence": "使用用户提供的 DevKit、当前本机游戏原文件和公开格式实现；未访问旧的崛起适配结果。",
+  "groups": {
+    "ordinary": 143,
+    "configuredCapture": 142,
+    "auxiliaryNotCaptured": 67,
+    "masterMetadataOnly": 3803692087,
+    "reason": "Master has all four effect slots occupied in original Init.bnk"
+  },
+  "stages": {
+    "build": "passed",
+    "integrity": "passed",
+    "protocol": "passed: 143 groups / 142 HasPcm",
+    "nativeSelfTest": 0,
+    "registration": "Connect succeeded: 142 SetBusEffect calls returned success",
+    "realPcm": "passed: 3 nonzero buses at title screen",
+    "trackIndependence": "Different payload hashes observed; top bus is parent of the other two, so overlap is expected. This is not proof of three unrelated sound categories.",
+    "transport": "0 dropped blocks; no reported errors",
+    "realtimeMapping": "active; 283 published blocks; selection remains empty",
+    "lifecycle": "normal test completion/disposal; game remains running. Explicit stop/restart/reconnect/exit cases not separately tested.",
+    "semantics": "72 ordinary groups have reference names (finite hash recovery and some current-game settings strings); 71 retain numeric identifiers and optional ancestor-based reference labels. No exhaustive audition performed.",
+    "physicalController": "not tested; no X-Haptics or physical output started"
+  },
+  "capture": {
+    "integrity": true,
+    "id": "independent.mhrise.wwise",
+    "version": "0.1.0",
+    "adapterExecuted": true,
+    "gameConnected": true,
+    "demoConnected": false,
+    "groups": [
+      {
+        "id": "3803692087",
+        "name": "主混音（仅层级，不采集）",
+        "parentId": null,
+        "category": "音频总线",
+        "hasPcm": false,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "253003338",
+        "name": "音频总线 253003338",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "23001570",
+        "name": "音频总线 23001570",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "814663814",
+        "name": "音频总线 814663814",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "392537532",
+        "name": "音频总线 392537532",
+        "parentId": "814663814",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "196593681",
+        "name": "音频总线 196593681",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "835735623",
+        "name": "音频总线 835735623",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1679905368",
+        "name": "音频总线 1679905368",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1803442492",
+        "name": "音频总线 1803442492",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1803442493",
+        "name": "音频总线 1803442493",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1803442494",
+        "name": "音频总线 1803442494",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997632",
+        "name": "音频总线 1836997632",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997633",
+        "name": "音频总线 1836997633",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997635",
+        "name": "音频总线 1836997635",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997638",
+        "name": "音频总线 1836997638",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997639",
+        "name": "音频总线 1836997639",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1863469084",
+        "name": "音频总线 1863469084",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2003346832",
+        "name": "音频总线 2003346832",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2003346835",
+        "name": "音频总线 2003346835",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2662913198",
+        "name": "音频总线 2662913198",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2767677640",
+        "name": "音频总线 2767677640",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3205032327",
+        "name": "音频总线 3205032327",
+        "parentId": "814663814",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "50050244",
+        "name": "音频总线 50050244",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "580059306",
+        "name": "音频总线 580059306",
+        "parentId": "50050244",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2107988482",
+        "name": "音频总线 2107988482",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2698677555",
+        "name": "音频总线 2698677555",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3013247952",
+        "name": "音频总线 3013247952",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3257180952",
+        "name": "音频总线 3257180952",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3281689728",
+        "name": "音频总线 3281689728",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3281689751",
+        "name": "音频总线 3281689751",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3342556899",
+        "name": "音频总线 3342556899",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3670746297",
+        "name": "音频总线 3670746297",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1819748195",
+        "name": "音频总线 1819748195",
+        "parentId": "50050244",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "377287256",
+        "name": "音频总线 377287256",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1744231092",
+        "name": "音频总线 1744231092",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1903594596",
+        "name": "音频总线 1903594596",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2838238495",
+        "name": "音频总线 2838238495",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3012978083",
+        "name": "音频总线 3012978083",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3281419908",
+        "name": "音频总线 3281419908",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3281419923",
+        "name": "音频总线 3281419923",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3647958503",
+        "name": "音频总线 3647958503",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "717843337",
+        "name": "音频总线 717843337",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "957788960",
+        "name": "音频总线 957788960",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1933058324",
+        "name": "音频总线 1933058324",
+        "parentId": "957788960",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1763003628",
+        "name": "音频总线 1763003628",
+        "parentId": "1933058324",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3353848690",
+        "name": "音频总线 3353848690",
+        "parentId": "1933058324",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3663448410",
+        "name": "音频总线 3663448410",
+        "parentId": "957788960",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1933463838",
+        "name": "音频总线 1933463838",
+        "parentId": "3663448410",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2529193900",
+        "name": "音频总线 2529193900",
+        "parentId": "3663448410",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1090403738",
+        "name": "音频总线 1090403738",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1267086631",
+        "name": "音频总线 1267086631",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1432530473",
+        "name": "音频总线 1432530473",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1501464320",
+        "name": "音频总线 1501464320",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1664353713",
+        "name": "音频总线 1664353713",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2154761356",
+        "name": "音频总线 2154761356",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "514405275",
+        "name": "音频总线 514405275",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "854769676",
+        "name": "音频总线 854769676",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2057540599",
+        "name": "音频总线 2057540599",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2633393377",
+        "name": "音频总线 2633393377",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2774048450",
+        "name": "音频总线 2774048450",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2949880285",
+        "name": "音频总线 2949880285",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3457292308",
+        "name": "音频总线 3457292308",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3657774559",
+        "name": "音频总线 3657774559",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4146945521",
+        "name": "音频总线 4146945521",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2472534735",
+        "name": "音频总线 2472534735",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "203987704",
+        "name": "音频总线 203987704",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "460094734",
+        "name": "音频总线 460094734",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2396605251",
+        "name": "音频总线 2396605251",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2531991544",
+        "name": "音频总线 2531991544",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3607995691",
+        "name": "音频总线 3607995691",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2493685259",
+        "name": "音频总线 2493685259",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3429794846",
+        "name": "音频总线 3429794846",
+        "parentId": "2493685259",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4210235045",
+        "name": "音频总线 4210235045",
+        "parentId": "2493685259",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4294123248",
+        "name": "音频总线 4294123248",
+        "parentId": "2493685259",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2567740528",
+        "name": "音频总线 2567740528",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3223516310",
+        "name": "音频总线 3223516310",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "264685801",
+        "name": "音频总线 264685801",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3098530433",
+        "name": "音频总线 3098530433",
+        "parentId": "264685801",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3273465751",
+        "name": "音频总线 3273465751",
+        "parentId": "264685801",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4097032877",
+        "name": "音频总线 4097032877",
+        "parentId": "264685801",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "516350030",
+        "name": "音频总线 516350030",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1935249320",
+        "name": "音频总线 1935249320",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3036395753",
+        "name": "音频总线 3036395753",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "245673290",
+        "name": "音频总线 245673290",
+        "parentId": "3036395753",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "478119502",
+        "name": "音频总线 478119502",
+        "parentId": "3036395753",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3900222898",
+        "name": "音频总线 3900222898",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3394440612",
+        "name": "音频总线 3394440612",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3625804358",
+        "name": "音频总线 3625804358",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4004218990",
+        "name": "音频总线 4004218990",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "926848091",
+        "name": "音频总线 926848091",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1455882868",
+        "name": "音频总线 1455882868",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1875529325",
+        "name": "音频总线 1875529325",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "814287309",
+        "name": "音频总线 814287309",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1277508763",
+        "name": "音频总线 1277508763",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2028987858",
+        "name": "音频总线 2028987858",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2776907015",
+        "name": "音频总线 2776907015",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2983090232",
+        "name": "音频总线 2983090232",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3137993214",
+        "name": "音频总线 3137993214",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3339510539",
+        "name": "音频总线 3339510539",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3549715305",
+        "name": "音频总线 3549715305",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3559843295",
+        "name": "音频总线 3559843295",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3603123945",
+        "name": "音频总线 3603123945",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3800787469",
+        "name": "音频总线 3800787469",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3941477710",
+        "name": "音频总线 3941477710",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2414365428",
+        "name": "音频总线 2414365428",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "509070426",
+        "name": "音频总线 509070426",
+        "parentId": "2414365428",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "702945423",
+        "name": "音频总线 702945423",
+        "parentId": "2414365428",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "966464572",
+        "name": "音频总线 966464572",
+        "parentId": "2414365428",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2148127105",
+        "name": "音频总线 2148127105",
+        "parentId": "2414365428",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2563992102",
+        "name": "音频总线 2563992102",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3075009468",
+        "name": "音频总线 3075009468",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1150492938",
+        "name": "音频总线 1150492938",
+        "parentId": "3075009468",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4103209199",
+        "name": "音频总线 4103209199",
+        "parentId": "3075009468",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3145001837",
+        "name": "音频总线 3145001837",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3066415342",
+        "name": "音频总线 3066415342",
+        "parentId": "3145001837",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3179867851",
+        "name": "音频总线 3179867851",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "794264280",
+        "name": "音频总线 794264280",
+        "parentId": "3179867851",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1814716149",
+        "name": "音频总线 1814716149",
+        "parentId": "3179867851",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3223046451",
+        "name": "音频总线 3223046451",
+        "parentId": "3179867851",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3502364734",
+        "name": "音频总线 3502364734",
+        "parentId": "3179867851",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3513968129",
+        "name": "音频总线 3513968129",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4141759354",
+        "name": "音频总线 4141759354",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1613532887",
+        "name": "音频总线 1613532887",
+        "parentId": "4141759354",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "913229679",
+        "name": "音频总线 913229679",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "243760356",
+        "name": "音频总线 243760356",
+        "parentId": "913229679",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1110447096",
+        "name": "音频总线 1110447096",
+        "parentId": "913229679",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4270974851",
+        "name": "音频总线 4270974851",
+        "parentId": "913229679",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1957127820",
+        "name": "音频总线 1957127820",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2728400764",
+        "name": "音频总线 2728400764",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2985039989",
+        "name": "音频总线 2985039989",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3140653121",
+        "name": "音频总线 3140653121",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3431724106",
+        "name": "音频总线 3431724106",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3560323826",
+        "name": "音频总线 3560323826",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3770324682",
+        "name": "音频总线 3770324682",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1697325113",
+        "name": "音频总线 1697325113",
+        "parentId": "4141759354",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "954366176",
+        "name": "音频总线 954366176",
+        "parentId": "1697325113",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1263889584",
+        "name": "音频总线 1263889584",
+        "parentId": "1697325113",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1002551518",
+        "name": "音频总线 1002551518",
+        "parentId": "1263889584",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2041683921",
+        "name": "音频总线 2041683921",
+        "parentId": "1697325113",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2892451698",
+        "name": "音频总线 2892451698",
+        "parentId": "4141759354",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3632523416",
+        "name": "音频总线 3632523416",
+        "parentId": "4141759354",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1659652729",
+        "name": "音频总线 1659652729",
+        "parentId": "3632523416",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "805203703",
+        "name": "音频总线 805203703",
+        "parentId": null,
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      }
+    ],
+    "packets": 843,
+    "frames": 863232,
+    "nonZeroGroups": 3,
+    "peaks": [
+      {
+        "id": "253003338",
+        "peak": 0.13409424,
+        "firstPayloadSha256": "FC9A95DC65D47BD5EB5D91CB556EB83CF3E9A175810B5D49743C16E9A49C8FC6"
+      },
+      {
+        "id": "3145001837",
+        "peak": 0.13284302,
+        "firstPayloadSha256": "05A0440B3E25997917D5F4C4D1DB8AA239F0985AD435CA789B019769F61204BB"
+      },
+      {
+        "id": "3179867851",
+        "peak": 0.03942871,
+        "firstPayloadSha256": "CA6571603CA5A107D84596FEEF3420E0DF190D570A42F841607FD1DDFD0D822F"
+      }
+    ],
+    "status": {
+      "connected": true,
+      "capturing": true,
+      "detail": "正在采集独立分组",
+      "droppedBlocks": 0
+    },
+    "realtime": {
+      "format": "apex-f32-planar-ring-v1",
+      "active": 1,
+      "blocks": 283
+    },
+    "errors": [],
+    "limitations": "PCM proves received data, not semantic separation. Matching hashes may indicate parent/child overlap or duplicate data and require listening. No X-Haptics engine or physical feedback was started."
+  },
+  "nativeSelfTest": {
+    "sha256": "A057506379043D883D9E5632939E5E325E2E5A0F1D6298A50B53B71AEA0F7E94",
+    "entry": "CaptureSelfTest",
+    "result": 0,
+    "gameConnected": false
+  },
+  "initialProtocol": {
+    "integrity": true,
+    "id": "independent.mhrise.wwise",
+    "version": "0.1.0",
+    "adapterExecuted": true,
+    "gameConnected": false,
+    "demoConnected": false,
+    "groups": [
+      {
+        "id": "3803692087",
+        "name": "主混音（仅层级，不采集）",
+        "parentId": null,
+        "category": "音频总线",
+        "hasPcm": false,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "253003338",
+        "name": "音频总线 253003338",
+        "parentId": "3803692087",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "23001570",
+        "name": "音频总线 23001570",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "814663814",
+        "name": "音频总线 814663814",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "392537532",
+        "name": "音频总线 392537532",
+        "parentId": "814663814",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "196593681",
+        "name": "音频总线 196593681",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "835735623",
+        "name": "音频总线 835735623",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1679905368",
+        "name": "音频总线 1679905368",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1803442492",
+        "name": "音频总线 1803442492",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1803442493",
+        "name": "音频总线 1803442493",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1803442494",
+        "name": "音频总线 1803442494",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997632",
+        "name": "音频总线 1836997632",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997633",
+        "name": "音频总线 1836997633",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997635",
+        "name": "音频总线 1836997635",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997638",
+        "name": "音频总线 1836997638",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1836997639",
+        "name": "音频总线 1836997639",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1863469084",
+        "name": "音频总线 1863469084",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2003346832",
+        "name": "音频总线 2003346832",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2003346835",
+        "name": "音频总线 2003346835",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2662913198",
+        "name": "音频总线 2662913198",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2767677640",
+        "name": "音频总线 2767677640",
+        "parentId": "392537532",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3205032327",
+        "name": "音频总线 3205032327",
+        "parentId": "814663814",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "50050244",
+        "name": "音频总线 50050244",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "580059306",
+        "name": "音频总线 580059306",
+        "parentId": "50050244",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2107988482",
+        "name": "音频总线 2107988482",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2698677555",
+        "name": "音频总线 2698677555",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3013247952",
+        "name": "音频总线 3013247952",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3257180952",
+        "name": "音频总线 3257180952",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3281689728",
+        "name": "音频总线 3281689728",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3281689751",
+        "name": "音频总线 3281689751",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3342556899",
+        "name": "音频总线 3342556899",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3670746297",
+        "name": "音频总线 3670746297",
+        "parentId": "580059306",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1819748195",
+        "name": "音频总线 1819748195",
+        "parentId": "50050244",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "377287256",
+        "name": "音频总线 377287256",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1744231092",
+        "name": "音频总线 1744231092",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1903594596",
+        "name": "音频总线 1903594596",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2838238495",
+        "name": "音频总线 2838238495",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3012978083",
+        "name": "音频总线 3012978083",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3281419908",
+        "name": "音频总线 3281419908",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3281419923",
+        "name": "音频总线 3281419923",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3647958503",
+        "name": "音频总线 3647958503",
+        "parentId": "1819748195",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "717843337",
+        "name": "音频总线 717843337",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "957788960",
+        "name": "音频总线 957788960",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1933058324",
+        "name": "音频总线 1933058324",
+        "parentId": "957788960",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1763003628",
+        "name": "音频总线 1763003628",
+        "parentId": "1933058324",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3353848690",
+        "name": "音频总线 3353848690",
+        "parentId": "1933058324",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3663448410",
+        "name": "音频总线 3663448410",
+        "parentId": "957788960",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1933463838",
+        "name": "音频总线 1933463838",
+        "parentId": "3663448410",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2529193900",
+        "name": "音频总线 2529193900",
+        "parentId": "3663448410",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1090403738",
+        "name": "音频总线 1090403738",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1267086631",
+        "name": "音频总线 1267086631",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1432530473",
+        "name": "音频总线 1432530473",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1501464320",
+        "name": "音频总线 1501464320",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1664353713",
+        "name": "音频总线 1664353713",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2154761356",
+        "name": "音频总线 2154761356",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "514405275",
+        "name": "音频总线 514405275",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "854769676",
+        "name": "音频总线 854769676",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2057540599",
+        "name": "音频总线 2057540599",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2633393377",
+        "name": "音频总线 2633393377",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2774048450",
+        "name": "音频总线 2774048450",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2949880285",
+        "name": "音频总线 2949880285",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3457292308",
+        "name": "音频总线 3457292308",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3657774559",
+        "name": "音频总线 3657774559",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4146945521",
+        "name": "音频总线 4146945521",
+        "parentId": "2154761356",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2472534735",
+        "name": "音频总线 2472534735",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "203987704",
+        "name": "音频总线 203987704",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "460094734",
+        "name": "音频总线 460094734",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2396605251",
+        "name": "音频总线 2396605251",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2531991544",
+        "name": "音频总线 2531991544",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3607995691",
+        "name": "音频总线 3607995691",
+        "parentId": "2472534735",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2493685259",
+        "name": "音频总线 2493685259",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3429794846",
+        "name": "音频总线 3429794846",
+        "parentId": "2493685259",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4210235045",
+        "name": "音频总线 4210235045",
+        "parentId": "2493685259",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4294123248",
+        "name": "音频总线 4294123248",
+        "parentId": "2493685259",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2567740528",
+        "name": "音频总线 2567740528",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3223516310",
+        "name": "音频总线 3223516310",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "264685801",
+        "name": "音频总线 264685801",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3098530433",
+        "name": "音频总线 3098530433",
+        "parentId": "264685801",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3273465751",
+        "name": "音频总线 3273465751",
+        "parentId": "264685801",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4097032877",
+        "name": "音频总线 4097032877",
+        "parentId": "264685801",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "516350030",
+        "name": "音频总线 516350030",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1935249320",
+        "name": "音频总线 1935249320",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3036395753",
+        "name": "音频总线 3036395753",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "245673290",
+        "name": "音频总线 245673290",
+        "parentId": "3036395753",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "478119502",
+        "name": "音频总线 478119502",
+        "parentId": "3036395753",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3900222898",
+        "name": "音频总线 3900222898",
+        "parentId": "3223516310",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3394440612",
+        "name": "音频总线 3394440612",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3625804358",
+        "name": "音频总线 3625804358",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4004218990",
+        "name": "音频总线 4004218990",
+        "parentId": "3205032327",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "926848091",
+        "name": "音频总线 926848091",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1455882868",
+        "name": "音频总线 1455882868",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1875529325",
+        "name": "音频总线 1875529325",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "814287309",
+        "name": "音频总线 814287309",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1277508763",
+        "name": "音频总线 1277508763",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2028987858",
+        "name": "音频总线 2028987858",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2776907015",
+        "name": "音频总线 2776907015",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2983090232",
+        "name": "音频总线 2983090232",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3137993214",
+        "name": "音频总线 3137993214",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3339510539",
+        "name": "音频总线 3339510539",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3549715305",
+        "name": "音频总线 3549715305",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3559843295",
+        "name": "音频总线 3559843295",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3603123945",
+        "name": "音频总线 3603123945",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3800787469",
+        "name": "音频总线 3800787469",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3941477710",
+        "name": "音频总线 3941477710",
+        "parentId": "1875529325",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2414365428",
+        "name": "音频总线 2414365428",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "509070426",
+        "name": "音频总线 509070426",
+        "parentId": "2414365428",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "702945423",
+        "name": "音频总线 702945423",
+        "parentId": "2414365428",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "966464572",
+        "name": "音频总线 966464572",
+        "parentId": "2414365428",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2148127105",
+        "name": "音频总线 2148127105",
+        "parentId": "2414365428",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2563992102",
+        "name": "音频总线 2563992102",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3075009468",
+        "name": "音频总线 3075009468",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1150492938",
+        "name": "音频总线 1150492938",
+        "parentId": "3075009468",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4103209199",
+        "name": "音频总线 4103209199",
+        "parentId": "3075009468",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3145001837",
+        "name": "音频总线 3145001837",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3066415342",
+        "name": "音频总线 3066415342",
+        "parentId": "3145001837",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3179867851",
+        "name": "音频总线 3179867851",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "794264280",
+        "name": "音频总线 794264280",
+        "parentId": "3179867851",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1814716149",
+        "name": "音频总线 1814716149",
+        "parentId": "3179867851",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3223046451",
+        "name": "音频总线 3223046451",
+        "parentId": "3179867851",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3502364734",
+        "name": "音频总线 3502364734",
+        "parentId": "3179867851",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3513968129",
+        "name": "音频总线 3513968129",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4141759354",
+        "name": "音频总线 4141759354",
+        "parentId": "253003338",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1613532887",
+        "name": "音频总线 1613532887",
+        "parentId": "4141759354",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "913229679",
+        "name": "音频总线 913229679",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "243760356",
+        "name": "音频总线 243760356",
+        "parentId": "913229679",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1110447096",
+        "name": "音频总线 1110447096",
+        "parentId": "913229679",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "4270974851",
+        "name": "音频总线 4270974851",
+        "parentId": "913229679",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1957127820",
+        "name": "音频总线 1957127820",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2728400764",
+        "name": "音频总线 2728400764",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2985039989",
+        "name": "音频总线 2985039989",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3140653121",
+        "name": "音频总线 3140653121",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3431724106",
+        "name": "音频总线 3431724106",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3560323826",
+        "name": "音频总线 3560323826",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3770324682",
+        "name": "音频总线 3770324682",
+        "parentId": "1613532887",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1697325113",
+        "name": "音频总线 1697325113",
+        "parentId": "4141759354",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "954366176",
+        "name": "音频总线 954366176",
+        "parentId": "1697325113",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1263889584",
+        "name": "音频总线 1263889584",
+        "parentId": "1697325113",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1002551518",
+        "name": "音频总线 1002551518",
+        "parentId": "1263889584",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2041683921",
+        "name": "音频总线 2041683921",
+        "parentId": "1697325113",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "2892451698",
+        "name": "音频总线 2892451698",
+        "parentId": "4141759354",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "3632523416",
+        "name": "音频总线 3632523416",
+        "parentId": "4141759354",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": true,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "1659652729",
+        "name": "音频总线 1659652729",
+        "parentId": "3632523416",
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      },
+      {
+        "id": "805203703",
+        "name": "音频总线 805203703",
+        "parentId": null,
+        "category": "音频总线",
+        "hasPcm": true,
+        "containsChildren": false,
+        "nameSource": "原始 Init.bnk 总线编号；主混音名称为标准 Wwise FNV 对应"
+      }
+    ],
+    "packets": 0,
+    "frames": 0,
+    "nonZeroGroups": 0,
+    "peaks": [],
+    "status": null,
+    "realtime": null,
+    "errors": [],
+    "limitations": "PCM proves received data, not semantic separation. Matching hashes may indicate parent/child overlap or duplicate data and require listening. No X-Haptics engine or physical feedback was started."
+  },
+  "userAssistance": [
+    {
+      "action": "启动游戏并停在标题画面",
+      "count": 1
+    }
+  ],
+  "limitations": [
+    "效果槽仅按原始银行确认空闲；未证明未来场景或其他模组不会动态占用。",
+    "143 条普通总线中仅 142 条配置采集；主混音只展示层级。",
+    "只支持已绑定的本机 EXE 摘要，更新后需重新适配。",
+    "精确 SDK 补丁版本尚未识别，仅验证了本包所用 ABI 可工作。",
+    "名称多数是哈希恢复候选，不保证原作大小写或逐项语义；剩余 71 条普通总线尚未恢复名称。"
+  ],
+  "publicSourceSha256": {
+    "MHR_STM_Release.list": "BD59E623CB9770D446DFCA1CA6F16E13AB402E7720B21C5D7FAA6F69AFD7DF81",
+    "Murmur3.cs": "CA4AC00D7D52CB921DD96CB929F0D8656390CA05ED36357A11751093A020AA96",
+    "PakCipher.cs": "164508D88275BA2BE279DD758308F040CEBC5C46E11C393418AF3CEF3E84C0DE",
+    "PakEntry.cs": "FA355E2C6AAFCD8F97195F2CE8C47F6E31CAE7AC6791B376B22EA380330A58BE",
+    "PakHash.cs": "A622113C48FE7126003848CA51506BFFE7793FAA1E65AC7FBE87EF6496072496",
+    "PakHeader.cs": "DDD4D08E262734A5530FA2687EF9AC841C11F95EF721D3F1643EFF39B5C32E94",
+    "PakList.cs": "3963F84C565262B360942D7EBFD7BF9664E04DA6B25C08A5DE7AA2D57D54F223",
+    "PakUnpack.cs": "55E73431074D50B65845C350095A857FFAB9844293490026BE266CE623605AE3",
+    "Program.cs": "622107F28E18E35A9D185A4C66BECAC5B6426906C7FDDFA9D012FAA98AF3A295"
+  },
+  "namingUpdate": {
+    "version": "0.1.1",
+    "ordinaryTotal": 143,
+    "referenceNamed": 72,
+    "stillNumbered": 71,
+    "metadataStringMatched": 2,
+    "mapping": [
+      {
+        "id": 50050244,
+        "recoveredName": "Enemy_Master",
+        "chineseReference": "怪物音效总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 92979990,
+        "recoveredName": "Aux_Init",
+        "chineseReference": "辅助组初始化",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 392537532,
+        "auxiliary": true,
+        "notAuditioned": true
+      },
+      {
+        "id": 245673290,
+        "recoveredName": "Foley_Movement",
+        "chineseReference": "移动拟音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3036395753,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 253003338,
+        "recoveredName": "Main_Audio_Bus",
+        "chineseReference": "主音频",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair"
+        ],
+        "parentId": 3803692087,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 264685801,
+        "recoveredName": "PL_Wp",
+        "chineseReference": "玩家武器",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3223516310,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 392537532,
+        "recoveredName": "Auxiliary_Master",
+        "chineseReference": "辅助混音汇总",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 814663814,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 460094734,
+        "recoveredName": "Env_Base",
+        "chineseReference": "基础环境声",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 2472534735,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 478119502,
+        "recoveredName": "Foley_Footsteps",
+        "chineseReference": "脚步",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3036395753,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 509070426,
+        "recoveredName": "PL_situation_VO",
+        "chineseReference": "玩家情境语音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 2414365428,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 516350030,
+        "recoveredName": "PL_fx",
+        "chineseReference": "玩家效果声",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3223516310,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 580059306,
+        "recoveredName": "EMS",
+        "chineseReference": "怪物音效 · EMS",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 50050244,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 805203703,
+        "recoveredName": "Master Secondary Bus",
+        "chineseReference": "次级输出",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "standard Wwise name candidate"
+        ],
+        "parentId": 0,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 814663814,
+        "recoveredName": "SE_Master",
+        "chineseReference": "音效总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 913229679,
+        "recoveredName": "bgm_quest_Battle",
+        "chineseReference": "任务战斗音乐",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1613532887,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 926848091,
+        "recoveredName": "UI_Master_Pause",
+        "chineseReference": "暂停界面音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 954366176,
+        "recoveredName": "BGM_Lobby_Jingle",
+        "chineseReference": "大厅提示乐",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1697325113,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 957788960,
+        "recoveredName": "Otomo_Master",
+        "chineseReference": "随从音效总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 966464572,
+        "recoveredName": "Dialogue_NPC_Chat",
+        "chineseReference": "NPC 闲聊对白",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair"
+        ],
+        "parentId": 2414365428,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1002551518,
+        "recoveredName": "bgm_lobby_VO",
+        "chineseReference": "大厅音乐人声",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1263889584,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1090403738,
+        "recoveredName": "EC_Master",
+        "chineseReference": "环境生物音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1150492938,
+        "recoveredName": "UI_info",
+        "chineseReference": "界面提示音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3075009468,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1263889584,
+        "recoveredName": "bgm_lobby",
+        "chineseReference": "大厅音乐",
+        "kind": "metadata-string-hash-match",
+        "origins": [
+          "candidate word pair",
+          "current game settings metadata: music_manager_settings_data.user.2",
+          "explicit candidate vocabulary",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1697325113,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1267086631,
+        "recoveredName": "Gimmick_Master",
+        "chineseReference": "机关与场景互动",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1455882868,
+        "recoveredName": "UI_Other",
+        "chineseReference": "界面其他音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1613532887,
+        "recoveredName": "bgm_quest_Master",
+        "chineseReference": "任务音乐总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 4141759354,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1659652729,
+        "recoveredName": "BGM_Common_Jingle",
+        "chineseReference": "通用提示乐",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3632523416,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1697325113,
+        "recoveredName": "bgm_lobby_Master",
+        "chineseReference": "大厅音乐总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 4141759354,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1763003628,
+        "recoveredName": "Airou_Other",
+        "chineseReference": "随从猫其他音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1933058324,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1814716149,
+        "recoveredName": "Event_Main",
+        "chineseReference": "主要事件音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3179867851,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1819748195,
+        "recoveredName": "EM",
+        "chineseReference": "怪物音效 · EM",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "explicit candidate vocabulary"
+        ],
+        "parentId": 50050244,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1933058324,
+        "recoveredName": "Airou_Master",
+        "chineseReference": "随从猫",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 957788960,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1933463838,
+        "recoveredName": "Dog_Other",
+        "chineseReference": "随从狗其他音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3663448410,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1935249320,
+        "recoveredName": "PL_Action_VO",
+        "chineseReference": "玩家动作语音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3223516310,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 1957127820,
+        "recoveredName": "bgm_quest_Demo",
+        "chineseReference": "任务演出音乐",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1613532887,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2148127105,
+        "recoveredName": "Dialogue_Event_Other",
+        "chineseReference": "事件其他对白",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 2414365428,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2154761356,
+        "recoveredName": "Impact_Master",
+        "chineseReference": "撞击与命中音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2414365428,
+        "recoveredName": "Dialogue_Master",
+        "chineseReference": "对白总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2472534735,
+        "recoveredName": "Env_Master",
+        "chineseReference": "环境声",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2493685259,
+        "recoveredName": "NPC_Master",
+        "chineseReference": "NPC 音效总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2529193900,
+        "recoveredName": "Dog_Action_VO",
+        "chineseReference": "随从狗动作语音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3663448410,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2531991544,
+        "recoveredName": "Env_Layer",
+        "chineseReference": "环境声叠加层",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 2472534735,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2563992102,
+        "recoveredName": "UI_Loading",
+        "chineseReference": "加载界面音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2567740528,
+        "recoveredName": "Wp_Ducking",
+        "chineseReference": "武器混音避让",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2728400764,
+        "recoveredName": "BGM_Quest_meat",
+        "chineseReference": "任务音乐 · meat",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1613532887,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 2985039989,
+        "recoveredName": "bgm_quest_Map",
+        "chineseReference": "任务场景音乐",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1613532887,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3012978083,
+        "recoveredName": "EM_VO",
+        "chineseReference": "怪物语音 · EM",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1819748195,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3013247952,
+        "recoveredName": "EMS_VO",
+        "chineseReference": "怪物语音 · EMS",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 580059306,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3036395753,
+        "recoveredName": "PL_Foley",
+        "chineseReference": "玩家动作拟音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3223516310,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3075009468,
+        "recoveredName": "UI_Master",
+        "chineseReference": "界面音效总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3098530433,
+        "recoveredName": "Wp_Whoosh",
+        "chineseReference": "武器挥动",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 264685801,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3145001837,
+        "recoveredName": "Event_BGM_Master",
+        "chineseReference": "事件音乐",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3179867851,
+        "recoveredName": "Event_SE_Master",
+        "chineseReference": "事件音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3205032327,
+        "recoveredName": "SFX_Master",
+        "chineseReference": "通用音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 814663814,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3223516310,
+        "recoveredName": "PL_Master",
+        "chineseReference": "玩家音效总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3205032327,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3273465751,
+        "recoveredName": "Wp_Other",
+        "chineseReference": "武器其他音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 264685801,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3281419908,
+        "recoveredName": "EM_fx",
+        "chineseReference": "怪物效果声 · EM",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1819748195,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3281419923,
+        "recoveredName": "EM_fo",
+        "chineseReference": "怪物动作拟音 · EM",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1819748195,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3281689728,
+        "recoveredName": "EMS_fo",
+        "chineseReference": "怪物动作拟音 · EMS",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 580059306,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3281689751,
+        "recoveredName": "EMS_fx",
+        "chineseReference": "怪物效果声 · EMS",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 580059306,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3353848690,
+        "recoveredName": "Airou_Action_VO",
+        "chineseReference": "随从猫动作语音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1933058324,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3502364734,
+        "recoveredName": "Event_Otomo",
+        "chineseReference": "事件随从音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3179867851,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3513968129,
+        "recoveredName": "Event_PL_Voice",
+        "chineseReference": "事件玩家语音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3560323826,
+        "recoveredName": "bgm_quest_result",
+        "chineseReference": "任务结算音乐",
+        "kind": "metadata-string-hash-match",
+        "origins": [
+          "candidate prefix plus word pair",
+          "candidate word pair",
+          "current game settings metadata: music_manager_settings_data.user.2",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1613532887,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3607995691,
+        "recoveredName": "Env_Wind",
+        "chineseReference": "风声",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 2472534735,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3632523416,
+        "recoveredName": "BGM_Common_Master",
+        "chineseReference": "通用音乐总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair",
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 4141759354,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3663448410,
+        "recoveredName": "Dog_Master",
+        "chineseReference": "随从狗",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 957788960,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3736508534,
+        "recoveredName": "camp",
+        "chineseReference": "营地",
+        "kind": "metadata-string-hash-match",
+        "origins": [
+          "current game settings metadata: mix_manager_settings_data.user.2",
+          "current game settings metadata: music_manager_settings_data.user.2",
+          "explicit candidate vocabulary"
+        ],
+        "parentId": 392537532,
+        "auxiliary": true,
+        "notAuditioned": true
+      },
+      {
+        "id": 3770324682,
+        "recoveredName": "BGM_Quest_Jingle",
+        "chineseReference": "任务提示乐",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 1613532887,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3803692087,
+        "recoveredName": "Master Audio Bus",
+        "chineseReference": "主混音（仅层级，不采集）",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate prefix plus word pair"
+        ],
+        "parentId": 0,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 3900222898,
+        "recoveredName": "PL_Other",
+        "chineseReference": "玩家其他音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 3223516310,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 4097032877,
+        "recoveredName": "Wp_Impact",
+        "chineseReference": "武器命中",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 264685801,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 4141759354,
+        "recoveredName": "BGM_Master",
+        "chineseReference": "背景音乐总组",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 253003338,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 4210235045,
+        "recoveredName": "NPC_SE",
+        "chineseReference": "NPC 动作音效",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 2493685259,
+        "auxiliary": false,
+        "notAuditioned": true
+      },
+      {
+        "id": 4294123248,
+        "recoveredName": "NPC_VO",
+        "chineseReference": "NPC 语音",
+        "kind": "hash-recovered-reference",
+        "origins": [
+          "candidate word pair",
+          "finite hash recovery using current game resource-path vocabulary"
+        ],
+        "parentId": 2493685259,
+        "auxiliary": false,
+        "notAuditioned": true
+      }
+    ],
+    "inheritedCategoryLabels": [
+      {
+        "id": 196593681,
+        "ancestor": 392537532
+      },
+      {
+        "id": 34432310,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2186076424,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3996194420,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3996194423,
+        "ancestor": 392537532
+      },
+      {
+        "id": 706797525,
+        "ancestor": 392537532
+      },
+      {
+        "id": 835735623,
+        "ancestor": 392537532
+      },
+      {
+        "id": 988650139,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1829744993,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2261408386,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2790677192,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3124243358,
+        "ancestor": 392537532
+      },
+      {
+        "id": 4157552836,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1679905368,
+        "ancestor": 392537532
+      },
+      {
+        "id": 57894653,
+        "ancestor": 392537532
+      },
+      {
+        "id": 517476883,
+        "ancestor": 392537532
+      },
+      {
+        "id": 700636128,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1209825702,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1874376499,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3342634946,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3543371892,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3844490108,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1803442492,
+        "ancestor": 392537532
+      },
+      {
+        "id": 4248702064,
+        "ancestor": 392537532
+      },
+      {
+        "id": 4264612092,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1803442493,
+        "ancestor": 392537532
+      },
+      {
+        "id": 823128023,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2321448157,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1803442494,
+        "ancestor": 392537532
+      },
+      {
+        "id": 956271454,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3006176190,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1836997632,
+        "ancestor": 392537532
+      },
+      {
+        "id": 742423668,
+        "ancestor": 392537532
+      },
+      {
+        "id": 938729867,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1223408064,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1244159997,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2974273605,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3651609306,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1836997633,
+        "ancestor": 392537532
+      },
+      {
+        "id": 526688957,
+        "ancestor": 392537532
+      },
+      {
+        "id": 934869016,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1781389580,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2021550795,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3893247185,
+        "ancestor": 392537532
+      },
+      {
+        "id": 4282504188,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1836997635,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2100128277,
+        "ancestor": 392537532
+      },
+      {
+        "id": 4273308839,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1836997638,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1580738134,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3102479238,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3416292035,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1836997639,
+        "ancestor": 392537532
+      },
+      {
+        "id": 872543918,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1070459012,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2367435870,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2915617627,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3997436057,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1863469084,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1636434364,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3390215409,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2003346832,
+        "ancestor": 392537532
+      },
+      {
+        "id": 131826243,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1513500570,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2717012058,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3709748344,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3709748345,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3709748346,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3709748347,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3709748348,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3709748349,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2003346835,
+        "ancestor": 392537532
+      },
+      {
+        "id": 538639175,
+        "ancestor": 392537532
+      },
+      {
+        "id": 747635272,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1795867672,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2662913198,
+        "ancestor": 392537532
+      },
+      {
+        "id": 1190931014,
+        "ancestor": 392537532
+      },
+      {
+        "id": 3879107882,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2767677640,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2097248492,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2773966472,
+        "ancestor": 392537532
+      },
+      {
+        "id": 2107988482,
+        "ancestor": 580059306
+      },
+      {
+        "id": 2698677555,
+        "ancestor": 580059306
+      },
+      {
+        "id": 3257180952,
+        "ancestor": 580059306
+      },
+      {
+        "id": 3342556899,
+        "ancestor": 580059306
+      },
+      {
+        "id": 3670746297,
+        "ancestor": 580059306
+      },
+      {
+        "id": 377287256,
+        "ancestor": 1819748195
+      },
+      {
+        "id": 1744231092,
+        "ancestor": 1819748195
+      },
+      {
+        "id": 1903594596,
+        "ancestor": 1819748195
+      },
+      {
+        "id": 2838238495,
+        "ancestor": 1819748195
+      },
+      {
+        "id": 3647958503,
+        "ancestor": 1819748195
+      },
+      {
+        "id": 717843337,
+        "ancestor": 3205032327
+      },
+      {
+        "id": 1432530473,
+        "ancestor": 3205032327
+      },
+      {
+        "id": 1501464320,
+        "ancestor": 3205032327
+      },
+      {
+        "id": 1664353713,
+        "ancestor": 3205032327
+      },
+      {
+        "id": 514405275,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 854769676,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 2057540599,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 2633393377,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 2774048450,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 2949880285,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 3457292308,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 3657774559,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 4146945521,
+        "ancestor": 2154761356
+      },
+      {
+        "id": 203987704,
+        "ancestor": 2472534735
+      },
+      {
+        "id": 2396605251,
+        "ancestor": 2472534735
+      },
+      {
+        "id": 3429794846,
+        "ancestor": 2493685259
+      },
+      {
+        "id": 3394440612,
+        "ancestor": 3205032327
+      },
+      {
+        "id": 3625804358,
+        "ancestor": 3205032327
+      },
+      {
+        "id": 4004218990,
+        "ancestor": 3205032327
+      },
+      {
+        "id": 702945423,
+        "ancestor": 2414365428
+      },
+      {
+        "id": 4103209199,
+        "ancestor": 3075009468
+      },
+      {
+        "id": 3066415342,
+        "ancestor": 3145001837
+      },
+      {
+        "id": 794264280,
+        "ancestor": 3179867851
+      },
+      {
+        "id": 3223046451,
+        "ancestor": 3179867851
+      },
+      {
+        "id": 243760356,
+        "ancestor": 913229679
+      },
+      {
+        "id": 1110447096,
+        "ancestor": 913229679
+      },
+      {
+        "id": 4270974851,
+        "ancestor": 913229679
+      },
+      {
+        "id": 3140653121,
+        "ancestor": 1613532887
+      },
+      {
+        "id": 3431724106,
+        "ancestor": 1613532887
+      },
+      {
+        "id": 2041683921,
+        "ancestor": 1697325113
+      },
+      {
+        "id": 2892451698,
+        "ancestor": 4141759354
+      }
+    ],
+    "method": "Names recovered using finite vocabulary, current game settings strings, Wwise lowercase FNV-1, plus actual bank hierarchy. A hash match is reference evidence, not an original name table or a substitute for auditioning.",
+    "nativeCaptureUnchanged": true,
+    "baseVersion": "0.1.0"
+  },
+  "captureValidationVersion": "0.1.0; native module and every acquisition field are identical in 0.1.1"
+}

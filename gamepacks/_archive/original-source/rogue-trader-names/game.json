@@ -1,0 +1,736 @@
+{
+  "backend": "Wwise",
+  "title": "战锤40K：行商浪人 / Warhammer 40,000: Rogue Trader",
+  "gameSha256": "0A683B537726A6F52771B2FE70D32DBB5A13C5854C7D9ED9F7C8718EBEC9A186",
+  "engineModule": "AkSoundEngine.dll",
+  "engineSha256": "75E8589EBC09A3B044796F91B9EB17E7884430E57FA28C40D9C2B7F3CEB58656",
+  "bankVersion": 145,
+  "bankHeader": "kQAAACM6xlA+XXAXEAAAAIgnAAAAAAAAOo+vP9aQzAQvBZqJVnGe3wAAAAAAAAAA",
+  "bankId": 2047606785,
+  "sdkYear": 2022,
+  "sdkSeries": 1,
+  "captureFile": "modules/ApexWwiseCapture.dll",
+  "captureSha256": "21B5A9B9C43E5E7167A35FB56A9CB2819096327F84A1E9ABBD23C3B3240DDF4F",
+  "buses": [
+    {
+      "id": 3803692087,
+      "parent": 0,
+      "name": "主输出总线",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "主输出",
+      "auxiliary": false,
+      "slot": 2
+    },
+    {
+      "id": 85412153,
+      "parent": 3803692087,
+      "name": "A1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 317282339,
+      "parent": 85412153,
+      "name": "A1-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 186852181,
+      "parent": 317282339,
+      "name": "A1-1-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 379718326,
+      "parent": 317282339,
+      "name": "A1-1-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1537061107,
+      "parent": 317282339,
+      "name": "A1-1-3",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2481666201,
+      "parent": 317282339,
+      "name": "A1-1-4",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 722060249,
+      "parent": 85412153,
+      "name": "A1-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 882140159,
+      "parent": 85412153,
+      "name": "A1-3",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 156311856,
+      "parent": 882140159,
+      "name": "A1-3-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 884412605,
+      "parent": 882140159,
+      "name": "A1-3-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1050421051,
+      "parent": 85412153,
+      "name": "A1-4",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1385801509,
+      "parent": 85412153,
+      "name": "A1-5",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2538584666,
+      "parent": 85412153,
+      "name": "A1-6",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 860385440,
+      "parent": 2538584666,
+      "name": "A1-6-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2357510901,
+      "parent": 2538584666,
+      "name": "A1-6-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3573368426,
+      "parent": 85412153,
+      "name": "A1-7",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 505125328,
+      "parent": 3573368426,
+      "name": "A1-7-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1191649373,
+      "parent": 3573368426,
+      "name": "A1-7-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 613761766,
+      "parent": 3803692087,
+      "name": "A2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 809318416,
+      "parent": 3803692087,
+      "name": "A3",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 2
+    },
+    {
+      "id": 931844945,
+      "parent": 3803692087,
+      "name": "A4",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 75618095,
+      "parent": 931844945,
+      "name": "A4-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 247557814,
+      "parent": 931844945,
+      "name": "A4-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 368791692,
+      "parent": 931844945,
+      "name": "A4-3",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 410840802,
+      "parent": 931844945,
+      "name": "A4-4",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 929405203,
+      "parent": 931844945,
+      "name": "A4-5",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1074020554,
+      "parent": 931844945,
+      "name": "A4-6",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1199502698,
+      "parent": 931844945,
+      "name": "A4-7",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1210751682,
+      "parent": 931844945,
+      "name": "A4-8",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1434974618,
+      "parent": 931844945,
+      "name": "A4-9",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1601209820,
+      "parent": 931844945,
+      "name": "A4-10",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1793969174,
+      "parent": 931844945,
+      "name": "A4-11",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1844591395,
+      "parent": 931844945,
+      "name": "A4-12",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2446376615,
+      "parent": 931844945,
+      "name": "A4-13",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2470376052,
+      "parent": 931844945,
+      "name": "A4-14",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2960513238,
+      "parent": 931844945,
+      "name": "A4-15",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2981729747,
+      "parent": 931844945,
+      "name": "A4-16",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 549347228,
+      "parent": 2981729747,
+      "name": "A4-16-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 563146235,
+      "parent": 2981729747,
+      "name": "A4-16-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 712482109,
+      "parent": 2981729747,
+      "name": "A4-16-3",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1512882804,
+      "parent": 2981729747,
+      "name": "A4-16-4",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3309158463,
+      "parent": 931844945,
+      "name": "A4-17",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 3614659429,
+      "parent": 931844945,
+      "name": "A4-18",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3694647828,
+      "parent": 931844945,
+      "name": "A4-19",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3699284957,
+      "parent": 931844945,
+      "name": "A4-20",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3826240549,
+      "parent": 931844945,
+      "name": "A4-21",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1270628146,
+      "parent": 3826240549,
+      "name": "A4-21-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2696806780,
+      "parent": 3826240549,
+      "name": "A4-21-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2730442764,
+      "parent": 3826240549,
+      "name": "A4-21-3",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3647308100,
+      "parent": 3826240549,
+      "name": "A4-21-4",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3930136735,
+      "parent": 931844945,
+      "name": "A4-22",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 463135381,
+      "parent": 3930136735,
+      "name": "A4-22-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2295679860,
+      "parent": 3930136735,
+      "name": "A4-22-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2433839550,
+      "parent": 3930136735,
+      "name": "A4-22-3",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "三级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 4101551376,
+      "parent": 931844945,
+      "name": "A4-23",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 4207818628,
+      "parent": 931844945,
+      "name": "A4-24",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 1145758500,
+      "parent": 3803692087,
+      "name": "A5",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1551306167,
+      "parent": 3803692087,
+      "name": "A6",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1885713360,
+      "parent": 1551306167,
+      "name": "A6-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1710965379,
+      "parent": 3803692087,
+      "name": "A7",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1764400846,
+      "parent": 3803692087,
+      "name": "A8",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1769618259,
+      "parent": 3803692087,
+      "name": "A9",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2242065222,
+      "parent": 3803692087,
+      "name": "A10",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2381614349,
+      "parent": 3803692087,
+      "name": "A11",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2940432316,
+      "parent": 3803692087,
+      "name": "A12",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2982943478,
+      "parent": 3803692087,
+      "name": "A13",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3585925006,
+      "parent": 3803692087,
+      "name": "A14",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2590351111,
+      "parent": 3585925006,
+      "name": "A14-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 3991942870,
+      "parent": 3803692087,
+      "name": "A15",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2415184883,
+      "parent": 3991942870,
+      "name": "A15-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3563523368,
+      "parent": 3991942870,
+      "name": "A15-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 1
+    },
+    {
+      "id": 4018282512,
+      "parent": 3803692087,
+      "name": "A16",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 4128530898,
+      "parent": 3803692087,
+      "name": "A17",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 2
+    },
+    {
+      "id": 4262181783,
+      "parent": 3803692087,
+      "name": "A18",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2204902281,
+      "parent": 4262181783,
+      "name": "A18-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 1299058465,
+      "parent": 0,
+      "name": "第二输出总线",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "主输出",
+      "auxiliary": false,
+      "slot": 2
+    },
+    {
+      "id": 2663784335,
+      "parent": 1299058465,
+      "name": "B1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "一级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 2679478974,
+      "parent": 2663784335,
+      "name": "B1-1",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 0
+    },
+    {
+      "id": 3422465165,
+      "parent": 2663784335,
+      "name": "B1-2",
+      "nameSource": "结构编号（Init.bnk 未保存总线名称）",
+      "category": "二级混音",
+      "auxiliary": false,
+      "slot": 1
+    }
+  ]
+}

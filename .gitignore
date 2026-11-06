@@ -12,5 +12,5 @@ evidence/
 .codegraph/
 **/__pycache__/
 
-# Game-specific definitions are maintained separately from the shared source.
-/gamepacks/
+# Preserve game-specific evidence in the official source tree.
+!/gamepacks/**/evidence/

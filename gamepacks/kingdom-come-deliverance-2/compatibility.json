@@ -1,0 +1,65 @@
+{
+  "KingdomCome.exe": {
+    "mode": "runtime-interfaces"
+  },
+  "WHGame.dll": {
+    "Mode": "same-code-layout",
+    "Sections": [
+      {
+        "Name": ".text",
+        "Rva": 4096,
+        "Size": 60824998,
+        "RawSize": 60825088,
+        "Sha256": "45ABD332B56F29093E670681DB6604B6DB2465E0C40B66E15356E8F3D334F14F"
+      },
+      {
+        "Name": ".rdata",
+        "Rva": 60829696,
+        "Size": 15528314,
+        "RawSize": 15528448,
+        "Sha256": "B1FC8A343D1FCA07C0C9219ED1D51A1A4E61CD3C8750778A6ED1D3973516E1A8"
+      },
+      {
+        "Name": ".data",
+        "Rva": 76361728,
+        "Size": 14378576,
+        "RawSize": 7974400,
+        "Sha256": null
+      },
+      {
+        "Name": ".pdata",
+        "Rva": 90742784,
+        "Size": 3501744,
+        "RawSize": 3502080,
+        "Sha256": null
+      },
+      {
+        "Name": "_RDATA",
+        "Rva": 94244864,
+        "Size": 78352,
+        "RawSize": 78848,
+        "Sha256": null
+      },
+      {
+        "Name": ".rsrc",
+        "Rva": 94326784,
+        "Size": 480,
+        "RawSize": 512,
+        "Sha256": null
+      },
+      {
+        "Name": ".reloc",
+        "Rva": 94330880,
+        "Size": 1269972,
+        "RawSize": 1270272,
+        "Sha256": null
+      }
+    ]
+  },
+  "fmod.dll": {
+    "mode": "runtime-interfaces"
+  },
+  "fmodstudio.dll": {
+    "mode": "runtime-interfaces"
+  }
+}

@@ -1,0 +1,8692 @@
+{
+  "engineModule": "007FirstLight.exe",
+  "sdkSeries": 1,
+  "title": "007FirstLight",
+  "engineSha256": "394BA9DB0F6D26EC083DECCEEE35EF7973A41681C522B9D400CF46FC5709015F",
+  "sdkYear": 2023,
+  "bankHeader": "lgAAACM6xlA+XXAXEAAAAPIjAAAAAAAAxMqgyLUupOhKWGbc88jfdAAAAAAAAAAA",
+  "captureSha256": "1E242833CEA313AF737FEA88EA46442C84557B0334F3719715F32A4B27D900C9",
+  "bankId": 2047606785,
+  "captureFile": "modules/ApexWwiseCapture-2023.1-v5.dll",
+  "bankVersion": 150,
+  "gameSha256": "394BA9DB0F6D26EC083DECCEEE35EF7973A41681C522B9D400CF46FC5709015F",
+  "buses": [
+    {
+      "category": "其他",
+      "parent": 0,
+      "slot": 3,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 3803692087,
+      "name": "Master Audio Bus"
+    },
+    {
+      "category": "音效",
+      "parent": 3803692087,
+      "slot": 1,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 393239870,
+      "name": "SFX"
+    },
+    {
+      "category": "音效",
+      "parent": 393239870,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 133039802,
+      "name": "SFX_Ingame"
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 436743010,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 436743010,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4034351997,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4034351997,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 100025898,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4034351997,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1085681986,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4034351997,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1409788905,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1409788905,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1768931136,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4034351997,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3963888781,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3963888781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 167234327,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3963888781,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 226224055,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3963888781,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2898424251,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 436743010,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4127381940,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4127381940,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 360430185,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 360430185,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3698499268,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4127381940,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1553389484,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4127381940,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2935325275,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2935325275,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 18901463,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2935325275,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1171870069,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1171870069,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2665389598,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1171870069,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2997702067,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2935325275,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1590832895,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2935325275,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2325290467,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2935325275,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3579346827,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2935325275,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3897563104,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 445639444,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 445639444,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 383907839,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 445639444,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1563953506,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 609520474,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 753483701,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 753483701,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 402586587,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 753483701,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1199155940,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 753483701,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3216666977,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3216666977,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1846755610,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3216666977,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2849147824,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3216666977,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4284352190,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 910801373,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 971393558,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 971393558,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 113580671,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 113580671,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 131802592,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 113580671,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 562013217,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 971393558,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 736315954,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 736315954,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 902389950,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 736315954,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2177652728,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 736315954,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2191964962,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 736315954,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2706912222,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 736315954,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3398023210,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 736315954,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3763206519,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3763206519,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 228553899,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3763206519,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 463440574,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 971393558,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1407677838,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1407677838,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 66829899,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1407677838,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1507269394,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1407677838,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2901684701,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2901684701,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1414722636,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2901684701,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3801969992,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1407677838,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3036164777,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 1,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 1229948536,
+      "name": "Environment"
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 124190798,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 349503545,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 349503545,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1994840320,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 349503545,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3201777692,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 349503545,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3405525704,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 521102376,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 521102376,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1822485390,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 588347914,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 588347914,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 971611036,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 588347914,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1021944022,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 615094547,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 959194520,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 959194520,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1319897305,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1378994417,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1378994417,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2231438980,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2732201932,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2732201932,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1132790255,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2732201932,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3230078606,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3678612580,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1229948536,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3919790315,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1448201964,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 1467963052,
+      "name": "Weapons"
+    },
+    {
+      "category": "音效",
+      "parent": 1467963052,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 346634243,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 346634243,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 554862502,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 346634243,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3902983074,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1467963052,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2150376662,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2150376662,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 457928022,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2150376662,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 865684148,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 865684148,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1109624969,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 865684148,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2407472329,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 865684148,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2911343580,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 865684148,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3153123586,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 865684148,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3160460097,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 865684148,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3318171598,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2150376662,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1004581198,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2150376662,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3934798385,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2150376662,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4234573264,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1467963052,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2522571426,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2522571426,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 492274918,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2522571426,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1421075458,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2522571426,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1901037314,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2522571426,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2182575912,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2522571426,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2383392557,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2522571426,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4175385644,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2151963051,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2846397898,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2846397898,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1287914658,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2846397898,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2899611263,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2932833694,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2932833694,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2452158959,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2932833694,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2765936254,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2932833694,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3761151530,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2989525307,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2989525307,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3604494013,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2989525307,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3765937639,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3765937639,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3044922271,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 133039802,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3082392461,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 393239870,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 289850723,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 393239870,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 3862737079,
+      "name": "SFX_UI"
+    },
+    {
+      "category": "音效",
+      "parent": 3862737079,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 2161710153,
+      "name": "UI_Ingame"
+    },
+    {
+      "category": "音效",
+      "parent": 2161710153,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2542802980,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3862737079,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 2511555531,
+      "name": "UI_Menu"
+    },
+    {
+      "category": "音效",
+      "parent": 3862737079,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3458731896,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3803692087,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1784452495,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1784452495,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 8905182,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 8905182,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2102801946,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 8905182,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3580224131,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1784452495,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 159903657,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 159903657,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2360894995,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 159903657,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3169508676,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1784452495,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2820135859,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2820135859,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 305134270,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2820135859,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1290761884,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2820135859,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1319069712,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2820135859,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2865266380,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2820135859,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3034998868,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2820135859,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3061378966,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2820135859,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4221769516,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1784452495,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4205210642,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3803692087,
+      "slot": 1,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 1942696649,
+      "name": "Effects"
+    },
+    {
+      "category": "音效",
+      "parent": 1942696649,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 505155963,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1942696649,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1517146655,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1942696649,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1664810947,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1942696649,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2408124919,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2408124919,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 300374073,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2408124919,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1681344248,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1681344248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 131261072,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1681344248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1289266332,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1681344248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2504226216,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1681344248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3745288451,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2408124919,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2219204095,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2408124919,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2231230482,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1942696649,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2621591677,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1942696649,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3340200167,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3340200167,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 473865869,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3340200167,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2036568254,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3340200167,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3951029263,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3803692087,
+      "slot": 2,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 3930136735,
+      "name": "Dialogue"
+    },
+    {
+      "category": "语音",
+      "parent": 3930136735,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 53161999,
+      "name": "Dialogue_VO"
+    },
+    {
+      "category": "语音",
+      "parent": 53161999,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3790813009,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 53161999,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3985106098,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 53161999,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4211958813,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3930136735,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 345631216,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3930136735,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1174877955,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 1174877955,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 485313686,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 485313686,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 582648885,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 582648885,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 32677312,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 582648885,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 398464673,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 582648885,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2185250411,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 485313686,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2777948574,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2777948574,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2244896184,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2777948574,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3199627075,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2777948574,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3329805450,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 1174877955,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 914831062,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 914831062,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 443661426,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 914831062,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1272115525,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 914831062,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3444478160,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 1174877955,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2564736875,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2564736875,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 297252305,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2564736875,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1492490242,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2564736875,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2419847428,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2564736875,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3296052291,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3930136735,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1694364885,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 1694364885,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 834579588,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 1694364885,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1528166900,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 1528166900,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3039097313,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 1528166900,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3794688793,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3794688793,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2756015048,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3794688793,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2763770855,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3794688793,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3108872025,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 1694364885,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2938744932,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3930136735,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2470277861,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3930136735,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 2585658947,
+      "name": "Dialogue_VO_Menu"
+    },
+    {
+      "category": "语音",
+      "parent": 3930136735,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2896553235,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2896553235,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2840687239,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3930136735,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3792124379,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 3803692087,
+      "slot": 2,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 3991942870,
+      "name": "Music"
+    },
+    {
+      "category": "音乐",
+      "parent": 3991942870,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 1598298728,
+      "name": "Music_Menu"
+    },
+    {
+      "category": "音乐",
+      "parent": 3991942870,
+      "slot": 0,
+      "nameSource": "常见名称匹配（待试听）",
+      "auxiliary": false,
+      "id": 2186578306,
+      "name": "Music_Ingame"
+    },
+    {
+      "category": "音乐",
+      "parent": 2186578306,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1825494780,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2186578306,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1835940253,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2186578306,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2471605617,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2471605617,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 71319315,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2471605617,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1119331622,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2471605617,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1320444283,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2471605617,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1633523330,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2471605617,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1679774166,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2471605617,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2094454088,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2471605617,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3537025171,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 2186578306,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2809858616,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 0,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 985987111,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 985987111,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3246433673,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3246433673,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3941978117,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3246433673,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4048248560,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 985987111,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3640737278,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 79315478,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 203482061,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 260814970,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 457004557,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 582740674,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 603683040,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1684803094,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 1931930945,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2724516690,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2724516690,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2614580482,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 2900719582,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2900719582,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3349189262,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3653652356,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3653652356,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3265752073,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 3766072076,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4008766151,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4008766151,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": false,
+      "id": 4245951024,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3763206519,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1740514361,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3763206519,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3278417326,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 521102376,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1115578800,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1822485390,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 331652848,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1822485390,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 544213488,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1822485390,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 546482785,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1822485390,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2977910540,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1822485390,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2991981190,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1822485390,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3029628529,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 521102376,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2512706925,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 521102376,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3624606858,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 521102376,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3818642030,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 521102376,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3859730448,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2102801946,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 408318544,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2102801946,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 459588994,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2102801946,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1220659580,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2102801946,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2757375796,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2102801946,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3239100859,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3580224131,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1597017805,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3580224131,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2090876595,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2360894995,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2488901590,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2360894995,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3945491691,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2360894995,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4102285399,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3169508676,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1235258384,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3169508676,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1828428827,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3169508676,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2001565626,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3169508676,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2331904551,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3169508676,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4183753980,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 305134270,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1887748990,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1290761884,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3162583939,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1290761884,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3838296978,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1319069712,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1325702980,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2865266380,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 627465811,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2865266380,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2676335106,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2865266380,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2743445720,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3034998868,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1951547567,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3061378966,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 10054238,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3061378966,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 77164564,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3061378966,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1434467505,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4221769516,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2367592098,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4221769516,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2434702712,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4221769516,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3442439795,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4205210642,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1970123327,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4205210642,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2037233909,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4205210642,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4172391002,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 505155963,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1350622210,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1517146655,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1476837038,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1517146655,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2576958229,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1664810947,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2195237377,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 300374073,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 497217908,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 300374073,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1189766229,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 300374073,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2023432906,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 300374073,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3036534757,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 300374073,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3689353581,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 300374073,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3696095222,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 131261072,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 75391339,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1289266332,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 834114251,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 834114251,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 352651345,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 352651345,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 123789938,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 352651345,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 126100848,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 352651345,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 133262426,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 352651345,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1161663884,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 352651345,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1923898123,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 352651345,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3562928739,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 352651345,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3869482640,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 834114251,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2123762990,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2123762990,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 564122423,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2123762990,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2016463783,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2123762990,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2147519135,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 834114251,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2659879867,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 222050319,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 427158440,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1941891015,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2072946367,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2600152919,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2785733319,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2836606822,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3261324260,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3679580158,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2659879867,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3984247247,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 834114251,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2859385537,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2859385537,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 79366782,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2859385537,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 269071381,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2859385537,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1926796132,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2859385537,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3531360742,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1289266332,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1432748476,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1432748476,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2832118514,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2832118514,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1055494290,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2832118514,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2226163495,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2832118514,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2436679749,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2832118514,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2751919034,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2832118514,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4269292194,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1432748476,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3050485962,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3050485962,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 167774537,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3050485962,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 234979364,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3050485962,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 723097868,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3050485962,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1112637814,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3050485962,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1338995262,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3050485962,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1525938709,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3050485962,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3416648102,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2504226216,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 929392959,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 929392959,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 66457007,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 40378782,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 333998029,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 333998030,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 642436721,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 642436722,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 642436723,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 929747256,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 978343210,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2661816606,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2954719160,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3316025641,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3599781034,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 66457007,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3788241177,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 929392959,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 183286365,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 183286365,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 438394087,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 183286365,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 959753826,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 183286365,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1066107695,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 183286365,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1361345391,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 183286365,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2756875703,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 183286365,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3148568036,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 183286365,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3757701963,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 929392959,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 234722748,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 234722748,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 995994787,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 234722748,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1584358011,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 234722748,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2354129643,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 929392959,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2102785293,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2102785293,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1028350772,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2102785293,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1909269578,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2102785293,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2374213900,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2102785293,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3544267377,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2504226216,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1749795490,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1749795490,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 509287632,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 509287632,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 284792376,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 509287632,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 812773739,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 509287632,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2129692208,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 509287632,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3341221473,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 509287632,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3935452288,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1749795490,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2391186760,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2391186760,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1551055860,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2391186760,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2027273329,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2391186760,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2294708940,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2391186760,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3121739018,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2391186760,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3238962436,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2391186760,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3370485426,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2391186760,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3750662197,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1681344248,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2778693718,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3745288451,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 723747982,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3745288451,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 873836703,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 873836703,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 144697359,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 144697359,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 569754219,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 569754219,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 60978110,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 569754219,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 656907024,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 569754219,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 906038251,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 569754219,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1712899925,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 569754219,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1949027008,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 569754219,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1999734952,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 144697359,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2997730343,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2997730343,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 418007556,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2997730343,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 925010927,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2997730343,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1187293804,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2997730343,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1641175490,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2997730343,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1874307425,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2997730343,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2443596539,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2997730343,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3197906666,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2997730343,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4227461108,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 873836703,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 340398852,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 340398852,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 720635818,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 529004493,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2295207877,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2324384437,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2813850548,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2855358850,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3087049510,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3519880629,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3644089900,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3687079389,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 720635818,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3909626781,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 340398852,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1002193236,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1002193236,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2100172645,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1002193236,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2460402109,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1002193236,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3069084821,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 340398852,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1842078803,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1842078803,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 337001429,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1842078803,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 822220389,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1842078803,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2836588781,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 340398852,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2648446046,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2648446046,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2093214882,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2648446046,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3032561240,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 340398852,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2958945918,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2958945918,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2483130626,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2958945918,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3148637748,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2958945918,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3978877100,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 340398852,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3073724904,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3073724904,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1978046434,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3073724904,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2101620654,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3073724904,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2431467836,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 340398852,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3283091311,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3283091311,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 158522724,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3283091311,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 379576869,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3283091311,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 739806589,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3283091311,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3186060434,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3283091311,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3914016341,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 340398852,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3651686552,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3651686552,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 890989881,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3651686552,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1150960008,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3651686552,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2220728526,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3651686552,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2357289834,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3651686552,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2543847086,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3651686552,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2574544123,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3651686552,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3925101457,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3651686552,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3949792096,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3745288451,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2189352272,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2189352272,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 472509748,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 472509748,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4160861134,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4160861134,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1231264469,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2189352272,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3157003241,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 442729637,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 515592171,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 725029229,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 725029230,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1446841815,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1456969246,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1486809890,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1616181400,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 471076647,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 529215746,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 890694498,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1423801396,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1696496714,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1726394990,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2397461440,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2947202556,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3096588950,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3742712910,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3908612919,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1616181400,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3919314304,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1683313409,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1746961303,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1814114620,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2001853730,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2532157178,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3176933491,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3176933491,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 917912321,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3176933491,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1377336533,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3194090280,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3223519547,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3264155994,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3628766311,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3647220585,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3710151351,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3711029838,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3157003241,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4200754318,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2189352272,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3914129875,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3914129875,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 438105790,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 438105790,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1025457992,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 438105790,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1025457993,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 438105790,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1025457994,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 438105790,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1025457999,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 438105790,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1654647091,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 438105790,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3501062356,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 19909211,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 21939324,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 36686756,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 90035338,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 90557155,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 110980567,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 255172993,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 340630311,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 615698455,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 688955036,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 757051306,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 874410175,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 991489240,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1018370674,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1092302035,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1187934787,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1253875903,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1378978476,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1447074810,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1455501449,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1475504353,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1611826698,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1665857239,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1699764262,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1706355467,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1810762423,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1883267433,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1901389872,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1923257473,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1935550622,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1975912870,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1985883585,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2124883091,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2317318109,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2323574265,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2367328676,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2385414379,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2427975617,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2737863383,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2848987457,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3157343702,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3329604925,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3478134145,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3570099691,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3754800387,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3785794685,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4067754909,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4135851179,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3501062356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4249331855,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 438105790,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3888786832,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 897929464,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1405095878,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1407848501,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1475944771,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1608753731,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2120829432,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2179827928,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2322454986,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2843735918,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3272379864,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3418061140,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3757009287,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3861634890,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3888786832,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4066635886,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3914129875,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3064974266,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3064974266,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1761501016,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1761501016,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1330075084,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1761501016,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1330075087,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1761501016,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3003377643,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1761501016,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3358929272,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1761501016,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3902576514,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3914129875,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3553349781,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3553349781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 702543394,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 702543394,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 578252424,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 702543394,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1009226468,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3553349781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 749373321,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 749373321,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 162355586,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 749373321,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 998521755,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 749373321,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2220145266,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 749373321,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2763065891,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3553349781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1271210905,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3553349781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1271210906,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3553349781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1271210907,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3553349781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1376957555,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1376957555,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1103170009,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3553349781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1472122830,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1472122830,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 535667382,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 535667382,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 156437842,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 535667382,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3394756300,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1472122830,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1289942167,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1289942167,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2791828842,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1289942167,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3032561243,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1289942167,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3369812284,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1472122830,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1359360203,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1359360203,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1062507064,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1359360203,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1341487106,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1359360203,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3843405725,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1472122830,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1413413702,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1413413702,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1039709057,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1472122830,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1763508551,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1763508551,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 9024022,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1763508551,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 542506847,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3553349781,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3851691096,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3745288451,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2765197033,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 35681318,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 35681318,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 137180952,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 35681318,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3403684772,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 35681318,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3448411862,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 35681318,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3764986042,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 213678911,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 276205037,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 858469341,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1083137540,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1083137540,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 345909925,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1083137540,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 790078513,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1083137540,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 928505788,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1083137540,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2221037418,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1467779902,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1652586111,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1724802254,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 8595415,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 62528598,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 187167177,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 444646943,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 653935960,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 938258642,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 975904604,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1052190917,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1108163783,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1252243367,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1275495529,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1323766322,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1473078608,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1633903779,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1916021980,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2019091737,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2685817953,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2747051219,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2767861500,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3124940301,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3507389807,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3550600481,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3568653141,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3808792305,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3864324328,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4005240101,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4055293025,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4068869669,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1724802254,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4285070944,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1744429087,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1744429087,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 911741153,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1935127278,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1935127278,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1166165611,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1935127278,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1311677771,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1935127278,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1378835103,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1935127278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1775179085,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1935127278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3051153507,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1935127278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3570559029,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1935127278,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4103658403,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1935127278,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4139878469,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1975603121,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 79805624,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 370010224,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 580544885,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 853549104,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 956525538,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1014451082,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1017043019,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2035804222,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2083882603,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2228894212,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2277095674,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2485039649,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2491540415,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2554710662,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2979829402,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3045825465,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3130467063,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3165295205,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3212660220,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3394505022,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3635977762,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1975603121,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3731950885,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2123481911,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2279610949,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 513684633,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 584281513,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1243347482,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1353109927,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1543425681,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1635222099,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1648200409,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1907708289,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1988039643,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2033272420,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2853324787,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2897693874,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2938246395,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2998244216,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3081483706,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3101162335,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3148326457,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3294332686,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3696089333,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2279610949,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4128668134,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2442174629,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2442174629,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1670072917,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2442174629,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4173610280,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2736990792,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2748908406,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2748908406,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2228240258,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2930795106,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2930795106,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 140292411,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2930795106,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1627826140,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2930795106,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4057469014,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2978855956,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2978855956,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1292134201,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3489260016,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3516586891,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3529644050,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 8681072,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 310906929,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 385235139,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 660417088,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 703965668,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1282113448,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1384385645,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1591557865,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1593535621,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1654624339,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1665341913,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2449732509,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2544656498,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2607636866,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2836563814,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3279960198,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3311402916,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3844282364,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3897493745,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3529644050,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3974228973,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3652792400,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3773846740,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3773846740,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 372947515,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3773846740,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 531370857,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3773846740,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 581644010,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3773846740,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 739652970,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3773846740,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2445727659,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3773846740,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2933150723,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3773846740,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3673476799,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4042581248,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4042581248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 413128090,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4042581248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 494820173,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4042581248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 758921565,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4042581248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1073194708,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4042581248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1778110849,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4042581248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2410394597,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4042581248,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2887675068,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4203473902,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4203473902,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 62093097,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4203473902,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 179764285,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4203473902,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1427431465,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4203473902,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1771424905,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4203473902,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2443905317,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4203473902,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2458715562,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4203473902,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3051940044,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 4203473902,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4093968960,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4233084018,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2765197033,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4290208491,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3745288451,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2850957353,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3745288451,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3273756651,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3273756651,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2616238203,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2616238203,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 90970455,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 90970455,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1103536078,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 90970455,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1654971556,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 90970455,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2788637446,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 90970455,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3060069497,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 90970455,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3439518526,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 90970455,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3525255639,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2616238203,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3323237795,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3323237795,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1343006491,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3323237795,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1453778426,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3323237795,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2011531344,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3323237795,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2761484978,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3323237795,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3077477986,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3323237795,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3342832472,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3323237795,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4129819079,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3273756651,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3960043874,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3960043874,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 708836763,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 708836763,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 69482632,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 708836763,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1475944977,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 708836763,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2529052546,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 708836763,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2642880041,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 708836763,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3096693113,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3960043874,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1320327535,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1320327535,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2328830945,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1320327535,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2468058617,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1320327535,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4078385001,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3960043874,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1537742180,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1537742180,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 594734488,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1537742180,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2929379130,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1537742180,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3537102066,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3960043874,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1609347856,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 105785973,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 183352250,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 240080649,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 791075186,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1994376857,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2344342844,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2822943537,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3485050353,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4123100033,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4194947864,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1609347856,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4262327705,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3960043874,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2394993942,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2394993942,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 359618900,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2394993942,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 777888756,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2394993942,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 952199632,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2394993942,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1510134205,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2394993942,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1662074414,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2394993942,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2812780070,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2394993942,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3082266567,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2394993942,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4216226885,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3960043874,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2874749444,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2874749444,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 204854392,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3960043874,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3450685138,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3450685138,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3303616337,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3450685138,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3776155833,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3450685138,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4004414057,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3960043874,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3720933190,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3720933190,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 337684212,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3720933190,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 559792568,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3720933190,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3478284266,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2219204095,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2569843293,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2569843293,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2290755880,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2290755880,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1650319306,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2290755880,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2165525686,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2290755880,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3181325539,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2231230482,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 11690769,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 11690769,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2885283198,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2885283198,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1106955186,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1106955186,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 168962016,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1106955186,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1473894064,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2885283198,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1295924170,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1295924170,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 521926538,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2885283198,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1891285036,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1891285036,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1271648580,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 1891285036,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3151937698,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 11690769,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3988516192,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3988516192,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 958833361,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3988516192,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1478652409,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3988516192,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1856339521,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3988516192,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2328873905,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3988516192,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2696278766,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3988516192,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3274194462,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2231230482,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2175217936,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2175217936,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 173950967,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 173950967,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 227594631,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 227594631,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 729757944,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 729757944,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 99354547,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 729757944,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 227572695,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 729757944,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2076394926,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 729757944,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2906992282,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 729757944,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3399543651,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 227594631,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2047419281,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2047419281,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2194084822,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 227594631,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3441962305,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3441962305,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 768340685,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3441962305,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 869429026,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3441962305,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1157079245,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3441962305,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1385871241,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3441962305,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2563720629,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3441962305,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4258412741,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 173950967,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 406374085,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 406374085,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1595971992,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 406374085,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3557716026,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 259030274,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 716054155,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 976785336,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 259030273,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 716054152,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1186486655,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2068676227,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2140763147,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2509730031,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2609442234,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2609442235,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2695285798,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2916136169,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3011077006,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3277759061,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3318699679,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3532434851,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3694113534,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4006378974,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 976785336,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4205522597,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1186486652,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2068676224,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2140763144,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2509730028,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2609442236,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2609442237,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2695285797,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2916136170,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3011077005,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3277759062,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3318699676,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3532434848,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3694113533,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4006378973,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3557716026,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4205522598,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 406374085,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4184186096,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2175217936,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3460294913,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3460294913,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 203087635,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 203087635,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 630159196,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 203087635,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2437530984,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 203087635,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2609442238,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 203087635,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2737149826,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 203087635,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2902197838,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3460294913,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3555177829,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3555177829,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 592409507,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 592409507,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2014805540,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 592409507,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3076204588,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 592409507,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4166058634,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3555177829,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3174313349,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3174313349,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3272508423,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2621591677,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 506294721,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 473865869,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 293744879,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 473865869,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 322099077,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 473865869,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2505523106,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2036568254,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1199444289,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2036568254,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1801915481,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 2036568254,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4156358682,
+      "name": ""
+    },
+    {
+      "category": "音效",
+      "parent": 3951029263,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2755781045,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 2938744932,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1280343766,
+      "name": ""
+    },
+    {
+      "category": "语音",
+      "parent": 3792124379,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3451057402,
+      "name": ""
+    },
+    {
+      "category": "音乐",
+      "parent": 3991942870,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 913148378,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3941978117,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2343830090,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4048248560,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 318134571,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 79315478,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3172423693,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 79315478,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3629913750,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 79315478,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3679551116,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3679551116,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2951965251,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3679551116,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3736912740,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 203482061,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1626681170,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 260814970,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1095928184,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 260814970,
+      "slot": 1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1112705763,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 260814970,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3186721201,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 457004557,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 274800882,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 457004557,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3643513941,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 582740674,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1062726201,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 603683040,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 35976482,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 603683040,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1270606605,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 603683040,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1543544754,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 603683040,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2862467899,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 603683040,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2992018154,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 603683040,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3569153099,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3640737278,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 991002117,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1684803094,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2110107632,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1684803094,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3642493341,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 1931930945,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2403157606,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2724516690,
+      "slot": 2,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1466253747,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2724516690,
+      "slot": 3,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 2823840691,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2724516690,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3100680553,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2900719582,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 982989413,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 2900719582,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1710541076,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3349189262,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 4047564324,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3653652356,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 455015535,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4008766151,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1364163520,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 4008766151,
+      "slot": -1,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 3579243624,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3579243624,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 62082497,
+      "name": ""
+    },
+    {
+      "category": "其他",
+      "parent": 3579243624,
+      "slot": 0,
+      "nameSource": "编号",
+      "auxiliary": true,
+      "id": 1738989085,
+      "name": ""
+    }
+  ],
+  "backend": "Wwise"
+}

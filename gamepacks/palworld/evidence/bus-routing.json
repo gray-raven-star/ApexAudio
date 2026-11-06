@@ -1,0 +1,293 @@
+[
+  {
+    "id": 3803692087,
+    "parent": 0,
+    "kind": "CAkBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": 3,
+    "nameCandidate": "Master Audio Bus",
+    "hircOffset": 2035
+  },
+  {
+    "id": 47937584,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 2160
+  },
+  {
+    "id": 77978275,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": "Ambient",
+    "hircOffset": 2307
+  },
+  {
+    "id": 348963605,
+    "parent": 3803692087,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 2449
+  },
+  {
+    "id": 608898761,
+    "parent": 348963605,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 2510
+  },
+  {
+    "id": 286627785,
+    "parent": 608898761,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 2578
+  },
+  {
+    "id": 381372403,
+    "parent": 608898761,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 2636
+  },
+  {
+    "id": 683424935,
+    "parent": 608898761,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 2694
+  },
+  {
+    "id": 3244485201,
+    "parent": 608898761,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 2752
+  },
+  {
+    "id": 3121008436,
+    "parent": 348963605,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 2810
+  },
+  {
+    "id": 412724365,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": "BGM",
+    "hircOffset": 2861
+  },
+  {
+    "id": 752119174,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 3027
+  },
+  {
+    "id": 1551306167,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": "UI",
+    "hircOffset": 3182
+  },
+  {
+    "id": 1996316241,
+    "parent": 1551306167,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 3324
+  },
+  {
+    "id": 1584861537,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [
+      0,
+      1
+    ],
+    "captureSlot": 3,
+    "nameCandidate": "SE",
+    "hircOffset": 3433
+  },
+  {
+    "id": 1656082668,
+    "parent": 1584861537,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 3588
+  },
+  {
+    "id": 2569992122,
+    "parent": 1584861537,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 3659
+  },
+  {
+    "id": 2706548304,
+    "parent": 1584861537,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 3730
+  },
+  {
+    "id": 3093912444,
+    "parent": 1584861537,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 3801
+  },
+  {
+    "id": 3177428469,
+    "parent": 1584861537,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 3872
+  },
+  {
+    "id": 3893417221,
+    "parent": 1584861537,
+    "kind": "CAkBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 3968
+  },
+  {
+    "id": 4161132316,
+    "parent": 1584861537,
+    "kind": "CAkBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 4046
+  },
+  {
+    "id": 2139775466,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 4124
+  },
+  {
+    "id": 2716898011,
+    "parent": 3803692087,
+    "kind": "CAkAuxBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": -1,
+    "nameCandidate": null,
+    "hircOffset": 4272
+  },
+  {
+    "id": 2948364142,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 4330
+  },
+  {
+    "id": 2948364143,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [
+      0
+    ],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 4479
+  },
+  {
+    "id": 3073030106,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": "Jingle",
+    "hircOffset": 4595
+  },
+  {
+    "id": 3157003241,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 4725
+  },
+  {
+    "id": 3225742224,
+    "parent": 3803692087,
+    "kind": "CAkBus",
+    "occupiedSlots": [],
+    "captureSlot": 3,
+    "nameCandidate": null,
+    "hircOffset": 4801
+  }
+]

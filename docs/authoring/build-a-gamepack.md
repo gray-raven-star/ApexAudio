@@ -24,12 +24,28 @@
 | `adapters/Fmod/` | FMOD 适配器，字段和限制见其 `README.md` |
 | `adapters/Unreal/` | Unreal AudioMixer 适配器，字段和限制见其 `README.md` |
 | `schemas/` | 清单与预设的 JSON Schema |
+| `gamepacks/` | [官方适配包源码](https://github.com/gray-raven-star/ApexAudio/tree/main/gamepacks)，每个游戏有独立目录 |
 | `gamepack-starter/` | 可复制的 Wwise 定义示例，也是 `New-Pack.ps1` 的模板来源 |
 | `tools/Pack.ps1` | 为完整包目录生成文件摘要并压成 `.gpack` |
 
 使用 `tools/New-Pack.ps1` 从 `gamepack-starter/` 和 `templates/` 创建新定义，保存到作者自己选定的目录。字段来源见[配置参考](../reference/engine-config-reference.md)，调查方法见[接口识别](identify-audio-system.md)。
 
 制作采集模块需要完整源码，运行版只含应用和文档。构建环境为 Windows x64、.NET 8 SDK；原生构建脚本调用 Zig 的 `cc`，`-Compiler` 填写实际 `zig.exe` 路径。源码不含第三方游戏 SDK。
+
+## 重建仓库中的适配包
+
+从源码仓库的 `gamepacks/README.md` 找到游戏目录，在源码根目录执行构建。DevKit 提供通用构建工具和新包示例，官方包定义随源码仓库提供。以下以杀戮尖塔 2 为例，官方包 CI 使用 .NET 8 和 Zig 0.15.2。
+
+```powershell
+pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/slay-the-spire-2
+dotnet run --project tools/DevTools/ApexAudio.DevTools.csproj -- check --pack dist/packages/apex.slay-the-spire-2.gpack
+```
+
+定义目录中的 `build.json` 记录源码目录名 `slug`、包 ID `id`、包版本 `version` 和引擎后端 `backend`。包 ID 和版本取自 `manifest.json`，后端取自 `game.json`。Wwise 专用配方可选用 `adapterProject` 指定适配器项目，或用 `nativeSource` 指定原生采集源码，两者均指向当前定义目录的 `_capture/`。构建产物按包 ID 命名，写入 `dist/packages/`。
+
+包目录里的 `_history/` 保存旧发布版配置，`PROVENANCE.md` 记录来源和重建范围。这些记录、专用源码和构建配方留在源码仓库。离线 `check` 验证包完整性及导入流程，实际采集和手柄反馈另按[验证指南](verify-a-gamepack.md)检查。
+
+`validate-packs.yml` 构建并离线校验改动的官方包。共用采集器或构建工具改动时，工作流校验全部官方包。
 
 ## 制作步骤
 

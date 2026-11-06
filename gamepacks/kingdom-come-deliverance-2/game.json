@@ -1,0 +1,332 @@
+{
+  "name": "天国：拯救2",
+  "executable": "KingdomCome.exe",
+  "executableSha256": "D85B5355842D16290DC0D97E1D02856C6F2811A2021C8957AA24D7782A771B77",
+  "modules": {
+    "WHGame.dll": "BDF8F9E4A11257A72B64C84700E284C29E4C4CCAF5B8D4BFA7D0B2A7294479F7",
+    "fmod.dll": "205CF4342EB47EB9B5905242B1A5D17FD51A1621BB011782E67B39804DB24247",
+    "fmodstudio.dll": "24C779EC317A83E380918A81C332F46C4B34D6DA8B8111ED9F98FCE6B86B42AC"
+  },
+  "wrapperModule": "WHGame.dll",
+  "wrapperRva": 87173624,
+  "stateOffset": 216,
+  "studioOffset": 224,
+  "captureFile": "native/ApexFmodCapture-83A37D66FF82.dll",
+  "runtimeVersion": 131617,
+  "buses": [
+    {
+      "id": "07ea096c9788f245a786a638fa852345",
+      "path": "bus:/perm",
+      "name": "常驻声音与界面 · perm",
+      "parentId": "2f0f688df19d6a47b7fb7f654c8a2db1",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "09d091ee6d5bf34f8a5099157662ad00",
+      "path": "bus:/dieg/foley_other",
+      "name": "其他动作音效 · dieg/foley_other",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "11b1aa663fec9f41956914eccf42b446",
+      "path": "bus:/dieg/foley_plr",
+      "name": "主角装备动作 · dieg/foley_plr",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "141a3ca64178f7419ed70dafe6cfcdc1",
+      "path": "bus:/dieg/d_music",
+      "name": "场景音乐 · dieg/d_music",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音乐",
+      "containsChildren": false
+    },
+    {
+      "id": "18b2beb5ea7b844e87b0884983e28293",
+      "path": "bus:/dieg/combat/combat_perm",
+      "name": "持续战斗音效 · dieg/combat/combat_perm",
+      "parentId": "e54b0240edcac04798af1f2364a86aa2",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "path": "bus:/dieg",
+      "name": "场景声音 · dieg",
+      "parentId": "2f0f688df19d6a47b7fb7f654c8a2db1",
+      "category": "音效",
+      "containsChildren": true
+    },
+    {
+      "id": "34ef356d57e3f14aac71d4aa4d4cb172",
+      "path": "bus:/dieg/w_obj/obj_loud",
+      "name": "dieg/w_obj/obj_loud",
+      "parentId": "8288070a5488ff44aaed5959b6a7f68e",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "51da3bf987605d4db143a35e21b5cdcd",
+      "path": "bus:/dieg/dialog",
+      "name": "对白 · dieg/dialog",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "5aeb8aa1f1dc794b88f4526eac4cfe31",
+      "path": "bus:/dieg/hs_npc",
+      "name": "dieg/hs_npc",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "5f421ed8be0519499bc038ec72257927",
+      "path": "bus:/RVB_GRP",
+      "name": "RVB_GRP",
+      "parentId": "2f0f688df19d6a47b7fb7f654c8a2db1",
+      "category": "混响",
+      "containsChildren": true
+    },
+    {
+      "id": "661c37008551894aa8d36ad449cd47f0",
+      "path": "bus:/dieg/hs_plr",
+      "name": "dieg/hs_plr",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "6af6650ee3286e43a79d83014953b433",
+      "path": "bus:/music",
+      "name": "背景音乐 · music",
+      "parentId": "2f0f688df19d6a47b7fb7f654c8a2db1",
+      "category": "音乐",
+      "containsChildren": false
+    },
+    {
+      "id": "795fd214c50bd64c9c4e1d5e347934bf",
+      "path": "bus:/dieg/combat/combat_oneshot",
+      "name": "战斗瞬态音效 · dieg/combat/combat_oneshot",
+      "parentId": "e54b0240edcac04798af1f2364a86aa2",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "8288070a5488ff44aaed5959b6a7f68e",
+      "path": "bus:/dieg/w_obj",
+      "name": "dieg/w_obj",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": true
+    },
+    {
+      "id": "8443f39a0f571147ad38c79cf0aaa90a",
+      "path": "bus:/dieg/w_obj/player",
+      "name": "dieg/w_obj/player",
+      "parentId": "8288070a5488ff44aaed5959b6a7f68e",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "8894e4bbf128404cb830ea7877cf48af",
+      "path": "bus:/dieg/w_obj/obj",
+      "name": "dieg/w_obj/obj",
+      "parentId": "8288070a5488ff44aaed5959b6a7f68e",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "9eafeb313b437e40869f4f0ad92a60dc",
+      "path": "bus:/dieg/fts_plr",
+      "name": "主角脚步 · dieg/fts_plr",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "9fa8718a438cee4dad3e11c1bef9c047",
+      "path": "bus:/dieg/w_wtr",
+      "name": "水声 · dieg/w_wtr",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "a3a016b160d8a64ab84e4be2cb48c804",
+      "path": "bus:/dieg/fts_npc",
+      "name": "NPC 脚步 · dieg/fts_npc",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "a3aef31af537754cb5f679fb013dd1a0",
+      "path": "bus:/dieg/hs_plr_wr",
+      "name": "dieg/hs_plr_wr",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "aaf9064ae1667f4e81abcd28b2ab8147",
+      "path": "bus:/cin",
+      "name": "过场声音 · cin",
+      "parentId": "2f0f688df19d6a47b7fb7f654c8a2db1",
+      "category": "音效",
+      "containsChildren": true
+    },
+    {
+      "id": "b70a43e3b7480c4b8006350b48a0ef4c",
+      "path": "bus:/dieg/w_obj/barks",
+      "name": "物件／喊话 · dieg/w_obj/barks",
+      "parentId": "8288070a5488ff44aaed5959b6a7f68e",
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "b8d838aeb599f84fb1cc9f63da95152e",
+      "path": "bus:/dieg/d_perm",
+      "name": "dieg/d_perm",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "d87207d03c5d4c45a749c8b84f6bb522",
+      "path": "bus:/dieg/w_beds",
+      "name": "环境底噪 · dieg/w_beds",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "e54b0240edcac04798af1f2364a86aa2",
+      "path": "bus:/dieg/combat",
+      "name": "战斗音效 · dieg/combat",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": true
+    },
+    {
+      "id": "f9d8fb990801c24caf27a07263b4d4ae",
+      "path": "bus:/dieg/foley_npc",
+      "name": "NPC 装备动作 · dieg/foley_npc",
+      "parentId": "1ef14045a7a6ac4d9021f9322ff7af17",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "fc680781ebdb1844a8283ee7ccc3df68",
+      "path": "bus:/dieg/w_obj/music",
+      "name": "物件音乐 · dieg/w_obj/music",
+      "parentId": "8288070a5488ff44aaed5959b6a7f68e",
+      "category": "音乐",
+      "containsChildren": false
+    },
+    {
+      "id": "1407068db78c544887a9c26504fab16c",
+      "path": "bus:/RVB_GRP/RVB_OUT",
+      "name": "RVB_GRP/RVB_OUT",
+      "parentId": "5f421ed8be0519499bc038ec72257927",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "241f2082e535f84c9cc90f6f76faea52",
+      "path": "bus:/cin/CIN_RVB1",
+      "name": "cin/CIN_RVB1",
+      "parentId": "aaf9064ae1667f4e81abcd28b2ab8147",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "2c52b339beab49499a80d40fa2808f29",
+      "path": "bus:/RVB_GRP/RVB_C_hollow",
+      "name": "RVB_GRP/RVB_C_hollow",
+      "parentId": "5f421ed8be0519499bc038ec72257927",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "5f9a25d9611e3145b37db41795d13c86",
+      "path": "bus:/RVB_GRP/RVB_C_helmet",
+      "name": "RVB_GRP/RVB_C_helmet",
+      "parentId": "5f421ed8be0519499bc038ec72257927",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "68ca0a13fc962d449608957a4a6d9a48",
+      "path": "bus:/RVB_GRP/RVB_UI",
+      "name": "RVB_GRP/RVB_UI",
+      "parentId": "5f421ed8be0519499bc038ec72257927",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "899b5e2ac6b05f4e97edb592fb1599d8",
+      "path": "bus:/RVB_GRP/RVB_C_mines",
+      "name": "RVB_GRP/RVB_C_mines",
+      "parentId": "5f421ed8be0519499bc038ec72257927",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "a052d7e56ed0d343acab5d198d23fce8",
+      "path": "bus:/RVB_GRP/RVB",
+      "name": "RVB_GRP/RVB",
+      "parentId": "5f421ed8be0519499bc038ec72257927",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "ae6f4bf2f4fe5f4ea416b80c7143e7f7",
+      "path": "bus:/Vibration/Vibration_dieg",
+      "name": "游戏震动音轨：场景 · Vibration/Vibration_dieg",
+      "parentId": "2f0f688df19d6a47b7fb7f654c8a2db1",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "e4cf6d36616eff49aa7de6930d8dfaa8",
+      "path": "bus:/Vibration/Vibration_perm",
+      "name": "游戏震动音轨：常驻 · Vibration/Vibration_perm",
+      "parentId": "2f0f688df19d6a47b7fb7f654c8a2db1",
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "fdaace39e4d1a64888a1d308a6764ffd",
+      "path": "bus:/cin/CIN_RVB3",
+      "name": "cin/CIN_RVB3",
+      "parentId": "aaf9064ae1667f4e81abcd28b2ab8147",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "fedc13b0670ff14cac7e79f6c248be63",
+      "path": "bus:/cin/CIN_RVB2",
+      "name": "cin/CIN_RVB2",
+      "parentId": "aaf9064ae1667f4e81abcd28b2ab8147",
+      "category": "混响",
+      "containsChildren": false
+    },
+    {
+      "id": "2f0f688df19d6a47b7fb7f654c8a2db1",
+      "path": "bus:/",
+      "name": "全部声音",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": true
+    }
+  ],
+  "captureSha256": "83A37D66FF826396A93A67207A1F7AB6E2AA03BC944584F31E92D11056205531",
+  "backend": "Fmod"
+}

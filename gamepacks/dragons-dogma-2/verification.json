@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-24",
+  "targetVersion": "4.1.0.0",
+  "targetSha256": "53D0FA7093CA1B560E0C881C84A6451091F87D3AB678D25F3EFFF08C22128127",
+  "bankVersion": 140,
+  "ordinaryGroups": 210,
+  "namedOrdinaryGroups": 129,
+  "auxiliaryMetadata": 67,
+  "gameConnected": true,
+  "packets": 940,
+  "frames": 962560,
+  "nonZeroGroups": 4,
+  "droppedBlocks": 0,
+  "errors": [],
+  "scene": "有声标题画面",
+  "limitations": "未逐场景或物理手柄验证；名称匹配不保证唯一或声音语义"
+}

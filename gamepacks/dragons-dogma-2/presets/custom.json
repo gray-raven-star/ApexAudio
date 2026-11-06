@@ -1,0 +1,1271 @@
+{
+  "schemaVersion": 1,
+  "id": "custom",
+  "name": "玩家动作与环境",
+  "packId": "local.dragonsdogma2",
+  "basePresetId": null,
+  "basePackVersion": null,
+  "folders": [],
+  "groups": {
+    "3803692087": {
+      "name": "总混音（包含音乐和对白） · Master Audio Bus",
+      "enabled": false,
+      "folderId": null,
+      "order": 0
+    },
+    "1401767917": {
+      "name": "敌人、机关与技能混音路由 · 1401767917",
+      "enabled": false,
+      "folderId": null,
+      "order": 1
+    },
+    "1521018306": {
+      "name": "场景机关与物件总线 · gm_Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 2
+    },
+    "447408838": {
+      "name": "未命名机关与界面分组 · 447408838",
+      "enabled": false,
+      "folderId": null,
+      "order": 3
+    },
+    "4132482924": {
+      "name": "机关与物件音效 · gm_se",
+      "enabled": false,
+      "folderId": null,
+      "order": 4
+    },
+    "4132482937": {
+      "name": "机关与物件特殊音效 · gm_sp",
+      "enabled": false,
+      "folderId": null,
+      "order": 5
+    },
+    "2054545917": {
+      "name": "未命名混合与未确认分组 · 2054545917",
+      "enabled": false,
+      "folderId": null,
+      "order": 6
+    },
+    "209189415": {
+      "name": "未命名混合与未确认分组 · 209189415",
+      "enabled": false,
+      "folderId": null,
+      "order": 7
+    },
+    "1488287255": {
+      "name": "未命名混合与未确认分组 · 1488287255",
+      "enabled": false,
+      "folderId": null,
+      "order": 8
+    },
+    "2426359878": {
+      "name": "未命名混合与未确认分组 · 2426359878",
+      "enabled": false,
+      "folderId": null,
+      "order": 9
+    },
+    "2426359891": {
+      "name": "未命名混合与未确认分组 · 2426359891",
+      "enabled": false,
+      "folderId": null,
+      "order": 10
+    },
+    "2535150153": {
+      "name": "未命名混合与未确认分组 · 2535150153",
+      "enabled": false,
+      "folderId": null,
+      "order": 11
+    },
+    "2265963024": {
+      "name": "敌人总线（包含叫声） · em_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 12
+    },
+    "1425423685": {
+      "name": "未命名敌人分组 · 1425423685",
+      "enabled": false,
+      "folderId": null,
+      "order": 13
+    },
+    "221917476": {
+      "name": "敌人物件音效 · em_se_obj",
+      "enabled": false,
+      "folderId": null,
+      "order": 14
+    },
+    "1727747637": {
+      "name": "敌人物件发声 · em_vo_obj",
+      "enabled": false,
+      "folderId": null,
+      "order": 15
+    },
+    "4001171034": {
+      "name": "敌人物件效果 · em_fx_obj",
+      "enabled": false,
+      "folderId": null,
+      "order": 16
+    },
+    "1743392432": {
+      "name": "敌人对话 · em_vo_dia",
+      "enabled": false,
+      "folderId": null,
+      "order": 17
+    },
+    "2716789688": {
+      "name": "未命名对白与发声分组 · 2716789688",
+      "enabled": false,
+      "folderId": null,
+      "order": 18
+    },
+    "1962487222": {
+      "name": "未命名敌人分组 · 1962487222",
+      "enabled": false,
+      "folderId": null,
+      "order": 19
+    },
+    "2147673137": {
+      "name": "敌人低频混音 · em_lfe",
+      "enabled": false,
+      "folderId": null,
+      "order": 20
+    },
+    "2282317921": {
+      "name": "敌人吼叫 · em_vo_roars",
+      "enabled": false,
+      "folderId": null,
+      "order": 21
+    },
+    "2692174254": {
+      "name": "敌人联动混音 · em_link",
+      "enabled": false,
+      "folderId": null,
+      "order": 22
+    },
+    "983086489": {
+      "name": "敌人联动音效 · em_se_link",
+      "enabled": false,
+      "folderId": null,
+      "order": 23
+    },
+    "2609032430": {
+      "name": "敌人联动发声 · em_vo_link",
+      "enabled": false,
+      "folderId": null,
+      "order": 24
+    },
+    "2962645366": {
+      "name": "敌人动作音效 · em_se",
+      "enabled": false,
+      "folderId": null,
+      "order": 25
+    },
+    "3012978083": {
+      "name": "敌人发声 · em_vo",
+      "enabled": false,
+      "folderId": null,
+      "order": 26
+    },
+    "3281419908": {
+      "name": "敌人效果音 · em_fx",
+      "enabled": false,
+      "folderId": null,
+      "order": 27
+    },
+    "2451255124": {
+      "name": "敌人效果冲击 · fx_imp",
+      "enabled": false,
+      "folderId": null,
+      "order": 28
+    },
+    "2665274041": {
+      "name": "敌人效果准备段 · fx_pre",
+      "enabled": false,
+      "folderId": null,
+      "order": 29
+    },
+    "3670949330": {
+      "name": "敌人特殊挥动声 · em_whoosh_sp",
+      "enabled": false,
+      "folderId": null,
+      "order": 30
+    },
+    "3964209045": {
+      "name": "敌人冲击音效 · em_se_imp",
+      "enabled": false,
+      "folderId": null,
+      "order": 31
+    },
+    "4163712781": {
+      "name": "技能总线 · skill_Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 32
+    },
+    "649923786": {
+      "name": "魔法技能 · skill_mgc",
+      "enabled": true,
+      "folderId": null,
+      "order": 33
+    },
+    "1171219747": {
+      "name": "技能音效 · skill_se",
+      "enabled": true,
+      "folderId": null,
+      "order": 34
+    },
+    "1819944823": {
+      "name": "音乐总路由（按子级结构判断） · 1819944823",
+      "enabled": false,
+      "folderId": null,
+      "order": 35
+    },
+    "3442526356": {
+      "name": "背景音乐总线 · Master_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 36
+    },
+    "884273065": {
+      "name": "剧情演出音乐 · cutscene_ovw_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 37
+    },
+    "1917576852": {
+      "name": "未命名音乐分组 · 1917576852",
+      "enabled": false,
+      "folderId": null,
+      "order": 38
+    },
+    "2270785518": {
+      "name": "未命名音乐分组 · 2270785518",
+      "enabled": false,
+      "folderId": null,
+      "order": 39
+    },
+    "1980514306": {
+      "name": "未命名音乐分组 · 1980514306",
+      "enabled": false,
+      "folderId": null,
+      "order": 40
+    },
+    "2193628812": {
+      "name": "游玩音乐 · playable_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 41
+    },
+    "134123266": {
+      "name": "犯罪事件音乐 · crime_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 42
+    },
+    "637936606": {
+      "name": "犯罪状态音乐 · crime_crime",
+      "enabled": false,
+      "folderId": null,
+      "order": 43
+    },
+    "1057363778": {
+      "name": "未命名音乐分组 · 1057363778",
+      "enabled": false,
+      "folderId": null,
+      "order": 44
+    },
+    "1474931616": {
+      "name": "被捕音乐 · crime_arrested",
+      "enabled": false,
+      "folderId": null,
+      "order": 45
+    },
+    "1579993091": {
+      "name": "未命名音乐分组 · 1579993091",
+      "enabled": false,
+      "folderId": null,
+      "order": 46
+    },
+    "2750242987": {
+      "name": "未命名音乐分组 · 2750242987",
+      "enabled": false,
+      "folderId": null,
+      "order": 47
+    },
+    "825611774": {
+      "name": "剧情相关音乐 · ovw_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 48
+    },
+    "1686318067": {
+      "name": "ovw_qu030150（原名，含义待确认）",
+      "enabled": false,
+      "folderId": null,
+      "order": 49
+    },
+    "2214754610": {
+      "name": "常规剧情音乐 · ovw_normal_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 50
+    },
+    "1247319581": {
+      "name": "未命名音乐分组 · 1247319581",
+      "enabled": false,
+      "folderId": null,
+      "order": 51
+    },
+    "2228129718": {
+      "name": "未命名音乐分组 · 2228129718",
+      "enabled": false,
+      "folderId": null,
+      "order": 52
+    },
+    "2529963441": {
+      "name": "未命名音乐分组 · 2529963441",
+      "enabled": false,
+      "folderId": null,
+      "order": 53
+    },
+    "4050317642": {
+      "name": "ovw_ch253001（原名，含义待确认）",
+      "enabled": false,
+      "folderId": null,
+      "order": 54
+    },
+    "1116020140": {
+      "name": "战斗音乐 · battle_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 55
+    },
+    "123629876": {
+      "name": "普通战斗音乐 · battle_normal_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 56
+    },
+    "2170919005": {
+      "name": "未命名音乐分组 · 2170919005",
+      "enabled": false,
+      "folderId": null,
+      "order": 57
+    },
+    "933806435": {
+      "name": "剧情战斗音乐 · battle_ovw_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 58
+    },
+    "619874185": {
+      "name": "未命名音乐分组 · 619874185",
+      "enabled": false,
+      "folderId": null,
+      "order": 59
+    },
+    "1079640173": {
+      "name": "未命名音乐分组 · 1079640173",
+      "enabled": false,
+      "folderId": null,
+      "order": 60
+    },
+    "1481550769": {
+      "name": "未命名音乐分组 · 1481550769",
+      "enabled": false,
+      "folderId": null,
+      "order": 61
+    },
+    "4254592374": {
+      "name": "未命名音乐分组 · 4254592374",
+      "enabled": false,
+      "folderId": null,
+      "order": 62
+    },
+    "4275049403": {
+      "name": "未命名音乐分组 · 4275049403",
+      "enabled": false,
+      "folderId": null,
+      "order": 63
+    },
+    "1006270902": {
+      "name": "首领战音乐 · battle_boss_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 64
+    },
+    "1003754319": {
+      "name": "未命名音乐分组 · 1003754319",
+      "enabled": false,
+      "folderId": null,
+      "order": 65
+    },
+    "2548663173": {
+      "name": "未命名音乐分组 · 2548663173",
+      "enabled": false,
+      "folderId": null,
+      "order": 66
+    },
+    "2934291385": {
+      "name": "未命名音乐分组 · 2934291385",
+      "enabled": false,
+      "folderId": null,
+      "order": 67
+    },
+    "2986979771": {
+      "name": "未命名音乐分组 · 2986979771",
+      "enabled": false,
+      "folderId": null,
+      "order": 68
+    },
+    "2994623150": {
+      "name": "优势战斗音乐 · battle_adv_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 69
+    },
+    "3905015500": {
+      "name": "未命名音乐分组 · 3905015500",
+      "enabled": false,
+      "folderId": null,
+      "order": 70
+    },
+    "1116041891": {
+      "name": "骑乘与移动音乐 · field_ride_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 71
+    },
+    "185551787": {
+      "name": "室内骑乘音乐 · field_indoor_ride_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 72
+    },
+    "715205664": {
+      "name": "野外骑乘音乐 · field_field_ride_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 73
+    },
+    "3810668788": {
+      "name": "城镇骑乘音乐 · field_town_ride_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 74
+    },
+    "4069718242": {
+      "name": "异界骑乘音乐 · field_otherworld_ride_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 75
+    },
+    "1138265770": {
+      "name": "音乐混响发送 · send_reverb",
+      "enabled": false,
+      "folderId": null,
+      "order": 76
+    },
+    "1268187597": {
+      "name": "演奏者音乐 · musician_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 78
+    },
+    "2807115946": {
+      "name": "地牢音乐 · dungeon_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 79
+    },
+    "3178114896": {
+      "name": "探索音乐 · field_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 80
+    },
+    "1391890385": {
+      "name": "野外探索音乐 · field_field_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 81
+    },
+    "1787177439": {
+      "name": "城镇位置音乐 · field_town_poss_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 82
+    },
+    "2615529215": {
+      "name": "异界探索音乐 · field_otherworld_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 83
+    },
+    "2665238376": {
+      "name": "室内探索音乐 · field_indoor_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 84
+    },
+    "3431559237": {
+      "name": "城镇探索音乐 · field_town_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 85
+    },
+    "2503691457": {
+      "name": "系统音乐 · system_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 86
+    },
+    "3987283357": {
+      "name": "未命名音乐分组 · 3987283357",
+      "enabled": false,
+      "folderId": null,
+      "order": 87
+    },
+    "3105653954": {
+      "name": "过场音乐 · cutscene_bgm",
+      "enabled": false,
+      "folderId": null,
+      "order": 88
+    },
+    "3939311000": {
+      "name": "未命名音乐分组 · 3939311000",
+      "enabled": false,
+      "folderId": null,
+      "order": 89
+    },
+    "2697148476": {
+      "name": "场景与对白混音路由 · 2697148476",
+      "enabled": false,
+      "folderId": null,
+      "order": 90
+    },
+    "308500818": {
+      "name": "过场总线（含对白） · Master_cutscene",
+      "enabled": false,
+      "folderId": null,
+      "order": 91
+    },
+    "3580759046": {
+      "name": "过场混音（含对白） · cutscene_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 92
+    },
+    "1999732764": {
+      "name": "过场对白 · cutscene_dialog",
+      "enabled": false,
+      "folderId": null,
+      "order": 93
+    },
+    "3458657328": {
+      "name": "过场音效 · cutscene_se",
+      "enabled": false,
+      "folderId": null,
+      "order": 94
+    },
+    "714756579": {
+      "name": "随从捏脸对白 · charamake_pw_dialog",
+      "enabled": false,
+      "folderId": null,
+      "order": 95
+    },
+    "1202187522": {
+      "name": "音效总混音（含人物发声） · Master_se",
+      "enabled": false,
+      "folderId": null,
+      "order": 96
+    },
+    "161319522": {
+      "name": "任务总线 · quest_master",
+      "enabled": false,
+      "folderId": null,
+      "order": 97
+    },
+    "456588883": {
+      "name": "未命名机关与界面分组 · 456588883",
+      "enabled": false,
+      "folderId": null,
+      "order": 98
+    },
+    "1074647805": {
+      "name": "未命名机关与界面分组 · 1074647805",
+      "enabled": false,
+      "folderId": null,
+      "order": 99
+    },
+    "1284216844": {
+      "name": "任务音效 · quest_se",
+      "enabled": true,
+      "folderId": null,
+      "order": 100
+    },
+    "779133925": {
+      "name": "未命名混合与未确认分组 · 779133925",
+      "enabled": false,
+      "folderId": null,
+      "order": 101
+    },
+    "20270801": {
+      "name": "菜单与界面 · menu_ui",
+      "enabled": true,
+      "folderId": null,
+      "order": 102
+    },
+    "3421825649": {
+      "name": "NPC音轨（编号30） · npc30_a_veryhigh_ssl",
+      "enabled": false,
+      "folderId": null,
+      "order": 103
+    },
+    "1173343445": {
+      "name": "未命名混合与未确认分组 · 1173343445",
+      "enabled": false,
+      "folderId": null,
+      "order": 104
+    },
+    "814334160": {
+      "name": "未命名混合与未确认分组 · 814334160",
+      "enabled": false,
+      "folderId": null,
+      "order": 105
+    },
+    "2823531440": {
+      "name": "聚落NPC衣物与脚步 · npc_wear_foot_es_settlement",
+      "enabled": false,
+      "folderId": null,
+      "order": 106
+    },
+    "2472534735": {
+      "name": "环境总线（含生物与人群） · env_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 107
+    },
+    "208310147": {
+      "name": "环境混音 · env_table",
+      "enabled": false,
+      "folderId": null,
+      "order": 108
+    },
+    "70692432": {
+      "name": "地形与场景环境 · env_terrain",
+      "enabled": true,
+      "folderId": null,
+      "order": 109
+    },
+    "2397782640": {
+      "name": "基础场景环境 · env_terrain_base",
+      "enabled": false,
+      "folderId": null,
+      "order": 110
+    },
+    "3114113467": {
+      "name": "空间场景环境 · env_terrain_pos",
+      "enabled": false,
+      "folderId": null,
+      "order": 111
+    },
+    "44958167": {
+      "name": "空间水声 · env_terrain_pos_water",
+      "enabled": false,
+      "folderId": null,
+      "order": 112
+    },
+    "296169990": {
+      "name": "随机空间环境声 · env_terrain_pos_rnd",
+      "enabled": false,
+      "folderId": null,
+      "order": 113
+    },
+    "315654545": {
+      "name": "常规空间环境声 · env_terrain_pos_com",
+      "enabled": false,
+      "folderId": null,
+      "order": 114
+    },
+    "362877979": {
+      "name": "空间环境混合 · env_terrain_pos_blend",
+      "enabled": false,
+      "folderId": null,
+      "order": 115
+    },
+    "2735430590": {
+      "name": "空间天气声 · env_terrain_pos_weather",
+      "enabled": false,
+      "folderId": null,
+      "order": 116
+    },
+    "3318196968": {
+      "name": "场景布置环境声 · env_terrain_painter",
+      "enabled": false,
+      "folderId": null,
+      "order": 117
+    },
+    "1957425687": {
+      "name": "树木环境声 · env_terrain_painter_tree",
+      "enabled": false,
+      "folderId": null,
+      "order": 118
+    },
+    "3269355274": {
+      "name": "通用布置环境声 · env_terrain_painter_com",
+      "enabled": false,
+      "folderId": null,
+      "order": 119
+    },
+    "3997593513": {
+      "name": "场景glass音轨（用途待确认） · env_terrain_painter_glass",
+      "enabled": false,
+      "folderId": null,
+      "order": 120
+    },
+    "4102608464": {
+      "name": "场景布置水声 · env_terrain_painter_water",
+      "enabled": false,
+      "folderId": null,
+      "order": 121
+    },
+    "1416464721": {
+      "name": "小型生物环境声 · env_critters",
+      "enabled": false,
+      "folderId": null,
+      "order": 122
+    },
+    "581243387": {
+      "name": "基础小型生物声 · env_critters_base",
+      "enabled": false,
+      "folderId": null,
+      "order": 123
+    },
+    "1284975157": {
+      "name": "场景布置生物声 · env_critters_painter",
+      "enabled": false,
+      "folderId": null,
+      "order": 124
+    },
+    "1320850058": {
+      "name": "空间生物声 · env_critters_pos",
+      "enabled": false,
+      "folderId": null,
+      "order": 125
+    },
+    "4130131583": {
+      "name": "环境人群声（语义待试听） · env_gaya",
+      "enabled": false,
+      "folderId": null,
+      "order": 126
+    },
+    "1071024731": {
+      "name": "天气环境声 · env_weather",
+      "enabled": true,
+      "folderId": null,
+      "order": 127
+    },
+    "1266270403": {
+      "name": "异界环境声 · env_otherworld",
+      "enabled": false,
+      "folderId": null,
+      "order": 128
+    },
+    "1294900668": {
+      "name": "背面世界环境声（原名backworld） · env_backworld",
+      "enabled": false,
+      "folderId": null,
+      "order": 129
+    },
+    "1630999069": {
+      "name": "背面世界天气 · env_backworld_weather",
+      "enabled": false,
+      "folderId": null,
+      "order": 130
+    },
+    "3104180185": {
+      "name": "未命名环境分组 · 3104180185",
+      "enabled": false,
+      "folderId": null,
+      "order": 131
+    },
+    "4059739940": {
+      "name": "背面世界机关 · env_backworld_gimmick",
+      "enabled": true,
+      "folderId": null,
+      "order": 132
+    },
+    "1818815792": {
+      "name": "环境事件声 · env_ev",
+      "enabled": false,
+      "folderId": null,
+      "order": 133
+    },
+    "3089504244": {
+      "name": "通用环境机关 · env_gimmick_com",
+      "enabled": true,
+      "folderId": null,
+      "order": 134
+    },
+    "3148058304": {
+      "name": "敌人战斗环境声 · env_em_battle",
+      "enabled": false,
+      "folderId": null,
+      "order": 135
+    },
+    "3744296052": {
+      "name": "环境EPV音轨（用途待确认） · env_epv",
+      "enabled": false,
+      "folderId": null,
+      "order": 136
+    },
+    "2500525744": {
+      "name": "受伤与状态总线 · dmg_Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 137
+    },
+    "1965400598": {
+      "name": "受伤音效 · dmg_se",
+      "enabled": false,
+      "folderId": null,
+      "order": 138
+    },
+    "3703962904": {
+      "name": "状态音效 · condition",
+      "enabled": false,
+      "folderId": null,
+      "order": 139
+    },
+    "2551232689": {
+      "name": "人形角色总线（含语音） · hm_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 140
+    },
+    "2318388427": {
+      "name": "随从总线（含语音） · pw_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 141
+    },
+    "263484261": {
+      "name": "随从动作音效 · pw_se",
+      "enabled": false,
+      "folderId": null,
+      "order": 142
+    },
+    "347372208": {
+      "name": "随从发声 · pw_vo",
+      "enabled": false,
+      "folderId": null,
+      "order": 143
+    },
+    "2493685259": {
+      "name": "NPC总线（含语音） · npc_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 144
+    },
+    "4210235045": {
+      "name": "NPC动作音效 · npc_se",
+      "enabled": false,
+      "folderId": null,
+      "order": 145
+    },
+    "4294123248": {
+      "name": "NPC发声 · npc_vo",
+      "enabled": false,
+      "folderId": null,
+      "order": 146
+    },
+    "3223516310": {
+      "name": "玩家总线（含发声） · pl_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 147
+    },
+    "247908201": {
+      "name": "玩家发声 · pl_vo",
+      "enabled": false,
+      "folderId": null,
+      "order": 148
+    },
+    "331796096": {
+      "name": "玩家动作音效 · pl_se",
+      "enabled": true,
+      "folderId": null,
+      "order": 149
+    },
+    "2583890416": {
+      "name": "未命名混合与未确认分组 · 2583890416",
+      "enabled": false,
+      "folderId": null,
+      "order": 150
+    },
+    "2961792041": {
+      "name": "衣物与脚步混音 · wear_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 151
+    },
+    "1946215016": {
+      "name": "NPC衣物与脚步 · wear_npc",
+      "enabled": false,
+      "folderId": null,
+      "order": 152
+    },
+    "2554851755": {
+      "name": "玩家衣物与脚步 · wear_pl",
+      "enabled": true,
+      "folderId": null,
+      "order": 153
+    },
+    "2554851760": {
+      "name": "随从衣物与脚步 · wear_pw",
+      "enabled": false,
+      "folderId": null,
+      "order": 154
+    },
+    "3066580060": {
+      "name": "武器总线 · wep_master",
+      "enabled": true,
+      "folderId": null,
+      "order": 155
+    },
+    "23785496": {
+      "name": "武器碰撞与命中 · wep_imp",
+      "enabled": true,
+      "folderId": null,
+      "order": 156
+    },
+    "2984116819": {
+      "name": "武器操作与摩擦 · wep_foley",
+      "enabled": true,
+      "folderId": null,
+      "order": 157
+    },
+    "3796380970": {
+      "name": "武器挥动 · wep_whs",
+      "enabled": true,
+      "folderId": null,
+      "order": 158
+    },
+    "2783051634": {
+      "name": "共享混响（可能含对白） · reverb_Master",
+      "enabled": false,
+      "folderId": null,
+      "order": 159
+    },
+    "1801258597": {
+      "name": "未命名共享混响分组 · 1801258597",
+      "enabled": false,
+      "folderId": null,
+      "order": 160
+    },
+    "2005187239": {
+      "name": "未命名共享混响分组 · 2005187239",
+      "enabled": false,
+      "folderId": null,
+      "order": 162
+    },
+    "3064974266": {
+      "name": "特殊混响 · special",
+      "enabled": false,
+      "folderId": null,
+      "order": 216
+    },
+    "1368645141": {
+      "name": "音效混响发送 · se_send_reverb",
+      "enabled": false,
+      "folderId": null,
+      "order": 217
+    },
+    "3371445611": {
+      "name": "未命名共享混响分组 · 3371445611",
+      "enabled": false,
+      "folderId": null,
+      "order": 225
+    },
+    "3930136735": {
+      "name": "对白混响 · dialogue",
+      "enabled": false,
+      "folderId": null,
+      "order": 229
+    },
+    "3975264820": {
+      "name": "未命名混合与未确认分组 · 3975264820",
+      "enabled": false,
+      "folderId": null,
+      "order": 232
+    },
+    "92586030": {
+      "name": "未命名混合与未确认分组 · 92586030",
+      "enabled": false,
+      "folderId": null,
+      "order": 233
+    },
+    "2273912029": {
+      "name": "未命名混合与未确认分组 · 2273912029",
+      "enabled": false,
+      "folderId": null,
+      "order": 234
+    },
+    "424047702": {
+      "name": "未命名混合与未确认分组 · 424047702",
+      "enabled": false,
+      "folderId": null,
+      "order": 235
+    },
+    "420089131": {
+      "name": "未命名混合与未确认分组 · 420089131",
+      "enabled": false,
+      "folderId": null,
+      "order": 236
+    },
+    "832883924": {
+      "name": "未命名混合与未确认分组 · 832883924",
+      "enabled": false,
+      "folderId": null,
+      "order": 237
+    },
+    "852471607": {
+      "name": "未命名混合与未确认分组 · 852471607",
+      "enabled": false,
+      "folderId": null,
+      "order": 238
+    },
+    "970795202": {
+      "name": "未命名混合与未确认分组 · 970795202",
+      "enabled": false,
+      "folderId": null,
+      "order": 239
+    },
+    "1242396902": {
+      "name": "未命名混合与未确认分组 · 1242396902",
+      "enabled": false,
+      "folderId": null,
+      "order": 240
+    },
+    "1613447514": {
+      "name": "未命名混合与未确认分组 · 1613447514",
+      "enabled": false,
+      "folderId": null,
+      "order": 241
+    },
+    "2172715611": {
+      "name": "未命名混合与未确认分组 · 2172715611",
+      "enabled": false,
+      "folderId": null,
+      "order": 242
+    },
+    "963909375": {
+      "name": "未命名混合与未确认分组 · 963909375",
+      "enabled": false,
+      "folderId": null,
+      "order": 243
+    },
+    "1784260513": {
+      "name": "未命名混合与未确认分组 · 1784260513",
+      "enabled": false,
+      "folderId": null,
+      "order": 244
+    },
+    "592369148": {
+      "name": "未命名混合与未确认分组 · 592369148",
+      "enabled": false,
+      "folderId": null,
+      "order": 245
+    },
+    "614242771": {
+      "name": "未命名混合与未确认分组 · 614242771",
+      "enabled": false,
+      "folderId": null,
+      "order": 246
+    },
+    "2739334881": {
+      "name": "未命名混合与未确认分组 · 2739334881",
+      "enabled": false,
+      "folderId": null,
+      "order": 247
+    },
+    "3204746900": {
+      "name": "未命名混合与未确认分组 · 3204746900",
+      "enabled": false,
+      "folderId": null,
+      "order": 248
+    },
+    "4198597642": {
+      "name": "未命名混合与未确认分组 · 4198597642",
+      "enabled": false,
+      "folderId": null,
+      "order": 249
+    },
+    "2305607758": {
+      "name": "未命名混合与未确认分组 · 2305607758",
+      "enabled": false,
+      "folderId": null,
+      "order": 250
+    },
+    "1640255174": {
+      "name": "未命名混合与未确认分组 · 1640255174",
+      "enabled": false,
+      "folderId": null,
+      "order": 251
+    },
+    "3595166394": {
+      "name": "未命名混合与未确认分组 · 3595166394",
+      "enabled": false,
+      "folderId": null,
+      "order": 252
+    },
+    "3812509269": {
+      "name": "未命名混合与未确认分组 · 3812509269",
+      "enabled": false,
+      "folderId": null,
+      "order": 253
+    },
+    "3372890476": {
+      "name": "未命名混合与未确认分组 · 3372890476",
+      "enabled": false,
+      "folderId": null,
+      "order": 254
+    },
+    "2001696495": {
+      "name": "未命名混合与未确认分组 · 2001696495",
+      "enabled": false,
+      "folderId": null,
+      "order": 255
+    },
+    "2297411687": {
+      "name": "未命名混合与未确认分组 · 2297411687",
+      "enabled": false,
+      "folderId": null,
+      "order": 256
+    },
+    "2440944745": {
+      "name": "未命名混合与未确认分组 · 2440944745",
+      "enabled": false,
+      "folderId": null,
+      "order": 257
+    },
+    "2722044045": {
+      "name": "未命名混合与未确认分组 · 2722044045",
+      "enabled": false,
+      "folderId": null,
+      "order": 258
+    },
+    "2823019616": {
+      "name": "未命名混合与未确认分组 · 2823019616",
+      "enabled": false,
+      "folderId": null,
+      "order": 259
+    },
+    "2092096412": {
+      "name": "未命名混合与未确认分组 · 2092096412",
+      "enabled": false,
+      "folderId": null,
+      "order": 260
+    },
+    "3028107201": {
+      "name": "未命名混合与未确认分组 · 3028107201",
+      "enabled": false,
+      "folderId": null,
+      "order": 261
+    },
+    "3080097354": {
+      "name": "未命名混合与未确认分组 · 3080097354",
+      "enabled": false,
+      "folderId": null,
+      "order": 262
+    },
+    "1654947788": {
+      "name": "未命名混合与未确认分组 · 1654947788",
+      "enabled": false,
+      "folderId": null,
+      "order": 263
+    },
+    "1962375776": {
+      "name": "未命名混合与未确认分组 · 1962375776",
+      "enabled": false,
+      "folderId": null,
+      "order": 264
+    },
+    "2720179982": {
+      "name": "未命名混合与未确认分组 · 2720179982",
+      "enabled": false,
+      "folderId": null,
+      "order": 265
+    },
+    "3994030881": {
+      "name": "未命名混合与未确认分组 · 3994030881",
+      "enabled": false,
+      "folderId": null,
+      "order": 266
+    },
+    "4222214689": {
+      "name": "道具总线 · item_Master",
+      "enabled": true,
+      "folderId": null,
+      "order": 267
+    },
+    "1222624712": {
+      "name": "道具音效 · item",
+      "enabled": false,
+      "folderId": null,
+      "order": 268
+    },
+    "3390284473": {
+      "name": "人物捏脸对白 · charamake_human_dialog",
+      "enabled": false,
+      "folderId": null,
+      "order": 269
+    },
+    "3627036714": {
+      "name": "对白总线 · Master_dialog",
+      "enabled": false,
+      "folderId": null,
+      "order": 270
+    },
+    "1024623621": {
+      "name": "随从对白 · pw_dialog",
+      "enabled": false,
+      "folderId": null,
+      "order": 271
+    },
+    "1345706023": {
+      "name": "人物对白 · human_dialog",
+      "enabled": false,
+      "folderId": null,
+      "order": 272
+    },
+    "1963123080": {
+      "name": "敌人对白 · enm_dialog",
+      "enabled": false,
+      "folderId": null,
+      "order": 273
+    },
+    "805203703": {
+      "name": "次级总混音 · Master Secondary Bus",
+      "enabled": false,
+      "folderId": null,
+      "order": 274
+    },
+    "2075344660": {
+      "name": "未命名混合与未确认分组 · 2075344660",
+      "enabled": false,
+      "folderId": null,
+      "order": 275
+    },
+    "3300430197": {
+      "name": "游戏手柄音效通道 · ingame_controller_sfx",
+      "enabled": false,
+      "folderId": null,
+      "order": 276
+    }
+  }
+}

@@ -1,0 +1,472 @@
+{
+  "name": "剑星",
+  "executable": "SB-Win64-Shipping.exe",
+  "executableSha256": "573AAFF1C9455F85EA6036EF6F6CCB0774DE4164722A296276FBBFC7FA87545C",
+  "captureFile": "modules/ApexUnrealCapture-085E47C2B8DD.dll",
+  "captureSha256": "085E47C2B8DD3C301E39005E96ACEA3647367E7ECB678F820E7A57B413C61FA8",
+  "buses": [
+    {
+      "id": "MasterSubmixDefault",
+      "nativeName": "MasterSubmixDefault",
+      "name": "主混音",
+      "parentId": null,
+      "category": "其他",
+      "containsChildren": false
+    },
+    {
+      "id": "MasterReverbSubmixDefault",
+      "nativeName": "MasterReverbSubmixDefault",
+      "name": "主混响",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "MasterEQSubmixDefault",
+      "nativeName": "MasterEQSubmixDefault",
+      "name": "主均衡",
+      "parentId": null,
+      "category": "其他",
+      "containsChildren": false
+    },
+    {
+      "id": "Haptic",
+      "nativeName": "Haptic",
+      "name": "游戏手柄音频",
+      "parentId": null,
+      "category": "其他",
+      "containsChildren": false
+    },
+    {
+      "id": "Hit",
+      "nativeName": "Hit",
+      "name": "击中音效",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "PC_SE",
+      "nativeName": "PC_SE",
+      "name": "主角音效",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "PC_Voice",
+      "nativeName": "PC_Voice",
+      "name": "主角语音",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "EveActionVoiceSubmix",
+      "nativeName": "EveActionVoiceSubmix",
+      "name": "主角动作语音",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "HologramVoiceSubmix",
+      "nativeName": "HologramVoiceSubmix",
+      "name": "HologramVoiceSubmix",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "HologramVoiceSubmixDiggerSpeaker",
+      "nativeName": "HologramVoiceSubmixDiggerSpeaker",
+      "name": "HologramVoiceSubmixDiggerSpeaker",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": true
+    },
+    {
+      "id": "FilterVoiceSubmix_Str",
+      "nativeName": "FilterVoiceSubmix_Str",
+      "name": "FilterVoiceSubmix_Str",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "TachyPrologueVoiceSubmix",
+      "nativeName": "TachyPrologueVoiceSubmix",
+      "name": "TachyPrologueVoiceSubmix",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "EveVoiceSubmix",
+      "nativeName": "EveVoiceSubmix",
+      "name": "主角对白",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "DroneVoiceSubmix",
+      "nativeName": "DroneVoiceSubmix",
+      "name": "无人机语音",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "DroneVoiceSubmix_High",
+      "nativeName": "DroneVoiceSubmix_High",
+      "name": "DroneVoiceSubmix_High",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "DroneVoiceSubmix_En",
+      "nativeName": "DroneVoiceSubmix_En",
+      "name": "DroneVoiceSubmix_En",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "NPCVoiceSubmix",
+      "nativeName": "NPCVoiceSubmix",
+      "name": "NPC 语音",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "SystemAnnounceReverb2",
+      "nativeName": "SystemAnnounceReverb2",
+      "name": "SystemAnnounceReverb2",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "SystemAnnounceReverb",
+      "nativeName": "SystemAnnounceReverb",
+      "name": "SystemAnnounceReverb",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "DialogReverb",
+      "nativeName": "DialogReverb",
+      "name": "DialogReverb",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "SystemAnnounceReverbDrone",
+      "nativeName": "SystemAnnounceReverbDrone",
+      "name": "SystemAnnounceReverbDrone",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "DroneBVoiceSubmix",
+      "nativeName": "DroneBVoiceSubmix",
+      "name": "DroneBVoiceSubmix",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "OperatorVoiceSubmix",
+      "nativeName": "OperatorVoiceSubmix",
+      "name": "OperatorVoiceSubmix",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "MotherSphereReverb",
+      "nativeName": "MotherSphereReverb",
+      "name": "MotherSphereReverb",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "NPCVoiceSubmix_Orcal",
+      "nativeName": "NPCVoiceSubmix_Orcal",
+      "name": "NPCVoiceSubmix_Orcal",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "HologramVoiceSubmix2",
+      "nativeName": "HologramVoiceSubmix2",
+      "name": "HologramVoiceSubmix2",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "FilterVoiceSubmix",
+      "nativeName": "FilterVoiceSubmix",
+      "name": "FilterVoiceSubmix",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "PS5ControllerSpeaker",
+      "nativeName": "PS5ControllerSpeaker",
+      "name": "PS5ControllerSpeaker",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "HologramVoiceSubmixDigger",
+      "nativeName": "HologramVoiceSubmixDigger",
+      "name": "HologramVoiceSubmixDigger",
+      "parentId": "HologramVoiceSubmixDiggerSpeaker",
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "MasterEffect",
+      "nativeName": "MasterEffect",
+      "name": "MasterEffect",
+      "parentId": null,
+      "category": "其他",
+      "containsChildren": false
+    },
+    {
+      "id": "MenuEffect",
+      "nativeName": "MenuEffect",
+      "name": "菜单音效",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "DeathEffect",
+      "nativeName": "DeathEffect",
+      "name": "DeathEffect",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "Boss",
+      "nativeName": "Boss",
+      "name": "Boss",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "BGM",
+      "nativeName": "BGM",
+      "name": "背景音乐",
+      "parentId": null,
+      "category": "音乐",
+      "containsChildren": false
+    },
+    {
+      "id": "Ambience",
+      "nativeName": "Ambience",
+      "name": "环境声",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "WorldSE",
+      "nativeName": "WorldSE",
+      "name": "场景音效",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "Mon_Footstep",
+      "nativeName": "Mon_Footstep",
+      "name": "怪物脚步",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "General",
+      "nativeName": "General",
+      "name": "通用音效",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "Monster_Vox",
+      "nativeName": "Monster_Vox",
+      "name": "怪物叫声",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "Monster",
+      "nativeName": "Monster",
+      "name": "Monster",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "EVE_EndpointSubmix_vib",
+      "nativeName": "EVE_EndpointSubmix_vib",
+      "name": "手柄音频输出",
+      "parentId": null,
+      "category": "其他",
+      "containsChildren": false
+    },
+    {
+      "id": "DieReverbSubmixx_S",
+      "nativeName": "DieReverbSubmixx_S",
+      "name": "DieReverbSubmixx_S",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "DieReverbSubmixx",
+      "nativeName": "DieReverbSubmixx",
+      "name": "DieReverbSubmixx",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "DialogReverb_Large",
+      "nativeName": "DialogReverb_Large",
+      "name": "DialogReverb_Large",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "JustActionSubmix",
+      "nativeName": "JustActionSubmix",
+      "name": "JustActionSubmix",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "UIReverb",
+      "nativeName": "UIReverb",
+      "name": "UIReverb",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "Submix_Hall",
+      "nativeName": "Submix_Hall",
+      "name": "Submix_Hall",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "Guard",
+      "nativeName": "Guard",
+      "name": "格挡音效",
+      "parentId": null,
+      "category": "音效",
+      "containsChildren": false
+    },
+    {
+      "id": "Submix_Field",
+      "nativeName": "Submix_Field",
+      "name": "Submix_Field",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "DialogReverb_Large2",
+      "nativeName": "DialogReverb_Large2",
+      "name": "DialogReverb_Large2",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "Submix_Valley",
+      "nativeName": "Submix_Valley",
+      "name": "Submix_Valley",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "Submix_Narrow_Street",
+      "nativeName": "Submix_Narrow_Street",
+      "name": "Submix_Narrow_Street",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "Submix_Field2",
+      "nativeName": "Submix_Field2",
+      "name": "Submix_Field2",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "DialogReverb_Mid",
+      "nativeName": "DialogReverb_Mid",
+      "name": "DialogReverb_Mid",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "DialogReverb_Large3",
+      "nativeName": "DialogReverb_Large3",
+      "name": "DialogReverb_Large3",
+      "parentId": null,
+      "category": "语音",
+      "containsChildren": false
+    },
+    {
+      "id": "Submix_Cave",
+      "nativeName": "Submix_Cave",
+      "name": "Submix_Cave",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    },
+    {
+      "id": "Submix_Inside",
+      "nativeName": "Submix_Inside",
+      "name": "Submix_Inside",
+      "parentId": null,
+      "category": "环境",
+      "containsChildren": false
+    }
+  ],
+  "engineRva": 118370392,
+  "nameBlocksRva": 117435472,
+  "vtableRva": 104294576,
+  "registerRva": 64813024,
+  "unregisterRva": 64814208,
+  "holderOffset": 2704,
+  "deviceOffset": 144
+}

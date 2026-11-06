@@ -73,7 +73,13 @@ API DWORD FmodStop(void*unused){
  for(unsigned i=0;i<cfg.count;i++){Route*r=&routes[i];if(r->dsp){removeDsp(r->group,r->dsp);releaseDsp(r->dsp);r->dsp=NULL;}if(r->bus){busUnlock(r->bus);r->bus=NULL;}}
  unlockDsp(core);return 0;
 }
-API DWORD FmodConfigure(void*configuration){if(source&&source->active)return 100;Configuration*c=configuration;if(!c||c->magic!=0x314d4641||c->version!=2||c->count<1||c->count>ROUTES||c->wrapperModule[127]||c->stateOffset>4092||c->studioOffset>4088)return 1;cfg=*c;return 0;}
+API DWORD FmodConfigure(void*configuration){
+ if(source&&source->active)return 100;
+ Configuration*c=configuration;
+ if(!c||c->magic!=0x314d4641||c->version!=2||c->count<1||c->count>ROUTES||c->wrapperModule[127])return 1;
+ if(c->wrapperRva ? (c->stateOffset>4092||c->studioOffset>4088) : (!c->stateOffset||c->studioOffset))return 1;
+ cfg=*c;return 0;
+}
 #define LOAD(module,variable,entry) variable=(void*)GetProcAddress(module,entry);if(!variable)return 2
 API DWORD FmodStart(void*unused){
  (void)unused;if(source&&source->active)return 100;
@@ -82,8 +88,14 @@ API DWORD FmodStart(void*unused){
  LOAD(s,getBus,"FMOD_Studio_System_GetBusByID");LOAD(s,busLock,"FMOD_Studio_Bus_LockChannelGroup");LOAD(s,busUnlock,"FMOD_Studio_Bus_UnlockChannelGroup");LOAD(s,busGroup,"FMOD_Studio_Bus_GetChannelGroup");
  LOAD(c,createDsp,"FMOD_System_CreateDSP");LOAD(c,dspUser,"FMOD_DSP_SetUserData");LOAD(c,getDspUser,"FMOD_DSP_GetUserData");LOAD(c,addDsp,"FMOD_ChannelGroup_AddDSP");LOAD(c,removeDsp,"FMOD_ChannelGroup_RemoveDSP");LOAD(c,releaseDsp,"FMOD_DSP_Release");
  LOAD(c,lockDsp,"FMOD_System_LockDSP");LOAD(c,unlockDsp,"FMOD_System_UnlockDSP");LOAD(c,getMaster,"FMOD_System_GetMasterChannelGroup");
- unsigned char*object=*(void**)((unsigned char*)wrapper+cfg.wrapperRva);if(!object||*(unsigned*)(object+cfg.stateOffset)!=2)return 3;
- studio=*(void**)(object+cfg.studioOffset);if(!studioValid(studio)||getCore(studio,&core))return 3;
+ if(cfg.wrapperRva){
+  unsigned char*object=*(void**)((unsigned char*)wrapper+cfg.wrapperRva);if(!object||*(unsigned*)(object+cfg.stateOffset)!=2)return 3;
+  studio=*(void**)(object+cfg.studioOffset);
+ }else{
+  // The archived V1 handle locator stores the Studio handle in stateOffset.
+  studio=(void*)(uintptr_t)cfg.stateOffset;
+ }
+ if(!studioValid(studio)||getCore(studio,&core))return 3;
  unsigned version=0;if(getVersion(core,&version)||version!=cfg.runtimeVersion)return 4;int rate=0;if(getFormat(core,&rate,NULL,NULL)||rate!=48000)return 5;
  WCHAR mapping[64];if(!source){name(mapping,L"Local\\ApexFmodMix-");sourceMap=CreateFileMappingW(INVALID_HANDLE_VALUE,NULL,PAGE_READWRITE,0,sizeof(Source),mapping);if(sourceMap)source=MapViewOfFile(sourceMap,FILE_MAP_ALL_ACCESS,0,0,sizeof(Source));
   if(source&&source->magic==0x37504341&&source->active){UnmapViewOfFile(source);CloseHandle(sourceMap);source=NULL;sourceMap=NULL;return 108;}}

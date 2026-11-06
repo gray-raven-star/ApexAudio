@@ -1,0 +1,867 @@
+{
+  "schemaVersion": 1,
+  "id": "initial",
+  "name": "默认预设",
+  "packId": "independent.mhrise.wwise",
+  "folders": [],
+  "groups": {
+    "3803692087": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 0
+    },
+    "253003338": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 1
+    },
+    "23001570": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 2
+    },
+    "814663814": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 3
+    },
+    "392537532": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 4
+    },
+    "196593681": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 6
+    },
+    "835735623": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 12
+    },
+    "1679905368": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 19
+    },
+    "1803442492": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 28
+    },
+    "1803442493": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 31
+    },
+    "1803442494": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 34
+    },
+    "1836997632": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 37
+    },
+    "1836997633": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 44
+    },
+    "1836997635": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 51
+    },
+    "1836997638": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 54
+    },
+    "1836997639": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 58
+    },
+    "1863469084": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 64
+    },
+    "2003346832": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 67
+    },
+    "2003346835": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 77
+    },
+    "2662913198": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 81
+    },
+    "2767677640": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 84
+    },
+    "3205032327": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 88
+    },
+    "50050244": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 89
+    },
+    "580059306": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 90
+    },
+    "2107988482": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 91
+    },
+    "2698677555": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 92
+    },
+    "3013247952": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 93
+    },
+    "3257180952": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 94
+    },
+    "3281689728": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 95
+    },
+    "3281689751": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 96
+    },
+    "3342556899": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 97
+    },
+    "3670746297": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 98
+    },
+    "1819748195": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 99
+    },
+    "377287256": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 100
+    },
+    "1744231092": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 101
+    },
+    "1903594596": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 102
+    },
+    "2838238495": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 103
+    },
+    "3012978083": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 104
+    },
+    "3281419908": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 105
+    },
+    "3281419923": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 106
+    },
+    "3647958503": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 107
+    },
+    "717843337": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 108
+    },
+    "957788960": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 109
+    },
+    "1933058324": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 110
+    },
+    "1763003628": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 111
+    },
+    "3353848690": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 112
+    },
+    "3663448410": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 113
+    },
+    "1933463838": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 114
+    },
+    "2529193900": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 115
+    },
+    "1090403738": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 116
+    },
+    "1267086631": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 117
+    },
+    "1432530473": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 118
+    },
+    "1501464320": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 119
+    },
+    "1664353713": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 120
+    },
+    "2154761356": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 121
+    },
+    "514405275": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 122
+    },
+    "854769676": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 123
+    },
+    "2057540599": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 124
+    },
+    "2633393377": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 125
+    },
+    "2774048450": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 126
+    },
+    "2949880285": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 127
+    },
+    "3457292308": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 128
+    },
+    "3657774559": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 129
+    },
+    "4146945521": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 130
+    },
+    "2472534735": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 131
+    },
+    "203987704": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 132
+    },
+    "460094734": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 133
+    },
+    "2396605251": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 134
+    },
+    "2531991544": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 135
+    },
+    "3607995691": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 136
+    },
+    "2493685259": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 137
+    },
+    "3429794846": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 138
+    },
+    "4210235045": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 139
+    },
+    "4294123248": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 140
+    },
+    "2567740528": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 141
+    },
+    "3223516310": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 142
+    },
+    "264685801": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 143
+    },
+    "3098530433": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 144
+    },
+    "3273465751": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 145
+    },
+    "4097032877": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 146
+    },
+    "516350030": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 147
+    },
+    "1935249320": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 148
+    },
+    "3036395753": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 149
+    },
+    "245673290": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 150
+    },
+    "478119502": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 151
+    },
+    "3900222898": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 152
+    },
+    "3394440612": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 153
+    },
+    "3625804358": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 154
+    },
+    "4004218990": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 155
+    },
+    "926848091": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 156
+    },
+    "1455882868": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 157
+    },
+    "1875529325": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 158
+    },
+    "814287309": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 159
+    },
+    "1277508763": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 160
+    },
+    "2028987858": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 161
+    },
+    "2776907015": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 162
+    },
+    "2983090232": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 163
+    },
+    "3137993214": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 164
+    },
+    "3339510539": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 165
+    },
+    "3549715305": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 166
+    },
+    "3559843295": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 167
+    },
+    "3603123945": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 168
+    },
+    "3800787469": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 169
+    },
+    "3941477710": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 170
+    },
+    "2414365428": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 171
+    },
+    "509070426": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 172
+    },
+    "702945423": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 173
+    },
+    "966464572": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 174
+    },
+    "2148127105": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 175
+    },
+    "2563992102": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 176
+    },
+    "3075009468": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 177
+    },
+    "1150492938": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 178
+    },
+    "4103209199": {
+      "name": null,
+      "enabled": true,
+      "folderId": null,
+      "order": 179
+    },
+    "3145001837": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 180
+    },
+    "3066415342": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 181
+    },
+    "3179867851": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 182
+    },
+    "794264280": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 183
+    },
+    "1814716149": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 184
+    },
+    "3223046451": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 185
+    },
+    "3502364734": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 186
+    },
+    "3513968129": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 187
+    },
+    "4141759354": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 188
+    },
+    "1613532887": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 189
+    },
+    "913229679": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 190
+    },
+    "243760356": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 191
+    },
+    "1110447096": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 192
+    },
+    "4270974851": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 193
+    },
+    "1957127820": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 194
+    },
+    "2728400764": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 195
+    },
+    "2985039989": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 196
+    },
+    "3140653121": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 197
+    },
+    "3431724106": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 198
+    },
+    "3560323826": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 199
+    },
+    "3770324682": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 200
+    },
+    "1697325113": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 201
+    },
+    "954366176": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 202
+    },
+    "1263889584": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 203
+    },
+    "1002551518": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 204
+    },
+    "2041683921": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 205
+    },
+    "2892451698": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 206
+    },
+    "3632523416": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 207
+    },
+    "1659652729": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 208
+    },
+    "805203703": {
+      "name": null,
+      "enabled": false,
+      "folderId": null,
+      "order": 209
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "packId": "apex.slay-the-spire-2",
+  "packVersion": "1.0.0",
+  "environment": {
+    "date": "2026-10-18",
+    "gamePath": "E:\\SteamLibrary\\steamapps\\common\\Slay the Spire 2",
+    "gameVersion": "v0.111.0 (commit 41cef1ea)",
+    "engine": "Godot 4.5.1 + GDExtension libGodotFmod",
+    "audio": "FMOD Studio 2.3.6 build 149358",
+    "devkit": "ApexAudio-DevKit-2026.10.17",
+    "compiler": "zig 0.15.2",
+    "dotnetSdk": "8.0.413"
+  },
+  "validationTier": "runtime-audio",
+  "targetVersionEvidence": [
+    "fmod.dll / fmodstudio.dll product version 2.3.6 (build 149358)",
+    "FMOD_Studio_System_Create(headerVersion=0x00020306) returned 0",
+    "runtime trace from the capture module: v=00020306, getVersion result 0",
+    "libGodotFmod RTTI strings name godot::FmodServer and src\\fmod_server.cpp"
+  ],
+  "versions": {
+    "bankFormat": "FMOD Studio bank (RIFF/FEV) inside Godot pck v3",
+    "integrationVersion": "utopia-rise/fmod-gdextension style GDExtension",
+    "exactSdkVersion": "2.3.6",
+    "verifiedAbi": "FMOD 2.03.06 C API; DSP descriptor sdk=110 accepted (9/9 taps attached, audio observed)"
+  },
+  "audioInstanceEvidence": {
+    "diskCandidates": [
+      "fmod.dll (7C5948D8...)",
+      "fmodstudio.dll (85364E24...)",
+      "libGodotFmod...dll (890695D3...)"
+    ],
+    "loadedModule": "fmodstudio.dll loaded in SlayTheSpire2.exe",
+    "initializedInstance": "confirmed: FMOD_Studio_System_IsValid(0x1FFF1F) passed and GetCoreSystem succeeded",
+    "realCallbacks": "confirmed: ApexFmodMix ring active=1, 4611 blocks in one sampling window"
+  },
+  "groupEvidenceFile": "README.md",
+  "stages": {
+    "packageIntegrity": "passed",
+    "build": "passed",
+    "protocol": "passed",
+    "resolvedObjects": "passed",
+    "listenerRegistration": "not-applicable",
+    "callbacks": "passed",
+    "nonZeroPcm": "passed",
+    "independentTracks": "passed",
+    "selection": "not-tested",
+    "disconnectReconnect": "not-tested",
+    "feedbackSource": "passed",
+    "physicalHaptics": "not-tested"
+  },
+  "runtimeMeasurements": {
+    "scene": "main menu idle",
+    "window": "about 18 s",
+    "buses": [
+      { "route": 0, "path": "bus:/", "peak": 0.147853, "blocks": 2731 },
+      { "route": 1, "path": "bus:/master", "peak": 0.147853, "blocks": 2731 },
+      { "route": 3, "path": "bus:/master/music", "peak": 0.131774, "blocks": 2730 },
+      { "route": 2, "path": "bus:/master/sfx", "peak": 0, "blocks": 0 },
+      { "route": 4, "path": "bus:/master/ambience", "peak": 0, "blocks": 0 },
+      { "route": 5, "path": "bus:/master/sfx/Reverb", "peak": 0, "blocks": 0 },
+      { "route": 6, "path": "bus:/master/sfx/chorus", "peak": 0, "blocks": 0 },
+      { "route": 7, "path": "bus:/master/sfx_ducking_bass", "peak": 0, "blocks": 0 },
+      { "route": 8, "path": "bus:/master/sfx_ducking_big", "peak": 0, "blocks": 0 }
+    ],
+    "note": "Parent equals child (master ~ music) as expected for bus aggregation; no audio was playing on the other buses in that scene."
+  },
+  "evidenceFiles": ["README.md", "sts2-buses.json", "sts2-fmodstudio-inspect.json"],
+  "sources": [
+    "ApexAudio-DevKit-2026.10.17 adapters/Fmod (patched: handle-mode locator + step trace)",
+    "FMOD Studio API exports of the shipped fmodstudio.dll / fmod.dll",
+    "Godot pck v3 layout as implemented by Godot 4.5"
+  ],
+  "knownLimitations": [
+    "The Studio System handle (0x1FFF1F) is a runtime handle; a different FMOD build or init order can change it and the connect will fail with code 3.",
+    "runtimeVersion must equal FMOD_System_GetVersion (131846 here).",
+    "Only 48 kHz is supported.",
+    "The capture module appends to %TEMP%\\apexfmod-trace.txt on connect (diagnostics only)."
+  ],
+  "blockingStage": null,
+  "notTested": [
+    "gameplay SFX and ambience audio",
+    "group selection affecting the realtime mix",
+    "disconnect and reconnect in the same session",
+    "X-Haptics engine and physical controller feedback",
+    "long-run stability"
+  ],
+  "reproductionCommands": [
+    "ApexAudio.DevTools.exe check --pack apex.slay-the-spire-2.gpack",
+    "ApexAudio.DevTools.exe check --pack apex.slay-the-spire-2.gpack --launch",
+    "ApexAudio.DevTools.exe capture --pack apex.slay-the-spire-2.gpack --pid <SlayTheSpire2 pid> --allow-game-connection --seconds 10"
+  ],
+  "cleanup": {
+    "adapterDisconnected": "passed",
+    "gameModules": "ApexFmodCapture-*.dll stays loaded until the game exits",
+    "temporaryDirectories": ["devtools scratch directories", "%TEMP%\\apexfmod-trace.txt"]
+  }
+}

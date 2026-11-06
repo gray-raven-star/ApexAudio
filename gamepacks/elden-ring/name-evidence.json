@@ -1,0 +1,756 @@
+{
+  "source": "https://github.com/bnnm/wwiser-utils/blob/master/wwnames/Elden%20Ring%20(PS4).txt",
+  "method": "Labels accepted only when Wwise FNV-1 matches current PC Init.bnk ID.",
+  "buses": [
+    {
+      "id": 3803692087,
+      "originalName": "Master Audio Bus",
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2077784188,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2668876684,
+      "originalName": "InGameMaster",
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 412724365,
+      "originalName": "Bgm",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 514358619,
+      "originalName": "Field",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1092937338,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3488556250,
+      "originalName": "FieldNormal",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3137449344,
+      "originalName": "FieldNormalAux",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3608943425,
+      "originalName": "FieldBattle",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 224312193,
+      "originalName": "FieldBattleAux",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1398499310,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1522554916,
+      "originalName": "BossBattle",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2888417916,
+      "originalName": "BattleWyvern",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 983310469,
+      "originalName": "Aux",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 713277698,
+      "originalName": "Echo",
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1126594524,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3125543353,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3125543356,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3125543358,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3125543359,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1417743849,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 528538126,
+      "originalName": "_008_Underground_HugeSpace",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 719093136,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1345718028,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1853589643,
+      "originalName": "_003_Room",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2241973003,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2252513925,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2352684120,
+      "originalName": "_001_Outdoor",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2556314929,
+      "originalName": "_000_None",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2644074703,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2913009953,
+      "originalName": null,
+      "occupiedSlots": [
+        0,
+        1
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2995893590,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3368768847,
+      "originalName": "_002_Outdoor_Narrow",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3524127397,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3639472402,
+      "originalName": "_004_Room_Large",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3665333770,
+      "originalName": "_007_Underground_Tunnel",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3695558217,
+      "originalName": "_005_Hall",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3731110161,
+      "originalName": null,
+      "occupiedSlots": [
+        1
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3770122600,
+      "originalName": "_006_Hall_Large",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3942751198,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1824148386,
+      "originalName": "VoiceEffect",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 965907223,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2957365592,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3822118266,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1848941422,
+      "originalName": null,
+      "occupiedSlots": [
+        0,
+        1
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3382104531,
+      "originalName": "PlayerFooter",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 654224750,
+      "originalName": null,
+      "occupiedSlots": [
+        1
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3060986496,
+      "originalName": null,
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3540168572,
+      "originalName": null,
+      "occupiedSlots": [
+        2
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3814961238,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1584861537,
+      "originalName": "SE",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 436743010,
+      "originalName": "Character",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 393239870,
+      "originalName": "SFX",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1069431850,
+      "originalName": "Player",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 559901361,
+      "originalName": "instruments",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1362963929,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1790315531,
+      "originalName": "BattleVoice",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 986433125,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3965536909,
+      "originalName": "BattleVoice_default",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2129573385,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 94261868,
+      "originalName": "GypsySong",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2561315776,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 280344167,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2202883432,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2467255899,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2756358378,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4178685407,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3012940251,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3169535375,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2299321487,
+      "originalName": "Enemy",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 789383070,
+      "originalName": "c3050",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2329431920,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1449930091,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2329288837,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2646498870,
+      "originalName": "c4020",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1817942109,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2882665464,
+      "originalName": "c4800",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1846302144,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3841132504,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1613975458,
+      "originalName": "IconSE",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 797505578,
+      "originalName": "IconSE_Lv3",
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 797505579,
+      "originalName": "IconSE_Lv2",
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1788190166,
+      "originalName": "MapEnv",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1375654984,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1411817582,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1525972139,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1952473685,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2599410046,
+      "originalName": "Rains",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2798675908,
+      "originalName": "EntranceEnv",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3127560358,
+      "originalName": "MaterialChange",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2623632643,
+      "originalName": "Asset",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3759290903,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1784196969,
+      "originalName": "Hit_Dialogue",
+      "occupiedSlots": [
+        0
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2747540986,
+      "originalName": "Hit_Old",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1802970398,
+      "originalName": "FE",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3764479168,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3764479170,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3764479171,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2569233829,
+      "originalName": "CutsceneSE",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 479358706,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2771280331,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3735027030,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2975624521,
+      "originalName": "VoiceParent",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1698900754,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3170124113,
+      "originalName": "Voice",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 720844497,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 737622178,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 771177368,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1862294529,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1017377641,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2335912179,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2502849598,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4169630593,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4202347380,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4026531462,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4235484925,
+      "originalName": null,
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 805203703,
+      "originalName": "Master Secondary Bus",
+      "occupiedSlots": [],
+      "selectedSlot": 3
+    }
+  ]
+}

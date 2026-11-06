@@ -1,0 +1,277 @@
+{
+  "backend": "Wwise",
+  "title": "幻兽帕鲁 · Wwise 音频",
+  "gameSha256": "E590B5E7BFAA3FEA40FAB1A02CC72C8FC5FD6F8631EF2308E95AC56C25195837",
+  "engineModule": "Palworld-Win64-Shipping.exe",
+  "engineSha256": "E590B5E7BFAA3FEA40FAB1A02CC72C8FC5FD6F8631EF2308E95AC56C25195837",
+  "bankVersion": 150,
+  "bankHeader": "lgAAACM6xlA+XXAXEAAAAN00AAAAAAAAk7zVI17dPExK95S1bIYbeQAAAAAAAAAA",
+  "bankId": 2052085504,
+  "sdkYear": 2023,
+  "sdkSeries": 1,
+  "captureFile": "modules/ApexPalworldWwiseCapture.dll",
+  "captureSha256": "F8435D78AA1B66E18DC2D9A1397430C8B406FAF6D9E104A854C191E5705C199F",
+  "buses": [
+    {
+      "id": 3803692087,
+      "parent": 0,
+      "name": "主混音（Master Audio Bus）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 47937584,
+      "parent": 3803692087,
+      "name": "玩家语音（PlayerVoice）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 77978275,
+      "parent": 3803692087,
+      "name": "环境（Ambient）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 348963605,
+      "parent": 3803692087,
+      "name": "音频总线 348963605",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 608898761,
+      "parent": 348963605,
+      "name": "音频总线 608898761",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 286627785,
+      "parent": 608898761,
+      "name": "音频总线 286627785",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 381372403,
+      "parent": 608898761,
+      "name": "音频总线 381372403",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 683424935,
+      "parent": 608898761,
+      "name": "音频总线 683424935",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3244485201,
+      "parent": 608898761,
+      "name": "音频总线 3244485201",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3121008436,
+      "parent": 348963605,
+      "name": "音频总线 3121008436",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 412724365,
+      "parent": 3803692087,
+      "name": "背景音乐（BGM）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 752119174,
+      "parent": 3803692087,
+      "name": "帕鲁语音（PalVoice）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1551306167,
+      "parent": 3803692087,
+      "name": "界面（UI）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1996316241,
+      "parent": 1551306167,
+      "name": "加载静音界面（UI_LoadingMute）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1584861537,
+      "parent": 3803692087,
+      "name": "音效（SE）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1656082668,
+      "parent": 1584861537,
+      "name": "音频总线 1656082668",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2569992122,
+      "parent": 1584861537,
+      "name": "音频总线 2569992122",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2706548304,
+      "parent": 1584861537,
+      "name": "音频总线 2706548304",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3093912444,
+      "parent": 1584861537,
+      "name": "音频总线 3093912444",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3177428469,
+      "parent": 1584861537,
+      "name": "音频总线 3177428469",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3893417221,
+      "parent": 1584861537,
+      "name": "武器（Weapon）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4161132316,
+      "parent": 1584861537,
+      "name": "技能（Skill）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2139775466,
+      "parent": 3803692087,
+      "name": "音频总线 2139775466",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2716898011,
+      "parent": 3803692087,
+      "name": "音频总线 2716898011",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2948364142,
+      "parent": 3803692087,
+      "name": "音频总线 2948364142",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2948364143,
+      "parent": 3803692087,
+      "name": "音频总线 2948364143",
+      "nameSource": "Init.bnk HIRC 原始总线编号",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3073030106,
+      "parent": 3803692087,
+      "name": "提示乐（Jingle）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3157003241,
+      "parent": 3803692087,
+      "name": "测试总线（test）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3225742224,
+      "parent": 3803692087,
+      "name": "NPC 语音（NPCVoice）",
+      "nameSource": "Wwise FNV 对应；除 Master Audio Bus 外候选英文也出现在当前 EXE；细分语义尚未逐项试听",
+      "category": "音频总线",
+      "auxiliary": false,
+      "slot": 3
+    }
+  ]
+}
