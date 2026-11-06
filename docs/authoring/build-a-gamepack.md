@@ -24,9 +24,10 @@
 | `adapters/Fmod/` | FMOD 适配器，字段和限制见其 `README.md` |
 | `adapters/Unreal/` | Unreal AudioMixer 适配器，字段和限制见其 `README.md` |
 | `schemas/` | 清单与预设的 JSON Schema |
+| `gamepack-starter/` | 可复制的 Wwise 定义示例，也是 `New-Pack.ps1` 的模板来源 |
 | `tools/Pack.ps1` | 为完整包目录生成文件摘要并压成 `.gpack` |
 
-使用 `tools/New-Pack.ps1` 从 `templates/` 创建新定义，保存到作者自己选定的目录。字段来源见[配置参考](../reference/engine-config-reference.md)，调查方法见[接口识别](identify-audio-system.md)。
+使用 `tools/New-Pack.ps1` 从 `gamepack-starter/` 和 `templates/` 创建新定义，保存到作者自己选定的目录。字段来源见[配置参考](../reference/engine-config-reference.md)，调查方法见[接口识别](identify-audio-system.md)。
 
 制作采集模块需要完整源码，运行版只含应用和文档。构建环境为 Windows x64、.NET 8 SDK；原生构建脚本调用 Zig 的 `cc`，`-Compiler` 填写实际 `zig.exe` 路径。源码不含第三方游戏 SDK。
 
@@ -44,6 +45,7 @@ pwsh -File tools/New-Pack.ps1 -Id author.my-game -Name "目标游戏" -Backend W
 
 ```text
 ../my-game/
+  AGENTS.md
   manifest.json
   game.json
   presets/initial.json
@@ -52,6 +54,7 @@ pwsh -File tools/New-Pack.ps1 -Id author.my-game -Name "目标游戏" -Backend W
   validation-report.json
 ```
 
+- `AGENTS.md`：本适配包工作目录的编码代理约定。用代理协助制作时，提供这个目录和 ApexAudio 源码或 DevKit 的位置。标准构建会把这份开发指引留在定义目录。
 - `manifest.json`：包 ID、名称、版本、适配器入口、游戏匹配和预设引用，格式见 [包清单](../reference/gpack-format.md)。为新游戏分配独立的包 ID。
 - `game.json`：适配器配置，包含游戏地址或引擎字段，宿主不解析。自写适配器可使用其他文件名和格式。
 - `presets/initial.json`：作者提供的初始命名、显示文件夹和开关，格式见 [预设说明](../reference/presets-recordings.md)。`packId` 必须对应新包 ID，分组键必须匹配适配器返回的稳定 ID。
@@ -62,6 +65,47 @@ pwsh -File tools/New-Pack.ps1 -Id author.my-game -Name "目标游戏" -Backend W
 `__REQUIRED__` 和空分组需要用调查结果补齐。Custom 还生成 `adapter/YourAdapter.csproj` 与协议骨架，供实现自己的采集器。
 
 声音父子关系由适配器报告，预设文件夹只整理界面，不改变游戏路由。各编号需对应各自的音频来源，不能重复发送同一份总混音。
+
+#### Wwise 定义的格式示例
+
+以下是上面命令生成的初始结构。占位字段和空分组要用目标游戏的实际调查结果补齐，之后才能构建可发布的适配包。
+
+`manifest.json` 描述包身份和运行入口，`presets` 列出要随包分发的预设。打包时才会填入 `files`。
+
+```json
+{
+  "schemaVersion": 1,
+  "id": "author.my-game",
+  "name": "目标游戏",
+  "version": "0.1.0",
+  "author": "__REQUIRED__",
+  "source": "__REQUIRED__",
+  "description": "Unverified development package",
+  "protocolVersion": 1,
+  "entryPoint": "ApexAudio.Wwise.exe",
+  "demo": false,
+  "games": [
+    {"executable": "__REQUIRED__.exe", "sha256": "__REQUIRED__"}
+  ],
+  "presets": ["presets/initial.json"],
+  "files": {}
+}
+```
+
+`game.json` 从 [gamepack-starter 里的 Wwise 配置](../../gamepack-starter/game.json) 生成。核对目标 EXE 后，把相同的摘要写入清单的 `games[0].sha256` 和后端配置的 `gameSha256`，再按实际引擎和音频路由填写其余字段。整个起始目录见 [gamepack-starter](../../gamepack-starter/README.md)，可以直接复制。
+
+`presets/initial.json` 的 `packId` 对应清单的 `id`。确认实际分组后，用适配器返回的稳定分组 ID 作为 `groups` 的键。
+
+```json
+{
+  "schemaVersion": 1,
+  "id": "initial",
+  "name": "初始配置",
+  "packId": "author.my-game",
+  "folders": [],
+  "groups": {}
+}
+```
 
 ### 2. 复用或实现适配器
 

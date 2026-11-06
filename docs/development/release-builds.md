@@ -6,7 +6,7 @@
 pwsh -File tools/Release.ps1 -Version 2026.10.18 -CompilerDirectory 'C:/Tools/zig' -OutputDirectory '../release-output'
 ```
 
-将版本、编译器目录和输出位置换成本次构建的值。脚本生成 Windows x64 运行包、DevKit ZIP、SHA-256 清单和构建报告。DevKit 提供通用源码、工具、示例和许可证；运行包附应用和用户文档。构建通过只说明源码和后端入口通过了编译，游戏采集和手柄反馈由各适配包的验证报告单独记录。
+将版本、编译器目录和输出位置换成本次构建的值。脚本生成 Windows x64 运行包、DevKit ZIP、SHA-256 清单和构建报告。DevKit 提供通用源码、工具、适配包起始目录（`gamepack-starter/`）、示例和许可证；运行包附应用和用户文档。构建通过只说明源码和后端入口通过了编译，游戏采集和手柄反馈由各适配包的验证报告单独记录。
 
 ## 现有 GitHub 发布流程
 

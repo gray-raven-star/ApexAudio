@@ -21,7 +21,7 @@ if ($game.backend -eq 'Custom') {
     New-Item -ItemType Directory -Path $stage -Force | Out-Null
     & dotnet publish (Join-Path $definitionRoot 'adapter/YourAdapter.csproj') -c Release --no-self-contained -o $stage --configfile (Join-Path $root 'NuGet.Config') --nologo
     if ($LASTEXITCODE -ne 0) { throw 'Custom adapter build failed.' }
-    Get-ChildItem -LiteralPath $definitionRoot | Where-Object Name -ne 'adapter' | Copy-Item -Destination $stage -Recurse -Force
+    Get-ChildItem -LiteralPath $definitionRoot | Where-Object Name -notin @('adapter','AGENTS.md') | Copy-Item -Destination $stage -Recurse -Force
     & (Join-Path $PSScriptRoot 'Pack.ps1') -Directory $stage -Output (Join-Path $root ('dist/packages/' + $manifest.id + '.gpack'))
     return
 }

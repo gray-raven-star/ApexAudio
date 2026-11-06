@@ -12,7 +12,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Wwise adapter build failed.' }
 $module = Join-Path $stage $game.captureFile
 & $Compiler cc -target x86_64-windows-gnu -shared -O2 "-DCAPTURE_BANK_VERSION=$($game.bankVersion)" "-DCAPTURE_SDK_YEAR=$($game.sdkYear)" "-DCAPTURE_SDK_SERIES=$($game.sdkSeries)" (Join-Path $root 'adapters/Wwise/native/ApexWwiseCapture.c') -o $module
 if ($LASTEXITCODE -ne 0) { throw 'Native capture build failed.' }
-Get-ChildItem -LiteralPath $definitionRoot | Copy-Item -Destination $stage -Recurse -Force
+Get-ChildItem -LiteralPath $definitionRoot | Where-Object Name -ne 'AGENTS.md' | Copy-Item -Destination $stage -Recurse -Force
 $game.captureSha256 = (Get-FileHash -LiteralPath $module).Hash
 $game | ConvertTo-Json -Depth 30 | Set-Content -Encoding utf8 -LiteralPath (Join-Path $stage 'game.json')
 & (Join-Path $root 'tools/Pack.ps1') -Directory $stage -Output (Join-Path $root ('dist/packages/' + $manifest.id + '.gpack'))

@@ -12,7 +12,7 @@ Apex Audio 是面向飞智八爪鱼 6 Pro 的 Windows 游戏音频工具。用�
 
 ## 制作适配包
 
-从包含 `ApexAudio.sln` 的目录操作，先按[构建环境](docs/development/build-environment.md)准备工具。每款游戏的定义由适配作者维护，仓库提供采集器实现、配置模板和构建工具。
+从包含 `ApexAudio.sln` 的目录操作，先按[构建环境](docs/development/build-environment.md)准备工具。每款游戏的定义由适配作者维护，仓库提供采集器实现、可复制的定义示例 [gamepack-starter](gamepack-starter/README.md) 和构建工具。
 
 1. [识别游戏音频接口](docs/authoring/identify-audio-system.md)，判断可复用的采集器。
 2. [制作适配包](docs/authoring/build-a-gamepack.md)，创建游戏定义并构建 `.gpack`。

@@ -72,7 +72,7 @@ capture 的退出成功表示诊断命令完成，不表示游戏音轨已经通
 
 ## 阶段记录与交接
 
-`New-Pack.ps1` 已从 `templates/validation-report.json` 生成报告。随制作过程更新现有字段，续接时根据证据决定下一步：
+`New-Pack.ps1` 已从 `gamepack-starter/validation-report.json` 生成报告。随制作过程更新现有字段，续接时根据证据决定下一步：
 
 | 阶段 | 保存内容 | 报告位置与后续判断 |
 |---|---|---|

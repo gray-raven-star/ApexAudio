@@ -26,7 +26,7 @@ function Copy-Tree([string]$Source,[string]$Destination) {
     }
 }
 Write-Host 'Stage the application and adapter development kit.'
-foreach($directory in @('.github','src','adapters','providers','tests','schemas','ui','vendor','templates','packaging')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
+foreach($directory in @('.github','src','adapters','providers','tests','schemas','ui','vendor','templates','gamepack-starter','packaging')) { Copy-Tree (Join-Path $root $directory) (Join-Path $kit $directory) }
 # Source and runtime need one bridge revision, no old copies or debug artifacts.
 $native=Join-Path $kit 'providers/XHaptics/native'
 Get-ChildItem -LiteralPath $native -File | Where-Object Name -notin @('ApexGroupsBridge.c','ApexGroupsBridge-v5.dll','xh-support.json','xh-engines.json') | ForEach-Object { Remove-Item -LiteralPath $_.FullName }
