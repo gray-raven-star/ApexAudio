@@ -41,6 +41,7 @@ Copy-Tree (Join-Path $root 'tools/FmodProbe') (Join-Path $kit 'tools/FmodProbe')
 Copy-Tree (Join-Path $root 'examples/demo-pack') (Join-Path $kit 'examples/demo-pack')
 Copy-Tree (Join-Path $root 'docs') (Join-Path $kit 'docs')
 New-Item -ItemType Directory -Force -Path (Join-Path $kit 'assets') | Out-Null
+Copy-Item -LiteralPath (Join-Path $root 'packaging/assets/apex.ico') -Destination (Join-Path $kit 'assets/apex.ico')
 Copy-Item -LiteralPath (Join-Path $root 'packaging/assets/apex.svg') -Destination (Join-Path $kit 'assets/apex.svg')
 Write-Host 'Copy portable Zig with its complete library and license tree.'
 $compiler=(Resolve-Path -LiteralPath $CompilerDirectory).Path
