@@ -1,4 +1,4 @@
-# 发布开发套件和独立游戏包
+# 发布适配包
 
 用户可只下载应用和自己需要的 .gpack；通用开发套件不混入具体游戏定义和个人数据。版本、初始预设及元数据更新仍须重新生成 manifest.files。
 
@@ -10,12 +10,8 @@
 
 打包后做完整性和预设一致性检查。原始采集报告应保留实际测试版本与范围，不能把换预设写成重新验证所有场景。运行不需要的 PDB、导入库和本机路径不放入用户包。
 
-## GitHub 发布任务
+## 分发与下载目录
 
-.github/workflows/publish-bundle.yml 只在 bundle-YEAR.MONTH.DAY 标签推送时触发，使用固定摘要的 GitHub 官方构建步骤与校验过的 Zig。构建开发套件，不连接游戏或发送手柄反馈。
+发布前准备完整 `.gpack`、SHA-256、支持的游戏构建及[实际验证结果](verify-a-gamepack.md)。保留该版本的游戏定义和专用采集器源码，并记录构建命令和依赖来源，方便后续更新。发布后核对公开附件和摘要，再更新[适配包下载目录](../user/gamepack-downloads.md)。
 
-主分支保存通用源码和文档；发布标签的提交可额外携带 release-inputs/gamepacks/、gamepacks.json 及 release-notes.md。gamepacks.json 记录每个附件的文件名、版本和 SHA256；这些发布输入不复制进开发套件。
-
-任务先验证输入，构建，再创建草稿 Release，全部附件上传成功后才公开。每个 .gpack 是独立附件。开发套件更新不自动成为最新主程序发布，旧版本不会被覆盖。
-
-发布前必须确认内容和来源已获授权，不加入账号、密钥、游戏媒体、银行原包、内存转储、用户录音或调试符号。发布后检查公开附件数量、名称和摘要，不能只看标签推送成功。
+现有公开包在 [ApexAudio 2026.10.18](https://github.com/gray-raven-star/ApexAudio/releases/tag/bundle-2026.10.18) 的附件中。早期的 `bundle-*` 工作流从发布标签的快照上传附件，龙之信条 2 则由[专用工作流](https://github.com/gray-raven-star/ApexAudio/blob/main/.github/workflows/publish-gamepack.yml)校验仓库中的输入后追加到该 Release。应用和 DevKit 的构建见[发行版构建](../development/release-builds.md)。

@@ -1,16 +1,23 @@
-# 新游戏音频识别与复用判断
+# 识别游戏音频接口
 
 按以下顺序调查目标游戏，再判断能否复用现有采集器。项目没有覆盖所有资源包、SDK 版本和静态音频引擎的自动发现工具；缺少证据的配置项先保留为未知，由开发者或 AI 继续调查。
-
-用 DevTools `inspect` 检查静态导出、候选资源和加载模块，命令见[制作指南](gamepack-authoring.md)。资源位于容器内时，先核对[现有元数据读取器](container-metadata.md)支持的格式。
-
-需要读取已知地址或反汇编片段时，使用[调查工具与资料检索](investigation.md)中的命令。下文按引擎列出复用条件。
 
 ## 先盘点项目，再调查目标
 
 先读[后端配置与限制](../reference/engine-config-reference.md)，了解现有实现支持的接口，再决定是否扩展包内实现或开发新后端。不能因引擎名称相同就认定兼容。
 
 把目标游戏的主 EXE、发行版本、SHA256、实际音频模块和调查工具／方法写入自己的适配笔记。文件摘要可以用 PowerShell `Get-FileHash -Algorithm SHA256 -LiteralPath <文件>` 获取。不得把开发机的绝对路径、随机堆地址或旧缓存路径写成发布配置。
+
+## 静态与运行时调查
+
+先按[构建环境](../development/build-environment.md)准备 DevTools。使用 `inspect` 记录游戏文件摘要、候选资源和导出。报告出现 `truncated=true` 时缩小资源范围重查。启动游戏后可以核对实际加载的模块，将 PID 和模块名换成当前进程的数据。
+
+```powershell
+prebuilt/devtools/ApexAudio.DevTools.exe inspect --exe "D:/Games/Example/Game.exe" --resources "D:/Games/Example" --output evidence/static.json
+prebuilt/devtools/ApexAudio.DevTools.exe inspect --exe "D:/Games/Example/Game.exe" --pid 1234 --module Audio.dll --output evidence/runtime.json
+```
+
+调查只读，范围限于指定进程和模块。记录游戏构建、模块 SHA-256、采样率、通道和路由；找不到名称时保留稳定编号。需要定位具体对象或核对签名时，再查[分析采集接口](analyze-capture-interfaces.md)。资源在容器内时，先查[容器元数据读取范围](container-metadata.md)。
 
 ## 分三类证据
 
@@ -53,3 +60,13 @@ RE Engine、Unreal 等游戏引擎身份不能单独决定音频中间件。`.pa
 - **尚无可用采集路线**：列出缺口、证据和开发范围。可以提供研究结果，但不要交付冒充已可用的空壳包。
 
 调查阶段、构建阶段、真实音频阶段和实体反馈阶段应分别记录结果。目标游戏的版本数据、分组与接口必须独立取得；是否允许读取目标游戏历史配置应提前约定。共享的公开源码仓库只包含通用模板，不包含历史扫描目录或具体游戏配置。
+
+## 如何搜资料
+
+按已观察到的接口名、类型名、实际错误码、SDK 系列及结构字段搜索，优先顺序为：官方版本文档→对应版本头文件／原始源码→引擎接口示例→第三方讨论。第三方片段只能提供线索。
+
+资料入口：[Audiokinetic 文档](https://www.audiokinetic.com/library/)、[官方公开头文件仓库](https://github.com/audiokinetic/WwiseIncludes)、[FMOD 文档](https://www.fmod.com/docs/)、[Epic API](https://dev.epicgames.com/documentation/en-us/unreal-engine/API)。核对页面实际版本，最新文档不能直接套给旧版程序。
+
+搜索模板可以是 `"<实际符号>" "<SDK系列>"`、`"<结构名>" "<字段名>"`、`"<错误码>" site:<官方域名>`。若只有其他版本资料，列出差异假设，再用目标中的调用和内存结构验证。保存来源链接、版本、证据与仍未知项，不保存整份第三方文档进游戏包。
+
+确定复用路径后，继续[创建定义并构建适配包](build-a-gamepack.md)。

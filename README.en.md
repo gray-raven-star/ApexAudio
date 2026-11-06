@@ -1,28 +1,28 @@
 # Apex Audio
 
-**Apex Audio lets the Flydigi Apex 6 Pro use selected game sounds as input for supplemental vibration through Flydigi X-Haptics.** When a game adapter can read dialogue, background music, and sound effects as separate groups, you can turn off dialogue and music while keeping footsteps, gunfire, and other effects as vibration input. The game continues playing all of its normal audio.
- Game-specific capture is supplied by `.gpack` adapters.
+Apex Audio captures separate game audio tracks on Windows. Choose which sounds feed Flydigi X-Haptics for supplemental vibration on the Flydigi Apex 6 Pro, or record the tracks and listen to them individually.
 
 [中文说明](README.md)
 
-## Downloads
+## Download and use
 
-GitHub Releases provide a Windows x64 application archive and individually downloadable game adapters. The application requires .NET 8 Desktop Runtime and WebView2 Runtime. Supplemental haptics are currently designed and verified primarily with the Flydigi Apex 6 Pro.
+1. Download the Windows x64 ZIP from the [latest stable release](https://github.com/gray-raven-star/ApexAudio/releases/latest). Extract it and run `ApexAudio.exe`. The app requires the .NET 8 Desktop Runtime and WebView2 Runtime. Supplemental vibration requires a supported official X-Haptics installation.
+2. Pick a `.gpack` from the [gamepack downloads](docs/user/gamepack-downloads.md).
+3. Follow the [guide to importing, connecting and recording](docs/user/connect-and-record.md).
 
-Import game adapters from the app as `.gpack` files. Each package only matches the game executable version declared in its manifest. Game updates may require an updated package. Supplemental haptics require a compatible official X-Haptics installation.
+## Build a gamepack
 
-The application and game adapters are separate assets on the same Release page. Download the app and only the `.gpack` files for games you play. The source tree does not include recordings, user settings, or local game data.
+Work from the directory containing `ApexAudio.sln`. Set up the [build environment](docs/development/build-environment.md). This repository provides capture adapters, templates, and build tools. Individual game definitions are maintained by their authors.
 
-## Develop an adapter
+1. [Identify the game's audio system](docs/authoring/identify-audio-system.md) and choose a capture adapter.
+2. [Build a gamepack](docs/authoring/build-a-gamepack.md) from your game definition.
+3. [Verify capture and feedback](docs/authoring/verify-a-gamepack.md) and record the test coverage.
+4. [Release the gamepack](docs/authoring/release-a-gamepack.md) with compatibility notes and validation results.
 
-Start with [START-HERE.md](START-HERE.md), then read the [game-pack authoring guide](docs/authoring/gamepack-authoring.md). Generic templates and engine adapters are included; ready-to-import game packages are distributed through GitHub Releases.
+See [AGENTS.md](AGENTS.md) for repository instructions used by coding agents.
 
-## Build from source
+## Develop the application
 
-Windows x64, PowerShell 7, and the .NET 8 SDK are required. See the [development guide](docs/development/adapter-maintenance.md) and [build environment](docs/development/build-environment.md).
+Use the [build guide](docs/development/build-environment.md) to build and run offline tests. See the [architecture and code entry points](docs/development/architecture.md) and the [documentation index](docs/README.md). Read the [contribution guidelines](CONTRIBUTING.md) before submitting changes.
 
-```powershell
-pwsh -File tools/Build.ps1 -Test
-```
-
-This project is licensed under the [MIT License](LICENSE). See [THIRD-PARTY.md](THIRD-PARTY.md) for separate terms.
+This project is licensed under the [MIT License](LICENSE). See [THIRD-PARTY.md](THIRD-PARTY.md) for third-party terms.

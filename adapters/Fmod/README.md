@@ -1,6 +1,6 @@
 # FMOD 分组适配器
 
-独立 EXE 适配器，实现既有 IPC V1、独立 PCM 和可选 realtimeMix。宿主源码和已安装二进制无需改变。每款游戏的定位数据和总线定义由单独的 `gamepacks/<你的包ID>` 提供，最终打包为自包含 `.gpack`。
+独立 EXE 适配器，实现既有 IPC V1、独立 PCM 和可选 realtimeMix。宿主源码和已安装二进制无需改变。每款游戏的定位数据和总线定义由单独的 `<定义目录>` 提供，最终打包为自包含 `.gpack`。
 
 ## 当前实现
 
@@ -26,7 +26,7 @@
 ## 构建
 
 ```powershell
-pwsh -File adapters/Fmod/tools/BuildPack.ps1 -Compiler <zig.exe> -Profile gamepacks/<你的包ID>
+pwsh -File adapters/Fmod/tools/BuildPack.ps1 -Compiler <zig.exe> -Profile <定义目录>
 ```
 
 仅编译本适配器和原生模块，复用 Contracts / Windows 辅助程序集，产物位于 `dist/packages/`。包不携带游戏银行、FMOD DLL 或第三方参考源码。匹配失败应更新包的定位数据和哈希，再实测，不要放宽版本检查。

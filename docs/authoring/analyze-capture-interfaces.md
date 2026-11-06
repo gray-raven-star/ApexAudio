@@ -1,10 +1,10 @@
-# 需要时才做代码分析
+# 分析采集接口
 
 代码分析用于回答资源、模块、导出和现有接口仍未解决的具体问题。它不是新游戏的默认第一步，不要求 REA，也不要求任何 AI 专用插件。Ghidra、反汇编工具或调试器只是不同工具入口。
 
 ## 进入条件
 
-先完成 [调查流程](investigation.md)，然后在笔记中写清：
+先完成 [调查流程](identify-audio-system.md)，然后在笔记中写清：
 
 - 已经检查什么，缺的是哪个接口、对象来源或线程条件。
 - 相关的模块、字符串、导出、调用者或数据引用在哪里。
@@ -37,4 +37,22 @@ Windows x64 的 .pdata 条目可能是函数分段，不总是完整函数边界
 
 先只读检查候选，再进行目标允许的调用或注册。注册可能只是将请求加入队列；必须确认实际完成、参数内存在完成前仍有效、回调对象生命周期正确。安装采集器与只读分析是不同阶段，不自动关闭保护或修改启动器。
 
-静态分析可帮助找到正确入口，不能证明已经得到 PCM。最终仍按 [验证说明](validation.md)观察真实数据。已有导出足够时完全可以跳过本文，省下工具安装和长时间分析。
+静态分析可帮助找到正确入口，不能证明已经得到 PCM。最终仍按 [验证说明](verify-a-gamepack.md)观察真实数据。已有导出足够时完全可以跳过本文，省下工具安装和长时间分析。
+
+## 读取已定位的地址
+
+已有候选地址后，可保存小段数据或函数代码：
+
+```powershell
+prebuilt/devtools/ApexAudio.DevTools.exe read-memory --pid 1234 --address 0xADDRESS --bytes 256 --binary evidence/snippet.bin --output evidence/snippet.json
+```
+
+`0xADDRESS` 必须用实际已核对的地址替换；单次最多 16 KiB，不写进程。堆地址每次可能变化；报告中记录地址来源和模块基址，不能把它直接写入发布配置。
+
+如需反汇编，另安装可选 Python 3 与 Capstone，不影响 .NET 主构建：
+
+```powershell
+uv run --with capstone==5.0.6 tools/Disassemble.py --input evidence/snippet.bin --base 0xADDRESS
+```
+
+该脚本只解码已取得的 x64 小段代码，不读游戏、不自动定位。Capstone 来源为 [原始项目](https://github.com/capstone-engine/capstone)，文档和许可由安装包提供；需要安装时按当前环境的网络权限执行，不要求所有适配任务都安装这些工具。

@@ -1,43 +1,28 @@
 # Apex Audio
 
-**Apex Audio** 是为飞智八爪鱼 6 Pro 与飞智 X-Haptics 配合使用的游戏声音分组工具。**你可以选择哪些游戏声音送给 X-Haptics 生成补充震动**。比如，游戏适配包能把对白、背景音乐和战斗音效分开时，你就可以关闭对白和 BGM，只让脚步、枪声等音效触发额外震动，同时仍正常听到游戏里的对白和音乐。
-
-这里控制的是**传给 X-Haptics 的声音输入**，不会改变游戏本身的音量或静音状态。每款游戏的采集方式由独立的 `.gpack` 适配包提供。
+Apex Audio 是面向飞智八爪鱼 6 Pro 的 Windows 游戏音频工具。用游戏适配包采集音乐、对白和音效，选择哪些声音送给飞智 X-Haptics 生成补充震动，也可以录下独立音轨逐组试听。
 
 [English](README.en.md)
 
 ## 下载与使用
 
-GitHub Releases 提供 Windows x64 程序压缩包和可单独下载的游戏适配包。运行程序需要 .NET 8 Desktop Runtime 和 WebView2 Runtime；补充震动功能目前以飞智八爪鱼 6 Pro 为主要适配和验证设备。
+1. 从[最新稳定版](https://github.com/gray-raven-star/ApexAudio/releases/latest)下载 Windows x64 程序 ZIP，解压后运行 `ApexAudio.exe`。运行需要 .NET 8 Desktop Runtime 和 WebView2 Runtime；补充震动需要受支持的官方 X-Haptics。
+2. 从[游戏适配包目录](docs/user/gamepack-downloads.md)下载对应的 `.gpack`。
+3. 按[导入适配包、连接与录音](docs/user/connect-and-record.md)开始使用。
 
-适配包由应用内的“导入 .gpack”功能安装。游戏包只匹配包中声明的程序版本；游戏更新后可能需要更新对应包。补充震动需要另行安装兼容的官方 X-Haptics。
+## 制作适配包
 
-程序与适配包可以在同一个 Release 页面分别下载。只下载程序和你实际游玩的游戏对应 `.gpack` 即可，无需安装其他游戏包。仓库源码不会混入录音、用户配置或本机游戏数据；适配包的游戏版本范围和验证记录见包内说明。
+从包含 `ApexAudio.sln` 的目录操作，先按[构建环境](docs/development/build-environment.md)准备工具。每款游戏的定义由适配作者维护，仓库提供采集器实现、配置模板和构建工具。
 
-## 开发适配包
+1. [识别游戏音频接口](docs/authoring/identify-audio-system.md)，判断可复用的采集器。
+2. [制作适配包](docs/authoring/build-a-gamepack.md)，创建游戏定义并构建 `.gpack`。
+3. [验证采集与反馈](docs/authoring/verify-a-gamepack.md)，检查独立音轨和实测范围。
+4. [发布适配包](docs/authoring/release-a-gamepack.md)，准备下载附件、兼容说明和验证报告。
 
-从 [开发入口](START-HERE.md) 开始，再阅读[游戏适配包制作指南](docs/authoring/gamepack-authoring.md)。
+使用编码代理时，项目约定见 [AGENTS.md](AGENTS.md)。
 
-使用、开发和协议文档见[文档入口](docs/README.md)。
+## 开发主程序
 
-| 目录或文档 | 用途 |
-|---|---|
-| `src/` | 主程序与通用功能 |
-| `adapters/` | Wwise、FMOD、Unreal 等独立采集器实现 |
-| `gamepacks/` | 游戏版本定义和作者初始预设 |
-| `templates/` | 新适配包模板 |
-| `docs/` | 架构、接口、预设和适配说明 |
-| `schemas/` | 适配包与预设格式校验规则 |
-| `tools/` | 构建、检查和打包脚本 |
+按[构建环境](docs/development/build-environment.md)构建和运行离线测试。查找实现入口从[架构](docs/development/architecture.md)开始，协议、格式及专项资料见[文档索引](docs/README.md)。提交改动前请阅读[贡献说明](CONTRIBUTING.md)。
 
-制作新游戏适配包需要检查目标游戏实际采用的音频接口和版本，并验证录到的是独立音轨。引擎名称相同不代表可以直接套用其他游戏的接口或配置。没有进行游戏内验证时，请在说明中明确标注。
-
-## 从源码构建
-
-需要 Windows x64、PowerShell 7 和 .NET 8 SDK。详见[开发文档](docs/development/adapter-maintenance.md)及[构建环境说明](docs/development/build-environment.md)。
-
-```powershell
-pwsh -File tools/Build.ps1 -Test
-```
-
-本项目采用 [MIT License](LICENSE)。第三方组件及各自许可见 [THIRD-PARTY.md](THIRD-PARTY.md)。
+本项目采用 [MIT License](LICENSE)。第三方来源和许可见 [THIRD-PARTY.md](THIRD-PARTY.md)。
