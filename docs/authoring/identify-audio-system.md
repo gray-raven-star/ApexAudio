@@ -1,6 +1,6 @@
 # 识别游戏音频接口
 
-按以下顺序调查目标游戏，再判断能否复用现有采集器。项目没有覆盖所有资源包、SDK 版本和静态音频引擎的自动发现工具；缺少证据的配置项先保留为未知，由开发者或 AI 继续调查。
+按以下顺序调查目标游戏，再判断能否复用现有采集器。项目没有能覆盖所有资源包、SDK 版本和静态音频引擎的自动发现工具；缺少证据的配置项先保留为未知，由开发者或 AI 继续调查。
 
 ## 先盘点项目，再调查目标
 
@@ -33,7 +33,7 @@ RE Engine、Unreal 等游戏引擎身份不能单独决定音频中间件。`.pa
 
 ## Wwise：从候选到可复用
 
-1. 查找 Wwise 银行及有效 `BKHD` 结构，读取银行版本、总线编号与父子关系；BNK 可能在容器内部，也可能使用不同扩展名。当前项目不带容器通用解包器，需记录外部读取工具和格式支持范围。
+1. 查找 Wwise 银行及有效 `BKHD` 结构，读取银行版本、总线编号与父子关系；BNK 可能在容器内部，也可能使用不同扩展名。当前项目不带通用容器解包器，需记录外部读取工具和格式支持范围。
 2. 核对实际目标模块的七类接口：IsInitialized、GetAudioSettings、SetBusEffect、LoadBankMemoryCopy／旧 LoadBank、RegisterPlugin、RegisterGlobalCallback、UnregisterGlobalCallback。精确修饰名和已支持别名以 `adapters/Wwise/native/ApexWwiseCapture.c` 为准。
 3. 检查实际 SDK ABI、银行头结构、插件虚表、回调签名及可用效果器槽位。银行版本不能单独推出所有 ABI；改变编译年份不会自动实现新 ABI。
 4. 接口与 ABI 都覆盖时，独立整理 `game.json`；缺少导出而只有静态代码时，现有基于 GetProcAddress 的定位不够，需在包内扩展，不能假填一个地址字段——Wwise 当前配置没有这个字段。
@@ -45,7 +45,7 @@ RE Engine、Unreal 等游戏引擎身份不能单独决定音频中间件。`.pa
 
 需要获取实际 Core／Studio 版本、Bus GUID／路径，以及已初始化 System 的定位方法。当前原生代码要求 `fmod.dll`、`fmodstudio.dll` 和相应 C API；其他名字、静态链接或不同包装方式可能需要改包内模块。不要把示例游戏的 wrapperRva、stateOffset、studioOffset 原样移给新游戏。
 
-单独离线载入银行得到 GUID 也不证明找到了正在游戏中播放的 System。GUID 要与活动实例中的 Bus 对应；父总线含子声音时，录音相同片段可能是真实重叠，需区分于错误复制。
+单独离线载入银行得到 GUID 也不证明找到了正在游戏中播放的 System。GUID 要与活动实例中的 Bus 对应；父总线含子声音时，录音相同片段可能是真实重叠，需与错误复制区分。
 
 ## Unreal：确认 AudioMixer 和对象布局
 
@@ -67,6 +67,6 @@ RE Engine、Unreal 等游戏引擎身份不能单独决定音频中间件。`.pa
 
 资料入口：[Audiokinetic 文档](https://www.audiokinetic.com/library/)、[官方公开头文件仓库](https://github.com/audiokinetic/WwiseIncludes)、[FMOD 文档](https://www.fmod.com/docs/)、[Epic API](https://dev.epicgames.com/documentation/en-us/unreal-engine/API)。核对页面实际版本，最新文档不能直接套给旧版程序。
 
-搜索模板可以是 `"<实际符号>" "<SDK系列>"`、`"<结构名>" "<字段名>"`、`"<错误码>" site:<官方域名>`。若只有其他版本资料，列出差异假设，再用目标中的调用和内存结构验证。保存来源链接、版本、证据与仍未知项，不保存整份第三方文档进游戏包。
+搜索模板可以是 `"<实际符号>" "<SDK系列>"`、`"<结构名>" "<字段名>"`、`"<错误码>" site:<官方域名>`。若只有其他版本资料，列出差异假设，再用目标中的调用和内存结构验证。保存来源链接、版本、证据与仍未知项，不把整份第三方文档保存进游戏包。
 
 确定复用路径后，继续[创建定义并构建适配包](build-a-gamepack.md)。

@@ -39,7 +39,7 @@ Setup 只检查，不自动下载软件或修改系统权限。失败先读报�
 dotnet publish tools/DevTools/ApexAudio.DevTools.csproj -c Release -o prebuilt/devtools --configfile NuGet.Config
 ```
 
-默认缓存可由构建脚本初始化在项目 .cache/；直接运行诊断 exe 时可在当前终端设置 $env:APEX_AUDIO_TEMP 到自己可写的本地目录，避免不同进程的环境变量不继承问题。详见 [权限与临时目录排查](../authoring/troubleshooting.md)。
+默认缓存可由构建脚本初始化在项目 .cache/；直接运行诊断 exe 时可在当前终端设置 $env:APEX_AUDIO_TEMP 到自己可写的本地目录，以免其他进程设置的环境变量传不到当前终端。详见 [权限与临时目录排查](../authoring/troubleshooting.md)。
 
 FMOD 自检源码可单独发布：
 

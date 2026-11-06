@@ -17,7 +17,7 @@ prebuilt/devtools/ApexAudio.DevTools.exe check --pack dist/packages/author.examp
 
 ### 开发示例音轨
 
-先构建 `tools/Build.ps1`，生成的开发示例在 artifacts/packages/demo.gpack。它不随用户版自动安装。
+先用 `tools/Build.ps1` 构建，生成的开发示例在 artifacts/packages/demo.gpack。它不随用户版自动安装。
 
 ```powershell
 prebuilt/devtools/ApexAudio.DevTools.exe check --pack artifacts/packages/demo.gpack --launch --demo-audio --seconds 3 --output evidence/demo.json
@@ -31,7 +31,7 @@ prebuilt/devtools/ApexAudio.DevTools.exe check --pack artifacts/packages/demo.gp
 prebuilt/devtools/ApexAudio.DevTools.exe capture --pack dist/packages/author.example.gpack --pid 1234 --allow-game-connection --seconds 5 --output evidence/capture.json
 ```
 
-这个命令执行包的正常 Connect，可能加载采集 DLL 或挂接 DSP，存在游戏崩溃风险，应在已授权的测试目标上执行；与 inspect 不同。它不启动 X-Haptics，也不发送物理震动。也可以由用户在应用中导入、连接和录音。
+与 inspect 不同，这个命令执行包的正常 Connect，可能加载采集 DLL 或挂接 DSP，存在游戏崩溃风险，应在已授权的测试目标上执行。它不启动 X-Haptics，也不发送物理震动。也可以由用户在应用中导入、连接和录音。
 
 报告包含实际分组、收到包数、帧数、各组峰值、首个有效数据块摘要、状态和错误。支持公共 realtimeMix 的包还报告映射 active 与发布块数；没有选中反馈组时混音静音是正常的，不能由此否定独立录音。
 
@@ -68,7 +68,7 @@ prebuilt/devtools/ApexAudio.DevTools.exe native-check --module "your-module.dll"
 
 首次 PCM 检查先用约 5 秒，不启动 X-Haptics 或做物理震动；只对明确发现的问题追加一次有目的的复查。按任务授权选择后续独立性、重连或手柄测试，用户留给自己测的项目标注未测并交付，不能为了填满报告反复要求重开游戏。
 
-capture 的退出成功表示诊断命令完成，不表示游戏音轨已经通过验收。读取实际报告字段和最早失败阶段再下结论。开发包的完整性和编译检查也不等于接收者已经成功完成新游戏适配。
+capture 成功退出表示诊断命令完成，不表示游戏音轨已经通过验收。读取实际报告字段和最早失败阶段再下结论。开发包的完整性和编译检查也不等于接收者已经成功完成新游戏适配。
 
 ## 阶段记录与交接
 

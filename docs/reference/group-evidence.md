@@ -26,7 +26,7 @@ uv run tools/Metadata/name_candidates.py --definition ../example/game.json --can
 
 输入为已经取得的当前分组表，输出是候选报告，脚本不自动改名。不要仅因 Init.bnk 没有文本名表就写“任何工具都无法恢复”。
 
-已有工具：Python 3 运行 `tools/Metadata/name_candidates.py --definition ../example/game.json --candidates evidence/names.txt --output evidence/name-candidates.json`。输入每行一个候选名，工具按当前 Wwise FNV-1 实现匹配定义中的 ID，输出所有竞争候选，不自动改配置。它不是音频识别器或穷举破解器。
+已有工具：用 Python 3 运行 `tools/Metadata/name_candidates.py --definition ../example/game.json --candidates evidence/names.txt --output evidence/name-candidates.json`。输入每行一个候选名，工具按当前 Wwise FNV-1 实现匹配定义中的 ID，输出所有竞争候选，不自动改配置。它不是音频识别器或穷举破解器。
 
 ## Wwise 效果槽依据
 
