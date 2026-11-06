@@ -1,62 +1,126 @@
-name: Publish development bundle
+name: Build and publish Windows release
+
 on:
   push:
-    tags:
-      - 'bundle-*'
+    tags: ['v*']
+  pull_request:
+    paths:
+      - 'assets/**'
+      - 'packaging/**'
+      - 'src/ApexAudio.Desktop/**'
+      - 'src/ApexAudio.Application/**'
+      - 'tools/Release.ps1'
+      - Directory.Build.props
+      - NuGet.Config
+      - .github/workflows/publish-bundle.yml
+
 permissions:
-  contents: write
+  contents: read
+
 jobs:
-  release:
+  build:
     runs-on: windows-latest
     timeout-minutes: 20
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
         with:
           dotnet-version: '8.0.x'
-      - name: Verify package inputs and obtain pinned compiler
+      - name: Verify release version
+        id: version
         shell: pwsh
         run: |
-          $ErrorActionPreference='Stop'
-          $metadata=Get-Content release-inputs/gamepacks.json -Raw | ConvertFrom-Json
-          foreach($pack in $metadata) {
-            $path=Join-Path 'release-inputs/gamepacks' $pack.file
-            if((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -ne $pack.sha256) { throw 'Package input hash mismatch.' }
+          [xml]$project = Get-Content -Raw src/ApexAudio.Desktop/ApexAudio.Desktop.csproj
+          $versions = @($project.Project.PropertyGroup.Version | Where-Object { $_ })
+          if ($versions.Count -ne 1) { throw 'The desktop project must declare exactly one Version.' }
+          $version = $versions[0]
+          if ($version -cnotmatch '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\z') {
+            throw 'The desktop project must have a MAJOR.MINOR.PATCH version.'
           }
-          $zip=Join-Path $env:RUNNER_TEMP 'zig.zip'
-          Invoke-WebRequest -Uri 'https://ziglang.org/download/0.15.2/zig-x86_64-windows-0.15.2.zip' -OutFile $zip
-          if((Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash -ne '3A0ED1E8799A2F8CE2A6E6290A9FF22E6906F8227865911FB7DDEDC3CC14CB0C') { throw 'Compiler download checksum mismatch.' }
-          $directory=Join-Path $env:RUNNER_TEMP 'zig'
-          Expand-Archive -LiteralPath $zip -DestinationPath $directory
-          $roots=@(Get-ChildItem -LiteralPath $directory -Directory)
-          if($roots.Count -ne 1) { throw 'Unexpected compiler archive root.' }
-          $compiler=$roots[0]
-          "APEX_RELEASE_COMPILER=$($compiler.FullName)" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
-      - name: Build development archive without game or controller tests
-        shell: pwsh
-        run: |
-          $ErrorActionPreference='Stop'
-          $version=$env:GITHUB_REF_NAME.Substring('bundle-'.Length)
-          if($version -notmatch '^\d+\.\d+\.\d+$') { throw 'Use bundle-YEAR.MONTH.DAY.' }
-          $output=Join-Path $env:RUNNER_TEMP 'apex-release'
-          ./tools/Release.ps1 -Version $version -CompilerDirectory $env:APEX_RELEASE_COMPILER -OutputDirectory $output -DevKitOnly
-          Copy-Item release-inputs/gamepacks/*.gpack -Destination $output
-          $hashes=Get-ChildItem -LiteralPath $output -File | Where-Object { $_.Extension -in @('.zip','.gpack') } | Sort-Object Name | ForEach-Object { "$( (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash )  $($_.Name)" }
-          $hashes | Set-Content -LiteralPath (Join-Path $output 'SHA256SUMS.txt') -Encoding utf8
-          "APEX_RELEASE_OUTPUT=$output" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
-      - name: Upload independent assets and publish release
+          if ($env:GITHUB_EVENT_NAME -eq 'push') {
+            if ($env:GITHUB_REF_NAME -cne "v$version") { throw "Expected release tag v$version." }
+            git fetch --no-tags origin '+refs/heads/main:refs/remotes/origin/main'
+            if ($LASTEXITCODE -ne 0) { throw 'Cannot fetch main.' }
+            git merge-base --is-ancestor HEAD origin/main
+            if ($LASTEXITCODE -ne 0) { throw 'The release commit must be part of main.' }
+          }
+          "version=$version" >> $env:GITHUB_OUTPUT
+      - name: Build and verify Windows application and DevKit
         shell: pwsh
         env:
-          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
-          $ErrorActionPreference='Stop'
-          $tag=$env:GITHUB_REF_NAME
-          gh release create $tag --repo $env:GITHUB_REPOSITORY --verify-tag --draft --title "开发包 $($tag.Substring(7)) 与新增游戏适配包" --notes-file release-inputs/release-notes.md
-          if($LASTEXITCODE -ne 0) { throw 'Draft release creation failed; existing releases are not overwritten.' }
-          $assets=@(Get-ChildItem -LiteralPath $env:APEX_RELEASE_OUTPUT -File | Where-Object { $_.Extension -in @('.zip','.gpack') -or $_.Name -eq 'SHA256SUMS.txt' } | ForEach-Object FullName)
-          gh release upload $tag --repo $env:GITHUB_REPOSITORY @assets
-          if($LASTEXITCODE -ne 0) { throw 'Asset upload failed; release remains draft.' }
-          gh release edit $tag --repo $env:GITHUB_REPOSITORY --draft=false --latest=false
-          if($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }
+          $sdk = dotnet --list-sdks | ForEach-Object { ($_ -split ' ')[0] } |
+            Where-Object { $_ -match '^8\.0\.[0-9]+$' } |
+            Sort-Object { [version]$_ } -Descending | Select-Object -First 1
+          if (-not $sdk) { throw '.NET 8 SDK is unavailable.' }
+          @{ sdk = @{ version = $sdk; rollForward = 'disable' } } |
+            ConvertTo-Json | Set-Content -Encoding utf8 global.json
+
+          $zip = Join-Path $env:RUNNER_TEMP 'zig.zip'
+          Invoke-WebRequest -Uri 'https://ziglang.org/download/0.15.2/zig-x86_64-windows-0.15.2.zip' -OutFile $zip
+          if ((Get-FileHash -LiteralPath $zip).Hash -ne '3A0ED1E8799A2F8CE2A6E6290A9FF22E6906F8227865911FB7DDEDC3CC14CB0C') {
+            throw 'Zig download checksum mismatch.'
+          }
+          $zigDir = Join-Path $env:RUNNER_TEMP 'zig'
+          Expand-Archive -LiteralPath $zip -DestinationPath $zigDir
+          $compiler = Join-Path $zigDir 'zig-x86_64-windows-0.15.2'
+          $out = Join-Path $env:RUNNER_TEMP 'apex-release'
+          ./tools/Release.ps1 -Version $env:VERSION -CompilerDirectory $compiler -OutputDirectory $out
+          if ($LASTEXITCODE -ne 0) { throw 'Release build failed.' }
+          $app = Join-Path $out "ApexAudio-Windows-x64-$env:VERSION.zip"
+          $unpacked = Join-Path $env:RUNNER_TEMP 'checked-app'
+          Expand-Archive -LiteralPath $app -DestinationPath $unpacked
+          $root = Join-Path $unpacked 'ApexAudio-Windows-x64'
+          if ((Get-Item "$root/ApexAudio.exe").VersionInfo.FileVersion -ne "$env:VERSION.0") {
+            throw 'Executable version does not match the archive version.'
+          }
+          if ((Get-FileHash "$root/assets/apex.ico").Hash -ne (Get-FileHash 'packaging/assets/apex.ico').Hash) {
+            throw 'Windows archive contains the wrong icon.'
+          }
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: github.event_name == 'push'
+        with:
+          name: windows-release
+          path: |
+            ${{ runner.temp }}/apex-release/*.zip
+            ${{ runner.temp }}/apex-release/SHA256SUMS-*.txt
+          if-no-files-found: error
+
+  publish:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: windows-release-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: windows-release
+      - name: Publish verified release attachments
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          sha256sum -c "SHA256SUMS-$VERSION.txt"
+          tag="$GITHUB_REF_NAME"
+          if draft="$(gh release view "$tag" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)"; then
+            if [[ "$draft" == false ]]; then
+              echo "Release $tag is already public."
+              exit 0
+            fi
+          else
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --title "ApexAudio $VERSION" --generate-notes
+          fi
+          gh release upload "$tag" --repo "$GITHUB_REPOSITORY" --clobber \
+            "ApexAudio-Windows-x64-$VERSION.zip" "ApexAudio-DevKit-$VERSION.zip" "SHA256SUMS-$VERSION.txt"
+          gh release edit "$tag" --repo "$GITHUB_REPOSITORY" --draft=false --latest
