@@ -6,6 +6,16 @@ static class HapticChecks
 {
     public static async Task Run(Action<bool,string> check)
     {
+        using var current = Process.GetCurrentProcess();
+        var supports = EngineApi.Supported.Where(s => s.Kind == "formal")
+            .Select(s => s with { ProcessName = current.ProcessName }).ToArray();
+        var matches = EngineApi.FindRunning(supports);
+        try
+        {
+            check(supports.Length >= 2 && matches.Count(p => p.Id == current.Id) == 1,
+                "multiple supported builds of one engine count the running process once");
+        }
+        finally { foreach (var match in matches) match.Dispose(); }
         await using var collector=new HapticCollector(18757,"test");
         using var payload=JsonDocument.Parse("""
         {"backendRuntime":{"realtimeAudio":{

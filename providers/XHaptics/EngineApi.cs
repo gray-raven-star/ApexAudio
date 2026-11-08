@@ -20,6 +20,8 @@ public sealed class EngineApi : IDisposable
     public bool Formal { get; private set; }
     public EngineApi(Func<int> port) { this.port = port; }
     public static EngineSupport[] Supported => JsonSerializer.Deserialize<EngineSupport[]>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory,"native","xh-engines.json")),Wire.Json)!;
+    public static Process[] FindRunning(IEnumerable<EngineSupport> supports) => supports.Select(s => s.ProcessName)
+        .Distinct(StringComparer.OrdinalIgnoreCase).SelectMany(Process.GetProcessesByName).ToArray();
     public void Bind(EngineSupport support, int pid) { Formal = support.Kind == "formal"; processId = pid; accessToken = null; diagnosticsToken = null; }
     public void SaveLaunch(int pid, string launchToken)
     {

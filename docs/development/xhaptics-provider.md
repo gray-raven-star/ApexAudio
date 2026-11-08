@@ -2,9 +2,9 @@
 
 游戏适配包只负责提供声音和实时混音映射，不依赖 X-Haptics 的版本。驱动差异集中在 `providers/XHaptics`。
 
-## 正式 Engine 5.0.2.4
+## 正式 Engine 5.0.2.4 和 5.0.2.8
 
-- HTTP 端口 18757；程序签名对应的文件哈希登记在 `native/xh-engines.json`。
+- 应用匹配 `native/xh-engines.json` 中的程序文件摘要，并使用正式版的 HTTP 端口 18757。
 - 首次由应用启动 Engine，使用官方启动令牌建立控制授权。授权缓存只与本次引擎进程关联。自行启动的 Engine 需要关闭一次，再由应用启动。
 - 绑定桥接时通过带 revision 的实时音频配置接口切换 enabled。其他算法、硬件增益和原生震动参数保持原值；分组选项修改不重启输入。
 - `ApexGroupsBridge-v5.dll` 在受校验的引擎进程内接入 WASAPI。游戏提供的实时混音映射协议保持不变。
@@ -18,7 +18,7 @@
 
 试听页默认同时显示声音补充（彩色）和引擎合成输出（灰色），也可分别选择。旧正式版录音曾把瞬时值扩展成请求间隔宽度；显示时改回原接收时刻的离散点，原录音文件不改写。诊断说明始终显示，不能因已录到数据而隐藏其精度限制。
 
-该版本声明了 diagnostics.wave.subscribe 能力，但实际 WebSocket 订阅返回 unknown-type，因此当前不使用该订阅。Beta 继续使用原有的带单调时钟波形接口。
+正式版 5.0.2.4 声明了 `diagnostics.wave.subscribe`，实测 WebSocket 订阅返回 `unknown-type`。当前正式版使用上述 HTTP 诊断接口。Beta 使用带单调时钟的波形接口。
 
 ## 验证要求
 

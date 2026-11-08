@@ -18,7 +18,9 @@ public sealed class FeedbackOutput : IAsyncDisposable
     readonly long origin = Stopwatch.GetTimestamp();
     long nextBlock, delayFrames = 960;
     Target? target; nint statusMap, statusView, stopAddress; long writes; bool previousInput = true;
-    public int Port { get; set; } = 18789;
+    int configuredPort = 18789;
+    int? formalPort;
+    public int Port { get => formalPort ?? configuredPort; set => configuredPort = value; }
     public EngineApi Engine { get; }
     public float Gain { get; set; } = 1;
     public bool Enabled => statusView != 0;
@@ -110,11 +112,12 @@ public sealed class FeedbackOutput : IAsyncDisposable
         string dll = Path.Combine(AppContext.BaseDirectory, "native", "ApexGroupsBridge-v5.dll");
         if (Native.Hash(dll) != config.RootElement.GetProperty("bridgeSha256").GetString()) throw new IOException("反馈桥接文件校验失败。");
         var supports = EngineApi.Supported;
-        var processes = supports.SelectMany(s => Process.GetProcessesByName(s.ProcessName)).ToArray();
+        var processes = EngineApi.FindRunning(supports);
         if (processes.Length != 1) { foreach (var p in processes) p.Dispose(); throw new IOException("请先打开 X-Haptics；需要且只能运行一份。"); }
         var process = processes[0];
         var support = supports.SingleOrDefault(s => s.ProcessName.Equals(process.ProcessName,StringComparison.OrdinalIgnoreCase) && s.Sha256.Equals(Native.Hash(process.MainModule!.FileName),StringComparison.OrdinalIgnoreCase))
             ?? throw new IOException("X-Haptics 版本尚未适配。");
+        formalPort = support.Kind == "formal" ? support.Port : null;
         Engine.Bind(support,process.Id);
         nint existing = Native.OpenFileMapping(4, false, $"Local\\ApexGroupsXhV4-{process.Id}");
         if (existing != 0)
