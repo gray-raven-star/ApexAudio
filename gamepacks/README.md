@@ -1,6 +1,6 @@
 # 官方适配包源码
 
-每个游戏目录保存当前定义和构建配方。已发布版本一列对应 [2026.10.18 发布附件](https://github.com/gray-raven-star/ApexAudio/releases/tag/bundle-2026.10.18)。两个版本不同时，当前定义来自未发布的本地版本，旧版配置留在对应包的 `_history/`。
+每个游戏目录保存当前定义和构建配方。单独发布的适配包在表中链接到各自的发布页。早期版本可从 [2026.10.18 发布附件](https://github.com/gray-raven-star/ApexAudio/releases/tag/bundle-2026.10.18) 下载，当前下载列表见 [官方适配包下载目录](https://github.com/gray-raven-star/ApexAudio-GamePacks#readme)。当前版本与已发布版本不同时，旧版配置留在对应包的 `_history/`。
 
 | 游戏 | 目录 | 包 ID | 当前版本 | 已发布版本 | 后端 | 重建路径 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -8,7 +8,7 @@
 | 赛博朋克 2077 | [`cyberpunk2077`](cyberpunk2077/README.md) | `local.cyberpunk2077` | 1.1.1 | 1.1.1 | Wwise | [通用 Wwise](cyberpunk2077/PROVENANCE.md) |
 | 龙之信条 2 | [`dragons-dogma-2`](dragons-dogma-2/README.md) | `local.dragonsdogma2` | 0.2.0 | [0.1.1](dragons-dogma-2/_history/0.1.1/manifest.json) | Wwise | [通用 Wwise](dragons-dogma-2/PROVENANCE.md) |
 | 艾尔登法环 | [`elden-ring`](elden-ring/README.md) | `local.elden-ring` | 0.2.0 | [0.1.1](elden-ring/_history/0.1.1/manifest.json) | Wwise | [专用 C# 入口](elden-ring/PROVENANCE.md) |
-| 霍格沃茨之遗 | [`hogwarts-legacy`](hogwarts-legacy/README.md) | `local.hogwarts-legacy` | 0.1.0 | — | Wwise | [通用 Wwise](hogwarts-legacy/PROVENANCE.md) |
+| 霍格沃茨之遗 | [`hogwarts-legacy`](hogwarts-legacy/README.md) | `local.hogwarts-legacy` | 0.1.0 | [0.1.0](https://github.com/gray-raven-star/ApexAudio-GamePacks/releases/tag/pack/hogwarts-legacy/v0.1.0) | Wwise | [通用 Wwise](hogwarts-legacy/PROVENANCE.md) |
 | 夺宝奇兵：古老之圈 | [`indiana-jones-great-circle`](indiana-jones-great-circle/README.md) | `local.indiana-great-circle` | 0.2.1 | [0.1.1](indiana-jones-great-circle/_history/0.1.1/manifest.json) | Wwise | [专用原生采集](indiana-jones-great-circle/PROVENANCE.md) |
 | 天国：拯救 2 | [`kingdom-come-deliverance-2`](kingdom-come-deliverance-2/README.md) | `local.kingdomcome2` | 1.1.0 | [1.0.1](kingdom-come-deliverance-2/_history/1.0.1/manifest.json) | Fmod | [通用 FMOD](kingdom-come-deliverance-2/PROVENANCE.md) |
 | 怪物猎人：崛起 | [`monster-hunter-rise`](monster-hunter-rise/README.md) | `independent.mhrise.wwise` | 0.1.2 | 0.1.2 | Wwise | [通用 Wwise](monster-hunter-rise/PROVENANCE.md) |
