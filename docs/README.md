@@ -17,7 +17,7 @@
 按 [识别游戏音频接口](authoring/identify-audio-system.md) → [制作适配包](authoring/build-a-gamepack.md) → [验证采集与反馈](authoring/verify-a-gamepack.md) → [发布适配包](authoring/release-a-gamepack.md) 推进。
 
 - 调查专题：[探查 FMOD 运行库](authoring/probe-fmod-runtime.md)、[读取容器元数据](authoring/container-metadata.md)、[分析采集接口](authoring/analyze-capture-interfaces.md)。
-- [官方适配包源码索引](https://github.com/gray-raven-star/ApexAudio/tree/main/gamepacks)记录各包的目录、已发布版本和重建状态。
+- [官方适配包源码](https://github.com/gray-raven-star/ApexAudio/tree/main/gamepacks)按游戏分目录，每个包的 `README.md` 说明支持范围。
 - 起手模板：[gamepack-starter](../gamepack-starter/README.md)，可复制的 Wwise 定义示例。
 - 扩展与排错：[编写自定义采集器](authoring/write-a-custom-adapter.md)、[排查采集与反馈问题](authoring/troubleshooting.md)。
 
