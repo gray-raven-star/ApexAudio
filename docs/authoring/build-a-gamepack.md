@@ -34,7 +34,7 @@
 
 ## 重建仓库中的适配包
 
-从源码仓库的 `gamepacks/README.md` 找到游戏目录，在源码根目录执行构建。DevKit 提供通用构建工具和新包示例，官方包定义随源码仓库提供。以下以杀戮尖塔 2 为例，官方包 CI 使用 .NET 8 和 Zig 0.15.2。
+在源码仓库的 `gamepacks/` 中打开目标游戏的子目录，阅读该包的 `README.md`，再从源码根目录执行构建。DevKit 提供通用构建工具和新包示例，官方包定义随源码仓库提供。以下以杀戮尖塔 2 为例，官方包 CI 使用 .NET 8 和 Zig 0.15.2。
 
 ```powershell
 pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/slay-the-spire-2
