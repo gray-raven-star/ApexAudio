@@ -1,0 +1,1528 @@
+{
+  "backend": "Wwise",
+  "title": "霍格沃茨之遗",
+  "gameSha256": "9CAB3D4214EC292BC7829CB662D25EB8817B9FFC14E33BBB360913F4273B1213",
+  "engineModule": "HogwartsLegacy.exe",
+  "engineSha256": "9CAB3D4214EC292BC7829CB662D25EB8817B9FFC14E33BBB360913F4273B1213",
+  "bankVersion": 140,
+  "bankHeader": "jAAAACM6xlA+XXAXEAAAAEcQAAAAAAAAAAAAAAAAAAA=",
+  "bankId": 2047606913,
+  "sdkYear": 2021,
+  "sdkSeries": 1,
+  "captureFile": "modules/ApexHogwartsLegacyWwiseCapture.dll",
+  "captureSha256": "",
+  "buses": [
+    {
+      "id": 3803692087,
+      "parent": 0,
+      "name": "主混音（Master Audio Bus）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "主混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3170825825,
+      "parent": 3803692087,
+      "name": "次级主总线（Sub Master Audio Bus）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "主混音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 393239870,
+      "parent": 3170825825,
+      "name": "音效（SFX）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 272434461,
+      "parent": 393239870,
+      "name": "总线 272434461",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 305039727,
+      "parent": 393239870,
+      "name": "总线 305039727",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 478119502,
+      "parent": 393239870,
+      "name": "总线 478119502",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 593057838,
+      "parent": 393239870,
+      "name": "Stations",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 693829042,
+      "parent": 393239870,
+      "name": "expendablebreakable",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 959088058,
+      "parent": 393239870,
+      "name": "总线 959088058",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1080430594,
+      "parent": 393239870,
+      "name": "WOw",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1082482811,
+      "parent": 393239870,
+      "name": "Navigation",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1214320096,
+      "parent": 393239870,
+      "name": "总线 1214320096",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1551515677,
+      "parent": 393239870,
+      "name": "总线 1551515677",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1983191592,
+      "parent": 393239870,
+      "name": "总线 1983191592",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2047325787,
+      "parent": 393239870,
+      "name": "Transfiguration",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2241489855,
+      "parent": 393239870,
+      "name": "Nurturing",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2242381963,
+      "parent": 393239870,
+      "name": "Enemies",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2507241531,
+      "parent": 393239870,
+      "name": "总线 2507241531",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3849094434,
+      "parent": 2507241531,
+      "name": "总线 3849094434",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2653668257,
+      "parent": 393239870,
+      "name": "总线 2653668257",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3117876319,
+      "parent": 2653668257,
+      "name": "总线 3117876319",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3053704941,
+      "parent": 393239870,
+      "name": "总线 3053704941",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3074349213,
+      "parent": 393239870,
+      "name": "Sanctuary",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 665143587,
+      "parent": 3074349213,
+      "name": "总线 665143587",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2052070029,
+      "parent": 3074349213,
+      "name": "TransfigurationObjects",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3567116701,
+      "parent": 393239870,
+      "name": "Creatures",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1884192453,
+      "parent": 3567116701,
+      "name": "magicalcreatures",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 309756471,
+      "parent": 1884192453,
+      "name": "总线 309756471",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 407681290,
+      "parent": 1884192453,
+      "name": "总线 407681290",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 519455336,
+      "parent": 1884192453,
+      "name": "总线 519455336",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 695956658,
+      "parent": 1884192453,
+      "name": "总线 695956658",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1316421684,
+      "parent": 1884192453,
+      "name": "总线 1316421684",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1514155413,
+      "parent": 1884192453,
+      "name": "总线 1514155413",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1777160596,
+      "parent": 1884192453,
+      "name": "总线 1777160596",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1922482304,
+      "parent": 1884192453,
+      "name": "总线 1922482304",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2007938068,
+      "parent": 1884192453,
+      "name": "总线 2007938068",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2333388385,
+      "parent": 1884192453,
+      "name": "总线 2333388385",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2494805941,
+      "parent": 1884192453,
+      "name": "总线 2494805941",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2666239551,
+      "parent": 1884192453,
+      "name": "总线 2666239551",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3037164277,
+      "parent": 1884192453,
+      "name": "总线 3037164277",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3494518271,
+      "parent": 1884192453,
+      "name": "总线 3494518271",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3975125879,
+      "parent": 1884192453,
+      "name": "总线 3975125879",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4013753821,
+      "parent": 1884192453,
+      "name": "总线 4013753821",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4116268952,
+      "parent": 1884192453,
+      "name": "总线 4116268952",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1993729839,
+      "parent": 3567116701,
+      "name": "ambientcreatures",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 93355262,
+      "parent": 1993729839,
+      "name": "总线 93355262",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 300269381,
+      "parent": 1993729839,
+      "name": "总线 300269381",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 944452859,
+      "parent": 1993729839,
+      "name": "总线 944452859",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1008758296,
+      "parent": 1993729839,
+      "name": "总线 1008758296",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1142287815,
+      "parent": 1993729839,
+      "name": "总线 1142287815",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1181050307,
+      "parent": 1993729839,
+      "name": "总线 1181050307",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1312579891,
+      "parent": 1993729839,
+      "name": "总线 1312579891",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1377174478,
+      "parent": 1993729839,
+      "name": "总线 1377174478",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1418559429,
+      "parent": 1993729839,
+      "name": "总线 1418559429",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2082808190,
+      "parent": 1993729839,
+      "name": "总线 2082808190",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2213994694,
+      "parent": 1993729839,
+      "name": "总线 2213994694",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2292791588,
+      "parent": 1993729839,
+      "name": "总线 2292791588",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2607328810,
+      "parent": 1993729839,
+      "name": "总线 2607328810",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2856444537,
+      "parent": 1993729839,
+      "name": "总线 2856444537",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2964625967,
+      "parent": 1993729839,
+      "name": "总线 2964625967",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3448636742,
+      "parent": 1993729839,
+      "name": "总线 3448636742",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3483323064,
+      "parent": 1993729839,
+      "name": "总线 3483323064",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3614659429,
+      "parent": 393239870,
+      "name": "InteractiveObjects",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3435381681,
+      "parent": 3614659429,
+      "name": "总线 3435381681",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3765803840,
+      "parent": 393239870,
+      "name": "Cutscenes",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1502025964,
+      "parent": 3765803840,
+      "name": "总线 1502025964",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4160437992,
+      "parent": 393239870,
+      "name": "法术（Spells）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "音效",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4237507684,
+      "parent": 393239870,
+      "name": "puzzles",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 358873419,
+      "parent": 4237507684,
+      "name": "总线 358873419",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4202210608,
+      "parent": 4237507684,
+      "name": "总线 4202210608",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 696369880,
+      "parent": 3170825825,
+      "name": "LFe",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1022449107,
+      "parent": 696369880,
+      "name": "总线 1022449107",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 864477977,
+      "parent": 3170825825,
+      "name": "总线 864477977",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1126594524,
+      "parent": 3170825825,
+      "name": "总线 1126594524",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3732670433,
+      "parent": 1126594524,
+      "name": "mandrakescreamingvoeffect",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 4265875867,
+      "parent": 1126594524,
+      "name": "总线 4265875867",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1272298447,
+      "parent": 3170825825,
+      "name": "总线 1272298447",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1759908433,
+      "parent": 1272298447,
+      "name": "testreverb",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1463976043,
+      "parent": 3170825825,
+      "name": "DialoguePing",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1551306167,
+      "parent": 3170825825,
+      "name": "界面（UI）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "界面",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2545004126,
+      "parent": 3170825825,
+      "name": "总线 2545004126",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 849258820,
+      "parent": 2545004126,
+      "name": "earlyreflections",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2936351030,
+      "parent": 3170825825,
+      "name": "总线 2936351030",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3930136735,
+      "parent": 3170825825,
+      "name": "对白（Dialogue）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "语音",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 77978275,
+      "parent": 3930136735,
+      "name": "环境（Ambient）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "环境",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 135787414,
+      "parent": 77978275,
+      "name": "总线 135787414",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 327603470,
+      "parent": 77978275,
+      "name": "Gossip",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1955224714,
+      "parent": 77978275,
+      "name": "总线 1955224714",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3028649187,
+      "parent": 77978275,
+      "name": "Greetings",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3640994538,
+      "parent": 77978275,
+      "name": "Acknowledgements",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1037543273,
+      "parent": 3930136735,
+      "name": "Ghosts",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 715139113,
+      "parent": 1037543273,
+      "name": "总线 715139113",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2427514019,
+      "parent": 1037543273,
+      "name": "总线 2427514019",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3159192341,
+      "parent": 1037543273,
+      "name": "总线 3159192341",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3576335212,
+      "parent": 1037543273,
+      "name": "总线 3576335212",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1353319066,
+      "parent": 3930136735,
+      "name": "总线 1353319066",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2174903061,
+      "parent": 3930136735,
+      "name": "总线 2174903061",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 813105702,
+      "parent": 2174903061,
+      "name": "总线 813105702",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1578188410,
+      "parent": 2174903061,
+      "name": "总线 1578188410",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2494109314,
+      "parent": 3930136735,
+      "name": "总线 2494109314",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 203734065,
+      "parent": 2494109314,
+      "name": "总线 203734065",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3725427529,
+      "parent": 2494109314,
+      "name": "总线 3725427529",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3725427530,
+      "parent": 2494109314,
+      "name": "总线 3725427530",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4097802964,
+      "parent": 2494109314,
+      "name": "总线 4097802964",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4097802967,
+      "parent": 2494109314,
+      "name": "总线 4097802967",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3224618006,
+      "parent": 3930136735,
+      "name": "总线 3224618006",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4181794693,
+      "parent": 3930136735,
+      "name": "Primary",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1069431850,
+      "parent": 4181794693,
+      "name": "Player",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3815242342,
+      "parent": 1069431850,
+      "name": "总线 3815242342",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1269182269,
+      "parent": 4181794693,
+      "name": "总线 1269182269",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 1288888254,
+      "parent": 4181794693,
+      "name": "总线 1288888254",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3437630436,
+      "parent": 4181794693,
+      "name": "总线 3437630436",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3991942870,
+      "parent": 3170825825,
+      "name": "音乐（Music）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "音乐",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2124052418,
+      "parent": 3991942870,
+      "name": "总线 2124052418",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 2751402999,
+      "parent": 3991942870,
+      "name": "总线 2751402999",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3159370726,
+      "parent": 3991942870,
+      "name": "总线 3159370726",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3260615248,
+      "parent": 3991942870,
+      "name": "总线 3260615248",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3812799815,
+      "parent": 3991942870,
+      "name": "总线 3812799815",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 3859233650,
+      "parent": 3991942870,
+      "name": "总线 3859233650",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4061831834,
+      "parent": 3991942870,
+      "name": "总线 4061831834",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 4284131077,
+      "parent": 3170825825,
+      "name": "总线 4284131077",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": 3
+    },
+    {
+      "id": 16345494,
+      "parent": 4284131077,
+      "name": "outdoorcliffside",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 407565896,
+      "parent": 4284131077,
+      "name": "outdoorbridge",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 776453309,
+      "parent": 4284131077,
+      "name": "总线 776453309",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1392115290,
+      "parent": 4284131077,
+      "name": "outdoorcastlestone",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1421487808,
+      "parent": 4284131077,
+      "name": "总线 1421487808",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1488923583,
+      "parent": 4284131077,
+      "name": "outdoorruralair",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1518758597,
+      "parent": 4284131077,
+      "name": "outdoorcourtyardwide",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1607251550,
+      "parent": 4284131077,
+      "name": "indoorwoodmedium",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1698725592,
+      "parent": 4284131077,
+      "name": "总线 1698725592",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1879035726,
+      "parent": 4284131077,
+      "name": "outdoorvalley",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 1968419678,
+      "parent": 4284131077,
+      "name": "outdoorcanyonwide",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2156993568,
+      "parent": 4284131077,
+      "name": "总线 2156993568",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2191650774,
+      "parent": 4284131077,
+      "name": "outdoorcanyonwalls",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2409921377,
+      "parent": 4284131077,
+      "name": "indoordungeonstone",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2423126754,
+      "parent": 4284131077,
+      "name": "outdoorcanyonmedium",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2606225055,
+      "parent": 4284131077,
+      "name": "outdoorconvolution",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2712206884,
+      "parent": 4284131077,
+      "name": "总线 2712206884",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2869944461,
+      "parent": 4284131077,
+      "name": "outdoorforestmedium",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2925159252,
+      "parent": 4284131077,
+      "name": "indoorhogwartslarge",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2929112249,
+      "parent": 4284131077,
+      "name": "outdoormountains",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3163998492,
+      "parent": 4284131077,
+      "name": "indoormediumroom",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3211759150,
+      "parent": 4284131077,
+      "name": "outdooroverland",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3243188945,
+      "parent": 4284131077,
+      "name": "outdoorhills",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3339516380,
+      "parent": 4284131077,
+      "name": "indoorhogwartssmall",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3429323807,
+      "parent": 4284131077,
+      "name": "outdoorcourtyardslapback",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3744925859,
+      "parent": 4284131077,
+      "name": "indoorcave",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3913715472,
+      "parent": 4284131077,
+      "name": "indoortunnellong",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3929505992,
+      "parent": 4284131077,
+      "name": "indoorwoodsmall",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 4044826574,
+      "parent": 4284131077,
+      "name": "总线 4044826574",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 4077069768,
+      "parent": 4284131077,
+      "name": "outdoorcavern",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 4204482522,
+      "parent": 4284131077,
+      "name": "indoorhogwartsmedium",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 985987111,
+      "parent": 0,
+      "name": "总线 985987111",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 1156359885,
+      "parent": 0,
+      "name": "原生震动（WWise_Motion）",
+      "nameSource": "Wwise FNV 名称候选",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 1813299563,
+      "parent": 1156359885,
+      "name": "总线 1813299563",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 1246556232,
+      "parent": 1813299563,
+      "name": "总线 1246556232",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 3575476233,
+      "parent": 1246556232,
+      "name": "总线 3575476233",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2002009866,
+      "parent": 1813299563,
+      "name": "总线 2002009866",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2266442270,
+      "parent": 1813299563,
+      "name": "总线 2266442270",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 2943983771,
+      "parent": 1813299563,
+      "name": "总线 2943983771",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 3525458404,
+      "parent": 2943983771,
+      "name": "总线 3525458404",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3577163916,
+      "parent": 1813299563,
+      "name": "总线 3577163916",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 3891755778,
+      "parent": 1813299563,
+      "name": "总线 3891755778",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 1060075117,
+      "parent": 3891755778,
+      "name": "总线 1060075117",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 2288906152,
+      "parent": 1156359885,
+      "name": "总线 2288906152",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 1334442663,
+      "parent": 0,
+      "name": "总线 1334442663",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "其他",
+      "auxiliary": false,
+      "slot": -1
+    },
+    {
+      "id": 1132646833,
+      "parent": 1334442663,
+      "name": "总线 1132646833",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    },
+    {
+      "id": 3594025529,
+      "parent": 1334442663,
+      "name": "总线 3594025529",
+      "nameSource": "Init.bnk 总线编号",
+      "category": "辅助总线",
+      "auxiliary": true,
+      "slot": -1
+    }
+  ]
+}

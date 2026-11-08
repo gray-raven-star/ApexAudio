@@ -1,0 +1,232 @@
+{
+  "packId": "local.hogwarts-legacy",
+  "packVersion": "0.1.0",
+  "date": "2026-11-08",
+  "environment": {
+    "platform": "Windows x64",
+    "store": "Epic Games Store",
+    "build": "2153883",
+    "zig": "0.15.2"
+  },
+  "validationTier": "basic",
+  "targetVersionEvidence": [
+    {
+      "executable": "HogwartsLegacy.exe",
+      "sha256": "9CAB3D4214EC292BC7829CB662D25EB8817B9FFC14E33BBB360913F4273B1213",
+      "buildId": "2153883"
+    }
+  ],
+  "versions": {
+    "bankFormat": 140,
+    "integrationVersion": "2021.1.13.8036.2580",
+    "exactSdkVersion": null,
+    "verifiedAbi": "七个 Wwise 导出与通用采集器签名一致，已通过连接及回调采样"
+  },
+  "audioInstanceEvidence": {
+    "loadedModule": "HogwartsLegacy.exe",
+    "initializedInstance": "passed",
+    "realCallbacks": "passed"
+  },
+  "groupEvidenceFile": "group-evidence.json",
+  "nativeSelfTest": {
+    "result": 0,
+    "moduleSha256": "3A26972E23CEAF6C1715FDA164289472B6AEAD4E3E73136E4D6C011579CCA813"
+  },
+  "stages": {
+    "packageIntegrity": "passed",
+    "build": "passed",
+    "protocol": "passed",
+    "resolvedObjects": "passed",
+    "listenerRegistration": "passed",
+    "callbacks": "passed",
+    "nonZeroPcm": "passed",
+    "independentTracks": "passed for observed payloads",
+    "selection": "passed",
+    "disconnectReconnect": "passed",
+    "feedbackSource": "passed",
+    "physicalHaptics": "not-tested"
+  },
+  "capture": {
+    "seconds": 8,
+    "groups": 126,
+    "captureGroups": 116,
+    "packets": 3739,
+    "aggregateFrames": 3828736,
+    "nonZeroGroups": 20,
+    "distinctFirstPayloads": 20,
+    "droppedBlocks": 0,
+    "tracks": [
+      {
+        "id": "393239870",
+        "peak": 0.5322571,
+        "firstPayloadSha256": "41D78139FD48BB704B7D9CA9C642228EB7A49B4AFD38E7AF1D472CAE913E1167",
+        "name": "音效（SFX）"
+      },
+      {
+        "id": "478119502",
+        "peak": 0.040649414,
+        "firstPayloadSha256": "0C4A26539124D9575599DEB2C9FC4DA808574EE1BD86301C75BE6291C3035E44",
+        "name": "总线 478119502"
+      },
+      {
+        "id": "1214320096",
+        "peak": 0.018035889,
+        "firstPayloadSha256": "8807E0C2B223BF226B996AA3448F1F2A78D1D8E49861BD4F9057A1151E48A84B",
+        "name": "总线 1214320096"
+      },
+      {
+        "id": "2653668257",
+        "peak": 0.059661865,
+        "firstPayloadSha256": "1CF9EC9E280A015070ABCB95F557BAA3D3C7FCAC0784D8B026C328499F86CF5D",
+        "name": "总线 2653668257"
+      },
+      {
+        "id": "3803692087",
+        "peak": 0.4246521,
+        "firstPayloadSha256": "CB088503D141BA8DB40552DA7D0C681474CE03B25D905729E1FDB198216FA34A",
+        "name": "主混音（Master Audio Bus）"
+      },
+      {
+        "id": "3930136735",
+        "peak": 0.3673401,
+        "firstPayloadSha256": "B73F167778F1F7FA37BCC70731D23BAE9F62EFE7746AEADF79183902E40EFB54",
+        "name": "对白（Dialogue）"
+      },
+      {
+        "id": "3991942870",
+        "peak": 0.11480713,
+        "firstPayloadSha256": "91B06FC17DCD49BE8DD34CDEF0E3AE09DA2127C1C62BE2A4473CC8D845EA330C",
+        "name": "音乐（Music）"
+      },
+      {
+        "id": "4284131077",
+        "peak": 0.123535156,
+        "firstPayloadSha256": "BF86253265FF2FAE2B34AB923F8C6E89B2BB983AB2AFC1FFE39C1B4FC17908EE",
+        "name": "总线 4284131077"
+      },
+      {
+        "id": "4160437992",
+        "peak": 0.9999695,
+        "firstPayloadSha256": "F1658926123F028A0D9D779C38C56A8757760A392899848B1518939F5AB3FCED",
+        "name": "法术（Spells）"
+      },
+      {
+        "id": "1551306167",
+        "peak": 0.013580322,
+        "firstPayloadSha256": "218472F1015F28AAB357D83D7FEDCC2A7E58CAB30DDCFD87E29D233D8647DD84",
+        "name": "界面（UI）"
+      },
+      {
+        "id": "3170825825",
+        "peak": 0.013549805,
+        "firstPayloadSha256": "8225B0662980EBDD291511769F072F7D311F10CC3F0B35A9C811F20EBFB5D23A",
+        "name": "次级主总线（Sub Master Audio Bus）"
+      },
+      {
+        "id": "3224618006",
+        "peak": 0.16534424,
+        "firstPayloadSha256": "F11A377E869D4B012F931F4E6E825FB980C26102EE6D828F0A6D0C03665DDEE5",
+        "name": "总线 3224618006"
+      },
+      {
+        "id": "4181794693",
+        "peak": 0.5345154,
+        "firstPayloadSha256": "D5EA0973C0F0EBC1F5A5E632FB9D85C8DF40123E95A9CFAD3BD5EC76848DF659",
+        "name": "Primary"
+      },
+      {
+        "id": "4237507684",
+        "peak": 0.0004272461,
+        "firstPayloadSha256": "A703F49F38F056E28E23D3D93D733772F29BEB37615C09776C3CC29796AAF378",
+        "name": "puzzles"
+      },
+      {
+        "id": "693829042",
+        "peak": 0.094177246,
+        "firstPayloadSha256": "3AFCA118D90C03A7E7772807ED96C62489D1A7A2188B581F6DD99E409878AA75",
+        "name": "expendablebreakable"
+      },
+      {
+        "id": "3614659429",
+        "peak": 0.057159424,
+        "firstPayloadSha256": "6A602961FA0E9A790ED0980AA2705543C3171E5447B008D4301CBF4592DD2DDD",
+        "name": "InteractiveObjects"
+      },
+      {
+        "id": "959088058",
+        "peak": 0.0024108887,
+        "firstPayloadSha256": "B8D06B3E3803E331FCAC80CAD6B02472751D1B20BA0D458A088FEFB15EFF6366",
+        "name": "总线 959088058"
+      },
+      {
+        "id": "1069431850",
+        "peak": 0.58969116,
+        "firstPayloadSha256": "7929B04B9CFEEB91ED5F9D9E0FF90A1BAF2141CC730191F33EE1BE7A15BA55B6",
+        "name": "Player"
+      },
+      {
+        "id": "2494109314",
+        "peak": 0.14694214,
+        "firstPayloadSha256": "4BAE9B44750493FF143A3FF2B8329C2C0C226F6191BB5B8D4DD550D6871FC13F",
+        "name": "总线 2494109314"
+      },
+      {
+        "id": "3725427529",
+        "peak": 0.1472168,
+        "firstPayloadSha256": "7B970AE845FC79EF3363682D5D60B7DE581920331E3FC7FD490DE7E54E7E733E",
+        "name": "总线 3725427529"
+      }
+    ]
+  },
+  "feedback": {
+    "format": "apex-f32-planar-ring-v1",
+    "empty": {
+      "Peak": 0,
+      "Blocks": 103,
+      "Packets": 304
+    },
+    "masterSelected": {
+      "Peak": 0.025453465,
+      "Blocks": 102,
+      "Packets": 368
+    },
+    "cleared": {
+      "Peak": 0,
+      "Blocks": 102,
+      "Packets": 354
+    },
+    "activeAfterDisconnect": 0,
+    "gameStillRunning": true
+  },
+  "evidenceFiles": [
+    "evidence/bus-routing.json",
+    "group-evidence.json"
+  ],
+  "sources": [
+    "本机 Epic 安装清单与运行进程",
+    "https://github.com/powzix/ooz",
+    "https://github.com/bnnm/wwiser/releases/tag/v20260808"
+  ],
+  "knownLimitations": [
+    "采样覆盖单次实机场景；父总线可包含子总线声音。",
+    "FNV 匹配名称为候选。10 条非主音频树普通总线仅显示元数据，42 条辅助总线仅记录在定义和路由证据中。",
+    "槽位空闲依据为 Init.bnk 的静态 FX 记录。实机验证涵盖挂接和音频输出。"
+  ],
+  "blockingStage": null,
+  "notTested": [
+    "其他发行渠道和游戏构建",
+    "所有分组的逐项试听与场景覆盖",
+    "游戏退出时的恢复流程",
+    "X-Haptics 和物理手柄"
+  ],
+  "reproductionCommands": [
+    "pwsh -File tools/Build-GamePack.ps1 -DefinitionDirectory gamepacks/hogwarts-legacy",
+    "ApexAudio.DevTools.exe check --pack dist/packages/local.hogwarts-legacy.gpack --launch",
+    "ApexAudio.DevTools.exe capture --pack dist/packages/local.hogwarts-legacy.gpack --pid <游戏主进程PID> --allow-game-connection --seconds 8"
+  ],
+  "cleanup": {
+    "adapterDisconnected": "passed",
+    "gameModules": "采集模块可能保留至游戏正常退出",
+    "gameStillRunning": true
+  }
+}

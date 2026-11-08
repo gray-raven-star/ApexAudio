@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "id": "initial",
+  "name": "初始配置",
+  "packId": "local.hogwarts-legacy",
+  "folders": [],
+  "groups": {
+    "393239870": {
+      "enabled": true
+    },
+    "272434461": {
+      "enabled": true
+    },
+    "305039727": {
+      "enabled": true
+    },
+    "478119502": {
+      "enabled": true
+    },
+    "593057838": {
+      "enabled": true
+    },
+    "693829042": {
+      "enabled": true
+    },
+    "959088058": {
+      "enabled": true
+    },
+    "1080430594": {
+      "enabled": true
+    },
+    "1082482811": {
+      "enabled": true
+    },
+    "1214320096": {
+      "enabled": true
+    },
+    "1551515677": {
+      "enabled": true
+    },
+    "1983191592": {
+      "enabled": true
+    },
+    "2047325787": {
+      "enabled": true
+    },
+    "2241489855": {
+      "enabled": true
+    },
+    "2242381963": {
+      "enabled": true
+    },
+    "2507241531": {
+      "enabled": true
+    },
+    "3849094434": {
+      "enabled": true
+    },
+    "2653668257": {
+      "enabled": true
+    },
+    "3117876319": {
+      "enabled": true
+    },
+    "3053704941": {
+      "enabled": true
+    },
+    "3074349213": {
+      "enabled": true
+    },
+    "665143587": {
+      "enabled": true
+    },
+    "2052070029": {
+      "enabled": true
+    },
+    "3567116701": {
+      "enabled": true
+    },
+    "1884192453": {
+      "enabled": true
+    },
+    "309756471": {
+      "enabled": true
+    },
+    "407681290": {
+      "enabled": true
+    },
+    "519455336": {
+      "enabled": true
+    },
+    "695956658": {
+      "enabled": true
+    },
+    "1316421684": {
+      "enabled": true
+    },
+    "1514155413": {
+      "enabled": true
+    },
+    "1777160596": {
+      "enabled": true
+    },
+    "1922482304": {
+      "enabled": true
+    },
+    "2007938068": {
+      "enabled": true
+    },
+    "2333388385": {
+      "enabled": true
+    },
+    "2494805941": {
+      "enabled": true
+    },
+    "2666239551": {
+      "enabled": true
+    },
+    "3037164277": {
+      "enabled": true
+    },
+    "3494518271": {
+      "enabled": true
+    },
+    "3975125879": {
+      "enabled": true
+    },
+    "4013753821": {
+      "enabled": true
+    },
+    "4116268952": {
+      "enabled": true
+    },
+    "1993729839": {
+      "enabled": true
+    },
+    "93355262": {
+      "enabled": true
+    },
+    "300269381": {
+      "enabled": true
+    },
+    "944452859": {
+      "enabled": true
+    },
+    "1008758296": {
+      "enabled": true
+    },
+    "1142287815": {
+      "enabled": true
+    },
+    "1181050307": {
+      "enabled": true
+    },
+    "1312579891": {
+      "enabled": true
+    },
+    "1377174478": {
+      "enabled": true
+    },
+    "1418559429": {
+      "enabled": true
+    },
+    "2082808190": {
+      "enabled": true
+    },
+    "2213994694": {
+      "enabled": true
+    },
+    "2292791588": {
+      "enabled": true
+    },
+    "2607328810": {
+      "enabled": true
+    },
+    "2856444537": {
+      "enabled": true
+    },
+    "2964625967": {
+      "enabled": true
+    },
+    "3448636742": {
+      "enabled": true
+    },
+    "3483323064": {
+      "enabled": true
+    },
+    "3614659429": {
+      "enabled": true
+    },
+    "3435381681": {
+      "enabled": true
+    },
+    "3765803840": {
+      "enabled": true
+    },
+    "1502025964": {
+      "enabled": true
+    },
+    "4160437992": {
+      "enabled": true
+    },
+    "4237507684": {
+      "enabled": true
+    },
+    "358873419": {
+      "enabled": true
+    },
+    "4202210608": {
+      "enabled": true
+    },
+    "1551306167": {
+      "enabled": true
+    }
+  }
+}
