@@ -33,7 +33,7 @@ sealed partial class MainWindow
         try
         {
             if (workspace.Feedback.Enabled) await workspace.Feedback.Stop();
-            var engines = EngineApi.Supported.SelectMany(s=>Process.GetProcessesByName(s.ProcessName)).ToArray(); bool running = engines.Length > 0; foreach (var p in engines) p.Dispose();
+            var engines = EngineApi.FindRunning(EngineApi.Supported); bool running = engines.Length > 0; foreach (var p in engines) p.Dispose();
             if (!running)
             {
                 if (!settings.AutoStartXh) { feedbackDetail = "等待 X-Haptics 启动"; return; }
@@ -46,9 +46,8 @@ sealed partial class MainWindow
                 string? launchToken=null;
                 if(support.Kind=="formal")
                 {
-                    if(settings.Port!=support.Port)throw new IOException("正式 Engine 使用本地端口 18757，请在应用设置中保存该端口。");
                     launchToken=Guid.NewGuid().ToString("N");
-                    start.ArgumentList.Add("--web-url");start.ArgumentList.Add("http://127.0.0.1:18757/diagnostics/");
+                    start.ArgumentList.Add("--web-url");start.ArgumentList.Add($"http://127.0.0.1:{support.Port}/diagnostics/");
                     start.ArgumentList.Add("--web-client-type");start.ArgumentList.Add("develop");
                     start.ArgumentList.Add("--dev-launch-token");start.ArgumentList.Add(launchToken);
                 }

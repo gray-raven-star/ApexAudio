@@ -1,0 +1,1957 @@
+{
+  "container": "pakchunk0-WindowsNoEditor.pak",
+  "indexSha1": "1fa961d7b56ae601265f7f7e3b793cd215f95895",
+  "resource": "Phoenix/Content/WwiseAudio/windows/Init.bnk",
+  "bankSha256": "4eefb9350c8516662d19b974a2a88df43a6dde95220fd81bcadcf5a29fa1c539",
+  "bankVersion": 140,
+  "wwiserVersion": "v20260808",
+  "integration": "2021.1.13.8036.2580",
+  "pluginDescriptorSha256": "c8d40e8b878cee78cf0e9b2d4f0808577eb5d586af2622624808e3b65e8f1762",
+  "nameCandidateSource": "Wwise FNV-1，候选来自当前游戏 EXE 字符串、银行文件名或项目通用词表",
+  "groups": [
+    {
+      "id": 3803692087,
+      "parent": 0,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0,
+        1
+      ],
+      "bankOffset": 10492,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Master Audio Bus"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3170825825,
+      "parent": 3803692087,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 10663,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Sub Master Audio Bus"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 393239870,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0,
+        1,
+        2
+      ],
+      "bankOffset": 10900,
+      "root": 3803692087,
+      "nameCandidates": [
+        "SFX",
+        "SFx",
+        "SfX",
+        "Sfx",
+        "sFX",
+        "sfx"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 272434461,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 11245,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 305039727,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 11322,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 478119502,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 11676,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 593057838,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 11995,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Stations",
+        "stations"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 693829042,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 12072,
+      "root": 3803692087,
+      "nameCandidates": [
+        "expendablebreakable"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 959088058,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 12426,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1080430594,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 12739,
+      "root": 3803692087,
+      "nameCandidates": [
+        "WOW",
+        "WOw",
+        "Wow",
+        "wOW",
+        "woW",
+        "wow"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1082482811,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 12816,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Navigation",
+        "navigation"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1214320096,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 12968,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1551515677,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 13189,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1983191592,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 13295,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2047325787,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 13390,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Transfiguration",
+        "transfiguration"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2241489855,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 13467,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Nurturing",
+        "nurturing"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2242381963,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 13544,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Enemies",
+        "enemies"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2507241531,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 13702,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3849094434,
+      "parent": 2507241531,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0
+      ],
+      "bankOffset": 13779,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2653668257,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 13864,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3117876319,
+      "parent": 2653668257,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 13941,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3053704941,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14075,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3074349213,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14285,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Sanctuary",
+        "sanctuary"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 665143587,
+      "parent": 3074349213,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14362,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2052070029,
+      "parent": 3074349213,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14439,
+      "root": 3803692087,
+      "nameCandidates": [
+        "TransfigurationObjects"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3567116701,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14516,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Creatures",
+        "creatures"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1884192453,
+      "parent": 3567116701,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14593,
+      "root": 3803692087,
+      "nameCandidates": [
+        "magicalcreatures"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 309756471,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14746,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 407681290,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14823,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 519455336,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14900,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 695956658,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 14977,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1316421684,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15054,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1514155413,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15131,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1777160596,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15208,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1922482304,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15285,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2007938068,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15362,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2333388385,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15439,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2494805941,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15516,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2666239551,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15593,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3037164277,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15670,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3494518271,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15747,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3975125879,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15824,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4013753821,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15901,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4116268952,
+      "parent": 1884192453,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 15978,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1993729839,
+      "parent": 3567116701,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16089,
+      "root": 3803692087,
+      "nameCandidates": [
+        "ambientcreatures"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 93355262,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16279,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 300269381,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16356,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 944452859,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16433,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1008758296,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16510,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1142287815,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16587,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1181050307,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16664,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1312579891,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16741,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1377174478,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16818,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1418559429,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16895,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2082808190,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 16972,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2213994694,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17049,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2292791588,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17126,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2607328810,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17203,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2856444537,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17280,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2964625967,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17357,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3448636742,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17434,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3483323064,
+      "parent": 1993729839,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17511,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3614659429,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17605,
+      "root": 3803692087,
+      "nameCandidates": [
+        "InteractiveObjects",
+        "interactiveobjects"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3435381681,
+      "parent": 3614659429,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17787,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3765803840,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17882,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Cutscenes",
+        "cutscenes"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1502025964,
+      "parent": 3765803840,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 17977,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4160437992,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 18071,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Spells",
+        "spells"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4237507684,
+      "parent": 393239870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 18182,
+      "root": 3803692087,
+      "nameCandidates": [
+        "puzzles"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 358873419,
+      "parent": 4237507684,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 18259,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4202210608,
+      "parent": 4237507684,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 18372,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 696369880,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0
+      ],
+      "bankOffset": 18539,
+      "root": 3803692087,
+      "nameCandidates": [
+        "LFE",
+        "LFe",
+        "LfE",
+        "Lfe",
+        "lFE",
+        "lFe",
+        "lfE"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1022449107,
+      "parent": 696369880,
+      "auxiliary": true,
+      "occupiedSlots": [],
+      "bankOffset": 18624,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 864477977,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 18681,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1126594524,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 18857,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3732670433,
+      "parent": 1126594524,
+      "auxiliary": true,
+      "occupiedSlots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "bankOffset": 18963,
+      "root": 3803692087,
+      "nameCandidates": [
+        "mandrakescreamingvoeffect"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 4265875867,
+      "parent": 1126594524,
+      "auxiliary": true,
+      "occupiedSlots": [
+        1,
+        2,
+        3
+      ],
+      "bankOffset": 19055,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1272298447,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 19163,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1759908433,
+      "parent": 1272298447,
+      "auxiliary": true,
+      "occupiedSlots": [
+        3
+      ],
+      "bankOffset": 19269,
+      "root": 3803692087,
+      "nameCandidates": [
+        "testreverb"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1463976043,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 19334,
+      "root": 3803692087,
+      "nameCandidates": [
+        "DialoguePing"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1551306167,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 19428,
+      "root": 3803692087,
+      "nameCandidates": [
+        "UI",
+        "Ui",
+        "uI",
+        "ui"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2545004126,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 19610,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 849258820,
+      "parent": 2545004126,
+      "auxiliary": true,
+      "occupiedSlots": [],
+      "bankOffset": 19687,
+      "root": 3803692087,
+      "nameCandidates": [
+        "earlyreflections"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2936351030,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 19745,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3930136735,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0,
+        1
+      ],
+      "bankOffset": 19856,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Dialogue",
+        "dialogue"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 77978275,
+      "parent": 3930136735,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 20338,
+      "root": 3803692087,
+      "nameCandidates": [
+        "AMBIENT",
+        "Ambient",
+        "ambient"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 135787414,
+      "parent": 77978275,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 20623,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 327603470,
+      "parent": 77978275,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 20700,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Gossip"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1955224714,
+      "parent": 77978275,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 20872,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3028649187,
+      "parent": 77978275,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 20954,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Greetings"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3640994538,
+      "parent": 77978275,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 21103,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Acknowledgements"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1037543273,
+      "parent": 3930136735,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0,
+        1
+      ],
+      "bankOffset": 21323,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Ghosts",
+        "ghosts"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 715139113,
+      "parent": 1037543273,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 21478,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2427514019,
+      "parent": 1037543273,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 21758,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3159192341,
+      "parent": 1037543273,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 21912,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3576335212,
+      "parent": 1037543273,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 22122,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1353319066,
+      "parent": 3930136735,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0,
+        1
+      ],
+      "bankOffset": 22361,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2174903061,
+      "parent": 3930136735,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0,
+        1,
+        2
+      ],
+      "bankOffset": 22539,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 813105702,
+      "parent": 2174903061,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 22873,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1578188410,
+      "parent": 2174903061,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 23027,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2494109314,
+      "parent": 3930136735,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 23409,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 203734065,
+      "parent": 2494109314,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 23605,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3725427529,
+      "parent": 2494109314,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 23711,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3725427530,
+      "parent": 2494109314,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 23788,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4097802964,
+      "parent": 2494109314,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 23865,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4097802967,
+      "parent": 2494109314,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 23942,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3224618006,
+      "parent": 3930136735,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 24138,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4181794693,
+      "parent": 3930136735,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0
+      ],
+      "bankOffset": 24315,
+      "root": 3803692087,
+      "nameCandidates": [
+        "PRIMARY",
+        "Primary",
+        "primary"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1069431850,
+      "parent": 4181794693,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 24981,
+      "root": 3803692087,
+      "nameCandidates": [
+        "PLAYER",
+        "Player",
+        "player"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3815242342,
+      "parent": 1069431850,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 25123,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1269182269,
+      "parent": 4181794693,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 25272,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 1288888254,
+      "parent": 4181794693,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 25385,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3437630436,
+      "parent": 4181794693,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 25462,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3991942870,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0,
+        1,
+        2
+      ],
+      "bankOffset": 25534,
+      "root": 3803692087,
+      "nameCandidates": [
+        "Music",
+        "music"
+      ],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2124052418,
+      "parent": 3991942870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 25840,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 2751402999,
+      "parent": 3991942870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 25953,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3159370726,
+      "parent": 3991942870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 26048,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3260615248,
+      "parent": 3991942870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 26143,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3812799815,
+      "parent": 3991942870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 26238,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 3859233650,
+      "parent": 3991942870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 26369,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4061831834,
+      "parent": 3991942870,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 26860,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 4284131077,
+      "parent": 3170825825,
+      "auxiliary": false,
+      "occupiedSlots": [
+        0
+      ],
+      "bankOffset": 27062,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": 3
+    },
+    {
+      "id": 16345494,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27279,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorcliffside"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 407565896,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27345,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorbridge"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 776453309,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27411,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1392115290,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27477,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorcastlestone"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1421487808,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27543,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1488923583,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27609,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorruralair"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1518758597,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27675,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorcourtyardwide"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1607251550,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27741,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoorwoodmedium"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1698725592,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27817,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1879035726,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27883,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorvalley"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1968419678,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 27949,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorcanyonwide"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2156993568,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28015,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2191650774,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28081,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorcanyonwalls"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2409921377,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28147,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoordungeonstone"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2423126754,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28213,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorcanyonmedium"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2606225055,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28279,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorconvolution"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2712206884,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28355,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2869944461,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28421,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorforestmedium"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2925159252,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28487,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoorhogwartslarge"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2929112249,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28563,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoormountains"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3163998492,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28629,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoormediumroom"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3211759150,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        0
+      ],
+      "bankOffset": 28695,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdooroverland"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3243188945,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28761,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorhills"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3339516380,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28827,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoorhogwartssmall"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3429323807,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 28903,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorcourtyardslapback"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3744925859,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        0,
+        3
+      ],
+      "bankOffset": 28979,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoorcave"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3913715472,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 29067,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoortunnellong"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3929505992,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 29133,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoorwoodsmall"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 4044826574,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 29199,
+      "root": 3803692087,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 4077069768,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 29265,
+      "root": 3803692087,
+      "nameCandidates": [
+        "outdoorcavern"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 4204482522,
+      "parent": 4284131077,
+      "auxiliary": true,
+      "occupiedSlots": [
+        2
+      ],
+      "bankOffset": 29331,
+      "root": 3803692087,
+      "nameCandidates": [
+        "indoorhogwartsmedium"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 985987111,
+      "parent": 0,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 29407,
+      "root": 985987111,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1156359885,
+      "parent": 0,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 29528,
+      "root": 1156359885,
+      "nameCandidates": [
+        "WWise_Motion"
+      ],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1813299563,
+      "parent": 1156359885,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 29715,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1246556232,
+      "parent": 1813299563,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 29849,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3575476233,
+      "parent": 1246556232,
+      "auxiliary": true,
+      "occupiedSlots": [],
+      "bankOffset": 29931,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2002009866,
+      "parent": 1813299563,
+      "auxiliary": true,
+      "occupiedSlots": [],
+      "bankOffset": 29999,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2266442270,
+      "parent": 1813299563,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 30067,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2943983771,
+      "parent": 1813299563,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 30149,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3525458404,
+      "parent": 2943983771,
+      "auxiliary": true,
+      "occupiedSlots": [],
+      "bankOffset": 30252,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3577163916,
+      "parent": 1813299563,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 30330,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3891755778,
+      "parent": 1813299563,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 30418,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1060075117,
+      "parent": 3891755778,
+      "auxiliary": true,
+      "occupiedSlots": [],
+      "bankOffset": 30500,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 2288906152,
+      "parent": 1156359885,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 30585,
+      "root": 1156359885,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1334442663,
+      "parent": 0,
+      "auxiliary": false,
+      "occupiedSlots": [],
+      "bankOffset": 30879,
+      "root": 1334442663,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 1132646833,
+      "parent": 1334442663,
+      "auxiliary": true,
+      "occupiedSlots": [],
+      "bankOffset": 31094,
+      "root": 1334442663,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    },
+    {
+      "id": 3594025529,
+      "parent": 1334442663,
+      "auxiliary": true,
+      "occupiedSlots": [],
+      "bankOffset": 31277,
+      "root": 1334442663,
+      "nameCandidates": [],
+      "selectedSlot": -1
+    }
+  ]
+}

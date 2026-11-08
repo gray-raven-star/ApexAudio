@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "local.hogwarts-legacy",
+  "name": "霍格沃茨之遗",
+  "version": "0.1.0",
+  "author": "ApexAudio / Codex",
+  "source": "本机 Epic Games Store build 2153883 音频元数据与 ApexAudio Wwise 采集器",
+  "description": "Epic 2153883 · Wwise 音频总线采集",
+  "protocolVersion": 1,
+  "entryPoint": "ApexAudio.Wwise.exe",
+  "demo": false,
+  "games": [
+    {
+      "executable": "HogwartsLegacy.exe",
+      "sha256": "9CAB3D4214EC292BC7829CB662D25EB8817B9FFC14E33BBB360913F4273B1213"
+    }
+  ],
+  "presets": [
+    "presets/initial.json"
+  ],
+  "files": {}
+}
